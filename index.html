@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]>
+<html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>
+<html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>
+<html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en"> <!--<![endif]-->
+<head>
+
+    <!-- Basic Page Needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>Aditya Sood</title>
+    <meta name="description"
+          content="Aditya Sood, student at the University of Georgia, looking for an internship.">
+    <meta name="author" content="Typebig">
+
+    <!-- Mobile Specific Metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- CSS Files
+    * cssreset-min.css 			- CSS reset
+    * grid.css					- Responsive grid system based on "Skeleton" by Dave Gamache (http://www.getskeleton.com/)
+    * alpha_background.css		- Classes for applying an alpha black or white background
+    * style.css					- Main CSS file
+    * responsive_custom			- CSS override for responsive layout
+    * print.css 				- CSS for printer-friendly presentation
+    ================================================== -->
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.8.0/build/cssreset/cssreset-min.css">
+    <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="css/alpha_background.css">
+    <link rel="stylesheet" href="css/style2.css">
+    <link rel="stylesheet" href="css/responsive_custom.css">
+    <link rel="stylesheet" href="css/print.css">
+    
+    <link href="css/animate.min.css" rel="stylesheet" type="text/css"/>
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Favicons
+    ================================================== -->
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+    <!-- Google Web Fonts
+    ================================================== -->
+    <link href='http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic' rel='stylesheet'
+          type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,300,400,700' rel='stylesheet'
+          type='text/css'>
+    <!-- flare lightbox css -->
+    <script type="text/javascript" src="js/jquery.js"></script>
+
+    <link href="js/pe.flare/jquery.pixelentity.flare.min.css" rel="stylesheet"/>
+    <script type="text/javascript" src="js/pe.flare/jquery.pixelentity.flare.min.js"></script>
+    <style>
+        #section-intro #section-profileImage-Movie {
+            overflow: hidden;
+            position: relative;
+        }
+        #section-intro {
+            position:relative;
+            left:0px;
+            top:0px;
+            z-index:10;
+        }
+        video#myvideo {
+            position: fixed;
+            top: -100px;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: 1;
+            background: url(images/profile_main3.jpg) no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            background-origin: content-box; 
+        }
+        #section-worksgrid {
+            width: 100%;
+            height: 100%;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+            position: relative;
+            background-color: white;
+            z-index: 20;
+        }
+        #section-about, #section-resume, #section-contact, #section-footer, .behance-out {
+            position: relative;
+            z-index: 20;
+        }
+    </style>
+    <style>
+        #working-section{
+            background-image: url(images/profile_main3.jpg);
+            height: 400px;
+            background-size: cover;
+            background-attachment: fixed;
+            background-origin: content-box;
+        }
+        #working-section-iphone {
+            background-image: url(images/profile_main3.jpg);
+            height: 400px;
+            background-size: cover;
+            background-position: top center;
+            background-repeat: no-repeat;
+        }
+        .appear {
+			visibility: hidden;
+		}
+    </style>
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-62522561-1', 'auto');
+  ga('send', 'pageview');
+
+	</script>
+</head>
+
+<body data-spy="scroll" data-target="#section-topbar" data-offset="60">
+<script type="text/javascript">// <![CDATA[
+jQuery(function ($) {
+    $('a[data-target="flare"]').peFlareLightbox();
+});
+// ]]></script>
+<p></p>
+<!-- Topbar: fixed + datascroll
+        
+                * the attribute data-scrollspy is for automatically updating nav targets based on scroll position
+                * scroll the area below the navbar and watch the active class change
+                ================================================== -->
+<div id="section-topbar">
+    <div id="topbar-inner">
+        
+    <div class="container"> 
+      <div class="sixteen columns"> 
+        <div class="dropdown"> 
+          <ul id="nav" class="nav">
+            <li class="menu-item"><a href="#section-intro" title="About"><img
+                                src="images/icons/icon_profile.png" alt="About"/> 
+              </a></li>
+           <!-- <li class="menu-item"><a href="#section-worksgrid" title="Portfolio"><img
+                                src="images/icons/icon_works.png" alt="Portfolio"/></a></li> -->
+            <li class="menu-item"><a href="#section-resume" title="Resume"><img
+                                src="images/icons/icon_resume.png" alt="Resume"/></a></li>
+            <li class="menu-item"><a href="#section-honors" title="Awards"><img
+                                src="images/icons/icon_awards.png" alt="Awards"/></a></li>
+            <li class="menu-item"><a href="#section-contact" title="Testimonials"><img
+                                src="images/icons/icon_testimonials.png" alt="Referrals"/></a></li>
+          </ul>
+          <!-- // uL#nav -->
+        </div>
+        <!-- // .dropdown -->
+        <div class="clear"></div>
+      </div>
+      <!-- // .sixteen -->
+    </div>
+        <!-- // .container -->
+        <div class="clear"></div>
+    </div>
+    <!-- // #topbar-inner --></div> 
+<!-- // #section-topbar -->
+<p></p> 
+<!-- Intro
+                ================================================== -->
+<div id="section-intro"> 
+  <!-- Profile Image -->
+    <div class="animated-bg">
+  <div style="position: absolute; top: 15%; text-align: center; z-index: 99; width: 100%;"><img
+            src="images/LOGO2.png"/></div>
+    </div>
+  <!--        <div id="working-section" class="table-cell v-middle">-->
+  <!--<video id="myvideoo" loop="loop" poster="images/profile_main3.jpg" autoplay="autoplay">&ndash;&gt;-->
+  <!--<source src="http://www.starmenusa.com/clients/tony/video/tony.mp4" type="video/mp4">-->
+  <!--<source src="http://www.starmenusa.com/clients/tony/video/tony.ogv" type="video/ogg">-->
+  <!--<source src="http://www.starmenusa.com/clients/tony/video/tony.webm" type="video/webm">-->
+  <!--</video>-->
+  <!--        </div>-->
+  <div id="section-profileImage-Movie" > 
+    <video loop="loop" poster="images/profile_main3.jpg" muted autoplay="autoplay" style="position: absolute; z-index: 0; top: -100px; left: 0px; min-width: 100%; min-height: 100%;">">
+                <source src="take3.mp4" type="video/mp4" />
+                </video>
+        <video id="myvideo" loop="loop" muted  poster="images/profile_main3.jpg" autoplay="autoplay"> 
+    <source src="take3.mp4" type="video/mp4"> 
+         </video> 
+      
+
+        
+        <!--                <div class="container">
+                        <div class="sixteen columns">
+                            <div id="box-name">
+                                <div class="logo"><a data-target="flare" href="http://vimeo.com/71395885"><img src="images/spacer.png" height="112" width="334" /></a></div>
+                            </div>
+                             // #box-name
+                        </div>
+                         // .four
+                        <div class="clear"></div>
+                    </div>-->
+    <!-- // .container -->
+  </div>
+  <!-- // #section-profileImage -->
+    
+        <div class="item">
+            <div class="two columns" ><img src="images/new-logo2.png" alt="Aditya Sood" width="100%" style="position: absolute; padding-top: 10px; padding-bottom: 30px"/>
+      <!-- // .three -->
+    <div class="ten columns" > 
+    </div>
+        </div>
+    </div>
+    
+    <a name="section-intro"></a>
+  <!-- About -->
+  <div id="section-about"> 
+     
+
+    <div class="container"> 
+      <div class="two columns" ><img src="images/about.png" style="padding-top: 0px; padding-bottom: 30px"/></div>
+      <!-- // .three -->
+      <div class="ten columns" > 
+        <p class="intro">Aditya Sood is a student at the University  
+          of Georgia who is currently using his energy to run the national nonprofit  
+          'Working Together for Change' in Athens, GA. While his aim is to pursue a medical  
+          degree, his expertise lies in an array of areas ranging from clinical and laboratory 
+          research, as well as marketing and entrepreneurship. Aditya's passions lie in  
+          medicine and ending homelessness. 
+          </p>
+          
+      </div>
+      <!-- // .nine -->
+      <div class="four columns" ><a href="http://www.adityasood.me/index.html#" class="link-print">Print 
+        Page</a> <a title="Download PDF Resume" class="link-pdf" href="cv/resume.pdf" target="_blank">Download 
+        PDF</a> <a href="https://www.linkedin.com/pub/aditya-sood/51/a91/6b3" class="link-li"
+                               target="_blank">LINKED IN</a></div>
+      <!-- // .four -->
+      <div class="clear"></div>
+    </div>
+    <!-- // .container -->
+  </div>
+  <!-- // #section-about -->
+</div>
+<!-- // #section-intro -->
+<p></p>
+
+<div id="section-worksgrid"> 
+    <a name="section-worksgrid"></a>
+   <div class="item" ><a target="_blank" href="21stcenturyleaders.org/tag/aditya-sood/" onClick="_gaq.push(['_trackEvent', 'Behance', 'Click', 'CBS']);"> 
+    <img src="images/cbs1.jpg" alt=""/><span><img src="images/cbs2.jpg" alt=""/></span> 
+    </a></div>
+  <div class="item" ><a target="_blank" href="https://www.workingtogetherforchange.com" onClick="_gaq.push(['_trackEvent', 'Behance', 'Click', 'TOYOTA']);"> 
+    <img src="images/toyota1.jpg" alt=""/><span><img src="images/toyota2.jpg" alt=""/></span> 
+    </a></div>
+  <!--<div class="item" ><a target="_blank" href="http://www.behance.net/gallery/The-Wall-Street-Journal-App/10314565" onClick="_gaq.push(['_trackEvent', 'Behance', 'Click', 'CBS']);"> 
+    <img src="images/wsj1.jpg" alt=""/><span><img src="images/wsj2.jpg" alt=""/></span> 
+    </a></div>
+  <!-- // .item -->
+ <!-- <div class="item" ><a target="_blank" href="http://www.behance.net/gallery/American-Eagle-Airlines/9955317" onClick="_gaq.push(['_trackEvent', 'Behance', 'Click', 'AE']);"> 
+    <img src="images/ae1.jpg" alt=""/> <span><img src="images/ae2.jpg" alt=""/></span></a></div>
+  <!-- // .item -->
+  <div class="item" ><a target="_blank" href="http://atlantabusinessradio.businessradiox.com/tag/aditya-sood/" onClick="_gaq.push(['_trackEvent', 'Behance', 'Click', 'Rogue']);"> 
+    <img src="images/dtv1.jpg" alt=""/><span><img src="images/dtv2.jpg" alt=""/></span> 
+    </a></div>
+  <!-- // .item -->
+  <!--<div class="item" ><a target="_blank" href="http://www.behance.net/gallery/Hampton-Inn-Suites-Website/9404813" onClick="_gaq.push(['_trackEvent', 'Behance', 'Click', 'Hampton']);"> 
+    <img src="images/hamp1.jpg" alt=""/> <span><img src="images/hamp2.jpg" alt=""/></span> 
+    </a></div>
+  <!-- // .item -->
+  <!-- // .item -->
+  <!--<div class="item" ><a target="_blank" href="http://www.behance.net/gallery/Tamrac-Website-Redesign/9616209" onClick="_gaq.push(['_trackEvent', 'Behance', 'Click', 'Tamrac']);"> 
+    <img src="images/tam1.jpg" alt=""/> <span><img src="images/tam2.jpg" alt=""/></span> 
+    </a></div>
+  <!-- // .item -->
+  <!--<div class="item" ><a target="_blank" href="http://www.behance.net/gallery/Nat-Geo-Presents-Space-Dive/8329073" onClick="_gaq.push(['_trackEvent', 'Behance', 'Click', 'Nat Geo']);"> 
+    <img src="images/nat1.jpg" alt=""/> <span><img src="images/nat2.jpg" alt=""/></span> 
+    </a></div>
+  <!-- // .item -->
+  <!--<div class="item" ><a target="_blank" href="http://www.behance.net/gallery/Voskos-Greek-Yogurt-Branding/9513591" onClick="_gaq.push(['_trackEvent', 'Behance', 'Click', 'Voskos']);"> 
+    <img src="images/voskos1.jpg" alt=""/> <span><img src="images/voskos2.jpg" alt=""/></span> 
+    </a></div>
+  <!-- // .item -->
+  <div class="item" ><a target="_blank" href="http://www.ahs-hook.com/?p=867" onClick="_gaq.push(['_trackEvent', 'Behance', 'Click', 'Chadburry']);"> 
+    <img src="images/chad1.jpg" alt=""/> <span><img src="images/chad2.jpg" alt=""/></span> 
+    </a></div>
+  <!-- // .item -->
+  <!--<div class="item" ><a target="_blank" href="http://www.behance.net/gallery/RED-2-Digital-Motion-Poster/13445481" onClick="_gaq.push(['_trackEvent', 'Behance', 'Click', 'RED']);"> 
+    <img src="images/red1.jpg" alt=""/> <span><img src="images/red2.jpg" alt=""/></span> 
+    </a></div>
+  <!-- // .item -->
+  <!--<div class="item" ><a target="_blank" href="http://www.behance.net/gallery/JP-HRO-Digital-Marketing/9593537" onClick="_gaq.push(['_trackEvent', 'Behance', 'Click', 'JpHro']);"> 
+    <img src="images/jp1.jpg" alt=""/> <span><img src="images/jp2.jpg" alt=""/></span> 
+    </a></div>
+  <!-- // .item -->
+  <!--<div class="item" data-ride="animated" data-animation="fadeIn" data-delay="0" style="display:none;"><a target="_blank" href="http://www.behance.net/gallery/MinusZero-Identity-Rebrand/8245477" onClick="_gaq.push(['_trackEvent', 'Behance', 'Click', 'Minus0']);"> 
+    <img src="images/mz1.jpg" alt=""/> <span><img src="images/mz2.jpg" alt=""/></span> 
+    </a></div>
+  <!-- // .item -->
+</div>
+<!-- // #section-worksgrid -->
+<p></p>
+
+<!-- Resume
+                ================================================== -->
+<div id="section-resume"> 
+    <a name="section-resume"></a>
+  <!-- // .section-title -->
+  <div class="container"> 
+    <!-- EDUCATION -->
+    <div class="block"> 
+      <div class="three columns" data-ride="animated" data-animation="fadeIn" data-delay="300"><img src="images/education.png" style="padding-top: 20px;"/></div>
+      <!-- // .three -->
+      <div class="thirteen columns" data-ride="animated" data-animation="fadeIn" data-delay="400"> 
+        <div class="item"> 
+          <div class="nine columns alpha no-border"> 
+            <h4>High School Diploma</h4>
+            <p><span class="italic font-color-black">Alpharetta High School</span></p>
+          </div>
+          <!-- // .nine -->
+          <div class="four columns omega"> 
+            <p class="date">2011 - 2015<br/>
+              <span class="font-color-gray">Alpharetta, GA</span></p>
+            <!-- // p.date -->
+          </div>
+          <!-- // .four -->
+          <div class="clear"></div>
+        </div>
+        <!-- // .item -->
+        <div class="clear"></div>
+        <div class="item"> 
+          <div class="nine columns alpha"> 
+            <h4>B.S. in Genetics, Cell, and Molecular Biology</h4>
+            <p><span class="italic font-color-black">University of Georgia</span></p>
+          </div>
+          <!-- // .nine -->
+          <div class="four columns omega"> 
+            <p class="date">2015 - 2019<br/>
+              <span class="font-color-gray">Athens, GA</span></p>
+            <!-- // p.date -->
+          </div>
+          <!-- // .four -->
+          <div class="clear"></div>
+        </div>
+        <!-- // .item -->
+        <div class="clear"></div>
+        <!--<div class="item"> 
+          <div class="nine columns alpha"> 
+            <h4>School of Art + Design, Advertising Art Direction</h4>
+            <p><span class="italic font-color-black">Columbia College Chicago</span></p>
+          </div>
+          <!-- // .nine -->
+         <!-- <div class="four columns omega"> 
+            <p class="date">2001 - 2003<br/>
+              <span class="font-color-gray">Chicago, IL</span></p>
+            <!-- // p.date -->
+        <!--  </div>
+          <!-- // .four -->
+        <!--  <div class="clear"></div>
+        </div>
+        <!-- // .item -->
+        <div class="clear"></div>
+      </div>
+      <!-- // .thirteen -->
+      <div class="clear"></div>
+    </div>
+    <!-- // .block -->
+    <!-- WORK -->
+    <div class="block"> 
+      <div class="three columns" data-ride="animated" data-animation="fadeIn" data-delay="300"><img src="images/work-experience.png"/></div>
+        
+        <!-- // .three -->
+      <div class="thirteen columns" data-ride="animated" data-animation="fadeIn" data-delay="400"> 
+        <!-- // .item -->
+        <div class="item"> 
+          <div class="nine columns alpha"> 
+            <!--<p><span class="font-color-black italic">Bemis Balkind </span></p> -->
+            <h4>Executive Director</h4>
+              <p><span class="font-color-black italic">Working Together for Change</span></p>
+            <p class="desc">Aditya co-founded and manages the national 501(c)3 nonprofit  
+              Working Together for Change. He manages the operations of chapters across the 
+              country, while also running the local activities of the Athens chapter.  
+              </p></div>
+          <div class="four columns omega"> 
+          <!-- // .nine -->
+              <span class="font-color-gray"></span></p>
+            <p class="date">2014-Present<br/>
+          </div>
+            <!-- // p.date -->
+          <div class="clear"></div>
+          <!-- // .four -->
+        </div>
+        <!-- // .item -->
+        <div class="clear"></div>
+        <div class="item"> 
+          <div class="nine columns alpha"> 
+            <h4>Research Intern</h4>
+            <p><span class="font-color-black italic">Georgia State Clinical Neuroplasticity Lab.</span></p>
+            <p class="desc">Aditya conducted research to improve the efficacy of 
+                rehabilitation therapy for Stroke survivors using a computer-based
+                controller and robotic peripheral devices.</p>
+          </div>
+          <!-- // .nine -->
+          <div class="four columns omega"> 
+            <p class="date">Feb 2014 ~ Dec 2014<br/>
+              <span class="font-color-gray">Atlanta, GA</span></p>
+            <!-- // p.date -->
+          </div>
+          <!-- // .four -->
+          <div class="clear"></div>
+        </div>
+        <!-- // .item -->
+        <div class="clear"></div>
+        <div class="item"> 
+          <div class="nine columns alpha"> 
+            <h4>Marketing Intern</h4>
+            <p><span class="font-color-black italic">University of Pennsylvania Health System</span></p>
+            <p class="desc">As a marketing intern Aditya put in his leadership skills in online  
+              marketing in order to redesign the ortho and neuro blogs to increase patient traffic. 
+              Additionally, he developed a system to monitor and increase patient referrals for
+              medical breakthroughs by designing patient profiles to track patient referrals from 
+              other doctors in the region. </p>
+          </div>
+          <!-- // .nine -->
+          <div class="four columns omega"> 
+            <p class="date">May. 2013 - Jul. 2013<br/>
+              <span class="font-color-gray">Philadelphia, PA</span></p>
+            <!-- // p.date -->
+          </div>
+          <!-- // .four -->
+          <div class="clear"></div>
+            <div class="item"> 
+          <div class="nine columns alpha"> 
+            <h4>Sales and Manufacturing Intern</h4>
+            <p><span class="font-color-black italic">NanoLumens Inc.</span></p>
+            <p class="desc">As a sales intern for NanoLumens, Aditya Manufactured 
+              flexi-displays to ship out to dozens of companies. Additionally, he  
+              maintained relationships with existing clients to provide custom LED 
+              video displays to meet customer needs. </p>
+              
+          </div>
+          <!-- // .nine -->
+          <div class="four columns omega"> 
+            <p class="date">Aug. 2011 - Dec. 2012<br/>
+              <span class="font-color-gray">Atlanta, GA</span></p>
+            <!-- // p.date -->
+          </div>
+          <!-- // .four -->
+          <div class="clear"></div>
+        </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <!-- // .thirteen -->
+      <div class="clear"></div>
+    </div>
+    <!-- // .block -->
+    <div class="block last"> 
+      <div class="three columns" data-ride="animated" data-animation="fadeIn" data-delay="300"><img src="images/expertise.png" style="padding-top: 10px;"/></div>
+      <!-- // .three -->
+      <div class="thirteen columns"> 
+        <div class="box-skill" data-ride="animated" data-animation="fadeIn" data-delay="400"> 
+          <div class="box-inner"> 
+            <h4>Vision.</h4>
+            <p>I see ideas for more than they are- I see them for their potential.  
+              I'm the catalyst that mixes ideas, pushes concepts and finds the 
+              best way to push a project through cutting-edge techniques .</p>
+          </div>
+          <!-- // .box-inner -->
+        </div>
+        <!-- // .box-skill -->
+        <div class="box-skill" data-ride="animated" data-animation="fadeIn" data-delay="900"> 
+          <div class="box-inner"> 
+            <h4>Problem-Solver.</h4>
+            <p>I don't believe in insurmountable obstacles. I see roadblocks as  
+              catalysts to new design improvements and believe that issues play a key role in  
+              better results.</p>
+          </div>
+          <!-- // .box-inner -->
+        </div>
+        <!-- // .box-skill -->
+        <div class="box-skill" data-ride="animated" data-animation="fadeIn" data-delay="1200"> 
+          <div class="box-inner"> 
+            <h4>Driven.</h4>
+            <p>I am confident in my abilities to use current resources to reach areas   
+              previously unventured. </p>
+          </div>
+          <!-- // .box-inner -->
+        </div>
+        <!-- // .box-skill -->
+        <div class="box-skill" data-ride="animated" data-animation="fadeIn" data-delay="1500"> 
+          <div class="box-inner"> 
+            <h4>Hands-On.</h4>
+            <p>I enjoy rolling up my sleeves and getting into the nitty gritty 
+              of work, yet my goal is ultimately to be a 'thought-leader' and 
+              provide more than ideas but inspiration.</p>
+          </div>
+          <!-- // .box-inner -->
+        </div>
+        <!-- // .box-skill -->
+        <div class="box-skill" data-ride="animated" data-animation="fadeIn" data-delay="1800"> 
+          <div class="box-inner"> 
+            <h4>Collaborative.</h4>
+            <p>I have high regards for team building, I work exceptionally well 
+              across all key functional areas including research, ideation, 
+              revision, and presentation.</p>
+          </div>
+          <!-- // .box-inner -->
+        </div>
+        <!-- // .box-skill -->
+        <div class="box-skill" data-ride="animated" data-animation="fadeIn" data-delay="2100"> 
+          <div class="box-inner"> 
+            <h4>Ambitious.</h4>
+            <p>I'm always looking for opportunities and aren&rsquo;t afraid to 
+              take risks for the sake of making things better.</p>
+          </div>
+          <!-- // .box-inner -->
+        </div>
+        <!-- // .box-skill -->
+      </div>
+      <!-- // .thirteen -->
+      <div class="clear" style="height: 40px;"></div>
+    </div>
+    <!-- AWARDS -->
+    <div id="section-honors"></div>
+      <a name="section-honors"></a>
+    <div class="block"> 
+      <div class="three columns" data-ride="animated" data-animation="fadeIn" data-delay="300"><img src="images/honors.png" style="padding-top: 0px;"/></div>
+      <!-- // .three -->
+      <div class="thirteen columns"> 
+        <div class="item"> 
+          <div class="six columns alpha" data-ride="animated" data-animation="fadeIn" data-delay="400"> 
+            <h4>FBLA Nationals</h4>
+            <p><span class="font-color-black italic">FBLA-PBL.org</span><br/>
+              <span class="font-color-gray">2nd Place in Business Plan, 2013 </span></p>
+            <p style="height: 20px;">&nbsp;</p>
+            <h4>FBLA Nationals</h4>
+            <p><span class="font-color-black italic">FBLA-PBL.org</span><br/>
+              <span class="font-color-gray">Top 10 in Business Financial Plan, 2014 </span></p>
+            <p style="height: 20px;">&nbsp;</p>
+            <h4>FBLA State</h4>
+            <p><span class="font-color-black italic">FBLA-PBL.orgFBLA-PBL.org</span><br/>
+              <span class="font-color-gray">2nd Place in Business Financial Plan, 2013 
+              </span></p>
+            <p style="height: 20px;">&nbsp;</p>
+            <h4>FBLA State</h4>
+            <p><span class="font-color-black italic">FBLA-PBL.org</span><br/>
+              <span class="font-color-gray">2nd Place in Business Plan,2012 </span></p>
+            <p style="height: 20px;">&nbsp;</p>
+              <h4>FBLA Regional</h4>
+            <p><span class="font-color-black italic">FBLA-PBL.org</span><br/>
+              <span class="font-color-gray">1st Place in Business Plan, 2012 </span></p>
+            <p style="height: 20px;">&nbsp;</p>
+            <h4>Debate</h4>
+            <p><span class="font-color-black italic">JV National Debate Championship</span><br/>
+              <span class="font-color-gray">Quarterfinalist</span></p>
+            <p style="height: 20px;">&nbsp;</p>
+            <h4>Debate</h4>
+            <p><span class="font-color-black italic">JV State Debate Championship</span><br/>
+              <span class="font-color-gray">Semifinalist</span></p>
+            <p style="height: 20px;">&nbsp;</p>
+            <h4>Debate</h4>
+            <p><span class="font-color-black italic">National EarlyBird Wake Forest Varsity Debate Tournament</span><br/>
+              <span class="font-color-gray">Octofinalist</span></p>
+            <p style="height: 20px;">&nbsp;</p>
+            <h4>Debate</h4>
+            <p><span class="font-color-black italic">Ohio Valley National Debate Tournament</span><br/>
+              <span class="font-color-gray">1st Place, 
+              2012 </span></p>
+            <p style="height: 20px;">&nbsp;</p>
+            </div>
+          <!-- // .nine -->
+          <div class="seven columns omega" data-ride="animated" data-animation="fadeIn" data-delay="900"> 
+            <h4>TyE Young Entrepreneurs</h4>
+            <p><span class="font-color-black italic">TiEYoungEntrepreneurs.com</span><br/>
+              <span class="font-color-gray">2nd Place Global Championship</span></p>
+            <p style="height: 20px;">&nbsp;</p>
+            <h4>Stamps Scholar</h4>
+            <p><span class="font-color-black italic">Stampsfoundation.com</span><br/>
+              <span class="font-color-gray">Designated as 1 of 5 UGA Stamps Scholars in UGA, </span></p>
+            <p style="height: 20px;">&nbsp;</p>
+            <h4>Foundation Fellow</h4>
+            <p><span class="font-color-black italic">UGA Fellowship</span><br/>
+              <span class="font-color-gray">Designated as 1 of 23 Foundation Fellows in UGA</span></p>
+            <p style="height: 20px;">&nbsp;</p>
+            <h4>Coke Scholar</h4>
+            <p><span class="font-color-black italic">JPHRO.org</span><br/>
+              <span class="font-color-gray">Selected as one of 150 out of 103,000 students for social leadership.</span></p>
+            <p style="height: 20px;">&nbsp;</p>
+            <h4>Presidential Volunteer Award</h4>
+              <p><span class="font-color-black italic">PresidentialServiceAwards.gov</span><br/>
+              <span class="font-color-gray">Gold Award, 2015</span></p>
+            <p style="height: 20px;">&nbsp;</p>
+            <h4>Summer of Service</h4>
+            <p><span class="font-color-black italic">YSA Student Leaders</span><br/>
+              <span class="font-color-gray">Grant Award for Summer Service Focus</span></p>
+              <h4>National Merit</h4>
+            <p><span class="font-color-black italic">National Merit Finalist</span><br/>
+              <span class="font-color-gray"> National Merit Scholarship Competition, 2015 </span></p>
+            <p style="height: 20px;">&nbsp;</p>
+            <h4>National Immigration Council</span><br/>
+              <span class="font-color-gray">Youth Immigrant Achievemtn Awrd Winner, 2015 </span></p>
+            <p style="height: 20px;">&nbsp;</p>
+            <h4>20 Under 20 GA Leaders</h4>
+            <p><span class="font-color-black italic">21CenturyLeaders.org</span><br/>
+              <span class="font-color-gray">20 Under 20 Student Leader</span></p>
+            <p style="height: 20px;">&nbsp;</p>        
+          </div>
+          <!-- // .four -->
+          <div class="clear"></div>
+        </div>
+        <!-- // .item -->
+      </div>
+      <!-- // .thirteen -->
+      <div class="clear"></div>
+    </div>
+    <!-- // .block -->
+    <!-- SKILLS -->
+    <!-- // .block -->
+  </div>
+  <!-- // .container -->
+</div>
+<!-- // #section-resume -->
+
+             <!--   </div>
+			</div>
+		</div>
+	</section>-->
+<!-- Works - Isotope
+          ================================================== -->
+<div class="behance-out"> 
+    
+  <div class="behance"><a href="http://www.workingtogetherforchange.com" target="Check out my work on Homelessness!"><!--<img src="images/behance.png"/>--> 
+      <h7><font color="white">Check out my work on homelessness!</font></h7></a> 
+  </div>
+</div>
+<!-- Contact
+                ================================================== -->
+<div id="section-contact"> 
+    <a name="section-contact"></a>
+  <div class="container"> 
+    <!--<div class="nine columns"><img src="images/contact.png" style="padding-top: 20px;"/> 
+      <div id="contact-warning"></div>
+      <!-- // #contact-warning -->
+    <!--  <div id="contact-success">Your message was successfuly sent, thank you!</div>
+      <!-- // #contact-warning -->
+      <!--<form name="contactForm" id="contactForm" method="post" action="http://www.anthonydesigner.com/includes/include.emailSender.php">
+        <fieldset>
+        <label for="contactName">Name <span class="required">*</span></label>
+        <input name="contactName" id="contactName" size="30" value="" type="text"/>
+        <br/>
+        <label for="contactEmail">Email <span class="required">*</span></label>
+        <input name="contactEmail" id="contactEmail" size="30" value="" type="text"/>
+        <br/>
+        <label for="contactMessage">Message <span class="required">*</span></label>
+        <textarea name="contactMessage" id="contactMessage" rows="6" cols="7"></textarea>
+        <br/>
+        <label for="contactCaptcha"><strong>1</strong> + <strong>8</strong> = 
+        <span class="required">*</span></label>
+        <input name="contactCaptcha" id="contactCaptcha" size="30" value="" type="text"/>
+        <input name="contactCaptchaAnswer" id="contactCaptchaAnswer" value="9" type="hidden"/>
+        <br/>
+        <label class="placeholder">&nbsp;</label>
+        <button class="submit">Submit</button>
+        </fieldset>
+      </form>
+    </div>
+    <!-- // .nine -->
+    <div class="seven columns"><img src="images/recommendations.png" style="padding-top: 20px; "/> 
+      <div id="box-testimonials"> 
+        <div class="container"> 
+          <blockquote> 
+            <p class="quote">"Aditya is able to invite others to share in his vision for change, and to make the vision a reality. He listens, he collaborates, he seeks input and advice, and then he implements ideas with the assistance of others. He is fearless and innovative when it comes to utilizing and trying out new concepts and approaches in his volunteer activities."</p>
+            <h4>Lana Wachniak, Ph.D.</h4>
+            <p class="position"><em>Professor Emeritus of Criminology at Kenessaw State University</em></p>
+          </blockquote>
+        </div>
+        <!-- // .item -->
+        <div class="container"> 
+          <blockquote> 
+              <p> </p>
+            <p class="quote">             
+                "It was an absolute delight to have Aditya work on my team. Aditya jumped right into the internship, with a solid mix of independent work and collegial collaboration with seasoned team members. In one project, Aditya took a novel approachto a referral analysis, leveraging his knowledge of HTML and web scraping to quickly and efficiently gather physician data from online sources, which he then analyzed to discern referral behavior and patterns."</p>
+            <h4>Suzanne Sawyer</h4>
+            <p class="position"><em>Chief Marketing Officer at University of Pennsylvania Health System</em></p>
+          </blockquote>
+        </div>
+        <!-- // .item -->
+      </div>
+      <!-- // #box-testimonials -->
+    </div>
+    <!-- // .seven -->
+  </div>
+  <!-- // .container -->
+</div>
+<!-- // #section-contact -->
+<p></p>
+<!-- Footer
+                ================================================== -->
+<div id="section-footer"> 
+  <div class="container"> 
+    <div class="six columns"> 
+        <p><a href="mailto:aditya.sood2@gmail.com"><font="white"><strong>aditya.sood2@gmail.com</strong></font></a></p>
+    </div>
+    <!-- // .six -->
+    <div class="ten columns"> 
+      <ul id="social">
+        <!--<li class="aiga"><a href="http://www.aiga.org/profile.aspx?uid=112780&amp;fromdirectory=true" title=""
+                                    target="_blank"><img src="images/icons/icon_aiga.png" alt="Aiga"/></a></li>-->
+        <li class="twitter"><a href="https://twitter.com/adityasood6" title="" target="_blank"><img
+                        src="images/icons/icon_twitter.png" alt="Twitter"/></a></li>
+        <!--<li class="beh"><a href="http://www.behance.net/anthonywiktor" title="" target="_blank"><img
+                        src="images/icons/icon_behance.png" alt="Behance"/></a></li>-->
+        <li class="linkedin"><a href="https://www.linkedin.com/pub/aditya-sood/51/a91/6b3" title=""
+                                        target="_blank"><img src="images/icons/icon_linkedin.png" alt="Linkedin"/></a> 
+        </li>
+        <!--<li class="dribble"><a href="http://dribbble.com/anthonywiktor" title="" target="_blank"><img
+                        src="images/icons/icon_dribbble.png" alt="Dribbble"/></a></li>-->
+      </ul>
+      <!-- // ul#social -->
+    </div>
+    <!-- // . -->
+    <div class="clear"></div>
+  </div>
+  <!-- // .container -->
+</div>
+<!-- // #section-footer -->
+<p></p>
+<!-- JS
+        
+                * jquery-1.9.0.js 					- jQuery
+                * jquery-ui.js						- jQuery UI
+                * bootstrap-scrollspy.js			- automatically updates nav targets based on scroll position
+                * jquery.foundation.reveal.js		- jQuery modal pop-up plugin from Zurb Foundation
+          * jquery.isotope.min.js          - Layout for work section
+                * jquery.custom.js					- custom jQuery scripts
+                ================================================== -->
+<script src="http://code.jquery.com/jquery-1.9.0.js" type="text/javascript"></script>
+<script src="http://code.jquery.com/ui/1.10.0/jquery-ui.js" type="text/javascript"></script>
+<script src="js/bootstrap-scrollspy.js" type="text/javascript"></script>
+<script src="js/jquery.ajaxContactForm.js" type="text/javascript"></script>
+<script src="js/jquery.foundation.reveal.js" type="text/javascript"></script>
+<script src="js/jquery.isotope.min.js" type="text/javascript"></script>
+<script src="js/jquery.custom.js" type="text/javascript"></script>
+<script src="js/scripts.js" type="text/javascript"></script>
+
+
+<script type="text/javascript" src="js/jquery-appear/jquery.appear.js"></script>
+<!-- Because jQuery opacity (fadeTo) is being rendered in a weird way in IE browsers, these are only loaded on non-IE browsers -->
+<p></p>
+<!--[if !IE]> -->
+<script src="js/jquery.custom.noIE.js" type="text/javascript"></script>
+<!-- <![endif]-->
+<p></p>
+<!-- End Document
+        ================================================== -->
+<p></p>
+
+<script type="text/javascript" src="js/jquery.parallax-1.1.3.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        if ($.fn.parallax){
+            $('#working-section').parallax("50%", 0.1,false);
+
+            $('.parrallax-element, .parrallax-background').each(function () {
+                $(this).css('background-image'+ $(this).attr("data-background-image") + ')');
+                $(this).css('height',  $(this).attr("data-background-height"));
+                $(this).css('width',  $(this).attr("data-background-width"));
+                $(this).parallax("50%", 0.1);
+            });
+        }
+
+        if ($.fn.appear){
+	        $('[data-ride="animated"]').appear();
+	        if( !$('html').hasClass('ie no-ie10') ) {       
+	            $('[data-ride="animated"]').addClass('appear');
+	            $('[data-ride="animated"]').on('appear', function() {
+	                var $el = $(this), $ani = ($el.data('animation') || 'fadeIn'), $delay;
+	                if ( !$el.hasClass('animated') ) {  
+	                    $delay = $el.data('delay') || 0;
+	                    setTimeout(function(){
+	                        $el.removeClass('appear').addClass( $ani + " animated" );
+	                    }, $delay);
+	                }
+	            });
+	        };
+	    }
+    });
+</script>
+
+</body>
+</html>
