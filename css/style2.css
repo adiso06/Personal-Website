@@ -25,7 +25,7 @@
 @charset "utf-8";
 @import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900);
 body {
-    color: #607D8B;
+    color: #323232;
     background: #fff;
     font: 14px/22px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
@@ -48,10 +48,10 @@ h6 { font-size: 12px; line-height: 14px; }
 h7 { font-size: 45px; line-height: 40px; }
 
 header { background: url(../img/intro-bg.jpg) no-repeat center center; position: relative; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; }
-header strong { font-weight: 900; display: block; color: #607D8B; font-family: 'Lato', 'Helvetica Neue', sans-serif; font-size: 120px; padding-top: 65px; }
+header strong { font-weight: 900; display: block; color: #323232; font-family: 'Lato', 'Helvetica Neue', sans-serif; font-size: 120px; padding-top: 65px; }
 header strong span { color: #eb4450; font-weight: 900; font-size: 86px; position: relative; top: -50px; margin-right: 5px; }
-header p { color: #607D8B; font-size: 40px; margin-bottom: 1.5em; margin-top: 0.3em; }
-header p.darker { color: #607D8B; margin-bottom: 2.3em; }
+header p { color: #323232; font-size: 40px; margin-bottom: 1.5em; margin-top: 0.3em; }
+header p.darker { color: #323232; margin-bottom: 2.3em; }
 header p a { color: #525252; }
 header p a:hover,
 header p a:focus { color: #444; }
@@ -157,7 +157,7 @@ h7 {
 }
 
 #topbar-inner {
-    background-color:#607D8B;
+    background-color:#323232;
     line-height: 0;
     text-align: center;
 }
@@ -173,7 +173,7 @@ h7 {
     margin: 0;
     padding: 0;
 
-    border-right: 1px solid #607D8B;
+    border-right: 1px solid #323232;
 
     /* For IE, the outcast */
     zoom:1;
@@ -192,18 +192,18 @@ h7 {
     font: normal 11px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-decoration: none;
     padding: 18px 20px 18px 20px;
-    border-left: 1px solid #607D8B;
+    border-left: 1px solid #323232;
 }
 
 #section-topbar ul#nav a:hover {
-    background: #607D8B;
+    background: #323232;
     text-decoration: none;
-    border-left: 1px solid #607D8B;
+    border-left: 1px solid #323232;
 }
 
 #section-topbar ul#nav .active a {
     background: #df4244;
-    border-left: 1px solid #607D8B;
+    border-left: 1px solid #323232;
 }
 
 #section-topbar ul#nav .active a:hover {
@@ -270,7 +270,7 @@ body .ui-tooltip {
     height: 67vh;
     overflow: hidden;
     position: relative;
-    background-color:#607D8B;
+    background-color:#323232;
     background-image: url(http://www.drodd.com/images11/twitter-backgrounds8.jpg)
 }
 
@@ -309,9 +309,9 @@ body .ui-tooltip {
 .logo:hover {background-image: url('../images/anthony-wiktor-logo-hover.png');}
 #section-about {
     color: #323232;
-    background:#607D8B;
+    background:#323232;
     padding: 50px 0;
-    height: 15vh;
+    height: 17vh;
     }
 @media only screen and (max-width: 900px) {
     #section-about{
@@ -481,7 +481,7 @@ a.link-li:hover {
 #section-resume .item div > p.date span.label {
     display: inline-block;
     color: #aaa;
-    background: #607D8B;
+    background: #323232;
     padding: 4px 8px;
     margin-top: 6px;
     font: normal 10px/20px 'museo_slab500', 'Open Sans', "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -498,7 +498,7 @@ a.link-li:hover {
 
 .box-skill .box-inner {
     padding: 20px 25px;
-    background: #607D8B;
+    background: #323232;
     height: 200px;
     overflow: hidden;
 }
@@ -735,7 +735,7 @@ cursor: url(../images/cross.png), auto;
     display: block;
     padding: 20px 25px;
     color: #aaa;
-    background: #607D8B;
+    background: #323232;
     font: normal 11px/21px 'Open Sans', "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-transform: uppercase;
     letter-spacing: 3px;
@@ -859,7 +859,7 @@ cursor: url(../images/cross.png), auto;
 #contact-success {
     display: none;
     color: #77aa44;
-    background: #607D8B;
+    background: #323232;
     padding: 20px 25px;
     margin-bottom: 30px;
 }
@@ -949,7 +949,7 @@ cursor: url(../images/cross.png), auto;
 
 #section-footer {
     color: #777;
-    background: #607D8B;
+    background: #323232;
     font: normal 13px/23px 'Open Sans', "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
@@ -964,7 +964,7 @@ cursor: url(../images/cross.png), auto;
 
 #section-footer ul#social {
     float: right;
-    border-left: 1px solid #607D8B;
+    border-left: 1px solid #323232;
 }
 
 #section-footer ul#social li {
@@ -1029,8 +1029,8 @@ cursor: url(../images/cross.png), auto;
     font-style: normal;
 
 }
-.behance-out{ width:100%; background:#607D8B; text-align: center;  }
-.behance-out a { background: #607D8B; display: block; padding: 45px 0; transition: all 0.5s ease 0s; }
+.behance-out{ width:100%; background:#323232; text-align: center;  }
+.behance-out a { background: #323232; display: block; padding: 47px 0; transition: all 0.5s ease 0s; }
 .behance-out a:hover{background:#df4244; padding: 60px 0; transition: all 0.5s ease 0s;}
 .behance img{ max-width:100%; }
 
