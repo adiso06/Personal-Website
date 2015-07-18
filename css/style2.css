@@ -149,6 +149,7 @@ h7 {
     right: 0;
     z-index: 100;
     overflow: visible;
+    max-width: inherit;
     font: normal 16px/24px  'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
@@ -271,6 +272,7 @@ body .ui-tooltip {
     overflow: hidden;
     position: relative;
     background-color:#323232;
+    background: linear-gradient(grey,grey);
     background-image: url(http://www.drodd.com/images11/twitter-backgrounds8.jpg)
 }
 
@@ -1032,6 +1034,11 @@ cursor: url(../images/cross.png), auto;
 .behance-out{ width:100%; background:#323232; text-align: center;  }
 .behance-out a { background: #323232; display: block; padding: 47px 0; transition: all 0.5s ease 0s; }
 .behance-out a:hover{background:#df4244; padding: 60px 0; transition: all 0.5s ease 0s;}
+.behance img{ max-width:100%; }
+
+.behance-in{ width:100%; background:#df4244; text-align: center;  }
+.behance-in a { background: #df4244; display: block; padding: 47px 0; transition: all 0.5s ease 0s; }
+.behance-in a:hover{background:#323232; padding: 60px 0; transition: all 0.5s ease 0s;}
 .behance img{ max-width:100%; }
 
 
