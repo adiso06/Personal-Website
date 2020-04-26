@@ -3,7 +3,7 @@
 
         Typebig Resume / CV
 
-        0. YUI Library is used for CSS reset (http://yuilibrary.com/yui/docs/cssreset/)
+        0. YUI Library is used for CSS reset (https://yuilibrary.com/yui/docs/cssreset/)
         1. Body
         2. Typography
         3. Page Sections
@@ -23,7 +23,7 @@
 --------------------------------------------------------------------------*/
 
 @charset "utf-8";
-@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900);
+@import url(https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900);
 body {
     color: #323232;
     background: #fff;
@@ -273,7 +273,7 @@ body .ui-tooltip {
     position: relative;
     background-color:#323232;
     background: linear-gradient(grey,grey);
-    background-image: url(http://www.drodd.com/images11/twitter-backgrounds8.jpg)
+    background-image: url(https://www.drodd.com/images11/twitter-backgrounds8.jpg)
 }
 
 #section-profileImage #box-name {
@@ -676,7 +676,7 @@ cursor: url(../images/cross.png), auto;
         3.4.1 jQuery Reveal Plugin
 ---------------------------------------------------*/
 
-/* CSS for jQuery Reveal Plugin Maintained for Foundation. foundation.zurb.com Free to use under the MIT license. http://www.opensource.org/licenses/mit-license.php */
+/* CSS for jQuery Reveal Plugin Maintained for Foundation. foundation.zurb.com Free to use under the MIT license. https://www.opensource.org/licenses/mit-license.php */
 /* Reveal Modals ---------------------- */
 .reveal-modal-bg { 
     position: fixed; 
