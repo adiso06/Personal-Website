@@ -1031,15 +1031,15 @@ cursor: url(../images/cross.png), auto;
     font-style: normal;
 
 }
-.behance-out{ width:100%; background:#323232; text-align: center;  }
+.behance-out{ width:50%; background:#323232; text-align: center;  }
 .behance-out a { background: #323232; display: block; padding: 47px 0; transition: all 0.5s ease 0s; }
 .behance-out a:hover{background:#df4244; padding: 60px 0; transition: all 0.5s ease 0s;}
 .behance img{ max-width:100%; }
 
-.behance-in{ width:100%; background:#df4244; text-align: center;  }
+.behance-in{ width:50%; background:#df4244; text-align: center;  }
 .behance-in a { background: #df4244; display: block; padding: 47px 0; transition: all 0.5s ease 0s; }
 .behance-in a:hover{background:#323232; padding: 60px 0; transition: all 0.5s ease 0s;}
-.behance img{ max-width:100%; }
+.behance img{ max-width:50%; }
 
 
 /***** new *****/
