@@ -1,950 +1,680 @@
 <!DOCTYPE html>
-<!--[if lt IE 7 ]>
-<html class="ie ie6" lang="en"> <![endif]-->
-<!--[if 
-<html class="ie ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]>
-<html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!-->
-<html lang="en"> <!--<![endif]-->
-<head>
-
-    <!-- Basic Page Needs
-    ================================================== -->
-    <meta charset="utf-8">
-    <title>Aditya Sood</title>
-    <meta name="description"
-          content="Aditya Sood, medical student at the Emory University School of Medicine.">
-    <meta name="author" content="Typebig">
-
-    <!-- Mobile Specific Metas
-    ================================================== -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-    <!-- CSS Files
-    * cssreset-min.css 			- CSS reset
-    * grid.css					- Responsive grid system based on "Skeleton" by Dave Gamache (https://www.getskeleton.com/)
-    * alpha_background.css		- Classes for applying an alpha black or white background
-    * style.css					- Main CSS file
-    * responsive_custom			- CSS override for responsive layout
-    * print.css 				- CSS for printer-friendly presentation
-    ================================================== -->
-    <link rel="stylesheet" type="text/css" href="https://yui-s.yahooapis.com/3.8.0/build/cssreset/cssreset-min.css">
-    <link rel="stylesheet" href="css/grid.css">
-    <link rel="stylesheet" href="css/alpha_background.css">
-    <link rel="stylesheet" href="css/style2.css">
-    <link rel="stylesheet" href="css/responsive_custom.css">
-    <link rel="stylesheet" href="css/print.css">
-    
-    <link href="css/animate.min.css" rel="stylesheet" type="text/css"/>
-
-    <!--[if lt IE 9]>
-    <script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
-    <!-- Favicons
-    ================================================== -->
-    <link rel="shortcut icon" href="images/favicon.ico">
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-
-    <!-- Google Web Fonts
-    ================================================== -->
-    <link href='https://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic' rel='stylesheet'
-          type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,300,400,700' rel='stylesheet'
-          type='text/css'>
-    <!-- flare lightbox css -->
-    <script type="text/javascript" src="js/jquery.js"></script>
-
-    <link href="js/pe.flare/jquery.pixelentity.flare.min.css" rel="stylesheet"/>
-    <script type="text/javascript" src="js/pe.flare/jquery.pixelentity.flare.min.js"></script>
-    <style>
-        #section-intro #section-profileImage-Movie {
-            overflow: hidden;
-            position: relative;
-        }
-        #section-intro {
-            position:relative;
-            left:0px;
-            top:0px;
-            z-index:10;
-        }
-        video#myvideo {
-            position: fixed;
-            top: -100px;
-            right: 0;
-            bottom: 0;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            z-index: 1;
-            background: url(images/profile_main3.jpg) no-repeat;
-            background-size: cover;
-            background-attachment: fixed;
-            background-origin: content-box; 
-        }
-        #section-worksgrid {
-            width: 100%;
-            height: 100%;
-            background-attachment: fixed;
-            background-size: 100% 100%;
-            position: relative;
-            background-color: white;
-            z-index: 20;
-        }
-        #section-about, #section-resume, #section-contact, #section-footer, .behance-out {
-            position: relative;
-            z-index: 20;
-        }
-    </style>
-    <style>
-        #working-section{
-            background-image: url(images/profile_main3.jpg);
-            height: 400px;
-            background-size: cover;
-            background-attachment: fixed;
-            background-origin: content-box;
-        }
-        #working-section-iphone {
-            background-image: url(images/profile_main3.jpg);
-            height: 400px;
-            background-size: cover;
-            background-position: top center;
-            background-repeat: no-repeat;
-        }
-        .appear {
-			visibility: hidden;
-		}
-    </style>
-	<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-62522561-1', 'auto');
-  ga('send', 'pageview');
-
-	</script>
-</head>
-
-<body data-spy="scroll" data-target="#section-topbar" data-offset="60">
-<script type="text/javascript">// <![CDATA[
-jQuery(function ($) {
-    $('a[data-target="flare"]').peFlareLightbox();
-});
-// ]]></script>
-<p></p>
-<!-- Topbar: fixed + datascroll
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="generator" content="Source Themes Academic 4.4.0">
+		<meta name="author" content="Aditya Sood">
+		<meta name="description" content="Student, Innovator, Researcher">
+		<link rel="alternate" hreflang="en-us" href="index.html">
+		<meta name="theme-color" content="#33B38D">
+		<link rel="stylesheet" href="../cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+		<link rel="stylesheet" href="../use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+		<link rel="stylesheet" href="../cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+		<link rel="stylesheet" href="../cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+		<link rel="stylesheet" href="../cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+		<link rel="stylesheet" href="css/grid.css">
+		<link rel="stylesheet" href="../fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono&amp;display=swap">
+		<link rel="stylesheet" href="css/academic.min.fb882b685e21cbf60bab514e586b3262.css">
+		<link rel="alternate" href="https://www.adityasood.me/index.xml" type="application/rss+xml" title="">
+		<link rel="manifest" href="index.webmanifest">
+		<link rel="icon" type="image/png" href="img/icon-32.png">
+		<link rel="apple-touch-icon" type="image/png" href="https://www.adityasood.me/img/icon-192.png">
+		<link rel="canonical" href="index.html">
+		<meta property="twitter:card" content="summary_large_image">
+		<meta property="twitter:site" content="@theadityasood">
+		<meta property="twitter:creator" content="@theaditysood">
+		<meta property="og:site_name" content="">
+		<meta property="og:url" content="/">
+		<meta property="og:title" content="">
+		<meta property="og:description" content="Student, Innovator, Researcher">
+		<meta property="og:image" content="img/icon-512.png">
+		<meta property="twitter:image" content="img/icon-512.png">
+		<meta property="og:locale" content="en-us">
+		<meta property="og:updated_time" content="2030-06-01T13:00:00&#43;00:00">
+		<title></title>
+	</head>
+	<body id="top" data-spy="scroll" data-offset="70" data-target="#navbar-main" >
+		<aside class="search-results" id="search">
+			<div class="container">
+				<section class="search-header">
+					<div class="row no-gutters justify-content-between mb-3">
+						<div class="col-6">
+							<h1>Search</h1>
+						</div>
+						<div class="col-6 col-search-close">
+							<a class="js-search" href="index.html#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+						</div>
+					</div>
+					<div id="search-box">
+						<input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+							autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+					</div>
+				</section>
+				<section class="section-search-results">
+					<div id="search-hits">
+					</div>
+				</section>
+			</div>
+		</aside>
+		<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0 compensate-for-scrollbar" id="navbar-main">
+			<div class="container">
+				<a class="navbar-brand" href="index.html"></a>
+				<button type="button" class="navbar-toggler" data-toggle="collapse"
+					data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+				<span><i class="fas fa-bars"></i></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbar">
+					<ul class="navbar-nav mr-auto">
+						<li class="nav-item">
+							<a class="nav-link " href="index.html#about" data-target="#about"><span>Home</span></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link " href="index.html#skills" data-target="#skills"><span>Links</span></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link " href="index.html#nonprofit" data-target="#nonprofit"><span>Nonprofit Work</span></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link " href="index.html#publications" data-target="#publications"><span>Publications</span></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link " href="https://www.adityasood.me/files/cv.pdf"><span>CV</span></a>
+						</li>
+					</ul>
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item">
+							<a class="nav-link js-search" href="index.html#"><i class="fas fa-search" aria-hidden="true"></i></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link js-dark-toggle" href="index.html#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<span class="js-widget-page d-none"></span>  
+		<section id="about" class="home-section wg-about   "  >
+			<div class="container">
+				<div class="row" itemprop="author" itemscope itemtype="http://schema.org/Person" itemref="person-email">
+					<div class="col-12 col-lg-4">
+						<div id="profile">
+							<img class="portrait" src="authors/admin/Aditya_Sood.jpg" itemprop="image" alt="Avatar">
+							<div class="portrait-title">
+								<h2 itemprop="name">Aditya Sood</h2>
+								<h3 itemprop="jobTitle">Student, Innovator, Researcher</h3>
+								<!--
+									<h3 itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
+									  <a href="https://www.sainsburywellcome.org/web/" target="_blank" itemprop="url" rel="noopener">
+									  <span itemprop="name">Sainsbury Wellcome Centre</span>
+									  </a>
+									</h3>
+									<h3 itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
+									  <a href="https://www.ucl.ac.uk/gatsby/" target="_blank" itemprop="url" rel="noopener">
+									  <span itemprop="name">Gatsby Computational Neuroscience Unit</span>
+									  </a>
+									</h3>
+									<h3 itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
+									  <a href="https://www.ucl.ac.uk/" target="_blank" itemprop="url" rel="noopener">
+									  <span itemprop="name">University College London (UCL)</span>
+									  </a>
+									</h3>-->
+							</div>
+							
+							<ul class="network-icon" aria-hidden="false">
+								<li><a href="https://www.linkedin.com/in/theadityasood"><img src="/img/icons/linkedin.png" ></a></li>
+                                
+                                <li><a href="https://scholar.google.com/citations?hl=en&user=wFX3kGMAAAAJ&view_op=list_works&gmla=AJsN-F7-7i-hbh_XDy6mfogUfc2GJx-mjJMZoYcCIVf1CAoYw14b-jsTqpBvScF3-2aF-4ESDeLUc7SjDGzbJCBDJgzv2s65Spy0o_ZgQfepImjeViHDrco"><img src="/img/icons/googlescholar.png"></a></li>
+                                
+                                <li><a href="https://www.researchgate.net/profile/Aditya-Sood-11"><img src="/img/icons/Researchgate.png"></a></li><li></li>
+				
+							</ul>
+						</div>
+					</div>
+					<div class="col-12 col-lg-8" itemprop="description">
+						<h1>About me</h1>
+						<p>I&rsquo;m Aditya Sood, and am currently studying at the Emory University School of Medicine.</p>
+						<p>A little bit about me: </p>
+                        <p><strong><font color=#33b38d>I always say yes.</font></strong> In both my personal and professional life, I’m a big believer that every opportunity given to me has something for me to learn from. </p>
+                        <p><strong><font color=#33b38d>I love to get into the thick of things</font></strong> and examine the details of what I’m looking at. For instance, when COVID struck, my first instinct was to get involved: my friends and I began to deliver meals to fatigued healthcare workers and struggling homeless shelters with Feed the Frontlines GA. </p>
+                        <p><strong><font color=#33b38d>I'm a practical problem solver.</font></strong> Whether it's figuring out how to use R to answer interesting questions, or 3d print random objects to fix small problems around my apartment, I'm always thinking about how we can figure out the next step and then accomplish it.</p>
+						<div class="row">
+							<div class="col-md-5">
+								<h3>Interests</h3>
+								<ul class="ul-interests">
+									<li>Health Technology</li>
+									<li>Underserved Populations</li>
+									<li>Ethics</li>
+									<li>Artificial Intelligence</li>
+									<li>Cooking</li>
+								</ul>
+							</div>
+							<div class="col-md-7">
+								<h3>Education</h3>
+								<ul class="ul-edu fa-ul">
+									<li>
+										<i class="fa-li fas fa-graduation-cap"></i>
+										<div class="description">
+											<p class="course">Emory University </p>
+											<p class="institution">MD |             2023</p>
+										</div>
+									</li>
+									<li>
+										<i class="fa-li fas fa-graduation-cap"></i>
+										<div class="description">
+											<p class="course">University of Georgia  </p>
+											<p class="institution">BS, BA   |   2019</p>
+                                          
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
         
-                * the attribute data-scrollspy is for automatically updating nav targets based on scroll position
-                * scroll the area below the navbar and watch the active class change
-                ================================================== -->
-<div id="section-topbar">
-    <div id="topbar-inner">
-        
-    <div class="container"> 
-      <div class="sixteen columns"> 
-        <div class="dropdown"> 
-          <ul id="nav" class="nav">
-            <li class="menu-item"><a href="#section-intro" title="About"><img
-                                src="images/icons/icon_profile.png" alt="About"/> 
-              </a></li>
-           <!-- <li class="menu-item"><a href="#section-worksgrid" title="Portfolio"><img
-                                src="images/icons/icon_works.png" alt="Portfolio"/></a></li> -->
-            <li class="menu-item"><a href="#section-resume" title="Resume"><img
-                                src="images/icons/icon_resume.png" alt="Resume"/></a></li>
-            <li class="menu-item"><a href="#section-honors" title="Awards"><img
-                                src="images/icons/icon_awards.png" alt="Awards"/></a></li>
-            <li class="menu-item"><a href="#section-contact" title="Testimonials"><img
-                                src="images/icons/icon_testimonials.png" alt="Referrals"/></a></li>
-           <!-- <li class="menu-item"><a href="https://blog.adityasood.me" title="Blog"><img
-                                src="images/icons/icon_blog.png" alt="Blog"/></a></li>-->
-          </ul>
-          <!-- // uL#nav -->
-        </div>
-        <!-- // .dropdown -->
-        <div class="clear"></div>
-      </div>
-      <!-- // .sixteen -->
-    </div>
-        <!-- // .container -->
-        <div class="clear"></div>
-    </div>
-    <!-- // #topbar-inner --></div> 
-<!-- // #section-topbar -->
-<p></p> 
-<!-- Intro
-                ================================================== -->
-<div id="section-intro"> 
-  <!-- Profile Image -->
-    <div class="animated-bg">
-  <div style="position: absolute; top: 20%; text-align: center; z-index: 99; width: 100%;"><img
-            src="images/logo5.png"/></div>
-    </div>
-  <!--        <div id="working-section" class="table-cell v-middle">-->
-  <!--<video id="myvideoo" loop="loop" poster="images/profile_main3.jpg" autoplay="autoplay">&ndash;&gt;-->
-  <!--<source src="https://www.starmenusa.com/clients/tony/video/tony.mp4" type="video/mp4">-->
-  <!--<source src="https://www.starmenusa.com/clients/tony/video/tony.ogv" type="video/ogg">-->
-  <!--<source src="https://www.starmenusa.com/clients/tony/video/tony.webm" type="video/webm">-->
-  <!--</video>-->
-  <!--        </div>-->
-  <div id="section-profileImage-Movie" > 
-    <video loop="loop" poster="images/profile_main3.jpg" muted autoplay="autoplay" style="position: absolute; z-index: 0; top: -100px; left: 0px; min-width: 100%; min-height: 100%;">">
-                <source src="Cityscape%20Chicago.mp4" type="video/mp4" />
-                </video>
-        <video id="myvideo" loop="loop" muted  poster="images/profile_main3.jpg" autoplay="autoplay"> 
-    <source src="Cityscape%20Chicago.mp4" type="video/mp4"> 
-         </video> 
-      
-
-        
-        <!--                <div class="container">
-                        <div class="sixteen columns">
-                            <div id="box-name">
-                                <div class="logo"><a data-target="flare" href="https://vimeo.com/71395885"><img src="images/spacer.png" height="112" width="334" /></a></div>
-                            </div>
-                             // #box-name
-                        </div>
-                         // .four
-                        <div class="clear"></div>
-                    </div>-->
-    <!-- // .container -->
-  </div>
-  <!-- // #section-profileImage -->
-    
-        <div class="item">
-            <div class="two columns" ><img src="images/new-logo2.png" alt="Aditya Sood" width="100%" style="position: absolute; padding-top: 10px; padding-bottom: 30px"/>
-      <!-- // .three -->
-    <div class="ten columns" > 
-    </div>
-        </div>
-    </div>
-    
-    <a name="section-intro"></a>
-  <!-- About -->
-  <div id="section-about"> 
-     
-
-    <div class="container"> 
-      <div class="two columns" ><img src="images/about.png" style="padding-top: 0px; padding-bottom: 30px"/></div>
-      <!-- // .three -->
-      <div class="ten columns" > 
-          </p>
-        <p class="intro"> I'm Aditya Sood. I'm currently studying at the Emory University School of Medicine. </p>
-        
-<p class="intro">A little bit about me:&nbsp;</p>
-<p class="intro">
-    <strong>I always say yes.</strong> In both my personal and professional life, I&rsquo;m a big believer that every opportunity given to me has something for me to learn from.&nbsp;
-    <br><br><strong>I love to get into the thick of things</strong> and examine the details of what I&rsquo;m looking at. For instance, when COVID struck, my first instinct was to get involved: my friends and I began to deliver meals to fatigued healthcare workers and struggling homeless shelters with Feed the Frontlines GA.&nbsp;
-   <br><br><strong>I&apos;m a practical problem solver.</strong> Whether it&apos;s figuring out how to use R to answer interesting questions, or 3d print random objects to fix small problems around my apartment, I&apos;m always thinking about how we can figure out the next step and then accomplish it.
-</p>
-      </div>
-      <!-- // .nine -->
-      <div class="four columns" ><!--<a href="https://www.adityasood.me/index.html#" class="link-print">Print 
-        Page</a> --><>
-          <a title="Download PDF Resume" class="link-pdf" href="cv/Aditya Sood CV.pdf" target="_blank">Download 
-        CV</a> <a href="https://www.linkedin.com/pub/aditya-sood/51/a91/6b3" class="link-li"
-                               target="_blank">LINKED IN</a></div>
-      <!-- // .four -->
-      <div class="clear"></div>
-    </div>
-    <!-- // .container -->
-  </div>
-  <!-- // #section-about -->
-</div>
-<!-- // #section-intro -->
-<p></p>
-
-<div id="section-worksgrid"> 
-    <a name="section-worksgrid"></a>
-   <div class="item" ><a target="_blank" href="https://21stcenturyleaders.org/tag/aditya-sood/"> 
-    <img src="images/cbs1.jpg" alt=""/><span><img src="images/cbs2.jpg" alt=""/></span> 
-    </a></div>
-  <div class="item" ><a target="_blank" href="https://www.workingtogetherforchange.com" onClick="_gaq.push(['_trackEvent', 'Behance', 'Click', 'TOYOTA']);"> 
-    <img src="images/toyota1.jpg" alt=""/><span><img src="images/toyota2.jpg" alt=""/></span> 
-    </a></div>
-  <div class="item" ><a target="_blank" href="https://www.hackstart.co" onClick="_gaq.push(['_trackEvent', 'Behance', 'Click', 'CBS']);"> 
-    <img src="images/hs1.jpg" alt=""/><span><img src="images/hs2.jpg" alt=""/></span> 
-    </a></div>
-  <!-- // .item -->
- <!-- <div class="item" ><a target="_blank" href="https://www.behance.net/gallery/American-Eagle-Airlines/9955317" onClick="_gaq.push(['_trackEvent', 'Behance', 'Click', 'AE']);"> 
-    <img src="images/ae1.jpg" alt=""/> <span><img src="images/ae2.jpg" alt=""/></span></a></div>
-  <!-- // .item -->
- <!-- <div class="item" ><a target="_blank" href="https://atlantabusinessradio.businessradiox.com/tag/aditya-sood/" onClick="_gaq.push(['_trackEvent', 'Behance', 'Click', 'Rogue']);"> 
-    <img src="images/dtv1.jpg" alt=""/><span><img src="images/dtv2.jpg" alt=""/></span> 
-    </a></div>-->
-  <!-- // .item -->
-   <div class="item" ><a target="_blank" href="https://feedthefrontlinesga.org"> 
-    <img src="images/FTFGA1.jpg" alt=""/><span><img src="images/FTFGA2.jpg" alt=""/></span> 
-       </a></div>
-  <!-- // .item -->
-    <div class="item" ><a target="_blank" href="https://www.hackahs.com"> 
-    <img src="images/hackahs1.jpg" alt=""/> <span><img src="images/hackahs2.jpg" alt=""/></span> 
-    </a></div>
-  <!-- // .item -->
-
-  <!-- // .item -->
-  <div class="item" ><a target="_blank" href="https://stice.uga.edu/team_stice.html" > 
-    <img src="images/rbc1.jpg" alt=""/> <span><img src="images/rbc2.jpg" alt=""/></span> 
-    </a></div>
-  <!-- // .item -->
-  <div class="item" ><a target="_blank" href="https://www.coca-colascholarsfoundation.org/"> 
-    <img src="images/coke1.jpg" alt=""/> <span><img src="images/coke2.jpg" alt=""/></span> 
-    </a></div>
-  <!-- // .item -->
-      
-  <div class="item" ><a target="_blank" href="https://www.youtube.com/watch?v=tAbsvshIGk8";> 
-    <img src="images/ted1.jpg" alt=""/> <span><img src="images/ted2.jpg" alt=""/></span> 
-    </a></div>
-    <!-- // .item -->
-  <!--<div class="item" ><a target="_blank" href="https://www.ahs-hook.com/?p=867" onClick="_gaq.push(['_trackEvent', 'Behance', 'Click', 'Chadburry']);"> 
-    <img src="images/chad1.jpg" alt=""/> <span><img src="images/chad2.jpg" alt=""/></span> 
-    </a></div>-->
-  <!-- // .item -->
-  <div class="item" ><a target="_blank" href="https://www.murthy.com/2015/04/22/indianamerican-teenager-honored-with-2015-immigrant-youth-achievement-award/" > 
-    <img src="images/aic1.jpg" alt=""/> <span><img src="images/aic2.jpg" alt=""/></span> 
-    </a></div>
-  <!-- // .item -->
-  <div class="item" ><a target="_blank" href="https://www.stampsfoundation.org/" > 
-    <img src="images/ss1.jpg" alt=""/> <span><img src="images/ss2.jpg" alt=""/></span> 
-    </a></div>
-  <!-- // .item -->
-  <div class="item" ><a target="_blank" href="https://www.wtfcorg.wix.com/ghys/" > 
-    <img src="images/ghys2.jpg" alt=""/> <span><img src="images/ghys1.jpg" alt=""/></span> 
-    </a></div>" > 
-      <!-- // .item -->
-</div>
-<!-- // #section-worksgrid -->
-<p></p>
-
-<!-- Resume
-                ================================================== -->
-<div id="section-resume"> 
-    <a name="section-resume"></a>
-  <!-- // .section-title -->
-  <div class="container">
-     
-    <!-- EDUCATION -->
-    <div class="block"> 
-        <div class="three columns" data-ride="animated" data-animation="fadeIn" data-delay="300"><h3><b>EDUCATION</b></header></div>
-      <!-- // .three -->
-      <div class="thirteen columns" data-ride="animated" data-animation="fadeIn" data-delay="400"> 
-        <!--item--> 
-          <div class="item"> 
-          <div class="nine columns alpha no-border"> 
-            <h4>Medical Student (MD) </h4>
-            <p><span class="italic font-color-black">Emory University School of Medicine</span></p>
-          </div>
-          <!-- // .nine -->
-          <div class="four columns omega"> 
-            <p class="date">2019 - 2023<br/>
-              <span class="font-color-gray">Atlanta, GA</span></p>
-            <!-- // p.date -->
-          </div>
-          <!-- // .four -->
-          <div class="clear"></div>
-        </div>
-        <!-- // .item -->
-                <!--item--> 
-                <div class="item"> 
-                  <div class="nine columns alpha no-border"> 
-                    <h4>Biomedical Ethics under Dr. Birks </h4>
-                    <p><span class="italic font-color-black">Kellogg College, University of Oxford</span></p>
-                  </div>
-                  <!-- // .nine -->
-                  <div class="four columns omega"> 
-                    <p class="date">Jun.-Jul. 2016<br/>
-                      <span class="font-color-gray">Oxford, UK</span></p>
-                    <!-- // p.date -->
-                  </div>
-                  <!-- // .four -->
-                  <div class="clear"></div>
-                </div>
-                <!-- // .item -->
-        <div class="clear"></div>
-        <div class="item"> 
-          <div class="nine columns alpha"> 
-            <h4>B.S. Biology, B.A. Sociology</h4>
-            <p><span class="italic font-color-black">University of Georgia</span></p>
-          </div>
-          <!-- // .nine -->
-          <div class="four columns omega"> 
-            <p class="date">2015 - 2019<br/>
-              <span class="font-color-gray">Athens, GA</span></p>
-            <!-- // p.date -->
-          </div>
-          <!-- // .four -->
-          <div class="clear"></div>
-        </div>
-        <!-- // .item -->
-        <div class="clear"></div>
-        <div class="item"> 
-          <div class="nine columns alpha no-border"> 
-            <h4>High School Diploma</h4>
-            <p><span class="italic font-color-black">Alpharetta High School</span></p>
-          </div>
-          <!-- // .nine -->
-          <div class="four columns omega"> 
-            <p class="date">2011 - 2015<br/>
-              <span class="font-color-gray">Alpharetta, GA</span></p>
-            <!-- // p.date -->
-          </div>
-          <!-- // .four -->
-          <div class="clear"></div>
-        </div>
-        <!--<div class="item"> 
-          <div class="nine columns alpha"> 
-            <h4>School of Art + Design, Advertising Art Direction</h4>
-            <p><span class="italic font-color-black">Columbia College Chicago</span></p>
-          </div>
-          <!-- // .nine -->
-         <!-- <div class="four columns omega"> 
-            <p class="date">2001 - 2003<br/>
-              <span class="font-color-gray">Chicago, IL</span></p>
-            <!-- // p.date -->
-        <!--  </div>
-          <!-- // .four -->
-        <!--  <div class="clear"></div>
-        </div>
-        <!-- // .item -->
-        <div class="clear"></div>
-      </div>
-      <!-- // .thirteen -->
-      <div class="clear"></div>
-    </div>
-    <!-- // .block -->
-    <!-- WORK -->
-    <div class="block"> 
-      <div class="three columns" data-ride="animated" data-animation="fadeIn" data-delay="300"><h3><b>WORK EXPERIENCE</b></header></div>
-        
-        <!-- // .three -->
-      <div class="thirteen columns" data-ride="animated" data-animation="fadeIn" data-delay="400"> 
-        <!-- // .item -->
-       <div class="item"> 
-          <div class="nine columns alpha"> 
-            <!--<p><span class="font-color-black italic">Bemis Balkind </span></p> -->
-            <h4>Executive Director</h4>
-              <p><span class="font-color-black italic">Feed the Frontlines Georgia</span></p>
-            <p class="desc">Aditya co-founded and manages the national 501(c)3 nonprofit, leading a team of 60+ students in providing meals to healthcare professionals battling COVID in Georgia, with special attention to those hospitals in rural areas. 
-             <br>   
-            <br>
-                
-                This effort has involved raising over $100,000 dollars, and delivering over 3500 meals to hospitals in Georgia. 
-              </p></div>
-          <div class="four columns omega"> 
-          <!-- // .nine -->
-              <span class="font-color-gray"></span></p>
-            <p class="date">2020-Present<br/>
-          </div>
-            <!-- // p.date -->
-          <div class="clear"></div>
-          <!-- // .four -->
-        </div>
-          
-          <div class="item"> 
-          <div class="nine columns alpha"> 
-            <!--<p><span class="font-color-black italic">Bemis Balkind </span></p> -->
-            <h4>Executive Director</h4>
-              <p><span class="font-color-black italic">Working Together for Change</span></p>
-            <p class="desc">Aditya co-founded and manages the national 501(c)3 nonprofit  
-              Working Together for Change. He manages the operations of chapters across the 
-              country, while also running the local activities of the Athens chapter.  
-              </p></div>
-          <div class="four columns omega"> 
-          <!-- // .nine -->
-              <span class="font-color-gray"></span></p>
-            <p class="date">2014-Present<br/>
-          </div>
-            <!-- // p.date -->
-          <div class="clear"></div>
-          <!-- // .four -->
-        </div>
-        <div class="item"> 
-          <div class="nine columns alpha"> 
-            <!--<p><span class="font-color-black italic">Bemis Balkind </span></p> -->
-            <h4>Summer Research Fellow </h4>
-              <p><span class="font-color-black italic">Sands Lab in Renal Division of Emory School of Medicine</span></p>
-            <p class="desc">Aditya studied effect of Metformin on urine concentrating ability of sickle cell mice. He presented his work at the American Society of Nephrology in San Diego. He learned/performed mouse maintenance/handling/sacrificing, western blotting, osmolarity measurements, electrolyte measurements
-
-  
-              </p></div>
-          <div class="four columns omega"> 
-          <!-- // .nine -->
-              <span class="font-color-gray"></span></p>
-            <p class="date">Jun. - Jul. 2018<br/>
-                <span class="font-color-gray">Atlanta, GA</span></p>
-          </div>
-            <!-- // p.date -->
-          <div class="clear"></div>
-          <!-- // .four -->
-        </div>  
-        <div class="item"> 
-          <div class="nine columns alpha"> 
-            <!--<p><span class="font-color-black italic">Bemis Balkind </span></p> -->
-            <h4>Undergradute Research Assistant </h4>
-              <p><span class="font-color-black italic">SkinPath Solutions</span></p>
-            <p class="desc">Aditya co-authored multiple case studies; 4 of these were presented at national conferences. He examined skin biopsies using immunofluorescenent microscopy, learned histochemical staining techniques. He primarily wrote up abstracts on unusual cases, such as multiple dermatofibromas in patients with Systemic Lupus Erythematosus, an acute immune system deficiency complication.
- 
-              </p></div>
-          <div class="four columns omega"> 
-          <!-- // .nine -->
-              <span class="font-color-gray"></span></p>
-            <p class="date">2015-Present<br/>
-                <span class="font-color-gray">Atlanta, GA</span></p>
-          </div>
-            <!-- // p.date -->
-          <div class="clear"></div>
-          <!-- // .four -->
-        </div>  
-        <div class="item"> 
-          <div class="nine columns alpha"> 
-            <!--<p><span class="font-color-black italic">Bemis Balkind </span></p> -->
-            <h4>Vertically Integrated Projects Fellow </h4>
-              <p><span class="font-color-black italic">Social Psychology of Undergraduate Research Lab</span></p>
-            <p class="desc">Aditya examined the generalizability of effects of group configuration on performance and satisfaction under Dr. Dolan, using R and SPSS for data analysis; utilized Qualtrics to accumulate and compile data
-
-  
-              </p></div>
-          <div class="four columns omega"> 
-          <!-- // .nine -->
-              <span class="font-color-gray"></span></p>
-            <p class="date">Jan. - May 2017<br/>
-                <span class="font-color-gray">Athens, GA</span></p>
-          </div>
-            <!-- // p.date -->
-          <div class="clear"></div>
-          <!-- // .four -->
-        </div>  
-        <div class="item"> 
-          <div class="nine columns alpha"> 
-            <!--<p><span class="font-color-black italic">Bemis Balkind </span></p> -->
-            <h4>Undergraduate Research Fellow</h4>
-              <p><span class="font-color-black italic">Regenerative Bioscience Center</span></p>
-            <p class="desc">Aditya performed immunostaining, cell culturing and maintenance, quantitative PCR, and electron microscopy imaging to examine the soluble glial switch between motor neurons & oligodendrocyte precursor cells causing temporal change in potency
-  
-              </p></div>
-          <div class="four columns omega"> 
-          <!-- // .nine -->
-              <span class="font-color-gray"></span></p>
-            <p class="date">2015-Present<br/>
-                <span class="font-color-gray">Athens, GA</span></p>
-          </div>
-            <!-- // p.date -->
-          <div class="clear"></div>
-          <!-- // .four -->
-        </div>
-        <!-- // .item -->
-        <div class="clear"></div>
-        <div class="item"> 
-          <div class="nine columns alpha"> 
-            <h4>Research Intern</h4>
-            <p><span class="font-color-black italic">Georgia State Clinical Neuroplasticity Lab.</span></p>
-            <p class="desc">Aditya conducted research to improve the efficacy of 
-                rehabilitation therapy for Stroke survivors using a computer-based
-                controller and robotic peripheral devices.</p>
-          </div>
-          <!-- // .nine -->
-          <div class="four columns omega"> 
-            <p class="date">Feb. 2014 - Dec. 2014<br/>
-              <span class="font-color-gray">Atlanta, GA</span></p>
-            <!-- // p.date -->
-          </div>
-          <!-- // .four -->
-          <div class="clear"></div>
-        </div>
-        <!-- // .item -->
-        <div class="clear"></div>
-        <div class="item"> 
-          <div class="nine columns alpha"> 
-            <h4>Marketing Intern</h4>
-            <p><span class="font-color-black italic">University of Pennsylvania Health System</span></p>
-            <p class="desc">As a marketing intern Aditya put in his leadership skills in online  
-              marketing in order to redesign the ortho and neuro blogs to increase patient traffic. 
-              Additionally, he developed a system to monitor and increase patient referrals for
-              medical breakthroughs by designing patient profiles to track patient referrals from 
-              other doctors in the region. </p>
-          </div>
-          <!-- // .nine -->
-          <div class="four columns omega"> 
-            <p class="date">May. 2013 - Jul. 2013<br/>
-              <span class="font-color-gray">Philadelphia, PA</span></p>
-            <!-- // p.date -->
-          </div>
-          <!-- // .four -->
-          <div class="clear"></div>
-            <div class="item"> 
-          <div class="nine columns alpha"> 
-            <h4>Sales and Manufacturing Intern</h4>
-            <p><span class="font-color-black italic">NanoLumens Inc.</span></p>
-            <p class="desc">As a sales intern for NanoLumens, Aditya Manufactured 
-              flexi-displays to ship out to dozens of companies. Additionally, he  
-              maintained relationships with existing clients to provide custom LED 
-              video displays to meet customer needs. </p>
-              
-          </div>
-          <!-- // .nine -->
-          <div class="four columns omega"> 
-            <p class="date">Aug. 2011 - Dec. 2012<br/>
-              <span class="font-color-gray">Atlanta, GA</span></p>
-            <!-- // p.date -->
-          </div>
-          <!-- // .four -->
-          <div class="clear"></div>
-        </div>
-        </div>
-        <div class="clear"></div>
-      </div>
-      <!-- // .thirteen -->
-      <div class="clear"></div>
-    </div>
-<div class="block"> 
-      <div class="three columns" data-ride="animated" data-animation="fadeIn" data-delay="300"><h3><b>CASE STUDIES & POSTERS</b></header></div>
-        
-        <!-- // .three -->
-      <div class="thirteen columns" data-ride="animated" data-animation="fadeIn" data-delay="400"> 
-        <!-- // .item -->
-        <div class="item"> 
-          <div class="thirteen columns alpha"> 
-              <h1>Publications</h1>
-<p class="desc">1. Gangal A., Sood A., Sangari A., Stoff B.K. (2022), &ldquo;A House Divided: Considerations for Implementation of a Formalized Open House Period in the Dermatology Residency Match&rdquo;, Journal of the American Academy of Dermatology (under review)</p>
-
-<p class="desc">2. Sood A., Sangari A., Stoff B.K. (2022), &ldquo;Recommending expensive treatments: An ethical analysis&rdquo;, Journal of the American Academy of Dermatology. S0190-9622(22)02401-X. doi:10.1016/j.jaad.2022.07.030</p>
-
-<p class="desc">3. Sangari A, Sood A., Stoff B.K. (2022), &ldquo;What To Do When You're Curbsided By Your Patient's Plus One&rdquo;, Journal of the American Academy of Dermatology.</p>
-
-<p class="desc">4. Sood A., Sangari A., Stoff B.K. (2022), &ldquo;Ethical Considerations of Genetic Expression Profiling for Melanoma Prognosis&rdquo;, Journal of the American Academy of Dermatology (under review)</p>
-
-<p class="desc">5. Sood A., Sangari A., and Stoff B.K. (2022), &ldquo;Navigating internet-based misinformation with patients in clinic&rdquo;, Journal of the American Academy of Dermatology. 2022;S0190-9622(22)00528-X. doi:10.1016/j.jaad.2022.03.038</p>
-
-<p class="desc">6. Sood A., Stoff B.K., and Yeung H. (2022), &ldquo;Challenges in caring for transgender populations: A primer for the dermatopathologist&rdquo;, Journal of Cutaneous Pathology; (under review).</p>
-
-<p class="desc">7. Sood A., Brahmbhatt M., Flowers N., Yeung H., Vong G., and Stoff B. (2021), &ldquo;Challenging ethical scenarios reported by American Society of Dermatopathology members: a qualitative analysis&rdquo;, Journal of Cutaneous Pathology 2021;10.1111/cup.14137. doi:10.1111/cup.14137</p>
-
-<p class="desc">8. Sood A., Sangari A., Chen J., and Stoff B. (2021), &ldquo;The ethics of using biased Artificial Intelligence programs in clinic&rdquo;, Journal of the American Academy of Dermatology, doi:10.1016/j.jaad.2021.11.031</p> <br>
-
-<h1>Published Abstracts</h1>
-
-<p class="desc">9. Sangari A., Sood A., et. al. Predicting Intubation and Ventilation Needs Upon Admission for Intensive Care Patients with Congestive Heart Failure (2021). Circulation. doi:10.1161/circ.144.suppl_1.14410</p>
-
-<p class="desc">10. Sangari A., Sood N., Sood A., et. al. Improving Patient Selection in International Pediatric ECPR Cohorts (November 2021). Annals of Emergency Medicine</p>
-
-<p class="desc">11. Sood A., Barrett D., Cheeley T. (2022), &ldquo;Oil Paint Necrotizing Hand Dermatitis&rdquo;, Journal of Investigative Dermatology<br><br>
-
-    
-              <h1>Poster Presentations and Talks</h1> 
-
-<p class="desc">12. Sood A. and Sood A. (2022) &ldquo;COVID-19&rsquo;s Effect on Digitization of Future Work: Complementary Role of Non-Pharmaceutical Interventions&rdquo; Special Session on &ldquo;The Influence of Digital Economy on Regional Economy Development&rdquo; Invited talk by LiaoNing University.</p>
-
-<p class="desc">13. Sood A., Dieudonne R., Chopra D., Westerkam L., Siira M., Sayed C., Lev-Tov H., Orenstein L.V., 2022 &ldquo;Examining Food Insecurity In Patients with Hidradenitis Suppurativa&rdquo;. Symposium on Hidradenitis Suppurativa Advances.</p>
-
-<p class="desc">14. Echuri H., Sood A., Dieudonne R., Siira M., Baranowski M., Orenstein, L.V. (2022 )&ldquo;Prevalence of hyponatremia in a cohort of patients with hidradenitis suppurativa&rdquo;. Symposium on Hidradenitis Suppurativa Advances.</p>
-
-<p class="desc">15. Farooq P., Mehra, N. and Sood A. (2021)&ldquo; Do increased vaccination sites per person lead to increased vaccination rates - a study of Alabama&rdquo;. <br>
-o AMA Research Challenge Semifinalist</p>
-
-<p class="desc">16. Sood A. and Sangari A. (2021) &ldquo;Bias Prevention in Global Adoption of Artificial Intelligence Based Health Management Systems&rdquo;, UCF Global Health Conference</p>
-
-<p class="desc">17. Sangari A. and Sood A., &ldquo;Establishing Global Guidelines for Integrating Artificial Intelligence Systems into Clinical Care&rdquo; UCF Global Health <br>
-Conference</p>
-
-<p class="desc">18. Sood A. and Anand D. (2021), &ldquo;ALK-Positive Spitz Tumor&rdquo;, Zola-Cooper Dermatopathologic Conference</p>
-
-<p class="desc">19. Sood A. and Anand D. (2021), &ldquo;Aggressive Digital Papillary Adenocarcinoma&rdquo;, Zola-Cooper Dermatopathologic Conference</p>
-
-<p class="desc">20. Sood A. and Sood A. (2020) &ldquo;COVID-19&rsquo;s Effect on Digitization of Future Work: A Multinational Diffusion Study using Functional Data Analysis&rdquo; <br>
-Special Session on &ldquo;COVID-19&rsquo;s Effect on Digitization of Future Work Transformation&rdquo; Invited talk by Department of Labor, US Government and APEC. Conference on Labor Market Impact and Social Protection in the COVID-19 Era.</p>
-
-<p class="desc">21. Sangari A., Sangari A., Sood A., and Sood N. (2020) &ldquo;Evaluating the Extent to which Posted Personally Identifying Information Jeopardizes the Privacy of Users of Breastcancer.org&rdquo;, Emory Global Perioperative Alliance Virtual Symposium</p>
-
-<p class="desc">22. Sood A. and Anand D. (2019), &ldquo;Atypical Lymphocytic Lobular Panniculitis&rdquo;, American Society of Dermatopathology</p>
-
-<p class="desc">23. Sood A. and Anand D. (2019), &ldquo;Lamotrigine-Induced Cutaneous CD 30+ Anaplastic Large Cell Lymphoma&rdquo;, American Society of Dermatopathology</p>
-
-<p class="desc">24. Sood A. and Anand D. (2019), &ldquo;Degos Disease&rdquo;, American Society of Dermatopathology</p>
-
-<p class="desc">25. Sood A. et al. (2018), &ldquo;Effect of Metformin on Urine Concentrating Ability in Sickle Cell Mice,&rdquo; American Society of Nephrology</p>
-
-<p class="desc">26. Sood A. and Anand D. (2019), &ldquo;Atypical Lymphocytic Lobular Panniculitis&rdquo;, Zola Cooper Dermatopathologic Conference</p>
-
-<p class="desc">27. Sood A. and Anand D. (2019), &ldquo;Lamotrigine-Induced Cutaneous CD 30+ Anaplastic Large Cell Lymphoma&rdquo;, Zola Cooper Dermatopathologic Conference</p>
- 
-<p class="desc">28. Sood A. and Anand D. (2019), &ldquo;Degos Disease&rdquo;, Zola Cooper Dermatopathologic Conference</p> 
-<p class="desc">29. Sood A. et al. (2018), &ldquo;Effect of Metformin on Urine Concentrating Ability in Sickle Cell Mice,&rdquo; Kidney, Urologic, and Hematologic Diseases Summer Undergraduate Research Symposium at Harvard University</p>
-<p class="desc">30. Sood A. (2017), &ldquo;Exploring Group Configuration and its Effect On Group Performance,&rdquo; Undergraduate Research Symposium, University of Georgia</p>
-<p class="desc">31. Sood A. and Anand D. (2017), &ldquo;Ectopic Extramammary Paget&rsquo;s Disease Presenting on the Face- An Extraordinary Case Presentation &amp; Discussion&rdquo;, Zola Cooper Dermatopathologic Conference</p>
-<p class="desc">32. Sood A. and Anand D. (2017), &ldquo;The lesser known CD8+ Cutaneous T-cell Lymphomas- What are they &amp; why should we know about them?&rdquo;, Zola Cooper Dermatopathologic Conference </p>
-<p class="desc">33. Sood A. and Daniel T. (2017), &ldquo;Oligodendrocyte Precursor Cell Specification: Convergence of Shh, Tgf-&#946; &amp; Notch Signaling,&rdquo; Regenerative Bioscience Undergraduate Symposium, University of Georgia</p>
-<p class="desc">34. Sood A. and Anand D. (2016) &ldquo;Diffuse dermal angiomatosis/Reactive angioendotheliomatosis- What is this, and why should I know about it?&rdquo;, Zola Cooper Dermatopathologic Conference </p>
-<p class="desc">35. Sood A. and Anand D. (2016) &ldquo;Blastic Plasmacytoid Dendritic Cell Neoplasm- An under recognized but deadly tumor&rdquo;, Zola Cooper Dermatopathologic Conference </p>
-<p class="desc">36. Sood A., Calloway C., and Daniel T. (2016), &ldquo;Oligodendrocyte Precursor Cell Specification: Convergence of Shh, Tgf-&#946; &amp; Notch Signaling,&rdquo; Regenerative Bioscience Undergraduate Symposium, University of Georgia.</p>
-&#8195;
-</p>
-</p>
-            <!--<p class="desc"><span class="font-color-black italic">Bemis Balkind </span></p> -->
-  <!--<p class="desc">●	Sood Aditya (2018), “Effect of Metformin on Urine Concentrating Ability in Sickle Cell Mice,” Kidney, Urologic, and Hematologic Diseases Summer Undergraduate Research Symposium at Harvard University </p>
-  <p class="desc">●	Sood Aditya UG-3 and Dipti Anand MD (2017), “Ectopic Extramammary Paget’s Disease Presenting on the Face- An Extraordinary Case Presentation & Discussion”, Zola Cooper Dermatopathologic Conference </p>
-  <p class="desc">●	Sood Aditya UG-3 and Dipti Anand MD (2017), “The lesser known CD8+ Cutaneous T-cell Lymphomas- What are they & why should we know about them?”, Zola Cooper Dermatopathologic Conference  </p>
-  <p class="desc">●	Sood Aditya (2017), “Oligodendrocyte Precursor Cell Specification: Convergence of Shh, Tgf-β & Notch Signaling,” Undergraduate Research Symposium, University of Georgia. </p>
-  <p class="desc">●	Sood Aditya (2017), “Exploring Group Configuration and its effect on Group Performance,” Undergraduate Research Symposium, University of Georgia. </p>
-  <p class="desc">●	Sood Aditya and Daniel Tarun (2017), “Oligodendrocyte Precursor Cell Specification: Convergence of Shh, Tgf-β & Notch Signaling,” Regenerative Bioscience Undergraduate Symposium, University of Georgia. </p>
-  <p class="desc">●	Sood Aditya UG-2 and Dipti Anand MD (2016) “Diffuse dermal angiomatosis/Reactive angioendotheliomatosis- What is this, and why should I know about it?”, Zola Cooper Dermatopathologic Conference  </p>
-  <p class="desc">●	Sood Aditya UG-2 and Dipti Anand MD (2016) “Blastic Plasmacytoid Dendritic Cell Neoplasm- An under recognized but deadly tumor”, Zola Cooper Dermatopathologic Conference  </p>
-  <p class="desc">●	Sood Aditya, Calloway Cali, and Daniel Tarun (2016), “Oligodendrocyte Precursor Cell Specification: Convergence of Shh, Tgf-β & Notch Signaling,” Regenerative Bioscience Undergraduate Symposium, University of Georgia. </p>-->
-               </div>  </div>
-          <div class="four columns omega"> 
-          <!-- // .nine -->
-              <span class="font-color-gray"></span></p>
-            
-          </div>
-            <!-- // p.date -->
-          <div class="clear"></div>
-          <!-- // .four -->
-        </div>
-                  <!-- // .four -->
-         
-      <!-- // .thirteen -->
-      <div class="clear"></div>
-    </div>
-       
-<!-- // .block -->
-  
-    <!-- AWARDS -->
-    <div id="section-honors"></div>
-      <a name="section-honors"></a>
-    <div class="block"> 
-      <div class="three columns" data-ride="animated" data-animation="fadeIn" data-delay="300"><H3><b>HONORS& AWARDS</b></H3></div>
-      <!-- // .three -->
-      <div class="thirteen columns"> 
-        <div class="item"> 
-          <div class="six columns alpha" data-ride="animated" data-animation="fadeIn" data-delay="400"> 
-            <p style="height: 20px;">&nbsp;</p>
-            <h4>Stamps Scholar</h4>
-            <p><span class="font-color-black italic">Stampsfoundation.com</span><br/>
-              <span class="font-color-gray">Designated as 1 of 5 UGA Stamps Scholars in UGA </span></p>
-            <p style="height: 20px;">&nbsp;</p>
-            <h4>Foundation Fellow</h4>
-            <p><span class="font-color-black italic">UGA Fellowship</span><br/>
-              <span class="font-color-gray">Designated as 1 of 23 Foundation Fellows in UGA</span></p>
-            <p style="height: 20px;">&nbsp;</p>
-            <h4>Coke Scholar</h4>
-            <p><span class="font-color-black italic">Coca-ColaScholarsFoundation.org</span><br/>
-              <span class="font-color-gray">Selected as one of 150 out of 103,000 students for social leadership.</span></p>
-             <p style="height: 20px;">&nbsp;</p>
-              <h4>National Merit</h4>
-            <p><span class="font-color-black italic">National Merit Finalist</span><br/>
-              <span class="font-color-gray"> National Merit Scholarship Competition, 2015 </span></p>
-            <p style="height: 20px;">&nbsp;</p>
-            </div>
-          <!-- // .nine -->
-          <div class="seven columns omega" data-ride="animated" data-animation="fadeIn" data-delay="900"> 
-            <p style="height: 20px;">&nbsp;</p>
-            <h4>Presidential Volunteer Award</h4>
-              <p><span class="font-color-black italic">PresidentialServiceAwards.gov</span><br/>
-              <span class="font-color-gray">Gold Award, 2015</span></p>
-            <p style="height: 20px;">&nbsp;</p>
-            <h4>Summer of Service</h4>
-            <p><span class="font-color-black italic">YSA Student Leaders</span><br/>
-              <span class="font-color-gray">Grant Award for Summer Service Focus</span></p>
-           
-            <p style="height: 20px;">&nbsp;</p>
-            <h4>National Youth Immigration Award</span><br/>
-              <p><span class="font-color-black italic">National Immigration Council</span><br/>
-              <span class="font-color-gray">Youth Immigrant Achievement Award Winner, 2015 </span></p>
-            <p style="height: 20px;">&nbsp;</p>
-            <h4>20 Under 20 GA Leaders</h4>
-            <p><span class="font-color-black italic">21CenturyLeaders.org</span><br/>
-              <span class="font-color-gray">20 Under 20 Student Leader</span></p>
-            <p style="height: 20px;">&nbsp;</p>        
-          </div>
-          <!-- // .four -->
-          <div class="clear"></div>
-        </div>
-        <!-- // .item -->
-      </div>
-      <!-- // .thirteen -->
-      <div class="clear"></div>
-    </div>
-    <!-- // .block -->
-    <!-- SKILLS -->
-    <!-- // .block -->
-  </div>
-  <!-- // .container -->
-</div>
-<!-- // #section-resume -->
-
-             <!--   </div>
+		<section id="skills" class="home-section wg-featurette   "  >
+		<div class="row featurette">
+			<div class="col-md-12 section-heading">
+				<h1>Links</h1>
 			</div>
 		</div>
-	</section>-->
-<!-- Works - Isotope
-          ================================================== -->
-<div class="behance-out"> 
-    
-  <div class="behance"><a href="https://www.workingtogetherforchange.com" target="Check out my work on Homelessness!"><!--<img src="images/behance.png"/>--> 
-      <h7><font color="white">Check out my work on homelessness!</font></h7></a> 
-  </div>
-</div>
-<div class="behance-out"> 
-    
-  <div class="behance"><a href="https://www.hackstart.co" target="Check out my work promoting youth hackathons!"><!--<img src="images/behance.png"/>--> 
-      <h7><font color="white">Check out my work promoting youth hackathons</font></h7></a> 
-  </div>
-</div>
-<!-- Contact
-                ================================================== -->
-<div id="section-contact"> 
-    <a name="section-contact"></a>
-  <div class="container"> 
-    <!--<div class="nine columns"><img src="images/contact.png" style="padding-top: 20px;"/> 
-      <div id="contact-warning"></div>
-      <!-- // #contact-warning -->
-    <!--  <div id="contact-success">Your message was successfuly sent, thank you!</div>
-      <!-- // #contact-warning -->
-      <!--<form name="contactForm" id="contactForm" method="post" action="https://www.anthonydesigner.com/includes/include.emailSender.php">
-        <fieldset>
-        <label for="contactName">Name <span class="required">*</span></label>
-        <input name="contactName" id="contactName" size="30" value="" type="text"/>
-        <br/>
-        <label for="contactEmail">Email <span class="required">*</span></label>
-        <input name="contactEmail" id="contactEmail" size="30" value="" type="text"/>
-        <br/>
-        <label for="contactMessage">Message <span class="required">*</span></label>
-        <textarea name="contactMessage" id="contactMessage" rows="6" cols="7"></textarea>
-        <br/>
-        <label for="contactCaptcha"><strong>1</strong> + <strong>8</strong> = 
-        <span class="required">*</span></label>
-        <input name="contactCaptcha" id="contactCaptcha" size="30" value="" type="text"/>
-        <input name="contactCaptchaAnswer" id="contactCaptchaAnswer" value="9" type="hidden"/>
-        <br/>
-        <label class="placeholder">&nbsp;</label>
-        <button class="submit">Submit</button>
-        </fieldset>
-      </form>
-    </div>
-    <!-- // .nine -->
-    <div class="seven columns"><img src="images/recommendations.png" style="padding-top: 20px; "/> 
-      <div id="box-testimonials"> 
-        <div class="container"> 
-          <blockquote> 
-            <p class="quote">"Aditya is able to invite others to share in his vision for change, and to make the vision a reality. He listens, he collaborates, he seeks input and advice, and then he implements ideas with the assistance of others. He is fearless and innovative when it comes to utilizing and trying out new concepts and approaches in his volunteer activities."</p>
-            <h4>Lana Wachniak, Ph.D.</h4>
-            <p class="position"><em>Professor Emeritus of Criminology at Kenessaw State University</em></p>
-          </blockquote>
-        </div>
-        <!-- // .item -->
-        <div class="container"> 
-          <blockquote> 
-              <p> </p>
-            <p class="quote">             
-                "It was an absolute delight to have Aditya work on my team. Aditya jumped right into the internship, with a solid mix of independent work and collegial collaboration with seasoned team members. In one project, Aditya took a novel approachto a referral analysis, leveraging his knowledge of HTML and web scraping to quickly and efficiently gather physician data from online sources, which he then analyzed to discern referral behavior and patterns."</p>
-            <h4>Suzanne Sawyer</h4>
-            <p class="position"><em>Chief Marketing Officer at University of Pennsylvania Health System</em></p>
-          </blockquote>
-        </div>
-        <!-- // .item -->
+		<style>
+			#grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+			grid-gap: 0px;
+			}
+			.
+			#grid > div {
+			font-size: 30px;
+			padding:1px;
+			color: #ffffff;
+			background: #ffffff;
+			text-align: center;
+			}
+			}
+		</style>
+		<div id="grid">
+            <div><a href="https://www.coca-colascholarsfoundation.org/"><img src="/img/coke1.jpg" alt="Coke Scholarship"></a></div>
+            <div><a href="https://www.feedthefrontlinesga.org/"><img src="/img/FTFGA1.jpg" alt="Feed the Frontlines GA"></a></div>
+            <div><a href="https://www.wtfcorg.wix.com/ghys/"><img src="/img/ghys1.jpg" alt="Global Health Youth Summit"></a></div>
+            <div><a href="https://www.hackstart.co/"><img src="/img/hs1.jpg" alt="HackStart"></a></div>
+            <div><a href="https://stice.uga.edu/team_stice.html"><img src="/img/rbc1.jpg" alt="Regenerative Bioscience Center"></a></div>
+            <div><a href="https://21stcenturyleaders.org/tag/aditya-sood"><img src="/img/cbs2.jpg" alt="21st Century Leaders"></a></div>
+            <div><a href="https://www.murthy.com/2015/04/22/indianamerican-teenager-honored-with-2015-immigrant-youth-achievement-award/"><img src="/img/aic1.jpg" alt="American Immigration Council"></a></div>
+            <div><a href="https://www.workingtogetherforchange.com"><img src="/img/wtfc1.jpg" alt="WTFC"></a></div>
+            <div><a href="https://www.youtube.com/watch?v=tAbsvshIGk8"><img src="/img/ted2.jpg" alt="TEDx Talk"></a></div>
+
+		</div>
+		<section id="skills" class="home-section wg-featurette   "  >
+			<div class="container">
+				<div class="row featurette">
+					<div class="col-md-12 section-heading">
+                        <h1>Skills</h1>
+						<br> 
+					</div>
+                    
+					<div class="col-12 col-sm-4">
+						
+						<h3>Programming</h3>
+						<p><strong>R</strong>, Python, LaTeX</p>
+					</div>
+					<div class="col-12 col-sm-4">
+						<div class="featurette-icon"><i class="fa fa-brain"></i></div>
+						<h3>Research</h3>
+						<p><strong>Qualitative Work (MaxQDA)</strong>, <strong>Statistics</strong>, Rodent animal care, general laboratory work, DNA/RNA/Protein isolation, blotting</p>
+					</div>
+					<div class="col-12 col-sm-4">
+						<div class="featurette-icon"><i class="fa fa-language"></i></div>
+						<h3>Languages</h3>
+						<p><strong>Hindi</strong>, <strong>English</strong>, Mandarin</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="nonprofit" class="home-section wg-portfolio   "  >
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 col-md-4 section-heading">
+						<h1>Nonprofit Work</h1>
+					</div>
+					<div class="col-xs-12 col-md-8">
+						<span class="d-none default-project-filter">.js-id-include</span>      
+						<div class="project-toolbar">
+							<!--<div class="project-filters">
+								<div class="btn-toolbar">
+								  <div class="btn-group flex-wrap">
+								      <a href="index.html#" data-filter=".js-id-include" class="btn btn-primary btn-lg active">All</a>
+								      <a href="index.html#" data-filter=".js-id-research" class="btn btn-primary btn-lg">My research</a>
+								      <a href="index.html#" data-filter=".js-id-collaborative" class="btn btn-primary btn-lg">Collaborative</a>
+								        </div>
+								</div>
+								</div>-->
+						</div>
+						<div class="isotope projects-container row js-layout-row ">
+							<div class="col-12 isotope-item js-id-collaborative js-id-include">
+								<div class="media stream-item" itemscope itemtype="http://schema.org/CreativeWork">
+									<div class="media-body">
+										<h3 class="article-title mb-0 mt-0" itemprop="name">
+											<!--Change--><a href="https://www.workingtogetherforchange.com"  itemprop="url">Working Together for Change</a>
+										</h3>
+										<div class="article-style" itemprop="articleBody">
+											I co-founded and manage the national 501(c)3 nonprofit Working Together for Change, a nonprofit aimed at ending homelessness. I manages the operations of chapters across the country, while also running the local activities of the Emory chapter.
+										</div>
+										<div class="stream-meta article-metadata">        </div>
+										<div class="btn-links">
+											<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://www.workingtogetherforchange.com/" target="_blank" rel="noopener">    WorkingTogetherForChange.com
+											</a>      
+											<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://www.facebook.com/workingtogetherforchange" target="_blank" rel="noopener">
+											<i class="fab fa-twitter mr-1"></i>Facebook
+											</a>
+											<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://www.youtube.com/watch?v=tAbsvshIGk8" target="_blank" rel="noopener">    TEDx Talk
+											</a>  
+										</div>
+									</div>
+									<div class="ml-3">        <a href="https://www.workingtogetherforchange.com/" >
+										<img src="/img/wtfc2.jpg" itemprop="image">
+										</a>  
+									</div>
+								</div>
+							</div>
+							<div class="col-12 isotope-item js-id-research js-id-include">
+								<div class="media stream-item" itemscope itemtype="http://schema.org/CreativeWork">
+									<div class="media-body">
+										<h3 class="article-title mb-0 mt-0" itemprop="name">
+											<a href="https://www.feedthefrontlinesga.org"  itemprop="url">Feed the Frontlines Georgia</a>
+										</h3>
+										<div class="article-style" itemprop="articleBody">
+											I co-founded and managed the national 501(c)3 nonprofit, leading a team of 90+ students in providing meals to healthcare professionals battling COVID in Georgia, with special attention to those hospitals in rural areas.
+											This effort has involved raising over $100,000 dollars, and delivering over 3500 meals to hospitals in Georgia.
+										</div>
+										<div class="stream-meta article-metadata">        </div>
+										<div class="btn-links">
+											<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://feedthefrontlinesga.org" target="_blank" rel="noopener">    FeedTheFrontlinesGA.org
+											</a>      
+											<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://news.uga.edu/alums-start-nonprofit-serving-frontline-workers/" target="_blank" rel="noopener">    University Coverage
+											</a>      
+										</div>
+									</div>
+									<div class="ml-3">        <a href="https://www.feedthefrontlinesga.org" >
+										<img src="img/FTFGA2.jpg" itemprop="image">
+										</a>  
+									</div>
+								</div>
+							</div>
+							<div class="col-12 isotope-item js-id-collaborative js-id-include">
+								<div class="media stream-item" itemscope itemtype="http://schema.org/CreativeWork">
+									<div class="media-body">
+										<h3 class="article-title mb-0 mt-0" itemprop="name">
+											<a href="https://www.hackstart.co/"  itemprop="url">HackStart</a>
+										</h3>
+										<div class="article-style" itemprop="articleBody">
+											Founded first organization in the southeast dedicated to teaching kids to code and hosting hackathons in the Southeast United States.
+										</div>
+										<div class="stream-meta article-metadata">        </div>
+										<div class=Z"btn-links">
+											<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://www.hackstart.co" target="_blank" rel="noopener">
+											<i class="fab fa-github mr-1"></i>
+											Hackstart.co
+											</a>      
+											<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://patch.com/georgia/alpharetta/student-brings-hackathon-alpharetta-high-school" target="_blank" rel="noopener">
+											<i class="fab fa-github mr-1"></i>
+											News Coverage
+											</a>      
+										</div>
+									</div>
+									<div class="ml-3">        <a href="https://hackstart.co" >
+										<img src="img/hackahs2.jpg" itemprop="image">
+										</a>  
+									</div>
+								</div>
+							</div>
+							<!--        
+								<div class="col-12 isotope-item js-id-research js-id-include"><div class="media stream-item" itemscope itemtype="http://schema.org/CreativeWork">
+								<div class="media-body">    <h3 class="article-title mb-0 mt-0" itemprop="name">
+								<a href="https://www.adityasood.me/project/medetomidine/"  itemprop="url">Temporal stability of fMRI in medetomidine-anesthetized rats</a>
+								</h3>    
+								<div class="article-style" itemprop="articleBody">
+								Work done for my MSc thesis and during the early stages of my PhD.
+								</div>
+								<div class="stream-meta article-metadata">        </div>    
+								<div class="btn-links">
+								
+								
+								
+								
+								<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://www.nature.com/articles/s41598-019-53144-y" target="_blank" rel="noopener">    Publication
+								</a>      
+								
+								<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://openneuro.org/datasets/ds001981" target="_blank" rel="noopener">    Data
+								</a>
+								</div>
+								</div>
+								<div class="ml-3">        <a href="https://www.adityasood.me/project/medetomidine/" >
+								<img src="project/medetomidine/featured_huc8cbc4cb0ffa5fcb3216a004db3bf9ca_118606_150x0_resize_q90_lanczos.jpg" itemprop="image">
+								</a>  </div>
+								</div></div>                        <div class="col-12 isotope-item js-id-side"><div class="media stream-item" itemscope itemtype="http://schema.org/CreativeWork">
+								<div class="media-body">    <h3 class="article-title mb-0 mt-0" itemprop="name">
+								<a href="https://www.adityasood.me/project/pyrat/"  itemprop="url">PyRat fMRI</a>
+								</h3>    
+								<div class="article-style" itemprop="articleBody">
+								A GUI app made with python&rsquo;s tkinter for a quick-and-dirty computation of fMRI activation maps.
+								</div>
+								<div class="stream-meta article-metadata">        </div>    
+								<div class="btn-links">
+								
+								
+								
+								
+								<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://github.com/niksirbi/PyRat_fMRI" target="_blank" rel="noopener">
+								<i class="fab fa-github mr-1"></i>
+								Code
+								</a>
+								</div>
+								</div>
+								<div class="ml-3">        <a href="https://www.adityasood.me/project/pyrat/" >
+								<img src="project/pyrat/featured_huf452b931a27e554bc6f0cb43c3a9cd59_40438_150x0_resize_q90_lanczos.jpg" itemprop="image">
+								</a>  </div>
+								</div></div>                        <div class="col-12 isotope-item js-id-collaborative js-id-include"><div class="media stream-item" itemscope itemtype="http://schema.org/CreativeWork">
+								<div class="media-body">    <h3 class="article-title mb-0 mt-0" itemprop="name">
+								<a href="https://www.adityasood.me/project/prime-re/"  itemprop="url">PRIME-RE</a>
+								</h3>    
+								<div class="article-style" itemprop="articleBody">
+								PRIME-RE (PRIMEatE Resource Exchange) aims to be the primary exchange platform for non-human primate neuroimaging data resources.
+								</div>
+								<div class="stream-meta article-metadata">        </div>    
+								<div class="btn-links">
+								
+								
+								
+								
+								<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://prime-re.github.io/" target="_blank" rel="noopener">    Website
+								</a>      
+								
+								<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://github.com/PRIME-RE/prime-re.github.io" target="_blank" rel="noopener">
+								<i class="fab fa-github mr-1"></i>
+								Code
+								</a>      
+								
+								<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://twitter.com/PRIMatE_RE" target="_blank" rel="noopener">
+								<i class="fab fa-twitter mr-1"></i>
+								Twitter
+								</a>
+								</div>
+								</div>
+								<div class="ml-3">        <a href="https://www.adityasood.me/project/prime-re/" >
+								<img src="project/prime-re/featured_hu278f2b0bd64fccafdf66c4479b540df0_147897_150x0_resize_lanczos_2.png" itemprop="image">
+								</a>  </div>
+								</div></div>                        <div class="col-12 isotope-item js-id-collaborative js-id-include"><div class="media stream-item" itemscope itemtype="http://schema.org/CreativeWork">
+								<div class="media-body">    <h3 class="article-title mb-0 mt-0" itemprop="name">
+								<a href="https://www.adityasood.me/project/neurizons/"  itemprop="url">Neurizons</a>
+								</h3>    
+								<div class="article-style" itemprop="articleBody">
+								Neurizons is a biennial neuroscience conference organized by students of the IMPRS for Neurosciences in Göttingen, Germany.
+								</div>
+								<div class="stream-meta article-metadata">        </div>    
+								<div class="btn-links">
+								
+								
+								
+								
+								<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://prime-re.github.io/" target="_blank" rel="noopener">    Website
+								</a>      
+								
+								<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://www.twitter.com/Neurizons" target="_blank" rel="noopener">
+								<i class="fab fa-twitter mr-1"></i>
+								Twitter
+								</a>      
+								
+								<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://www.facebook.com/Neurizons/" target="_blank" rel="noopener">
+								<i class="fab fa-facebook mr-1"></i>
+								Facebook
+								</a>
+								</div>
+								</div>
+								<div class="ml-3">        <a href="https://www.adityasood.me/project/neurizons/" >
+								<img src="project/neurizons/featured_hu5db33b70bfe147d24ac0fad5850893bc_679610_150x0_resize_q90_lanczos.jpg" itemprop="image">
+								</a>  </div> -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="publications" class="home-section wg-pages   "  >
+			<div class="container">
+				<div class="row">
+					<div class="col-12 col-lg-4 section-heading">
+						<h1>Publications</h1>
+					</div>
+					<div class="col-12 col-lg-8">
+						
+                        <div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle">
+    <a href="https://www.adityasood.me/publication/burst-suppression/"  itemprop="url"><span itemprop="name">A House Divided: Considerations for Implementation of a Formalized Open House Period in the Dermatology Residency Match</span></a> 
+    <br><h8> Journal of the American Academy of Dermatology | Date</h8>
+    <div class="article-metadata" itemprop="author">
+      <span itemprop="author name" itemtype="http://schema.org/Person">Gangal A., <strong>Sood A.</strong>, Sangari A., Stoff B.K.</span>
+      <div class="btn-links">
+       <!-- <button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
+          href="adityasood.me">
+        Link
+        </button>   -->
       </div>
-      <!-- // #box-testimonials -->
     </div>
-    <!-- // .seven -->
   </div>
-  <!-- // .container -->
-</div>
-<!-- // #section-contact -->
-<p></p>
-<!-- Footer
-                ================================================== -->
-<div id="section-footer"> 
-  <div class="container"> 
-    <div class="six columns"> 
-        <p><a href="mailto:aditya.sood2@gmail.com"><font="white"><strong>aditya.sood2@gmail.com</strong></font></a></p>
+
+
+
+  <div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle">
+    <a href="https://www.adityasood.me/publication/burst-suppression/"  itemprop="url"><span itemprop="name">Recommending expensive treatments: An ethical analysis</span></a> 
+    <br><h8> Journal of the American Academy of Dermatology | Date</h8>   
+    <div class="article-metadata" itemprop="author">
+      <span itemprop="author name" itemtype="http://schema.org/Person"> <strong> Sood A. </strong>, Sangari A., Stoff B.K.</span>
+      <div class="btn-links">
+       <!-- <button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
+          href="adityasood.me">
+        Link
+        </button>   -->
+      </div>
     </div>
-    <!-- // .six -->
-    <div class="ten columns"> 
-      <ul id="social">
-        <!--<li class="aiga"><a href="https://www.aiga.org/profile.aspx?uid=112780&amp;fromdirectory=true" title=""
-                                    target="_blank"><img src="images/icons/icon_aiga.png" alt="Aiga"/></a></li>-->
-        <li class="twitter"><a href="https://twitter.com/theadityasood" title="" target="_blank"><img
-                        src="images/icons/icon_twitter.png" alt="Twitter"/></a></li>
-        <!--<li class="beh"><a href="https://www.behance.net/anthonywiktor" title="" target="_blank"><img
-                        src="images/icons/icon_behance.png" alt="Behance"/></a></li>-->
-        <li class="linkedin"><a href="https://www.linkedin.com/pub/aditya-sood/51/a91/6b3" title=""
-                                        target="_blank"><img src="images/icons/icon_linkedin.png" alt="Linkedin"/></a> 
-        </li>
-        <!--<li class="dribble"><a href="https://dribbble.com/anthonywiktor" title="" target="_blank"><img
-                        src="images/icons/icon_dribbble.png" alt="Dribbble"/></a></li>-->
-      </ul>
-      <!-- // ul#social -->
-    </div>
-    <!-- // . -->
-    <div class="clear"></div>
   </div>
-  <!-- // .container -->
-</div>
-<!-- // #section-footer -->
-<p></p>
-<!-- JS
+
+
+  
+
+  <div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle">
+    <a href="https://www.adityasood.me/publication/burst-suppression/"  itemprop="url"><span itemprop="name">Ethical Considerations of Genetic Expression Profiling for Melanoma Prognosis</span></a>    
+    <br><h8> Journal of the American Academy of Dermatology | 2022</h8>
+    <div class="article-metadata" itemprop="author">
+      <span itemprop="author name" itemtype="http://schema.org/Person"><strong> Sood A. </strong>, Sangari A., Stoff B.K.
+      <div class="btn-links">
+       <!-- <button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
+          href="adityasood.me">
+        Link
+        </button>   -->
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle">
+    <a href="https://www.adityasood.me/publication/burst-suppression/"  itemprop="url"><span itemprop="name">Navigating internet-based misinformation with patients in clinic</span></a>    
+    <br><h8> Journal of the American Academy of Dermatology | 2022</h8>
+    <div class="article-metadata" itemprop="author">
+        <span itemprop="author name" itemtype="http://schema.org/Person"><strong> Sood A. </strong>, Sangari A., and Stoff B.K.</span>
+        <div class="btn-links">
+            <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://doi.org/10.1016/j.jaad.2022.03.038" target="_blank" rel="noopener">
+				<i class="fab fa-github mr-1"></i>
+				DOI: doi:10.1016/j.jaad.2022.03.038
+            </a>      
+        </div>
         
-                * jquery-1.9.0.js 					- jQuery
-                * jquery-ui.js						- jQuery UI
-                * bootstrap-scrollspy.js			- automatically updates nav targets based on scroll position
-                * jquery.foundation.reveal.js		- jQuery modal pop-up plugin from Zurb Foundation
-          * jquery.isotope.min.js          - Layout for work section
-                * jquery.custom.js					- custom jQuery scripts
-                ================================================== -->
-<script src="https://code.jquery.com/jquery-1.9.0.js" type="text/javascript"></script>
-<script src="https://code.jquery.com/ui/1.10.0/jquery-ui.js" type="text/javascript"></script>
-<script src="js/bootstrap-scrollspy.js" type="text/javascript"></script>
-<script src="js/jquery.ajaxContactForm.js" type="text/javascript"></script>
-<script src="js/jquery.foundation.reveal.js" type="text/javascript"></script>
-<script src="js/jquery.isotope.min.js" type="text/javascript"></script>
-<script src="js/jquery.custom.js" type="text/javascript"></script>
-<script src="js/scripts.js" type="text/javascript"></script>
+    </div>
+  </div>
 
 
-<script type="text/javascript" src="js/jquery-appear/jquery.appear.js"></script>
-<!-- Because jQuery opacity (fadeTo) is being rendered in a weird way in IE browsers, these are only loaded on non-IE browsers -->
-<p></p>
-<!--[if !IE]> -->
-<script src="js/jquery.custom.noIE.js" type="text/javascript"></script>
-<!-- <![endif]-->
-<p></p>
-<!-- End Document
-        ================================================== -->
-<p></p>
 
-<script type="text/javascript" src="js/jquery.parallax-1.1.3.js"></script>
-<script type="text/javascript">
-    $(document).ready(function(){
-        if ($.fn.parallax){
-            $('#working-section').parallax("50%", 0.1,false);
+  <div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle">
+    <a href="https://www.adityasood.me/publication/burst-suppression/"  itemprop="url"><span itemprop="name">Challenging ethical scenarios reported by American Society of Dermatopathology members: a qualitative analysis</span></a>    
+    <br><h8> Journal of the American Academy of Dermatology | 2021</h8>
+    <div class="article-metadata" itemprop="author">
+      <span itemprop="author name" itemtype="http://schema.org/Person"><strong> Sood A. </strong>, Brahmbhatt M., Flowers N., Yeung H., Vong G., and Stoff B.K.</span>
+      <div class="btn-links">
+       <button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
+          href="https://doi.org/10.1111/cup.14137">
+        Link
+        </button>  
+      </div>
+    </div>
+  </div>
 
-            $('.parrallax-element, .parrallax-background').each(function () {
-                $(this).css('background-image'+ $(this).attr("data-background-image") + ')');
-                $(this).css('height',  $(this).attr("data-background-height"));
-                $(this).css('width',  $(this).attr("data-background-width"));
-                $(this).parallax("50%", 0.1);
-            });
-        }
 
-        if ($.fn.appear){
-	        $('[data-ride="animated"]').appear();
-	        if( !$('html').hasClass('ie no-ie10') ) {       
-	            $('[data-ride="animated"]').addClass('appear');
-	            $('[data-ride="animated"]').on('appear', function() {
-	                var $el = $(this), $ani = ($el.data('animation') || 'fadeIn'), $delay;
-	                if ( !$el.hasClass('animated') ) {  
-	                    $delay = $el.data('delay') || 0;
-	                    setTimeout(function(){
-	                        $el.removeClass('appear').addClass( $ani + " animated" );
-	                    }, $delay);
-	                }
-	            });
-	        };
-	    }
-    });
-</script>
+  <div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle">
+    <a href="https://www.adityasood.me/publication/burst-suppression/"  itemprop="url"><span itemprop="name">The ethics of using biased Artificial Intelligence programs in clinic</span></a>    
+    <br><h8> Journal of the American Academy of Dermatology | 2021</h8>
+    <div class="article-metadata" itemprop="author">
+      <span itemprop="author name" itemtype="http://schema.org/Person"><strong> Sood A. </strong>, Sangari A., Chen J., and Stoff B.K.</span>
+      <div class="btn-links">
+      <button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
+          href="https://doi.org/10.1016/j.jaad.2021.11.031">
+        DOI
+        </button>  
+      </div>
+    </div>
+  </div> 
 
-</body>
+					</div>
+				</div>
+			</div>
+            </div>
+		</section>
+		<section id="abstracts" class="home-section wg-pages   "  >
+			<div class="container">
+				<div class="row">
+					<div class="col-12 col-lg-4 section-heading">
+						<h1>Published Abstracts</h1>
+					</div>
+					<div class="col-12 col-lg-8">
+						
+                        <div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle">
+							
+								<div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle">
+									<a href="https://doi.org/10.1161/circ.144.suppl_1.14410"  itemprop="url"><span itemprop="name">Predicting Intubation and Ventilation Needs Upon Admission for Intensive Care Patients with Congestive Heart Failure</span></a>
+                                    <br><h8>Circulation | 2021</h8>
+									<div class="article-metadata" itemprop="author">
+										<span itemprop="author name" itemtype="http://schema.org/Person">Sangari A., <strong>Sood A.</strong>, et. al.</span>
+										<div class="btn-links">
+											<button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
+												href="doi.org/10.1161/circ.144.suppl_1.14410">
+											Link
+											</button>   
+										</div>
+									</div>
+								</div>
+							</div>
+					
+                 
+           
+						<div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle">
+								<div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle">
+									<a href="https://doi.org/10.1161/circ.144.suppl_1.14410"  itemprop="url"><span itemprop="name">Improving Patient Selection in International Pediatric ECPR Cohorts</span></a>
+                                    <br><h8>Annals of Emergency Medicine | November 2021</h8>
+									<div class="article-metadata" itemprop="author">
+										<span itemprop="author name" itemtype="http://schema.org/Person">Sangari A., Sood N., <strong>Sood A.</strong>, et. al.</span>
+										<div class="btn-links">
+											<button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
+												href="doi.org/10.1161/circ.144.suppl_1.14410">
+											Link
+											</button>   
+										</div>
+									</div>
+								</div>
+							</div>
+					
+    
+						<div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle">
+							
+								<div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle">
+									<a href="https://doi.org/10.1161/circ.144.suppl_1.14410"  itemprop="url"><span itemprop="name">Oil Paint Necrotizing Hand Dermatitis</span></a>
+                                    <br><h8>Journal of Investigative Dermatology | 2022</h8>
+									<div class="article-metadata" itemprop="author">
+										<span itemprop="author name" itemtype="http://schema.org/Person"><strong>Sood A.</strong>, Barrett D., Cheeley T.</span>
+										<div class="btn-links">
+											<button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
+												href="doi.org/10.1161/circ.144.suppl_1.14410">
+											Link
+											</button>   
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+                    </div>
+            </div>
+		</section>
+		<section id="posters" class="home-section wg-pages   "  >
+			<div class="container">
+				<div class="row">
+					<div class="col-12 col-lg-4 section-heading">
+						<h1>Posters</h1>
+					</div>
+					<div class="col-12 col-lg-8">
+						<!--<h7>National</h7>
+						<hr />-->
+                    <ol style="list-style-type: decimal;">
+    <li style="font-family: Georgia, serif; font-size: 16px;"><span style="color: black;">Sood A. and Sood A. (2022) &ldquo;COVID-19&rsquo;s Effect on Digitization of Future Work: Complementary Role of Non-Pharmaceutical Interventions&rdquo; Special Session on &ldquo;The Influence of Digital Economy on Regional Economy Development&rdquo; Invited talk by LiaoNing University.</span></li>
+    <li style="font-family: Georgia, serif; font-size: 16px;"><strong><span style="color:black;">Sood A.</span></strong><span style="color: black;">, Dieudonne R., Chopra D., Westerkam L., Siira M., Sayed C., Lev-Tov H., Orenstein L.V., 2022 &ldquo;Examining Food Insecurity in Patients with Hidradenitis Suppurativa&rdquo;. Symposium on Hidradenitis Suppurativa Advances.</span></li>
+    <li style="font-family: Georgia, serif; font-size: 16px;"><span style="color: black;">Echuri H., <strong>Sood A.</strong>, Dieudonne R., Siira M., Baranowski M., Orenstein, L.V. (2022 )&ldquo;Prevalence of hyponatremia in a cohort of patients with hidradenitis suppurativa&rdquo;. Symposium on Hidradenitis Suppurativa Advances.</span></li>
+    <li style="font-family: Georgia, serif; font-size: 16px;"><span style="color: black;">Farooq P., Mehra, N. and<strong>&nbsp;Sood</strong> <strong>A</strong>. (2021) &ldquo; Do increased vaccination sites per person lead to increased vaccination rates - a study of Alabama&rdquo;.&nbsp;</span>
+        <ol style="list-style-type: circle; font-family: initial; font-size: initial;">
+            <li style="font-family: Georgia, serif; font-size: 16px;"><span style="color: black;">&nbsp; &nbsp;AMA Research Challenge Semifinalist</span></li>
+        </ol>
+    </li>
+    <li style="font-family: Georgia, serif; font-size: 16px;"><strong><span style="color: black;">Sood A.</span></strong><span style="color: black;">&nbsp;</span>and<span style="color: black;">&nbsp;Sangari A. (2021) &ldquo;Bias Prevention in Global Adoption of Artificial Intelligence Based Health Management Systems&rdquo;, UCF Global Health Conference</span>
+        <ol style="list-style-type: lower-alpha; font-family: initial; font-size: initial;">
+            <li style="font-family: Georgia, serif; font-size: 16px;"><span style="color: black;">Winner of best poster in category&nbsp;</span></li>
+        </ol>
+    </li>
+    <li style="font-family: Georgia, serif; font-size: 16px;"><span style="color: black;">Sangari A.&nbsp;</span>and<span style="color: black;">&nbsp;<strong>Sood A.</strong>, &ldquo;Establishing Global Guidelines for Integrating Artificial Intelligence Systems into Clinical Care&rdquo; UCF Global Health Conference</span></li>
+    <li style="font-family: Georgia, serif; font-size: 16px;"><strong>Sood A.&nbsp;</strong>and Anand D. <span style="color: black;">(2021), &ldquo;ALK-Positive Spitz Tumor&rdquo;, Zola-Cooper Dermatopathologic Conference</span></li>
+    <li style="font-family: Georgia, serif; font-size: 16px;"><strong>Sood A.&nbsp;</strong>and Anand D. <span style="color: black;">(2021), &ldquo;Aggressive Digital Papillary Adenocarcinoma&rdquo;, Zola-Cooper Dermatopathologic Conference</span></li>
+    <li style="font-family: Georgia, serif; font-size: 16px;"><span style="color: black;">Sood A. and <strong>Sood A.</strong> (2020) &ldquo;COVID-19&rsquo;s Effect on Digitization of Future Work: A Multinational Diffusion Study using Functional Data Analysis&rdquo; Special Session on &ldquo;COVID-19&rsquo;s Effect on Digitization of Future Work Transformation&rdquo; Invited talk by Department of Labor, US Government and APEC Conference on Labor Market Impact and Social Protection in the COVID-19 Era.</span></li>
+    <li style="font-family: Georgia, serif; font-size: 16px;"><span style="color: black;">Sangari A., Sangari A., <strong>Sood A.,&nbsp;</strong>and<strong>&nbsp;</strong>Sood N. (2020) &ldquo;Evaluating the Extent to which Posted Personally Identifying Information Jeopardizes the Privacy of Users of Breastcancer.org&rdquo;, Emory Global Perioperative Alliance Virtual Symposium</span></li>
+    <li style="font-family: Georgia, serif; font-size: 16px;"><strong>Sood A.&nbsp;</strong>and Anand D. (2019), &ldquo;Atypical Lymphocytic Lobular Panniculitis&rdquo;, American Society of Dermatopathology</li>
+    <li style="font-family: Georgia, serif; font-size: 16px;"><strong>Sood A.&nbsp;</strong>and Anand D. <span style="color: black;">(2019), &ldquo;Lamotrigine-Induced Cutaneous CD 30+ Anaplastic Large Cell Lymphoma&rdquo;, American Society of Dermatopathology</span></li>
+    <li style="font-family: Georgia, serif; font-size: 16px;"><strong>Sood A.&nbsp;</strong>and Anand D. <span style="color: black;">(2019), &ldquo;Degos Disease&rdquo;, American Society of Dermatopathology</span></li>
+    <li style="font-family: Georgia, serif; font-size: 16px;"><strong>Sood A.&nbsp;</strong>et al. (2018), &ldquo;Effect of Metformin on Urine Concentrating Ability in Sickle Cell Mice,&rdquo; American Society of Nephrology</li>
+    <li style="font-family: Georgia, serif; font-size: 16px;"><strong>Sood A.&nbsp;</strong>and Anand D. <span style="color: black;">(2019), &ldquo;Atypical Lymphocytic Lobular Panniculitis&rdquo;, Zola Cooper Dermatopathologic Conference&nbsp;</span></li>
+    <li style="font-family: Georgia, serif; font-size: 16px;"><strong>Sood A.&nbsp;</strong>and Anand D. <span style="color: black;">(2019), &ldquo;Lamotrigine-Induced Cutaneous CD 30+ Anaplastic Large Cell Lymphoma&rdquo;, Zola Cooper Dermatopathologic Conference&nbsp;</span></li>
+    <li style="font-family: Georgia, serif; font-size: 16px;"><strong>Sood A.&nbsp;</strong>and Anand D. <span style="color: black;">(2019), &ldquo;Degos Disease&rdquo;, Zola Cooper Dermatopathologic Conference&nbsp;</span></li>
+</ol>
+<ol start="18" style="margin-bottom:0in;margin-top:0in;" type="1">
+    <li style="margin: 0in; font-size: 16px; font-family: Georgia, serif; color: black;"><strong>Sood A.&nbsp;</strong>et al. (2018), &ldquo;Effect of Metformin on Urine Concentrating Ability in Sickle Cell Mice,&rdquo; Kidney, Urologic, and Hematologic Diseases Summer Undergraduate Research Symposium at Harvard University</li>
+    <li style="margin: 0in; font-size: 16px; font-family: Georgia, serif; color: black;"><strong>Sood A.&nbsp;</strong>(2017), &ldquo;Exploring Group Configuration and its Effect On Group Performance,&rdquo; Undergraduate Research Symposium, University of Georgia</li>
+    <li style="margin: 0in; font-size: 16px; font-family: Georgia, serif; color: black;"><strong><span style="color:windowtext;">Sood A.&nbsp;</span></strong><span style="color: windowtext;">and Anand D.&nbsp;</span>(2017), &ldquo;Ectopic Extramammary Paget&rsquo;s Disease Presenting on the Face- An Extraordinary Case Presentation &amp; Discussion&rdquo;, Zola Cooper Dermatopathologic Conference</li>
+    <li style="margin: 0in; font-size: 16px; font-family: Georgia, serif; color: black;"><strong><span style="color:windowtext;">Sood A.&nbsp;</span></strong><span style="color: windowtext;">and Anand D.&nbsp;</span>(2017), &ldquo;The lesser known CD8+ Cutaneous T-cell Lymphomas- What are they &amp; why should we know about them?&rdquo;, Zola Cooper Dermatopathologic Conference</li>
+    <li style="margin: 0in; font-size: 16px; font-family: Georgia, serif; color: black;"><strong>Sood A.&nbsp;</strong>and Daniel T. (2017), &ldquo;Oligodendrocyte Precursor Cell Specification: Convergence of Shh, Tgf-&beta; &amp; Notch Signaling,&rdquo; Regenerative Bioscience Undergraduate Symposium, University of Georgia</li>
+    <li style="margin: 0in; font-size: 16px; font-family: Georgia, serif; color: black;"><strong><span style="color:windowtext;">Sood A.&nbsp;</span></strong><span style="color: windowtext;">and Anand D.&nbsp;</span>(2016) &ldquo;Diffuse dermal angiomatosis/Reactive angioendotheliomatosis- What is this, and why should I know about it?&rdquo;, Zola Cooper Dermatopathologic Conference</li>
+    <li style="margin: 0in; font-size: 16px; font-family: Georgia, serif; color: black;"><strong><span style="color:windowtext;">Sood A.&nbsp;</span></strong><span style="color: windowtext;">and Anand D.&nbsp;</span>(2016) &ldquo;Blastic Plasmacytoid Dendritic Cell Neoplasm- An under recognized but deadly tumor&rdquo;, Zola Cooper Dermatopathologic Conference</li>
+    <li style="margin: 0in; font-size: 16px; font-family: Georgia, serif; color: black;"><strong>Sood A.</strong>, Calloway C., and Daniel T. (2016), &ldquo;Oligodendrocyte Precursor Cell Specification: Convergence of Shh, Tgf-&beta; &amp; Notch Signaling,&rdquo; Regenerative Bioscience Undergraduate Symposium, University of Georgia.</li>
+</ol>			
+		</section>
+		<script src="../cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+		<script src="../cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+		<script src="../cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+		<script src="../cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>            <script src="../cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
+		<script src="../cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/r.min.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+
+		<script src="../cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+		<script src="../cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+		<script src="js/academic.min.16bbb3750feb7244c9bc409a5a4fe678.js"></script>    
+	
+                    
+                    </body>
 </html>
