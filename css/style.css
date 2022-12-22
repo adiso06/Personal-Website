@@ -8198,7 +8198,7 @@ ul.share li:hover i{
 .section-heading h1{
     margin:0 0 10px;
     position: sticky;
-    top: 90px;
+    top: 100px;
 }
 .section-heading p{
     font-weight:400;
@@ -8813,7 +8813,7 @@ body.dark,.dark .docs-toc-link,.dark .docs-sidebar .nav>li:not(.active)>a,.dark 
 div.mermaid{
     width:100%;
     text-align:center;
-    margin-bottom:1rem
+    margin-bottom:1remg
 }
 
 
@@ -8840,13 +8840,4 @@ div.mermaid{
   display: inline;
 }
 
-.wg-portfolio img {
-  transition: all 0.5s;
-position: absolute;
-}
-
-
-
-    
-}
 --
