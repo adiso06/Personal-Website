@@ -1053,3 +1053,10 @@ cursor: url(../images/cross.png), auto;
 			#section-worksgrid .item:hover span { z-index: 20; position: absolute; width: 100%; height: 100%; 
             display: inline-block; top: 0px; left: 0px; opacity: 1; }
 
+@media (min-width: 700px) {
+  body {
+    padding-left: 1600px;
+    padding-right: 1600px;
+  }
+}
+
