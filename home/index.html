@@ -6,53 +6,55 @@
     <title>Links</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="description" content=""/>
-   <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 
-<body>
-  <body style="background-color:grey;">
-      <div class="container">
-    <div class="col-xs-12">
+<body style="background-color:grey;">
+    <div class="container">
+        <div class="col-xs-12">
             <div class="text-center" style="padding-top: 30px; padding-bottom: 30px;">
                 <img class="backdrop linktree">
-                           </div>
-    </div>
-    </div>
-
-
-      <div class="container">
-
-            <div class="text-center">
-
-                <div style="padding-bottom: 30px;">
-                    <button onclick="location.href='http://76.122.116.220:5001'" type="button" class="btn btn-outline-light" style="width: 50%; padding-top:10px; padding-bottom:10px; padding-left:20px; padding-right:20px; font-weight: 600;">Radarr</button>
-                </div>
-                <div style="padding-bottom: 30px;">
-                    <button onclick="location.href='http://76.122.116.220:5002'" type="button" class="btn btn-outline-light" style="width: 50%; padding-top:10px; padding-bottom:10px; font-weight: 600;">Misc</button>
-                </div>
-                     <div style="padding-bottom: 30px;">
-                    <button onclick="location.href='http://76.122.116.220:5001'" type="button" class="btn btn-outline-light" style="width: 50%; padding-top:10px; padding-bottom:10px; font-weight: 600;">Sonarr</button>
-                </div>
-                 <div style="padding-bottom: 30px;">
-                    <button onclick="location.href='http://76.122.116.220:5004'" type="button" class="btn btn-outline-light" style="width: 50%; padding-top:10px; padding-bottom:10px; font-weight: 600;">Nodered</button>
-                </div>
-                            
-                  <div style="padding-bottom: 30px;">
-                    <button onclick="location.href='http://76.122.116.220:50001'" type="button" class="btn btn-outline-light" style="width: 50%; padding-top:10px; padding-bottom:10px; font-weight: 600;">HA</button>
-                </div>
-                <div style="padding-bottom: 30px;">
-                  <button onclick="location.href='http://76.122.116.220:5006'" type="button" class="btn btn-outline-light" style="width: 50%; padding-top:10px; padding-bottom:10px; font-weight: 600;">Readarr</button>
-              </div>  
-                 <div style="padding-bottom: 30px;">
-                    <button onclick="location.href='http://76.122.116.220:5007'" type="button" class="btn btn-outline-light" style="width: 50%; padding-top:10px; padding-bottom:10px; padding-left:20px; padding-right:20px; font-weight: 600;">Audiobookshelf</button>
-                </div>
             </div>
-        
-
+        </div>
     </div>
 
+    <div class="container">
+        <div class="text-center">
+            <script>
+                var ipAddress = '74.101.251.198';
+
+                function navigateTo(port) {
+                    location.href = 'http://' + ipAddress + ':' + port;
+                }
+            </script>
+
+            <div style="padding-bottom: 30px;">
+                <button onclick="navigateTo(5001)" type="button" class="btn btn-outline-light" style="width: 50%; padding-top:10px; padding-bottom:10px; padding-left:20px; padding-right:20px; font-weight: 600;">Radarr</button>
+            </div>
+            <div style="padding-bottom: 30px;">
+                <button onclick="navigateTo(5002)" type="button" class="btn btn-outline-light" style="width: 50%; padding-top:10px; padding-bottom:10px; font-weight: 600;">Misc</button>
+            </div>
+            <div style="padding-bottom: 30px;">
+                <button onclick="navigateTo(5003)" type="button" class="btn btn-outline-light" style="width: 50%; padding-top:10px; padding-bottom:10px; font-weight: 600;">Sonarr</button>
+            </div>
+            <div style="padding-bottom: 30px;">
+                <button onclick="navigateTo(5002)" type="button" class="btn btn-outline-light" style="width: 50%; padding-top:10px; padding-bottom:10px; font-weight: 600;">Readarr</button>
+            </div>
+            <div style="padding-bottom: 30px;">
+                <button onclick="navigateTo(5007)" type="button" class="btn btn-outline-light" style="width: 50%; padding-top:10px; padding-bottom:10px; font-weight: 600;">Audiobookshelf</button>
+            </div>
+            <div style="padding-bottom: 30px;">
+                <button onclick="navigateTo(5005)" type="button" class="btn btn-outline-light" style="width: 50%; padding-top:10px; padding-bottom:10px; font-weight: 600;">Tautulli</button>
+            </div>
+            <div style="padding-bottom: 30px;">
+                <button onclick="navigateTo(5009)" type="button" class="btn btn-outline-light" style="width: 50%; padding-top:10px; padding-bottom:10px; font-weight: 600;">Docker</button>
+            </div>
+            
+            <!-- Add more buttons here, using the navigateTo function with the appropriate port number -->
+        </div>
+    </div>
 </body>
-    </body>
+
 </html>
