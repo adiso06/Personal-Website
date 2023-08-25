@@ -27,6 +27,8 @@
 
                 function navigateTo(port) {
                     location.href = 'http://' + ipAddress + ':' + port;
+                function navigateToS(port) {
+                    location.href = 'https://' + ipAddress + ':' + port;
                 }
             </script>
 
@@ -49,7 +51,7 @@
                 <button onclick="navigateTo(5005)" type="button" class="btn btn-outline-light" style="width: 50%; padding-top:10px; padding-bottom:10px; font-weight: 600;">Tautulli</button>
             </div>
             <div style="padding-bottom: 30px;">
-                <button onclick="navigateTo(5009)" type="button" class="btn btn-outline-light" style="width: 50%; padding-top:10px; padding-bottom:10px; font-weight: 600;">Docker</button>
+                <button onclick="navigateToS(5009)" type="button" class="btn btn-outline-light" style="width: 50%; padding-top:10px; padding-bottom:10px; font-weight: 600;">Docker</button>
             </div>
             
             
