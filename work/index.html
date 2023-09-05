@@ -2,61 +2,49 @@
 <html lang="en">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <meta charset="UTF-8">
     <title>Links</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content=""/>
+    <meta name="description" content="">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 
-<body style="background-color:grey;">
+<body class="bg-grey">
     <div class="container">
-        <div class="col-xs-12">
-            <div class="text-center" style="padding-top: 30px; padding-bottom: 30px;">
-                <img class="backdrop linktree">
-            </div>
+        <div class="col-xs-12 text-center py-30">
+            <!-- Assuming you want to add an image, you should complete the img tag -->
+            <!-- <img src="path_to_your_image.jpg" alt="Description of Image" class="backdrop linktree"> -->
         </div>
     </div>
 
     <div class="container">
         <div class="text-center">
-            <script>
-                var ipAddress = '74.101.251.198';
-
-                function navigateTo(port) {
-                    location.href = 'http://' + ipAddress + ':' + port;
-                }
-            </script>
-
-            <div style="padding-bottom: 30px;">
-                <button onclick="location.href='https://myremoteaccess.northwell.edu/logon/LogonPoint/tmindex.html'" type="button" class="btn btn-outline-light" style="width: 50%; padding-top:10px; padding-bottom:10px; padding-left:20px; padding-right:20px; font-weight: 600;">Sunrise</button>
+            <div class="btn-container">
+                <button onclick="location.href='https://myremoteaccess.northwell.edu/logon/LogonPoint/tmindex.html'" class="custom-btn">Sunrise</button>
             </div>
-            <div style="padding-bottom: 30px;">
-                <button onclick="location.href='https://twwebprod.northwell.edu'" type="button" class="btn btn-outline-light" style="width: 50%; padding-top:10px; padding-bottom:10px; padding-left:20px; padding-right:20px; font-weight: 600;">AllScripts</button>
+            <div class="btn-container">
+                <button onclick="location.href='https://twwebprod.northwell.edu'" class="custom-btn">AllScripts</button>
             </div>
-           <!-- <div style="padding-bottom: 30px;">
-                <button onclick="location.href='https://www.amion.com/cgi-bin/ocs?Lo=!244d199aiovfkm%1for%26Enote=NoGT'" type="button" class="btn btn-outline-light" style="width: 50%; padding-top:10px; padding-bottom:10px; padding-left:20px; padding-right:20px; font-weight: 600;">North Shore - On Call</button>
-            </div>-->
-            <div style="padding-bottom: 30px;">
-                <button onclick="location.href='https://amion.com/cgi-bin/ocs'" type="button" class="btn btn-outline-light" style="width: 50%; padding-top:10px; padding-bottom:10px; padding-left:20px; padding-right:20px; font-weight: 600;">Am I On - MEDNSLIJ</button>
+            <!-- Commented out as per original code -->
+            <!-- <div class="btn-container">
+                <button onclick="location.href='https://www.amion.com/cgi-bin/ocs?Lo=!244d199aiovfkm%1for%26Enote=NoGT'" class="custom-btn">North Shore - On Call</button>
+            </div> -->
+            <div class="btn-container">
+                <button onclick="location.href='https://amion.com/cgi-bin/ocs'" class="custom-btn">Am I On - MEDNSLIJ</button>
             </div>
-            
-            <div style="padding-bottom: 30px;">
-                <button onclick="location.href='https://bit.ly/clinicstream'" type="button" class="btn btn-outline-light" style="width: 50%; padding-top:10px; padding-bottom:10px; padding-left:20px; padding-right:20px; font-weight: 600;">Didactics - 2021</button>
+            <div class="btn-container">
+                <button onclick="location.href='https://bit.ly/clinicstream'" class="custom-btn">Didactics - 2021</button>
             </div>
-            <div style="padding-bottom: 30px;">
-                <button onclick="location.href='https://northwell-my.sharepoint.com/:f:/g/personal/mhellerman1_northwell_edu/Ejc7plLfcLVEp-Qv41hEFYgBK5lOFCWQ5Dkfy6wQ0gtSkQ?e=1nsfo8'" type="button" class="btn btn-outline-light" style="width: 50%; padding-top:10px; padding-bottom:10px; padding-left:20px; padding-right:20px; font-weight: 600;">Clinic Dropbox</button>
+            <div class="btn-container">
+                <button onclick="location.href='https://northwell-my.sharepoint.com/:f:/g/personal/mhellerman1_northwell_edu/Ejc7plLfcLVEp-Qv41hEFYgBK5lOFCWQ5Dkfy6wQ0gtSkQ?e=1nsfo8'" class="custom-btn">Clinic Dropbox</button>
             </div>
-            <div style="padding-bottom: 30px;">
-                <button onclick="location.href='https://northwell-my.sharepoint.com/:f:/g/personal/mhellerman1_northwell_edu/Equeez-DAnBItp-hqUHPcfcBHcI0spZOUX7qEaO7haG6pQ'" type="button" class="btn btn-outline-light" style="width: 50%; padding-top:10px; padding-bottom:10px; padding-left:20px; padding-right:20px; font-weight: 600;">Clinic Lectures</button>
+            <div class="btn-container">
+                <button onclick="location.href='https://northwell-my.sharepoint.com/:f:/g/personal/mhellerman1_northwell_edu/Equeez-DAnBItp-hqUHPcfcBHcI0spZOUX7qEaO7haG6pQ'" class="custom-btn">Clinic Lectures</button>
             </div>
-            <div style="padding-bottom: 30px;">
-                <button onclick="location.href='http://museapp.nslijhs.net:8080/Search/New" type="button" class="btn btn-outline-light" style="width: 50%; padding-top:10px; padding-bottom:10px; padding-left:20px; padding-right:20px; font-weight: 600;">Muse App</button>
+            <div class="btn-container">
+                <button onclick="location.href='http://museapp.nslijhs.net:8080/Search/New'" class="custom-btn">Muse App</button>
             </div>
-    
-            <!-- Add more buttons here, using the navigateTo function with the appropriate port number -->
         </div>
     </div>
 </body>
