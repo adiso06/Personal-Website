@@ -1,0 +1,61 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif; /* You can change this to your preferred font */
+    margin: 0;
+    padding: 0;
+    background-color: grey;
+}
+
+.container {
+    max-width: 1200px; /* Adjust this value based on your design preference */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Image Styles */
+.backdrop {
+    max-width: 100%; /* Ensures the image doesn't overflow its container */
+    height: auto; /* Maintains the image's aspect ratio */
+}
+
+.linktree {
+    /* Add any specific styles for the linktree image class here */
+}
+
+/* Button Styles */
+.custom-btn {
+    display: inline-block;
+    width: 50%;
+    padding: 10px 20px;
+    font-weight: 600;
+    border: 1px solid white;
+    background-color: transparent;
+    color: white;
+    text-align: center;
+    text-decoration: none; /* Removes underline if the button is an anchor link */
+    cursor: pointer; /* Changes the cursor to a hand when hovering over the button */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.custom-btn:hover {
+    background-color: white; /* Change color on hover */
+    color: grey; /* Text color on hover */
+}
+
+.btn-container {
+    padding-bottom: 30px;
+}
+
+/* Utility Classes */
+.py-30 {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.bg-grey {
+    background-color: grey;
+}
