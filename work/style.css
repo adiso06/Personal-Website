@@ -59,3 +59,40 @@ body {
 .bg-grey {
     background-color: grey;
 }
+
+#Buttons
+.outer-button {
+    position: relative;
+    width: 150px;
+    height: 50px;
+    border: 1px solid black;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ddd;
+}
+
+.inner-button {
+    display: none;
+    width: calc(100% / 3);
+    flex-grow: 1;
+    border: none;
+    padding: 10px;
+    background-color: #eee;
+    transition: background-color 0.3s;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    opacity: 0;  /* Hide the text */
+}
+
+.outer-button:hover .inner-button {
+    display: block;
+    opacity: 1;  /* Show the text on hover */
+}
+
+.inner-button:hover {
+    background-color: #ccc;
+}
+
