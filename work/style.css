@@ -61,38 +61,50 @@ body {
 }
 
 #Buttons
+/* ... Your existing CSS ... */
+
 .outer-button {
     position: relative;
     width: 150px;
     height: 50px;
     border: 1px solid black;
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     background-color: #ddd;
 }
 
+.outer-text {
+    position: absolute;
+    z-index: 2;  /* Ensures the text is above the inner buttons */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);  /* Centers the text inside .outer-button */
+    width: 100%;
+    text-align: center;
+    transition: opacity 0.3s;
+}
+
 .inner-button {
-    display: none;
     width: calc(100% / 3);
     flex-grow: 1;
     border: none;
     padding: 10px;
     background-color: #eee;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, opacity 0.3s;
     text-align: center;
     text-decoration: none;
     color: #333;
     opacity: 0;  /* Hide the text */
+    cursor: pointer;
+}
+
+.outer-button:hover .outer-text {
+    opacity: 0;  /* Hide the outer text on hover */
 }
 
 .outer-button:hover .inner-button {
-    display: block;
     opacity: 1;  /* Show the text on hover */
 }
 
 .inner-button:hover {
     background-color: #ccc;
 }
-
