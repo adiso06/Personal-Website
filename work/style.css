@@ -1,34 +1,27 @@
-/* General Styles */
 body {
-    font-family: Arial, sans-serif; /* You can change this to your preferred font */
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: grey;
+    background-color: rgb(122, 122, 122);
 }
 
 .container {
-    max-width: 1200px; /* Adjust this value based on your design preference */
+    max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
 }
 
-.text-center {
-    text-align: center;
+.btn-container, .btn-group {
+    position: relative; /* This is added to ensure dropdown positioning is relative to the button */
 }
 
-/* Image Styles */
-.backdrop {
-    max-width: 100%; /* Ensures the image doesn't overflow its container */
-    height: auto; /* Maintains the image's aspect ratio */
+.btn-group {
+width: 100%; /* Same width as .custom-btn */
+display: block; /* To make it behave like a block element */
+margin: 10px auto; /* centering and spacing, same as .custom-btn */
 }
 
-.linktree {
-    /* Add any specific styles for the linktree image class here */
-}
-
-/* Button Styles */
 .custom-btn {
-    display: inline-block;
     width: 50%;
     padding: 10px 20px;
     font-weight: 600;
@@ -36,75 +29,60 @@ body {
     background-color: transparent;
     color: white;
     text-align: center;
-    text-decoration: none; /* Removes underline if the button is an anchor link */
-    cursor: pointer; /* Changes the cursor to a hand when hovering over the button */
-    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 10px auto;  /* centering and spacing */
 }
 
 .custom-btn:hover {
-    background-color: white; /* Change color on hover */
-    color: grey; /* Text color on hover */
+    background-color: white;
+    color: grey;
 }
 
-.btn-container {
-    padding-bottom: 30px;
-}
-
-/* Utility Classes */
-.py-30 {
-    padding-top: 30px;
-    padding-bottom: 30px;
-}
-
-.bg-grey {
-    background-color: grey;
-}
-
-#Buttons
-/* ... Your existing CSS ... */
-
-.outer-button {
+/* Styling for the dropdown button */
+.dropdown-toggle {
     position: relative;
-    width: 150px;
-    height: 50px;
-    border: 1px solid black;
-    overflow: hidden;
-    background-color: #ddd;
 }
 
-.outer-text {
+.dropdown-toggle::after { /* This is the arrow indicator for dropdown */
+    content: '▼';
     position: absolute;
-    z-index: 2;  /* Ensures the text is above the inner buttons */
+    right: 10px;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);  /* Centers the text inside .outer-button */
-    width: 100%;
+    transform: translateY(-50%);
+}
+
+.dropdown-menu {
+    position: relative; /*  positioning for the dropdown */
+    left: 50%; /* Positioning it to the right of the button */
+    top: 0; /* Aligning it to the top of the button */
+    width: auto; /* Let it adjust its width based on content */
+    margin: 0; /* No margin */
+    border: 1px solid white; /* Consistent border with buttons */
+    background-color: grey; /* Set the background color to match the body */
+    display: none; /* Initially hidden */
+}
+
+.btn-group:hover .dropdown-menu {
+    display: block; /* Show dropdown on hover */
+}
+
+.dropdown-item {
+    color: white;
     text-align: center;
-    transition: opacity 0.3s;
+    border-top: 1px solid #bbb;
+    transition: background-color 0.3s;
+    padding: 10px 20px; /* Consistent padding with buttons */
+    display: block; /* Make it block for full width */
+    width: 100%; /* Full width */
 }
 
-.inner-button {
-    width: calc(100% / 3);
-    flex-grow: 1;
-    border: none;
-    padding: 10px;
-    background-color: #eee;
-    transition: background-color 0.3s, opacity 0.3s;
-    text-align: center;
-    text-decoration: none;
-    color: #333;
-    opacity: 0;  /* Hide the text */
-    cursor: pointer;
+.dropdown-item:first-child {
+    border-top: none;
 }
 
-.outer-button:hover .outer-text {
-    opacity: 0;  /* Hide the outer text on hover */
-}
-
-.outer-button:hover .inner-button {
-    opacity: 1;  /* Show the text on hover */
-}
-
-.inner-button:hover {
-    background-color: #ccc;
+.dropdown-item:hover {
+    background-color: white;
+    color: grey;
 }
