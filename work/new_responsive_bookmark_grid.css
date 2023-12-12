@@ -1,0 +1,50 @@
+
+/* New Stylesheet for Updated Design */
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif; /* Update as per the design requirement */
+}
+
+/* Flex container for the buttons to center align */
+.row {
+    display: flex;
+    justify-content: center; /* Center the buttons horizontally */
+    flex-wrap: wrap; /* Allow wrapping */
+}
+
+/* Style for the inner-container which is now the button */
+.inner-container {
+    background-color: #f2f2f2; /* Light grey background or as per design */
+    border-radius: 15px; /* Rounded corners for the buttons */
+    padding: 10px 20px; /* Padding inside the buttons */
+    margin: 5px; /* Space between the buttons */    
+    text-align: center; /* Center the text inside the button */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: Adds shadow for depth */
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.inner-container a {
+    text-decoration: none;
+    color: #010106; /* Hyperlink color */
+    font-size: 16px; /* As per design requirement */
+}
+
+/* Hover effect for buttons */
+.inner-container:hover {
+    transform: translateY(-2px); /* Slight raise effect on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .inner-container {
+        width: 100%; /* Full width for smaller screens */
+        margin-bottom: 10px; /* Space between stacked buttons */
+    }
+}
