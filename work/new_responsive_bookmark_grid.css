@@ -31,10 +31,15 @@ body {
 }
 
 .inner-container a {
+    display: block; /* Make the link fill the container */
+    width: 100%; /* Full width of the container */
+    height: 100%; /* Full height of the container */
+    padding: 10px 20px; /* Padding for the link, adjust as needed */
     text-decoration: none;
     color: #010106; /* Hyperlink color */
     font-size: 16px; /* As per design requirement */
 }
+
 
 /* Hover effect for buttons */
 .inner-container:hover {
