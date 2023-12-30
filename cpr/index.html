@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles_v1_2.css">
+</head>
+<body>
+
+<div class="timer-container flowchart-background">
+    <!-- Plus button and dropdown menu -->
+    <div class="dropdown">
+        <button class="dropbtn">Meds</button>
+        <div class="dropdown-content" id="myDropdown">
+            <button onclick="iterateCount('lido')">lido (0)</button>
+            <button onclick="iterateCount('amio')">amio (0)</button>
+            <button onclick="iterateCount('bicarb')">bicarb (0)</button>
+            <button onclick="iterateCount('ca2+')">ca2+ (0)</button>
+        </div>
+    </div>
+    <!-- Shock button -->
+    <button class="shock-button" id="shockButton">⚡ (0)</button>
+
+    <!-- Timer layout and functionality -->
+    <div class="top-timers">
+        <div class="timer" id="timer1" onclick="startStopResetTimer(1)">
+            <div>00:00.0</div>
+            <div class="label" id="label1">Epinephrine: 0</div>
+        </div>
+        <div class="timer" id="timer2" onclick="startStopResetTimer(2)">
+            <div>00:00.0</div>
+            <div class="label" id="label2">CPR: 0</div>
+        </div>
+    </div>
+    <div class="image-container">
+      <!-- This will now specifically hold the background image -->
+  </div>
+    <div class="bottom-timer">
+        <div class="timer" id="timer3" onclick="toggleTimer(3)">
+            <div>00:00.0</div>
+            <div class="label">Total Time</div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Original timer logic from provided file
+  var timers = {
+    1: { running: false, startTime: null, elapsed: 0, interval: null, count: 0 },
+    2: { running: false, startTime: null, elapsed: 0, interval: null, count: 0 },
+    3: { running: false, startTime: null, elapsed: 0, interval: null }
+  };
+
+  function formatTime(elapsed) {
+    var minutes = Math.floor(elapsed / 60);
+    var seconds = Math.floor(elapsed) % 60;
+    var tenths = Math.floor(elapsed * 10) % 10;
+    return (minutes < 10 ? '0' : '') + minutes + ':' + (seconds < 10 ? '0' : '') + seconds + '.' + tenths;
+  }
+
+  function updateTimerDisplay(timerId) {
+    var timerElement = document.getElementById('timer' + timerId);
+    timerElement.children[0].textContent = formatTime(timers[timerId].elapsed);
+  }
+
+  function startTimer(timerId) {
+    if (timers[timerId].running) return;
+    timers[timerId].running = true;
+    timers[timerId].startTime = Date.now() - timers[timerId].elapsed * 1000;
+    timers[timerId].interval = setInterval(function() {
+      timers[timerId].elapsed = (Date.now() - timers[timerId].startTime) / 1000;
+      updateTimerDisplay(timerId);
+    }, 100);
+  }
+
+  function stopTimer(timerId) {
+    if (!timers[timerId].running) return;
+    timers[timerId].running = false;
+    clearInterval(timers[timerId].interval);
+    timers[timerId].elapsed = (Date.now() - timers[timerId].startTime) / 1000;
+    updateTimerDisplay(timerId);
+    if (timerId !== 3) { // Update the count for the top timers
+      timers[timerId].count++;
+      var labelElement = document.getElementById('label' + timerId);
+      var labelText = (timerId === 1 ? 'Epinephrine: ' : 'CPR: ') + timers[timerId].count;
+      labelElement.textContent = labelText;
+    }
+  }
+
+  function resetTimer(timerId) {
+    timers[timerId].elapsed = 0;
+    updateTimerDisplay(timerId);
+  }
+
+  function startStopResetTimer(timerId) {
+    if (!timers[timerId].running && timers[timerId].elapsed === 0) {
+      // First click - start the timer
+      startTimer(timerId);
+    } else if (timers[timerId].running) {
+      // Second click - stop the timer
+      stopTimer(timerId);
+    } else {
+      // Third click - reset and start the timer
+      resetTimer(timerId);
+      startTimer(timerId);
+    }
+    // Ensure bottom timer is running when the top timers are interacted with
+    if (!timers[3].running) {
+      startTimer(3);
+    }
+  }
+
+  function toggleTimer(timerId) {
+    if (!timers[timerId].running) {
+      startTimer(timerId);
+    } else {
+      stopTimer(timerId);
+      resetTimer(timerId); // Reset the bottom timer when stopped
+    }
+  }
+// Dropdown functionality
+document.querySelector('.dropbtn').onclick = function() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        for (var i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
+    }
+}
+function iterateCount(drug) {
+    var button = document.querySelector(`button[onclick="iterateCount('${drug}')"]`);
+    var count = parseInt(button.textContent.match(/\d+/)[0]) + 1;
+    button.textContent = `${drug} (${count})`;
+}
+
+// Shock button functionality
+var shockCount = 0;
+document.getElementById('shockButton').onclick = function() {
+    shockCount += 1;
+    this.textContent = `⚡ (${shockCount})`;
+};
+
+// Timer color change logic
+function checkTimerColors() {
+    // Assuming timers have a method to get elapsed time in seconds
+    var cprTime = getTimerSeconds('timer2'); // Replace with actual method to get timer2 seconds
+    var epiTime = getTimerSeconds('timer1'); // Replace with actual method to get timer1 seconds
+
+    // Logic to turn timer red after set times
+    if (cprTime >= 120) { // 2 minutes for CPR
+        document.getElementById("timer2").classList.add("timer-red");
+    } else {
+        document.getElementById("timer2").classList.remove("timer-red");
+    }
+
+    if (epiTime >= 300) { // 5 minutes for Epi
+        document.getElementById("timer1").classList.add("timer-red");
+    } else {
+        document.getElementById("timer1").classList.remove("timer-red");
+    }
+}
+
+// Regularly check for timer updates
+// This should be integrated with your existing timer update mechanism
+setInterval(function() {
+    // Assuming you have a function to update timer display
+    updateTimerDisplay(1);
+    updateTimerDisplay(2);
+    updateTimerDisplay(3);
+    checkTimerColors();
+}, 1000);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,97 @@
+/* CSS styles for the website */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+.timer-container {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+.top-timers {
+    display: flex;
+    justify-content: space-between; /* Adjust as needed */
+    align-items: center; /* Align items vertically center */
+    padding: 20px;
+}
+.bottom-timer {
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
+}
+.timer {
+    font-size: 2em;
+    background: rgba(0, 0, 0, 0.5); /* Translucent background */
+    padding: 10px;
+    border-radius: 10px;
+    display: inline-block;
+    cursor: pointer;
+}
+.flowchart-background {
+    /* Update this path to your image */
+    background-image: url('/Users/adityasood/Downloads/acls.jpg');
+    background-size:cover;
+    background-position:top;
+    height: 100%;
+}
+.label {
+    font-size: 0.8em;
+    color: #ddd;
+}
+
+/* Style for the shock button */
+.shock-button {
+    font-size: 1.5em;
+    background: grey; /* Green background, adjust color as needed */
+    color: white;
+    padding: 10px;
+    margin-left: 10px; /* 10px left margin for padding */
+    border: none;
+    cursor: pointer;
+    align-self: center; /* Align button vertically center in flex container */
+}
+
+/* Dropdown Button */
+.dropbtn {
+    background-color: grey;
+    color: white;
+    padding: 10px;
+    font-size: 1.52em;
+    border: none;
+    cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content button {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content button:hover {background-color: #f1f1f1}
+
+/* Style changes for timers when time criteria are met */
+.timer-red {
+    color: red;
+}
+
+.show {display: block;}

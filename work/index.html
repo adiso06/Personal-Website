@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Responsive Bookmark Grid</title>
+    <title>Hospital Bookmarks</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="new_responsive_bookmark_grid.css">
 
@@ -43,10 +43,58 @@
              <div class="col-md-4"> <div class="inner-container">  <a href="https://northwell-my.sharepoint.com/:f:/g/personal/mhellerman1_northwell_edu/Equeez-DAnBItp-hqUHPcfcBHcI0spZOUX7qEaO7haG6pQ" target="_blank">Clinic Lectures</a></div> </div>
         </div>
     </div>
+    <button id="modeToggle">Toggle Dark/Light Mode</button>
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/
 
 4.3.1/js/bootstrap.min.js"></script>
+
+<script>
+    // Wait for the DOM to fully load
+    document.addEventListener("DOMContentLoaded", function () {
+        // Select the toggle button
+        var modeToggle = document.getElementById('modeToggle');
+
+        // Listen for a click event on the toggle button
+        modeToggle.addEventListener('click', function () {
+            // Select the body of the website or the main container of your website
+            var body = document.body;
+
+            // Toggle the "dark-mode" class on and off on each click
+            body.classList.toggle('dark-mode');
+
+            // Optionally toggle a "light-mode" class if you want specific styles for light mode as well
+            body.classList.toggle('light-mode');
+        });
+    });
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var modeToggle = document.getElementById('modeToggle');
+        var body = document.body;
+        
+        // Check for saved user preference, if any, on page load
+        if(localStorage.getItem('dark-mode') === 'true'){
+            body.classList.add('dark-mode');
+        } else {
+            body.classList.add('light-mode');
+        }
+
+        modeToggle.addEventListener('click', function () {
+            body.classList.toggle('dark-mode');
+            body.classList.toggle('light-mode');
+
+            // Save the current preference to localStorage
+            if(body.classList.contains('dark-mode')){
+                localStorage.setItem('dark-mode', 'true');
+            } else {
+                localStorage.setItem('dark-mode', 'false');
+            }
+        });
+    });
+</script>
+
 </body>
 </html>

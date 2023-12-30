@@ -45,6 +45,40 @@ body {
     transform: translateY(-2px); /* Slight raise effect on hover */
 }
 
+/* Light theme styles */
+.light-mode {
+    background-color: #fff; /* White background */
+    color: #000; /* Black text */
+    /* other styles for light mode */
+}
+
+/* Dark theme styles */
+.dark-mode {
+    background-color: #333; /* Dark background */
+    color: #fff; /* White text */
+    /* other styles for dark mode */
+}
+
+/* Positioning the mode toggle button at the bottom left */
+#modeToggle {
+    position: fixed; /* Fixed position relative to the viewport */
+    left: 10px; /* Distance from the left */
+    bottom: 10px; /* Distance from the bottom */
+    padding: 10px 20px; /* Padding for the button for better click area and appearance */
+    /* Additional styling for the button */
+    background: #f2f2f2; /* Light grey background or any color you prefer */
+    border: none; /* No border for a modern look */
+    border-radius: 5px; /* Slightly rounded corners */
+    cursor: pointer; /* Cursor changes to a pointer to indicate this is clickable */
+    z-index: 1000; /* Ensure it's above other items, adjust number as necessary */
+}
+
+/* Optional: Add some hover effect for the button */
+#modeToggle:hover {
+    background-color: #e2e2e2; /* Slightly darker on hover for visual feedback */
+}
+
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .inner-container {
