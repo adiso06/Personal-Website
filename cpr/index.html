@@ -7,42 +7,49 @@
 </head>
 <body>
 
-<div class="timer-container flowchart-background">
-    <!-- Plus button and dropdown menu -->
-    <div class="dropdown">
-        <button class="dropbtn">Meds</button>
-        <div class="dropdown-content" id="myDropdown">
-            <button onclick="iterateCount('lido')">lido (0)</button>
-            <button onclick="iterateCount('amio')">amio (0)</button>
-            <button onclick="iterateCount('bicarb')">bicarb (0)</button>
-            <button onclick="iterateCount('ca2+')">ca2+ (0)</button>
-        </div>
-    </div>
-    <!-- Shock button -->
-    <button class="shock-button" id="shockButton">⚡ (0)</button>
-
+<div class="timer-container">    
     <!-- Timer layout and functionality -->
     <div class="top-timers">
+        <div class="dropdown">
+           <button class="dropbtn">Meds</button>
+           <div class="dropdown-content" id="myDropdown">
+                <button onclick="iterateCount('lido')">lido (0)</button>
+                <button onclick="iterateCount('amio')">amio (0)</button>
+                <button onclick="iterateCount('bicarb')">bicarb (0)</button>
+                <button onclick="iterateCount('ca2+')">ca2+ (0)</button>
+           </div>
+        </div>
         <div class="timer" id="timer1" onclick="startStopResetTimer(1)">
             <div>00:00.0</div>
-            <div class="label" id="label1">Epinephrine: 0</div>
+            <div class="label" id="label1">Epi: 0</div>
         </div>
         <div class="timer" id="timer2" onclick="startStopResetTimer(2)">
             <div>00:00.0</div>
             <div class="label" id="label2">CPR: 0</div>
         </div>
+        <button class="shock-button" id="shockButton">⚡ (0)</button>
+
     </div>
+    
+    
+
     <div class="image-container">
       <!-- This will now specifically hold the background image -->
-      <img src="acls2.jpg" alt="ACLS">
-  </div>
-    <div class="bottom-timer">
-        <div class="timer" id="timer3" onclick="toggleTimer(3)">
-            <div>00:00.0</div>
-            <div class="label">Total Time</div>
+     <img src="acls2.jpg" alt="ACLS"  object-fit:scale-down; width:100%>
+    </div>
+    
+    
+    
+    
+</div>
+    <div class ="timer-container-lower">
+        <div class="bottom-timer">
+            <div class="timer" id="timer3" onclick="toggleTimer(3)">
+                <div>00:00.0</div>
+                <div class="label">Total Time</div>
+            </div>
         </div>
     </div>
-</div>
 
 <script>
 // Original timer logic from provided file

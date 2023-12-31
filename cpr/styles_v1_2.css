@@ -5,21 +5,32 @@ body, html {
     font-family: Arial, sans-serif;
 }
 .timer-container {
+    position: absolute;
+    text-align: center;
+    color: white;
+}
+
+.timer-container-lower {
     position: relative;
     text-align: center;
     color: white;
 }
+.bottom-timer {
+    
+    z-index: 1; 
+    bottom:-1100px;
+    width: 100%;
+    position:relative;
+    
+}
+
 .top-timers {
     display: flex;
-    justify-content: space-between; /* Adjust as needed */
-    align-items: center; /* Align items vertically center */
+    justify-content: space-around; /* Adjust as needed */
+    align-items:stretch; /* Align items vertically center */
     padding: 20px;
 }
-.bottom-timer {
-    position: absolute;
-    bottom: 50px;
-    width: 100%;
-}
+
 .timer {
     font-size: 2em;
     background: rgba(0, 0, 0, 0.5); /* Translucent background */
@@ -40,26 +51,42 @@ body, html {
     color: #ddd;
 }
 
+.image-container {
+  object-fit:scale-down;
+  z-index: 5;
+/* or
+  object-fit: cover; */
+} 
+
+
 /* Style for the shock button */
 .shock-button {
-    font-size: 1.5em;
-    background: grey; /* Green background, adjust color as needed */
+    font-size: 3em;
+    background: rgba(0, 0, 0, 0.5); /* Translucent background */
     color: white;
-    padding: 10px;
-    margin-left: 10px; /* 10px left margin for padding */
+    padding: 5px;
     border: none;
     cursor: pointer;
     align-self: center; /* Align button vertically center in flex container */
+    border-radius: 10px;
+    display: inline-block;
+    cursor: pointer;
+    height:100px;
+
 }
 
+    
 /* Dropdown Button */
 .dropbtn {
     background-color: grey;
     color: white;
     padding: 10px;
-    font-size: 1.52em;
+    font-size: 3em;
     border: none;
     cursor: pointer;
+    border-radius: 10px;
+    height:100px;
+    
 }
 
 /* The container <div> - needed to position the dropdown content */
@@ -70,18 +97,23 @@ body, html {
 
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
+    font-size:20px;
     display: none;
     position: absolute;
     background-color: #f9f9f9;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
+    
+    
 }
 
 /* Links inside the dropdown */
 .dropdown-content button {
     color: black;
-    padding: 12px 16px;
+    font-size:50px;
+    width:300px;
+    padding: 1px 1px;
     text-decoration: none;
     display: block;
 }
