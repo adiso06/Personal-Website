@@ -11,17 +11,17 @@ body, html {
 }
 
 .timer-container-lower {
-    position: relative;
+    position: fixed; /* or 'absolute' if you want it at the bottom of the entire content */
+    bottom: 0;
+    width: 100%; /* Ensure it spans the full width */
     text-align: center;
     color: white;
 }
+    
 .bottom-timer {
-    
     z-index: 1; 
-    bottom:-1100px;
     width: 100%;
-    position:relative;
-    
+    position: relative; /* Keep this as is if it's relative to the container */  
 }
 
 .top-timers {
