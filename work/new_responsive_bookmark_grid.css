@@ -58,6 +58,40 @@ body {
     color: #fff; /* White text */
     /* other styles for dark mode */
 }
+/*----------------------------------------------*/
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f2f2f2; /* Matches the inner-container background */
+    min-width: 160px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Similar to your button shadow */
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: #010106; /* Matches your hyperlink color */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #e2e2e2; /* Light grey, similar to your button hover */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+  /*----------------------------------------------*/
+
+
+
 
 /* Positioning the mode toggle button at the bottom left */
 #modeToggle {
