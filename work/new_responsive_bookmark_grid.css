@@ -1,7 +1,4 @@
 
-/* New Stylesheet for Updated Design */
-
-/* General Reset */
 * {
     margin: 0;
     padding: 0;
@@ -58,7 +55,7 @@ body {
     color: #fff; /* White text */
     /* other styles for dark mode */
 }
-/*----------------------------------------------*/
+
 .dropdown {
     position: relative;
     display: inline-block;
@@ -87,9 +84,6 @@ body {
 .dropdown:hover .dropdown-content {
     display: block;
 }
-
-  /*----------------------------------------------*/
-
 
 
 
