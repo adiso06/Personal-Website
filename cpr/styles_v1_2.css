@@ -3,11 +3,14 @@ body, html {
     height: 100%;
     margin: 0;
     font-family: Arial, sans-serif;
+    width:100%;
 }
 .timer-container {
-    position: absolute;
+    position: relative;
     text-align: center;
     color: white;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .timer-container-lower {
@@ -16,6 +19,7 @@ body, html {
     width: 100%; /* Ensure it spans the full width */
     text-align: center;
     color: white;
+    z-index: 10;
 }
     
 .bottom-timer {
@@ -124,6 +128,32 @@ body, html {
 /* Style changes for timers when time criteria are met */
 .timer-red {
     color: red;
+    background-color: #f56565;
 }
 
 .show {display: block;}
+
+
+.log-container {
+    position:relative;
+    
+    margin-top: 20px; /* Adjust as needed for spacing */
+    width: 100%; /* Ensure it spans the full width */
+    /* Additional styling as required */
+}
+
+#actionLog {
+    margin-top: 20px; /* Adjust as needed for spacing */
+    width: 100%; /* Adjust as per your design */
+    /* Additional styling as required */
+}
+
+
+@media screen and (max-width: 600px) { /* Adjust 600px to your needs */
+    body, html {
+        height: 100%;
+        margin: 0;
+        font-family: Arial, sans-serif;
+        width:600px;
+    }
+}
