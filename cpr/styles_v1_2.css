@@ -1,10 +1,16 @@
 /* CSS styles for the website */
+.container {
+    margin: auto;
+}
+
+
 body, html {
     height: 100%;
     margin: 0;
     font-family: Arial, sans-serif;
     width:100%;
 }
+
 .timer-container {
     position: relative;
     text-align: center;
@@ -14,73 +20,74 @@ body, html {
 }
 
 .timer-container-lower {
-    position: fixed; /* or 'absolute' if you want it at the bottom of the entire content */
+    position: fixed;
     bottom: 0;
-    width: 100%; /* Ensure it spans the full width */
+    width: 100%;
     text-align: center;
     color: white;
     z-index: 10;
+    max-width: 600px;
 }
-    
+
 .bottom-timer {
-    z-index: 1; 
+    z-index: 1;
     width: 100%;
-    position: relative; /* Keep this as is if it's relative to the container */  
+    position: relative;
+    
 }
 
 .top-timers {
     display: flex;
-    justify-content: space-around; /* Adjust as needed */
-    align-items:stretch; /* Align items vertically center */
+    justify-content: space-around;
+    align-items:stretch;
     padding: 20px;
 }
 
 .timer {
     font-size: 2em;
-    background: rgba(0, 0, 0, 0.5); /* Translucent background */
+    background: rgba(0, 0, 0, 0.5);
     padding: 10px;
     border-radius: 10px;
     display: inline-block;
     cursor: pointer;
 }
+
 .flowchart-background {
-    /* Update this path to your image */
     background-image: url('/Users/adityasood/Downloads/acls.jpg');
     background-size:cover;
     background-position:top;
     height: 100%;
 }
+
 .label {
     font-size: 0.8em;
     color: #ddd;
 }
 
 .image-container {
-  object-fit:scale-down;
-  z-index: 5;
-/* or
-  object-fit: cover; */
-} 
+    object-fit: scale-down;
+    z-index: 5;
+    max-width: 100%;
+    max-height: 1100px; /* Adjust this value to fit your design */
+    height: auto;
+    display: block; /* This will remove any extra space below the image */
+    margin: 0 auto; /* This centers the image if it's not as wide as the container */
+}
 
-
-/* Style for the shock button */
 .shock-button {
     font-size: 3em;
-    background: rgba(0, 0, 0, 0.5); /* Translucent background */
+    background: rgba(0, 0, 0, 0.5);
     color: white;
     padding: 5px;
     border: none;
     cursor: pointer;
-    align-self: center; /* Align button vertically center in flex container */
+    align-self: center;
     border-radius: 10px;
     display: inline-block;
     cursor: pointer;
     height:100px;
-
 }
 
-    
-/* Dropdown Button */
 .dropbtn {
     background-color: grey;
     color: white;
@@ -90,16 +97,13 @@ body, html {
     cursor: pointer;
     border-radius: 10px;
     height:100px;
-    
 }
 
-/* The container <div> - needed to position the dropdown content */
 .dropdown {
     position: relative;
     display: inline-block;
 }
 
-/* Dropdown Content (Hidden by Default) */
 .dropdown-content {
     font-size:20px;
     display: none;
@@ -108,11 +112,8 @@ body, html {
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-    
-    
 }
 
-/* Links inside the dropdown */
 .dropdown-content button {
     color: black;
     font-size:50px;
@@ -122,38 +123,49 @@ body, html {
     display: block;
 }
 
-/* Change color of dropdown links on hover */
-.dropdown-content button:hover {background-color: #f1f1f1}
+.dropdown-content button:hover {
+    background-color: #f1f1f1;
+}
 
-/* Style changes for timers when time criteria are met */
 .timer-red {
     color: red;
     background-color: #f56565;
 }
 
-.show {display: block;}
-
+.show {
+    display: block;
+}
 
 .log-container {
     position:relative;
-    
-    margin-top: 20px; /* Adjust as needed for spacing */
-    width: 100%; /* Ensure it spans the full width */
-    /* Additional styling as required */
+    margin-top: 20px;
+    width: 100%;
 }
 
 #actionLog {
-    margin-top: 20px; /* Adjust as needed for spacing */
-    width: 100%; /* Adjust as per your design */
-    /* Additional styling as required */
+    margin-top: 20px;
+    width: 100%;
 }
 
-
-@media screen and (max-width: 600px) { /* Adjust 600px to your needs */
+@media screen and (max-width: 800px) {
     body, html {
         height: 100%;
         margin: 0;
         font-family: Arial, sans-serif;
-        width:600px;
+        padding-bottom:500px;
     }
 }
+
+@media screen and (min-width: 801px) {
+    .container {
+      max-width: 600px; /* This will make the container the same width as on mobile */
+      height: 100%;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      width:600px;
+      padding-left: 30%;
+     /*padding-right: 40%;*/
+      padding-bottom:500px;
+    }
+  }
+  
