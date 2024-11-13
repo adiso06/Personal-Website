@@ -27,6 +27,28 @@
 
     gtag("config", "G-2W0HK77092");
   </script>
+  <script>
+      function getPublicIP(callback) {
+        fetch('https://api.ipify.org?format=json')
+          .then(response => response.json())
+          .then(data => callback(data.ip));
+      }
+
+      function setSunriseLink(ip) {
+        const sunriseLink = document.getElementById('sunrise-link');
+        const workDomain = 'mynorthwellapps.northwell.edu';
+        
+        if (ip.includes(workDomain)) {
+          sunriseLink.href = 'http://mynorthwellapps.northwell.edu/Citrix/MyNorthwellAppsWeb/';
+        } else {
+          sunriseLink.href = 'https://myremoteaccess.northwell.edu/logon/LogonPoint/tmindex.html';
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        getPublicIP(setSunriseLink);
+      });
+    </script>
   <body>
     <div class="container mt-4">
       <!-- EMR Section -->
