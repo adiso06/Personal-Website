@@ -50,15 +50,35 @@ body {
 }
 
 /* Dark theme styles */
+
 .dark-mode {
-    background-color: #333; /* Dark background */
-    color: #fff; /* White text */
-    /* other styles for dark mode */
+    background-color: #333; /* Dark mode background for the page */
+    color: lightgray; /* Default text color for dark mode */
 }
+
+.dark-mode .inner-container {
+    background-color: #555; /* Middle grey for button background */
+}
+
+.dark-mode .inner-container a {
+    color: lightgray; /* Light grey text color for the buttons */
+}
+
+.dark-mode .inner-container a:hover {
+    background-color: #666; /* Slightly lighter grey for hover effect */
+    border-radius: 15px;
+}
+
+.dark-mode .dropdown-content {
+    background-color: #555; /* Middle grey for the dropdown background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Adjust shadow for a darker theme */
+}
+
 
 .dropdown {
     position: relative;
     display: inline-block;
+    width: 100%;
 }
 
 .dropdown-content {
@@ -68,6 +88,7 @@ body {
     min-width: 160px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Similar to your button shadow */
     z-index: 1;
+    left: 20%;
 }
 
 .dropdown-content a {

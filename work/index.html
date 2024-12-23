@@ -13,6 +13,7 @@
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
+
   <!-- Google tag (gtag.js) -->
   <script
     async
@@ -24,31 +25,32 @@
       dataLayer.push(arguments);
     }
     gtag("js", new Date());
-
     gtag("config", "G-2W0HK77092");
   </script>
+
+  <!-- IP check for Sunrise link -->
   <script>
-      function getPublicIP(callback) {
-        fetch('https://api.ipify.org?format=json')
-          .then(response => response.json())
-          .then(data => callback(data.ip));
+    function getPublicIP(callback) {
+      fetch("https://api.ipify.org?format=json")
+        .then((response) => response.json())
+        .then((data) => callback(data.ip));
+    }
+    function setSunriseLink(ip) {
+      const sunriseLink = document.getElementById("sunrise-link");
+      const workDomain = "mynorthwellapps.northwell.edu";
+      if (ip.includes(workDomain)) {
+        sunriseLink.href =
+          "http://mynorthwellapps.northwell.edu/Citrix/MyNorthwellAppsWeb/";
+      } else {
+        sunriseLink.href =
+          "https://myremoteaccess.northwell.edu/logon/LogonPoint/tmindex.html";
       }
+    }
+    document.addEventListener("DOMContentLoaded", function () {
+      getPublicIP(setSunriseLink);
+    });
+  </script>
 
-      function setSunriseLink(ip) {
-        const sunriseLink = document.getElementById('sunrise-link');
-        const workDomain = 'mynorthwellapps.northwell.edu';
-        
-        if (ip.includes(workDomain)) {
-          sunriseLink.href = 'http://mynorthwellapps.northwell.edu/Citrix/MyNorthwellAppsWeb/';
-        } else {
-          sunriseLink.href = 'https://myremoteaccess.northwell.edu/logon/LogonPoint/tmindex.html';
-        }
-      }
-
-      document.addEventListener("DOMContentLoaded", function () {
-        getPublicIP(setSunriseLink);
-      });
-    </script>
   <body>
     <div class="container mt-4">
       <!-- EMR Section -->
@@ -56,15 +58,18 @@
         <div class="col-12">
           <h2 class="text-center">Electronic Medical Records</h2>
         </div>
+
         <div class="col-md-4">
           <div class="inner-container">
             <a
+              id="sunrise-link"
               href="https://myremoteaccess.northwell.edu/logon/LogonPoint/tmindex.html"
               target="_blank"
               >Sunrise</a
             >
           </div>
         </div>
+
         <div class="col-md-4">
           <div class="inner-container">
             <a href="https://twwebprod.northwell.edu" target="_blank"
@@ -72,6 +77,7 @@
             >
           </div>
         </div>
+
         <div class="col-md-4">
           <div class="inner-container">
             <a href="http://museapp.nslijhs.net:8080/Search/New" target="_blank"
@@ -79,6 +85,7 @@
             >
           </div>
         </div>
+
         <div class="col-md-4">
           <div class="inner-container">
             <a href="https://commerce.health.state.ny.us/" target="_blank"
@@ -86,24 +93,22 @@
             >
           </div>
         </div>
-       
 
         <div class="col-md-4">
-            <div class="inner-container">
-              <a href="https://airstripnsuh.northwell.edu/#/" target="_blank"
-                >Airstrip Remote Tele</a
-              >
-            </div>
+          <div class="inner-container">
+            <a href="https://airstripnsuh.northwell.edu/#/" target="_blank"
+              >Airstrip Remote Tele</a
+            >
           </div>
-          <!---->
-          
+        </div>
+
         <div class="col-md-4">
-            <div class="inner-container">
-              <a href="https://northwell.us.trustedauth.com/#/reset" target="_blank"
-                >EMR Account Unlock</a
-              >
-            </div>
+          <div class="inner-container">
+            <a href="https://northwell.us.trustedauth.com/#/reset" target="_blank"
+              >EMR Account Unlock</a
+            >
           </div>
+        </div>
       </div>
 
       <!-- Residency Section -->
@@ -121,11 +126,13 @@
             >
           </div>
         </div>
+
         <div class="col-md-4">
           <div class="inner-container">
             <a href="https://amion.doximity.com/" target="_blank">Am I On</a>
           </div>
         </div>
+
         <div class="col-md-4">
           <div class="inner-container">
             <a href="https://bit.ly/nslijfeedback" target="_blank"
@@ -133,6 +140,7 @@
             >
           </div>
         </div>
+
         <div class="col-md-4">
           <div class="inner-container">
             <a href="https://northwell.medhub.com/" target="_blank"
@@ -140,39 +148,31 @@
             >
           </div>
         </div>
-        
+
+        <!-- Dropdown that used to work -->
         <div class="col-md-4">
           <div class="inner-container">
             <div class="dropdown">
               <a href="#" target="_blank">Resident Facesheet</a>
               <div class="dropdown-content">
-                <a href="/work/resources/residents2023.jpg"
-                  >MSGO Residents</a
-                >
-                <a href="/work/resources/PGY1_Prelim.pdf"
-                  >PGY1 Prelim</a
-                >
-                <a href="/work/resources/PGY1_Categorical.pdf"
-                  >PGY1 Cat.</a
-                >
-                <a href="/work/resources/PGY2.pdf"
-                  >PGY2 Residents</a
-                >
-                <a href="/work/resources/PGY3.pdf"
-                  >PGY3 Residents</a
-                >
-                
+                <a href="/work/resources/residents2023.jpg">MSGO Residents</a>
+                <a href="/work/resources/PGY1_Prelim.pdf">PGY1 Prelim</a>
+                <a href="/work/resources/PGY1_Categorical.pdf">PGY1 Cat.</a>
+                <a href="/work/resources/PGY2.pdf">PGY2 Residents</a>
+                <a href="/work/resources/PGY3.pdf">PGY3 Residents</a>
               </div>
-            </div> 
-        </div>  
-      </div>
-      <div class="col-md-4">
-        <div class="inner-container">
-          <a href="https://forms.office.com/r/b1vSgMCzvU" target="_blank" >Noon Conference Attendance</a>
-        </div> 
-      </div>
-        
-        
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="inner-container">
+            <a href="https://forms.office.com/r/b1vSgMCzvU" target="_blank"
+              >Noon Conference Attendance</a
+            >
+          </div>
+        </div>
+
         <div class="col-md-4">
           <div class="inner-container">
             <a href="https://adityasood.me/cpr" target="_blank"
@@ -181,6 +181,7 @@
           </div>
         </div>
       </div>
+
       <!-- Documents/Forms Section -->
       <div class="row mb-4">
         <div class="col-12">
@@ -198,33 +199,31 @@
                 <a href="/work/resources/ICU/Phenobarb taper for nsuh lij.pdf"
                   >Phenobarnital Taper</a
                 >
-                
               </div>
             </div>
-          </div>   
+          </div>
         </div>
-       
-        <!-- <div class="col-md-4">
-         
-          <div class="inner-container">
-            <div class="dropdown">
-              <a
-                href="https://northwell.sharepoint.com/sites/LabMed/YearlyAntibiograms/Forms/AllItems.aspx"
-                target="_blank"
-                >All Hospital Antibiogram</a
-              >
-              <div class="dropdown-content">
-                <a href="/work/resources/AntibiogramLIJ2022.pdf"
-                  >LIJ Antibiogram</a
+
+        <!--
+          <div class="col-md-4">
+            <div class="inner-container">
+              <div class="dropdown">
+                <a
+                  href="https://northwell.sharepoint.com/sites/LabMed/YearlyAntibiograms/Forms/AllItems.aspx"
+                  target="_blank"
+                  >All Hospital Antibiogram</a
                 >
-                <a href="/work/resources/AntibiogramNSUH2022.pdf"
-                  >Northshore Antibiogram</a
-                >
+                <div class="dropdown-content">
+                  <a href="/work/resources/AntibiogramLIJ2022.pdf">LIJ Antibiogram</a>
+                  <a href="/work/resources/AntibiogramNSUH2022.pdf"
+                    >Northshore Antibiogram</a
+                  >
+                </div>
               </div>
             </div>
-          </div> 
-        </div> -->
-        
+          </div>
+        -->
+
         <div class="col-md-4">
           <div class="inner-container">
             <div class="dropdown">
@@ -237,12 +236,13 @@
                   >Procedure Consent</a
                 >
                 <a href="/work/resources/Forms/NS Cath Consent.pdf"
-                  >NS Cath Consent</a>
+                  >NS Cath Consent</a
+                >
               </div>
             </div>
-          </div>   
+          </div>
         </div>
-        
+
         <div class="col-md-4">
           <div class="inner-container">
             <div class="dropdown">
@@ -254,24 +254,27 @@
                 <a href="/work/resources/Forms/Procedure Consent.pdf"
                   >Procedure Consent</a
                 >
-                <a href="/work/resources/Forms/LIJ - MRI Gadolinium IV Contrast.pdf"
-                  >LIJ MRI Gadolinium</a>
-                <a href="/work/resources/Forms/LIJ - MRI Safety Screening Form.pdf"
-                  >LIJ MRI Safety Screen</a>
+                <a
+                  href="/work/resources/Forms/LIJ - MRI Gadolinium IV Contrast.pdf"
+                  >LIJ MRI Gadolinium</a
+                >
+                <a
+                  href="/work/resources/Forms/LIJ - MRI Safety Screening Form.pdf"
+                  >LIJ MRI Safety Screen</a
+                >
               </div>
             </div>
-          </div>   
+          </div>
         </div>
-        
+
         <div class="col-md-4">
           <div class="inner-container">
             <a href="/work/resources/ICU/Private MDs.pdf"
-                >Attending Phone Numbers (amion password all caps)</a
-              >
+              >Attending Phone Numbers (amion password all caps)</a
+            >
           </div>
         </div>
-        
-        
+
         <div class="col-md-4">
           <div class="inner-container">
             <div class="dropdown">
@@ -282,12 +285,13 @@
                 >
                 <a href="/work/resources/Notes/NSUH Doctor Note.pdf"
                   >NSUH Doctor's Note</a
-                >                
+                >
               </div>
             </div>
-          </div>   
+          </div>
         </div>
       </div>
+
       <!-- Clinic Section -->
       <div class="row mb-4">
         <div class="col-12">
@@ -327,9 +331,7 @@
         </div>
         <div class="col-md-4">
           <div class="inner-container">
-            <a
-              href="https://northwellhealth.my.irbmanager.com/Login.aspx"
-              target="_blank"
+            <a href="https://northwellhealth.my.irbmanager.com/Login.aspx" target="_blank"
               >IRB Home</a
             >
           </div>
@@ -345,9 +347,7 @@
         </div>
         <div class="col-md-4">
           <div class="inner-container">
-            <a
-              href="/work/resources/2023ConferenceRequestForm.docx"
-              target="_blank"
+            <a href="/work/resources/2023ConferenceRequestForm.docx" target="_blank"
               >Conference Request Form</a
             >
           </div>
@@ -355,57 +355,46 @@
       </div>
     </div>
 
-    <!--  <button id="modeToggle">Toggle Dark/Light Mode</button>-->
+    <!-- A simple bottom-left toggle button for dark/light, with NO huge z-index -->
+    <button id="modeToggle">Toggle Dark/Light Mode</button>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/
-
-4.3.1/js/bootstrap.min.js"></script>
-
-    <script>
-      // Wait for the DOM to fully load
-      document.addEventListener("DOMContentLoaded", function () {
-        // Select the toggle button
-        var modeToggle = document.getElementById("modeToggle");
-
-        // Listen for a click event on the toggle button
-        modeToggle.addEventListener("click", function () {
-          // Select the body of the website or the main container of your website
-          var body = document.body;
-
-          // Toggle the "dark-mode" class on and off on each click
-          body.classList.toggle("dark-mode");
-
-          // Optionally toggle a "light-mode" class if you want specific styles for light mode as well
-          body.classList.toggle("light-mode");
-        });
-      });
-    </script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        var modeToggle = document.getElementById("modeToggle");
-        var body = document.body;
-
-        // Check for saved user preference, if any, on page load
-        if (localStorage.getItem("dark-mode") === "true") {
-          body.classList.add("dark-mode");
-        } else {
-          body.classList.add("light-mode");
-        }
-
-        modeToggle.addEventListener("click", function () {
-          body.classList.toggle("dark-mode");
-          body.classList.toggle("light-mode");
-
-          // Save the current preference to localStorage
-          if (body.classList.contains("dark-mode")) {
-            localStorage.setItem("dark-mode", "true");
-          } else {
-            localStorage.setItem("dark-mode", "false");
-          }
-        });
-      });
-    </script>
+    <!-- Minimal scripts for toggling dark/light mode -->
+    
   </body>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const modeToggle = document.getElementById("modeToggle");
+      const body = document.body;
+
+      // On load, check localStorage
+      const savedMode = localStorage.getItem("mySiteMode");
+      if (savedMode === "dark") {
+        body.classList.add("dark-mode");
+      } else {
+        body.classList.add("light-mode");
+      }
+
+      // Toggle on click
+      modeToggle.addEventListener("click", function () {
+        if (body.classList.contains("dark-mode")) {
+          body.classList.remove("dark-mode");
+          body.classList.add("light-mode");
+          localStorage.setItem("mySiteMode", "light");
+        } else {
+          body.classList.remove("light-mode");
+          body.classList.add("dark-mode");
+          localStorage.setItem("mySiteMode", "dark");
+        }
+      });
+    });
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+  ></script>
+  <script
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+  ></script>
 </html>
