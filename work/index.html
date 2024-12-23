@@ -440,4 +440,42 @@ document.getElementById("modeToggle").addEventListener("click", () => {
 });
 
   </script>
+
+  <script>
+   document.addEventListener('DOMContentLoaded', function () {
+    const dropdowns = document.querySelectorAll('.dropdown');
+    
+    dropdowns.forEach(dropdown => {
+        dropdown.addEventListener('click', function (event) {
+            event.preventDefault(); // Prevent any default action
+            event.stopPropagation(); // Prevent closing if inside dropdown content
+            
+            // Close other dropdowns if needed
+            dropdowns.forEach(d => {
+                if (d !== dropdown) {
+                    const content = d.querySelector('.dropdown-content');
+                    if (content) content.style.display = 'none';
+                }
+            });
+
+            // Toggle the current dropdown menu
+            const dropdownContent = this.querySelector('.dropdown-content');
+            if (dropdownContent) {
+                dropdownContent.style.display = 
+                    dropdownContent.style.display === 'block' ? 'none' : 'block';
+            }
+        });
+    });
+
+    // Close dropdowns when clicking elsewhere
+    document.addEventListener('click', function () {
+        dropdowns.forEach(dropdown => {
+            const content = dropdown.querySelector('.dropdown-content');
+            if (content) content.style.display = 'none';
+        });
+    });
+});
+
+
+  </script>
 </html>
