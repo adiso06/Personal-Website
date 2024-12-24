@@ -398,46 +398,37 @@
     src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
   ></script>
   <script>
-    async function setIconBasedOnSunriseSunset() {
-    const button = document.getElementById("modeToggle");
-    try {
-        // Fetch sunrise and sunset data for NYC
-        const response = await fetch('https://api.sunrise-sunset.org/json?lat=40.7128&lng=-74.0060&formatted=0');
-        const data = await response.json();
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const modeToggle = document.getElementById("modeToggle");
+    const body = document.body;
 
-        // Get current time and sunrise/sunset times
-        const now = new Date();
-        const sunrise = new Date(data.results.sunrise);
-        const sunset = new Date(data.results.sunset);
-
-        // Set icon based on current time
-        if (now >= sunrise && now < sunset) {
-            button.textContent = "☀️"; // Sun icon for daytime
-            document.body.classList.remove("dark-mode");
-        } else {
-            button.textContent = "🌙"; // Moon icon for nighttime
-            document.body.classList.add("dark-mode");
-        }
-    } catch (error) {
-        console.error("Error fetching sunrise-sunset data:", error);
-        button.textContent = "☀️"; // Fallback to sun icon
-    }
-}
-
-// Call the function on page load
-setIconBasedOnSunriseSunset();
-
-// Optional: Add a toggle for manual switching
-document.getElementById("modeToggle").addEventListener("click", () => {
-    const button = document.getElementById("modeToggle");
-    if (button.textContent.trim() === "☀️") {
-        button.textContent = "🌙";
-        document.body.classList.add("dark-mode");
+    // On load, check localStorage
+    const savedMode = localStorage.getItem("mySiteMode");
+    if (savedMode === "dark") {
+      body.classList.add("dark-mode");
+      modeToggle.textContent = "☀️"; // Show Sun icon for transitioning to light mode
     } else {
-        button.textContent = "☀️";
-        document.body.classList.remove("dark-mode");
+      body.classList.add("light-mode");
+      modeToggle.textContent = "🌙"; // Show Moon icon for transitioning to dark mode
     }
-});
+
+    // Toggle on click
+    modeToggle.addEventListener("click", function () {
+      if (body.classList.contains("dark-mode")) {
+        body.classList.remove("dark-mode");
+        body.classList.add("light-mode");
+        localStorage.setItem("mySiteMode", "light");
+        modeToggle.textContent = "🌙"; // Show Moon icon
+      } else {
+        body.classList.remove("light-mode");
+        body.classList.add("dark-mode");
+        localStorage.setItem("mySiteMode", "dark");
+        modeToggle.textContent = "☀️"; // Show Sun icon
+      }
+    });
+  });
+
 
   </script>
 
