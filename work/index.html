@@ -442,7 +442,7 @@ document.getElementById("modeToggle").addEventListener("click", () => {
   </script>
 
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
+  document.addEventListener('DOMContentLoaded', function () {
     const dropdowns = document.querySelectorAll('.dropdown');
 
     // Helper function to toggle visibility
@@ -461,8 +461,8 @@ document.getElementById("modeToggle").addEventListener("click", () => {
         // For touch devices, use click events
         dropdowns.forEach(dropdown => {
             dropdown.addEventListener('click', function (event) {
-                event.preventDefault();
-                event.stopPropagation();
+                event.stopPropagation(); // Prevent closing dropdown on click
+                const dropdownContent = dropdown.querySelector('.dropdown-content');
 
                 // Close other dropdowns
                 dropdowns.forEach(d => {
@@ -473,7 +473,20 @@ document.getElementById("modeToggle").addEventListener("click", () => {
                 });
 
                 // Toggle the current dropdown
-                toggleDropdown(dropdown);
+                if (dropdownContent) {
+                    dropdownContent.style.display =
+                        dropdownContent.style.display === 'block' ? 'none' : 'block';
+                }
+            });
+        });
+
+        // Prevent dropdown from closing when clicking inside it
+        document.querySelectorAll('.dropdown-content a').forEach(link => {
+            link.addEventListener('click', function (event) {
+                event.stopPropagation(); // Stop the click from propagating to parent
+                // If you want links to close the dropdown after navigating, uncomment below
+                // const dropdownContent = this.closest('.dropdown-content');
+                // if (dropdownContent) dropdownContent.style.display = 'none';
             });
         });
 
@@ -499,6 +512,7 @@ document.getElementById("modeToggle").addEventListener("click", () => {
         });
     }
 });
+
 
   </script>
 </html>
