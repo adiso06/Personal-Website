@@ -359,151 +359,75 @@
     <button id="modeToggle">Toggle 🌞/🌙</button>
 
     <!-- Minimal scripts for toggling dark/light mode -->
-    
-  </body>
+     <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const modeToggle = document.getElementById("modeToggle");
+        const body = document.body;
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const modeToggle = document.getElementById("modeToggle");
-      const body = document.body;
+        // Approximate sunrise and sunset times
+        const sunriseHour = 9; // 9:00 AM
+        const sunsetHour = 18; // 6:00 PM
 
-      // On load, check localStorage
-      const savedMode = localStorage.getItem("mySiteMode");
-      if (savedMode === "dark") {
-        body.classList.add("dark-mode");
-      } else {
-        body.classList.add("light-mode");
-      }
+        // Get the current local hour
+        function getLocalHour() {
+          const now = new Date();
+          return now.getHours(); // Returns the hour (0-23) in the user's local time zone
+        }
 
-      // Toggle on click
-      modeToggle.addEventListener("click", function () {
-        if (body.classList.contains("dark-mode")) {
-          body.classList.remove("dark-mode");
-          body.classList.add("light-mode");
-          localStorage.setItem("mySiteMode", "light");
+        // Apply mode based on the current hour
+        function applyMode() {
+          const currentHour = getLocalHour();
+          if (currentHour >= sunriseHour && currentHour < sunsetHour) {
+            body.classList.add("light-mode");
+            body.classList.remove("dark-mode");
+            localStorage.setItem("mySiteMode", "light");
+            modeToggle.textContent = "🌙"; // Show Moon icon for toggling to dark mode
+          } else {
+            body.classList.add("dark-mode");
+            body.classList.remove("light-mode");
+            localStorage.setItem("mySiteMode", "dark");
+            modeToggle.textContent = "☀️"; // Show Sun icon for toggling to light mode
+          }
+        }
+
+        // Manual toggle button functionality
+        modeToggle.addEventListener("click", function () {
+          if (body.classList.contains("dark-mode")) {
+            body.classList.remove("dark-mode");
+            body.classList.add("light-mode");
+            localStorage.setItem("mySiteMode", "light");
+            modeToggle.textContent = "🌙"; // Show Moon icon
+          } else {
+            body.classList.remove("light-mode");
+            body.classList.add("dark-mode");
+            localStorage.setItem("mySiteMode", "dark");
+            modeToggle.textContent = "☀️"; // Show Sun icon
+          }
+        });
+
+        // On page load, apply mode
+        const savedMode = localStorage.getItem("mySiteMode");
+        if (savedMode) {
+          if (savedMode === "dark") {
+            body.classList.add("dark-mode");
+            body.classList.remove("light-mode");
+            modeToggle.textContent = "☀️";
+          } else {
+            body.classList.add("light-mode");
+            body.classList.remove("dark-mode");
+            modeToggle.textContent = "🌙";
+          }
         } else {
-          body.classList.remove("light-mode");
-          body.classList.add("dark-mode");
-          localStorage.setItem("mySiteMode", "dark");
+          applyMode();
         }
       });
-    });
-  </script>
+    </script>
 
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-  <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-  ></script>
-  <script
-    src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-  ></script>
-  <script>
-  <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const modeToggle = document.getElementById("modeToggle");
-    const body = document.body;
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-    // On load, check localStorage
-    const savedMode = localStorage.getItem("mySiteMode");
-    if (savedMode === "dark") {
-      body.classList.add("dark-mode");
-      modeToggle.textContent = "☀️"; // Show Sun icon for transitioning to light mode
-    } else {
-      body.classList.add("light-mode");
-      modeToggle.textContent = "🌙"; // Show Moon icon for transitioning to dark mode
-    }
+  </body>
 
-    // Toggle on click
-    modeToggle.addEventListener("click", function () {
-      if (body.classList.contains("dark-mode")) {
-        body.classList.remove("dark-mode");
-        body.classList.add("light-mode");
-        localStorage.setItem("mySiteMode", "light");
-        modeToggle.textContent = "🌙"; // Show Moon icon
-      } else {
-        body.classList.remove("light-mode");
-        body.classList.add("dark-mode");
-        localStorage.setItem("mySiteMode", "dark");
-        modeToggle.textContent = "☀️"; // Show Sun icon
-      }
-    });
-  });
-
-
-  </script>
-
-  <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const dropdowns = document.querySelectorAll('.dropdown');
-
-    // Helper function to toggle visibility
-    function toggleDropdown(dropdown) {
-        const dropdownContent = dropdown.querySelector('.dropdown-content');
-        if (dropdownContent) {
-            dropdownContent.style.display =
-                dropdownContent.style.display === 'block' ? 'none' : 'block';
-        }
-    }
-
-    // Detect if the user is on a touch device
-    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints;
-
-    if (isTouchDevice) {
-        // For touch devices, use click events
-        dropdowns.forEach(dropdown => {
-            dropdown.addEventListener('click', function (event) {
-                event.stopPropagation(); // Prevent closing dropdown on click
-                const dropdownContent = dropdown.querySelector('.dropdown-content');
-
-                // Close other dropdowns
-                dropdowns.forEach(d => {
-                    if (d !== dropdown) {
-                        const content = d.querySelector('.dropdown-content');
-                        if (content) content.style.display = 'none';
-                    }
-                });
-
-                // Toggle the current dropdown
-                if (dropdownContent) {
-                    dropdownContent.style.display =
-                        dropdownContent.style.display === 'block' ? 'none' : 'block';
-                }
-            });
-        });
-
-        // Prevent dropdown from closing when clicking inside it
-        document.querySelectorAll('.dropdown-content a').forEach(link => {
-            link.addEventListener('click', function (event) {
-                event.stopPropagation(); // Stop the click from propagating to parent
-                // If you want links to close the dropdown after navigating, uncomment below
-                // const dropdownContent = this.closest('.dropdown-content');
-                // if (dropdownContent) dropdownContent.style.display = 'none';
-            });
-        });
-
-        // Close dropdowns when clicking elsewhere
-        document.addEventListener('click', function () {
-            dropdowns.forEach(dropdown => {
-                const content = dropdown.querySelector('.dropdown-content');
-                if (content) content.style.display = 'none';
-            });
-        });
-    } else {
-        // For desktops, use hover behavior
-        dropdowns.forEach(dropdown => {
-            dropdown.addEventListener('mouseenter', function () {
-                const dropdownContent = this.querySelector('.dropdown-content');
-                if (dropdownContent) dropdownContent.style.display = 'block';
-            });
-
-            dropdown.addEventListener('mouseleave', function () {
-                const dropdownContent = this.querySelector('.dropdown-content');
-                if (dropdownContent) dropdownContent.style.display = 'none';
-            });
-        });
-    }
-});
-
-
-  </script>
+ 
 </html>
