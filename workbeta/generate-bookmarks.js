@@ -1,14 +1,17 @@
 const { google } = require('googleapis');
 const fs = require('fs').promises;
+const path = require('path');
 
-// Your Google Sheets credentials and configuration
-const CREDENTIALS = require('./credentials.json');
-// Replace this with your actual spreadsheet ID from the URL
-const SPREADSHEET_ID = '1wJUC_pM_IAbuv8aKkmvMhThLe_ulZ-VmcBiSNxlrnOk'; // Put your actual spreadsheet ID here
-const RANGE = 'Sheet1!A:D'; // Make sure this matches your sheet name and range
+// Your Google Sheets configuration
+const SPREADSHEET_ID = '1wJUC_pM_IAbuv8aKkmvMhThLe_ulZ-VmcBiSNxlrnOk';
+const RANGE = 'Sheet1!A:D';
 
 async function generateBookmarksJson() {
   try {
+    // Use path.join for cross-platform compatibility
+    const credentialsPath = path.join(__dirname, 'credentials.json');
+    const CREDENTIALS = require(credentialsPath);
+
     const auth = new google.auth.GoogleAuth({
       credentials: CREDENTIALS,
       scopes: ['https://www.googleapis.com/auth/spreadsheets.readonly'],
@@ -29,11 +32,13 @@ async function generateBookmarksJson() {
       Links: row[3] === 'dropdown' ? row[4] : undefined
     }));
 
-    // Save to static file
-    await fs.writeFile('bookmarks.json', JSON.stringify(bookmarks, null, 2));
+    // Save to static file, using path.join for cross-platform compatibility
+    const outputPath = path.join(__dirname, '..', 'bookmarks.json');
+    await fs.writeFile(outputPath, JSON.stringify(bookmarks, null, 2));
     console.log('Successfully generated bookmarks.json');
   } catch (error) {
     console.error('Error generating bookmarks:', error);
+    process.exit(1); // Ensure GitHub Actions knows if the script failed
   }
 }
 
