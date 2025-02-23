@@ -326,20 +326,34 @@
         localStorage.removeItem('bookmarks_cache');
         localStorage.removeItem('bookmarks_cache_expiry');
 
-        // Force refresh from Google Sheet
-        const response = await fetch(`${GAS_URL}?action=refresh`);
+        // Force refresh from Google Sheet with credentials
+        const response = await fetch(`${GAS_URL}?action=refresh`, {
+          method: 'GET',
+          credentials: 'include',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+        });
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
         const data = await response.json();
 
         if (data.success) {
           status.textContent = 'Refresh successful!';
           status.className = 'status-message text-success';
+          // Reload the links after successful refresh
+          loadLinks();
         } else {
-          throw new Error('Refresh failed');
+          throw new Error(data.message || 'Refresh failed');
         }
       } catch (error) {
         console.error('Refresh error:', error);
         const status = document.getElementById('statusMessage');
-        status.textContent = 'Refresh failed. Please try again.';
+        status.textContent = `Refresh failed: ${error.message}`;
         status.className = 'status-message text-danger';
       }
     }

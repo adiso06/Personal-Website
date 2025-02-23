@@ -4,6 +4,13 @@ const SHEET_NAME = 'Hospital Bookmarks';
 const ADMIN_PASSWORD = 'password'; // Add your desired admin password here
 
 function doGet(e) {
+  // Add CORS headers for all responses
+  const headers = {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type'
+  };
+
   // Add logging to debug the request
   Logger.log('Received request with parameters:', e.parameter);
   
@@ -12,37 +19,43 @@ function doGet(e) {
     Logger.log('Action detected:', e.parameter.action);
     
     if (e.parameter.action === 'login') {
-      // Return only the login response
-      const providedPassword = e.parameter.password;
-      Logger.log('Password provided:', providedPassword); // For debugging
-      Logger.log('Expected password:', ADMIN_PASSWORD); // For debugging
-      Logger.log('Match result:', providedPassword === ADMIN_PASSWORD); // For debugging
-      
       const response = {
-        type: 'login',  // Add a type field to distinguish response types
-        success: providedPassword === ADMIN_PASSWORD,
-        message: providedPassword === ADMIN_PASSWORD ? 'Login successful' : 'Invalid password'
+        type: 'login',
+        success: e.parameter.password === ADMIN_PASSWORD,
+        message: e.parameter.password === ADMIN_PASSWORD ? 'Login successful' : 'Invalid password'
       };
       
       return ContentService.createTextOutput(JSON.stringify(response))
         .setMimeType(ContentService.MimeType.JSON)
-        .setHeaders({
-          'Cache-Control': 'no-store',
-          'Access-Control-Allow-Origin': '*'
-        });
+        .setHeaders(headers);
     } 
     else if (e.parameter.action === 'refresh') {
-      return handleRefresh();
+      // Get fresh data directly from the sheet
+      const bookmarks = getBookmarks();
+      
+      // Return with no-cache headers
+      return ContentService.createTextOutput(JSON.stringify({
+        success: true,
+        message: 'Refresh successful',
+        data: bookmarks
+      }))
+      .setMimeType(ContentService.MimeType.JSON)
+      .setHeaders({
+        ...headers,
+        'Cache-Control': 'no-store, no-cache, must-revalidate',
+        'Pragma': 'no-cache',
+        'Expires': '0'
+      });
     }
   }
 
-  // Default behavior: return bookmarks
+  // Default behavior: return bookmarks with caching enabled
   const output = getBookmarks();
   return ContentService.createTextOutput(JSON.stringify(output))
     .setMimeType(ContentService.MimeType.JSON)
     .setHeaders({
-      'Cache-Control': 'public, max-age=300',
-      'Access-Control-Allow-Origin': '*'
+      ...headers,
+      'Cache-Control': 'public, max-age=300'
     });
 }
 
