@@ -6,10 +6,19 @@ const ADMIN_PASSWORD = 'password'; // Add your desired admin password here
 function doGet(e) {
   // Add CORS headers for all responses
   const headers = {
-    'Access-Control-Allow-Origin': '*',
+    // Update this to match your actual domain
+    'Access-Control-Allow-Origin': 'https://adityasood.me',
     'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-    'Access-Control-Allow-Headers': 'Content-Type'
+    'Access-Control-Allow-Headers': 'Content-Type',
+    'Access-Control-Allow-Credentials': 'true'
   };
+
+  // Handle OPTIONS preflight request
+  if (e.parameter.method === 'OPTIONS') {
+    return ContentService.createTextOutput('')
+      .setMimeType(ContentService.MimeType.TEXT)
+      .setHeaders(headers);
+  }
 
   // Add logging to debug the request
   Logger.log('Received request with parameters:', e.parameter);
@@ -34,18 +43,20 @@ function doGet(e) {
       const bookmarks = getBookmarks();
       
       // Return with no-cache headers
+      const refreshHeaders = {
+        ...headers,
+        'Cache-Control': 'no-store, no-cache, must-revalidate',
+        'Pragma': 'no-cache',
+        'Expires': '0'
+      };
+      
       return ContentService.createTextOutput(JSON.stringify({
         success: true,
         message: 'Refresh successful',
         data: bookmarks
       }))
       .setMimeType(ContentService.MimeType.JSON)
-      .setHeaders({
-        ...headers,
-        'Cache-Control': 'no-store, no-cache, must-revalidate',
-        'Pragma': 'no-cache',
-        'Expires': '0'
-      });
+      .setHeaders(refreshHeaders);
     }
   }
 
