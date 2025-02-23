@@ -4,7 +4,7 @@ const path = require('path');
 
 // Your Google Sheets configuration
 const SPREADSHEET_ID = '1wJUC_pM_IAbuv8aKkmvMhThLe_ulZ-VmcBiSNxlrnOk';
-const RANGE = 'Hospital Bookmarks!A:E';
+const SHEET_NAME = 'Hospital Bookmarks';
 
 async function generateBookmarksJson() {
   try {
@@ -21,17 +21,40 @@ async function generateBookmarksJson() {
     });
 
     const sheets = google.sheets({ version: 'v4', auth });
+
+    // First, verify the sheet exists and get its properties
+    const spreadsheet = await sheets.spreadsheets.get({
+      spreadsheetId: SPREADSHEET_ID,
+    });
+
+    const sheet = spreadsheet.data.sheets.find(s => 
+      s.properties.title === SHEET_NAME
+    );
+
+    if (!sheet) {
+      throw new Error(`Sheet "${SHEET_NAME}" not found. Available sheets: ${
+        spreadsheet.data.sheets.map(s => s.properties.title).join(', ')
+      }`);
+    }
+
+    // Now get the data using the sheet's ID
     const response = await sheets.spreadsheets.values.get({
       spreadsheetId: SPREADSHEET_ID,
-      range: RANGE,
+      range: `${SHEET_NAME}!A1:E1000`, // More specific range
     });
+
+    if (!response.data.values || response.data.values.length === 0) {
+      throw new Error('No data found in sheet');
+    }
 
     const rows = response.data.values;
     const headers = rows[0]; // Get header row
+    console.log('Headers found:', headers); // Debug log
+
     const bookmarks = rows.slice(1).map(row => {
       const bookmark = {
-        Category: row[headers.indexOf('Category')],
-        Name: row[headers.indexOf('Name')],
+        Category: row[headers.indexOf('Category')] || '',
+        Name: row[headers.indexOf('Name')] || '',
         URL: row[headers.indexOf('URL')] || '',
         Type: row[headers.indexOf('Type')] || 'link'
       };
@@ -60,6 +83,9 @@ async function generateBookmarksJson() {
     console.log('Successfully generated bookmarks.json');
   } catch (error) {
     console.error('Error generating bookmarks:', error);
+    if (error.errors) {
+      console.error('Detailed errors:', JSON.stringify(error.errors, null, 2));
+    }
     process.exit(1);
   }
 }
