@@ -330,7 +330,6 @@
         const response = await fetch(`${GAS_URL}?action=refresh`, {
           method: 'GET',
           mode: 'cors',
-          credentials: 'omit',
           headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'

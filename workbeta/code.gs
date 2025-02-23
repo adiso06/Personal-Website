@@ -6,11 +6,10 @@ const ADMIN_PASSWORD = 'password'; // Add your desired admin password here
 function doGet(e) {
   // Add CORS headers for all responses
   const headers = {
-    // Update this to match your actual domain
-    'Access-Control-Allow-Origin': 'https://adityasood.me',
+    // Allow requests from any origin
+    'Access-Control-Allow-Origin': '*',
     'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
     'Access-Control-Allow-Headers': 'Content-Type',
-    'Access-Control-Allow-Credentials': 'true'
   };
 
   // Handle OPTIONS preflight request
@@ -82,7 +81,9 @@ function handleRefresh() {
     .setMimeType(ContentService.MimeType.JSON)
     .setHeaders({
       'Cache-Control': 'no-store',
-      'Access-Control-Allow-Origin': '*'
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type'
     });
   } catch (error) {
     return ContentService.createTextOutput(JSON.stringify({
