@@ -299,18 +299,40 @@
         }
       }
 
-      // Add a function to force refresh the cache
-      function forceRefresh() {
+      // Update the forceRefresh function
+      async function forceRefresh() {
+        console.log('Force refreshing data...');
+        // Clear local cache
         localStorage.removeItem('bookmarks_cache');
         localStorage.removeItem('bookmarks_cache_expiry');
-        loadBookmarks();
+        
+        try {
+          // Directly fetch from Google Sheets
+          const response = await fetch(`${GAS_URL}?action=refresh`);
+          if (!response.ok) {
+            throw new Error(`Failed to fetch from Google Sheets: ${response.status}`);
+          }
+          const data = await response.json();
+          console.log('Successfully refreshed from Google Sheets');
+          
+          // Update cache with new data
+          localStorage.setItem('bookmarks_cache', JSON.stringify(data));
+          localStorage.setItem('bookmarks_cache_expiry', (Date.now() + CACHE_DURATION).toString());
+          
+          // Reload bookmarks display
+          loadBookmarks();
+        } catch (error) {
+          console.error('Refresh failed:', error);
+          // Fallback to normal load process
+          loadBookmarks();
+        }
       }
 
-      // Add a small refresh button in the corner
+      // Update the refresh button creation
       const refreshButton = document.createElement('button');
       refreshButton.innerHTML = '🔄';
       refreshButton.style.cssText = 'position: fixed; bottom: 60px; left: 10px; padding: 5px; border-radius: 5px; cursor: pointer;';
-      refreshButton.title = 'Refresh bookmarks';
+      refreshButton.title = 'Refresh from Google Sheets';
       refreshButton.onclick = forceRefresh;
       document.body.appendChild(refreshButton);
 

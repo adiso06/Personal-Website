@@ -62,8 +62,12 @@
   {
     "Category": "Residency",
     "Name": "Resident Facesheet",
+    "Type": "dropdown",
     "URL": "",
-    "Type": "dropdown"
+    "Links": [
+      {"name": "NS Facesheet", "url": "/work/resources/NS Facesheet.pdf"},
+      {"name": "LIJ Facesheet", "url": "/work/resources/LIJ Facesheet.pdf"}
+    ]
   },
   {
     "Category": "Residency",
@@ -80,20 +84,33 @@
   {
     "Category": "Documents/Forms",
     "Name": "ICU Documents",
+    "Type": "dropdown",
     "URL": "",
-    "Type": "dropdown"
+    "Links": [
+      {"name": "ICU Admission Note", "url": "/work/resources/ICU/ICU Admission Note.pdf"},
+      {"name": "ICU Progress Note", "url": "/work/resources/ICU/ICU Progress Note.pdf"},
+      {"name": "ICU Signout", "url": "/work/resources/ICU/ICU Signout.pdf"}
+    ]
   },
   {
     "Category": "Documents/Forms",
     "Name": "NS Consents",
+    "Type": "dropdown",
     "URL": "",
-    "Type": "dropdown"
+    "Links": [
+      {"name": "Blood Consent", "url": "/work/resources/Consents/NS/Blood Consent.pdf"},
+      {"name": "Procedure Consent", "url": "/work/resources/Consents/NS/Procedure Consent.pdf"}
+    ]
   },
   {
     "Category": "Documents/Forms",
     "Name": "LIJ Consents",
+    "Type": "dropdown",
     "URL": "",
-    "Type": "dropdown"
+    "Links": [
+      {"name": "Blood Consent", "url": "/work/resources/Consents/LIJ/Blood Consent.pdf"},
+      {"name": "Procedure Consent", "url": "/work/resources/Consents/LIJ/Procedure Consent.pdf"}
+    ]
   },
   {
     "Category": "Documents/Forms",
@@ -104,8 +121,12 @@
   {
     "Category": "Documents/Forms",
     "Name": "Work Excuse Forms",
+    "Type": "dropdown",
     "URL": "",
-    "Type": "dropdown"
+    "Links": [
+      {"name": "NS Work Excuse", "url": "/work/resources/Forms/NS Work Excuse.pdf"},
+      {"name": "LIJ Work Excuse", "url": "/work/resources/Forms/LIJ Work Excuse.pdf"}
+    ]
   },
   {
     "Category": "Clinic",
