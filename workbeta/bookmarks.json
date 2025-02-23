@@ -62,11 +62,29 @@
   {
     "Category": "Residency",
     "Name": "Resident Facesheet",
-    "Type": "dropdown",
     "URL": "",
+    "Type": "dropdown",
     "Links": [
-      {"name": "NS Facesheet", "url": "/work/resources/NS Facesheet.pdf"},
-      {"name": "LIJ Facesheet", "url": "/work/resources/LIJ Facesheet.pdf"}
+      {
+        "name": "MSGO Residents",
+        "url": "/work/resources/residents2023.jpg"
+      },
+      {
+        "name": "PGY1 Prelim",
+        "url": "/work/resources/PGY1_Prelim.pdf"
+      },
+      {
+        "name": "PGY1 Cat.",
+        "url": "/work/resources/PGY1_Categorical.pdf"
+      },
+      {
+        "name": "PGY2 Residents",
+        "url": "/work/resources/PGY2.pdf"
+      },
+      {
+        "name": "PGY3 Residents",
+        "url": "/work/resources/PGY3.pdf"
+      }
     ]
   },
   {
@@ -84,32 +102,73 @@
   {
     "Category": "Documents/Forms",
     "Name": "ICU Documents",
-    "Type": "dropdown",
     "URL": "",
+    "Type": "dropdown",
     "Links": [
-      {"name": "ICU Admission Note", "url": "/work/resources/ICU/ICU Admission Note.pdf"},
-      {"name": "ICU Progress Note", "url": "/work/resources/ICU/ICU Progress Note.pdf"},
-      {"name": "ICU Signout", "url": "/work/resources/ICU/ICU Signout.pdf"}
+      {
+        "name": "Heparin Normogram",
+        "url": "/work/resources/ICU/Heparin Nomogram Protocol.pdf"
+      },
+      {
+        "name": "Phenobarnital Taper",
+        "url": "/work/resources/ICU/Phenobarb taper for nsuh lij.pdf"
+      }
     ]
   },
   {
     "Category": "Documents/Forms",
     "Name": "NS Consents",
-    "Type": "dropdown",
     "URL": "",
+    "Type": "dropdown",
     "Links": [
-      {"name": "Blood Consent", "url": "/work/resources/Consents/NS/Blood Consent.pdf"},
-      {"name": "Procedure Consent", "url": "/work/resources/Consents/NS/Procedure Consent.pdf"}
+      {
+        "name": "Blood Consent",
+        "url": "http://64.72.139.12/pdfs3/NORTH_SHORE-ENGLISH-VD002.pdf"
+      },
+      {
+        "name": "Procedure Consent",
+        "url": "http://64.72.139.12/pdfs3/NORTH_SHORE-ENGLISH-VD010.pdf"
+      },
+      {
+        "name": "NS Cath Consent",
+        "url": "/work/resources/Forms/NS Cath Consent.pdf"
+      },
+      {
+        "name": "NS Lumbar Puncture Consent",
+        "url": "http://64.72.139.12/pdfs3/NORTH_SHORE-ENGLISH-VD108.pdf"
+      }
     ]
   },
   {
     "Category": "Documents/Forms",
     "Name": "LIJ Consents",
-    "Type": "dropdown",
     "URL": "",
+    "Type": "dropdown",
     "Links": [
-      {"name": "Blood Consent", "url": "/work/resources/Consents/LIJ/Blood Consent.pdf"},
-      {"name": "Procedure Consent", "url": "/work/resources/Consents/LIJ/Procedure Consent.pdf"}
+      {
+        "name": "Blood Consent",
+        "url": "http://64.72.139.12/pdfs3/LIJ-ENGLISH-VD002.pdf"
+      },
+      {
+        "name": "Procedure Consent",
+        "url": "http://64.72.139.12/pdfs3/LIJ-ENGLISH-VD010.pdf"
+      },
+      {
+        "name": "LIJ MRI Gadolinium",
+        "url": "/work/resources/Forms/LIJ - MRI Gadolinium IV Contrast.pdf"
+      },
+      {
+        "name": "LIJ MRI Safety Screen",
+        "url": "/work/resources/Forms/LIJ - MRI Safety Screening Form.pdf"
+      },
+      {
+        "name": "LIJ Consent for LP",
+        "url": "http://64.72.139.12/pdfs3/LIJ-ENGLISH-VD108.pdf"
+      },
+      {
+        "name": "LIJ Chemotherapy Consent",
+        "url": "http://64.72.139.12/pdfs3/LIJ-ENGLISH-VD036.pdf"
+      }
     ]
   },
   {
@@ -121,11 +180,17 @@
   {
     "Category": "Documents/Forms",
     "Name": "Work Excuse Forms",
-    "Type": "dropdown",
     "URL": "",
+    "Type": "dropdown",
     "Links": [
-      {"name": "NS Work Excuse", "url": "/work/resources/Forms/NS Work Excuse.pdf"},
-      {"name": "LIJ Work Excuse", "url": "/work/resources/Forms/LIJ Work Excuse.pdf"}
+      {
+        "name": "LIJ Doctor's Note",
+        "url": "/work/resources/Notes/LIJ Doctor Note.pdf"
+      },
+      {
+        "name": "NSUH Doctor's Note",
+        "url": "/work/resources/Notes/NSUH Doctor Note.pdf"
+      }
     ]
   },
   {
