@@ -50,7 +50,6 @@ credentials.*.json
 
 # Generated files
 generated_bookmarks.html
-bookmarks.json
 
 # Dependencies
 node_modules/
