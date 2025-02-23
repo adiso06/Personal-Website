@@ -240,8 +240,9 @@
 
     <!-- Add this script before the closing body tag -->
     <script>
-      const STATIC_JSON_URL = '/bookmarks.json';
-      console.log('Looking for JSON file at:', window.location.origin + STATIC_JSON_URL);
+      // Update the JSON path to be relative to the current page
+      const STATIC_JSON_URL = './bookmarks.json';
+      console.log('Looking for JSON file at:', window.location.href.replace(/\/[^/]*$/, '') + '/' + STATIC_JSON_URL);
       
       const GAS_URL = 'https://script.google.com/macros/s/AKfycbxMCRmQLRh2FinB0cLJRPRSQof5T-50tQ9MhOwOHoXgdQFBB34SMzB6kaKP2S74tGb2wg/exec';
       
@@ -261,11 +262,12 @@
 
         // Try static JSON first
         try {
-          console.log('Attempting to load static JSON from:', STATIC_JSON_URL);
-          const response = await fetch(STATIC_JSON_URL);
+          const fullUrl = window.location.href.replace(/\/[^/]*$/, '') + '/' + STATIC_JSON_URL;
+          console.log('Attempting to load static JSON from:', fullUrl);
+          const response = await fetch(fullUrl);
           if (!response.ok) {
             console.log('Static JSON response not OK:', response.status, response.statusText);
-            throw new Error('Static JSON not available');
+            throw new Error(`Static JSON not available (${response.status})`);
           }
           const data = await response.json();
           console.log('Successfully loaded static JSON');
