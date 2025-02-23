@@ -1,0 +1,192 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif; /* Update as per the design requirement */
+}
+
+/* Flex container for the buttons to center align */
+.row {
+    display: flex;
+    justify-content: center; /* Center the buttons horizontally */
+    flex-wrap: wrap; /* Allow wrapping */
+}
+
+/* Style for the inner-container which is now the button */
+.inner-container {
+    background-color: #f2f2f2; /* Light grey background or as per design */
+    border-radius: 15px; /* Rounded corners for the buttons */
+    margin: 5px; /* Space between the buttons */    
+    text-align: center; /* Center the text inside the button */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: Adds shadow for depth */
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.inner-container a {
+    display: block; /* Make the link fill the container */
+    width: 100%; /* Full width of the container */
+    height: 100%; /* Full height of the container */
+    padding: 10px 20px; /* Padding for the link, adjust as needed */
+    text-decoration: none;
+    color: #010106; /* Hyperlink color */
+    font-size: 16px; /* As per design requirement */
+}
+
+
+/* Hover effect for buttons */
+.inner-container a:hover {
+    transform: translateY(-2px); /* Slight raise effect on hover */
+}
+
+/* Light theme styles */
+.light-mode {
+    background-color: #fff; /* White background */
+    color: #000; /* Black text */
+    /* other styles for light mode */
+}
+
+/* Dark theme styles */
+
+.dark-mode {
+    background-color: #333; /* Dark mode background for the page */
+    color: lightgray; /* Default text color for dark mode */
+}
+
+.dark-mode .inner-container {
+    background-color: #555; /* Middle grey for button background */
+}
+
+.dark-mode .inner-container a {
+    color: lightgray; /* Light grey text color for the buttons */
+}
+
+.dark-mode .inner-container a:hover {
+    background-color: #666; /* Slightly lighter grey for hover effect */
+    border-radius: 15px;
+}
+
+.dark-mode .dropdown-content {
+    background-color: #555; /* Middle grey for the dropdown background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Adjust shadow for a darker theme */
+}
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f2f2f2;
+    min-width: 160px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 1000;
+    border-radius: 5px;
+    padding: 5px 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: #010106;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    white-space: nowrap;
+}
+
+.dropdown-content a:hover {
+    background-color: #e2e2e2;
+}
+
+/* Dark mode support */
+.dark-mode .dropdown-content {
+    background-color: #555;
+}
+
+.dark-mode .dropdown-content a {
+    color: lightgray;
+}
+
+.dark-mode .dropdown-content a:hover {
+    background-color: #666;
+}
+
+/* Positioning the mode toggle button at the bottom left */
+#modeToggle {
+    position: fixed; /* Fixed position relative to the viewport */
+    left: 10px; /* Distance from the left */
+    bottom: 10px; /* Distance from the bottom */
+    padding: 10px 20px; /* Padding for the button for better click area and appearance */
+    /* Additional styling for the button */
+    background: #f2f2f2; /* Light grey background or any color you prefer */
+    border: none; /* No border for a modern look */
+    border-radius: 5px; /* Slightly rounded corners */
+    cursor: pointer; /* Cursor changes to a pointer to indicate this is clickable */
+    z-index: 1000; /* Ensure it's above other items, adjust number as necessary */
+}
+
+/* Optional: Add some hover effect for the button */
+#modeToggle:hover {
+    background-color: #e2e2e2; /* Slightly darker on hover for visual feedback */
+}
+
+/* Search box styles */
+.search-container {
+    position: fixed;
+    bottom: 10px; /* Same as toggle button */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    padding: 0;
+    z-index: 1000;
+}
+
+.search-input {
+    width: 100%;
+    padding: 10px 20px; /* Match toggle button padding */
+    border: none;
+    border-radius: 5px; /* Match toggle button border-radius */
+    font-size: 16px;
+    outline: none;
+    background: #f2f2f2; /* Match toggle button background */
+    color: #010106;
+    transition: all 0.3s ease;
+    cursor: text;
+}
+
+.search-input:hover {
+    background-color: #e2e2e2; /* Match toggle button hover */
+}
+
+/* Dark mode styles for search */
+.dark-mode .search-input {
+    background-color: #555;
+    color: lightgray;
+}
+
+.dark-mode .search-input::placeholder {
+    color: #999;
+}
+
+.dark-mode .search-input:hover {
+    background-color: #666;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .inner-container {
+        width: 100%; /* Full width for smaller screens */
+        margin-bottom: 10px; /* Space between stacked buttons */
+    }
+}

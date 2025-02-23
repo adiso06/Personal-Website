@@ -41,3 +41,16 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# Credentials and sensitive data
+credentials.json
+credentials.*.json
+.env
+.env.*
+
+# Generated files
+generated_bookmarks.html
+bookmarks.json
+
+# Dependencies
+node_modules/
