@@ -6,13 +6,14 @@ const path = require('path');
 const SPREADSHEET_ID = '1wJUC_pM_IAbuv8aKkmvMhThLe_ulZ-VmcBiSNxlrnOk';
 const RANGE = 'Hospital Bookmarks!A:E';
 
-// Update to use environment variable for API key
-const API_KEY = process.env.GOOGLE_SHEETS_API_KEY;
-
 async function generateBookmarksJson() {
   try {
-    const credentialsPath = path.join(__dirname, 'credentials.json');
-    const CREDENTIALS = require(credentialsPath);
+    // Get credentials from environment variable
+    if (!process.env.GOOGLE_SHEETS_CREDENTIALS) {
+      throw new Error('GOOGLE_SHEETS_CREDENTIALS environment variable is not set');
+    }
+
+    const CREDENTIALS = JSON.parse(process.env.GOOGLE_SHEETS_CREDENTIALS);
 
     const auth = new google.auth.GoogleAuth({
       credentials: CREDENTIALS,
