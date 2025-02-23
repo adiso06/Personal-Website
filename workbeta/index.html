@@ -380,7 +380,7 @@
                 
                 if (item.Type === 'dropdown') {
                   try {
-                    const links = JSON.parse(item.Links);
+                    const links = item.Links;
                     col.innerHTML = `
                       <div class="inner-container">
                         <div class="dropdown">
@@ -395,7 +395,7 @@
                       </div>
                     `;
                   } catch (e) {
-                    console.error('Error parsing links for', item.Name);
+                    console.error('Error creating dropdown for', item.Name, e);
                   }
                 } else {
                   col.innerHTML = `
