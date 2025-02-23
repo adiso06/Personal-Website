@@ -1,0 +1,41 @@
+name: Update Bookmarks
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Runs daily at midnight
+  workflow_dispatch:      # Allows manual trigger
+  push:
+    paths:
+      - 'workbeta/generate-bookmarks.js'
+
+jobs:
+  update-bookmarks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          
+      - name: Create credentials file
+        run: |
+          echo '${{ secrets.GOOGLE_SHEETS_CREDENTIALS }}' > workbeta/credentials.json
+          
+      - name: Install dependencies
+        run: |
+          cd workbeta
+          npm install googleapis
+          
+      - name: Generate bookmarks
+        run: |
+          cd workbeta
+          node generate-bookmarks.js
+          
+      - name: Commit and push if changed
+        run: |
+          git config --global user.name 'GitHub Actions Bot'
+          git config --global user.email 'actions@github.com'
+          git add bookmarks.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update bookmarks" && git push)
