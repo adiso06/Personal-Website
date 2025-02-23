@@ -4,7 +4,7 @@ const path = require('path');
 
 // Your Google Sheets configuration
 const SPREADSHEET_ID = '1wJUC_pM_IAbuv8aKkmvMhThLe_ulZ-VmcBiSNxlrnOk';
-const SHEET_NAME = 'Hospital Bookmarks';
+const SHEET_NAME = 'Sheet1';
 
 async function generateBookmarksJson() {
   try {
