@@ -106,7 +106,40 @@ body {
     display: block;
 }
 
-
+.search-container {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--bg-color);
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .search-input {
+    width: 80%;
+    max-width: 600px;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+  }
+  
+  .search-input:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+  
+  /* For dark mode compatibility */
+  .dark-mode .search-input {
+    background: #333;
+    color: #fff;
+    border-color: #555;
+  }
+  
+  .dark-mode .search-input:focus {
+    border-color: #0056b3;
+  }
 
 /* Positioning the mode toggle button at the bottom left */
 #modeToggle {

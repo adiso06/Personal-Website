@@ -51,6 +51,11 @@
     });
   </script>
 
+  <!-- Search Box -->
+  <div class="search-container">
+    <input type="text" id="searchBox" placeholder="Type to search..." class="search-input" autofocus>
+  </div>
+
   <body>
     <div class="container mt-4">
       <!-- EMR Section -->
@@ -426,6 +431,74 @@
         } else {
           applyMode();
         }
+      });
+    </script>
+
+    <!-- Search functionality -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const searchBox = document.getElementById('searchBox');
+        
+        // Auto-focus search box and handle keyboard events
+        document.addEventListener('keydown', function(e) {
+          if (document.activeElement.tagName === 'INPUT' && document.activeElement !== searchBox) {
+            return;
+          }
+          
+          if (e.key.length === 1 || e.key === 'Backspace') {
+            searchBox.focus();
+          }
+        });
+
+        // Search functionality
+        searchBox.addEventListener('input', function() {
+          const searchTerm = this.value.toLowerCase();
+          
+          const containers = document.querySelectorAll('.inner-container');
+          const sections = document.querySelectorAll('.row.mb-4');
+          
+          containers.forEach(container => {
+            const link = container.querySelector('a');
+            const dropdownLinks = container.querySelectorAll('.dropdown-content a');
+            const section = container.closest('.row.mb-4');
+            const sectionText = section ? section.querySelector('h2').textContent.toLowerCase() : '';
+            
+            // Check main link and dropdown links
+            let matches = false;
+            if (link.textContent.toLowerCase().includes(searchTerm)) {
+              matches = true;
+            }
+            dropdownLinks.forEach(dropLink => {
+              if (dropLink.textContent.toLowerCase().includes(searchTerm)) {
+                matches = true;
+              }
+            });
+            if (sectionText.includes(searchTerm)) {
+              matches = true;
+            }
+
+            // Apply fade effect instead of hiding
+            container.style.opacity = matches ? '1' : '0.1';
+            container.style.transition = 'opacity 0.3s ease';
+          });
+          
+          // Handle section visibility based on visible items
+          sections.forEach(section => {
+            const visibleContainers = Array.from(section.querySelectorAll('.inner-container'))
+              .some(container => container.style.opacity !== '0.1');
+            section.style.opacity = visibleContainers ? '1' : '0.1';
+            section.style.transition = 'opacity 0.3s ease';
+          });
+        });
+        
+        // Clear search when pressing Escape
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape') {
+            searchBox.value = '';
+            searchBox.dispatchEvent(new Event('input'));
+            searchBox.blur();
+          }
+        });
       });
     </script>
 
