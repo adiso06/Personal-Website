@@ -12,6 +12,8 @@
       href="new_responsive_bookmark_grid.css"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preload" href="bookmarks.json" as="fetch" crossorigin="anonymous">
+    <link rel="preload" href="new_responsive_bookmark_grid.css" as="style">
   </head>
 
   <!-- Google tag (gtag.js) -->
@@ -242,12 +244,10 @@
 
     <!-- Add this script before the closing body tag -->
     <script>
-      // Update the JSON path to be relative to the current page
+      // Update these constants
       const STATIC_JSON_URL = './bookmarks.json';
-      console.log('Looking for JSON file at:', window.location.href.replace(/\/[^/]*$/, '') + '/' + STATIC_JSON_URL);
-      
       const GAS_URL = 'https://script.google.com/macros/s/AKfycbxMCRmQLRh2FinB0cLJRPRSQof5T-50tQ9MhOwOHoXgdQFBB34SMzB6kaKP2S74tGb2wg/exec';
-      
+
       async function fetchWithCache(url) {
         console.log('Starting data fetch...');
         
