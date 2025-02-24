@@ -379,23 +379,34 @@
                           <a href="#" onclick="return false;">${item.Name}</a>
                           <div class="dropdown-content">
                             ${links.map(link => `
-                              <a href="${link.url}" target="_blank" 
-                                 onclick="trackLinkClick('${link.name}', '${category}')">${link.name}</a>
+                              <a href="${link.url}" target="_blank">${link.name}</a>
                             `).join('')}
                           </div>
                         </div>
                       </div>
                     `;
+                    
+                    // Add click tracking to dropdown links
+                    col.querySelectorAll('.dropdown-content a').forEach(link => {
+                      link.addEventListener('click', function() {
+                        trackLinkClick(this.textContent, category);
+                      });
+                    });
                   } catch (e) {
                     console.error('Error creating dropdown for', item.Name, e);
                   }
                 } else {
                   col.innerHTML = `
                     <div class="inner-container">
-                      <a href="${item.URL}" target="_blank" 
-                         onclick="trackLinkClick('${item.Name}', '${category}')">${item.Name}</a>
+                      <a href="${item.URL}" target="_blank">${item.Name}</a>
                     </div>
                   `;
+                  
+                  // Add click tracking to regular links
+                  const link = col.querySelector('a');
+                  link.addEventListener('click', function() {
+                    trackLinkClick(item.Name, category);
+                  });
                 }
                 
                 row.appendChild(col);
