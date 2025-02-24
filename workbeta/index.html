@@ -266,13 +266,8 @@
       // Separate announcement fetch that always goes to Google Sheets
       function fetchAnnouncement() {
         console.log('Fetching announcement from Google Sheets...');
-        fetch(`${GAS_URL}?action=getAnnouncement&t=${Date.now()}`, {
-          cache: 'no-store',
-          headers: {
-            'Cache-Control': 'no-cache',
-            'Pragma': 'no-cache'
-          }
-        })
+        // Use simple GET request without custom headers to avoid CORS preflight
+        fetch(`${GAS_URL}?action=getAnnouncement&t=${Date.now()}`)
           .then(response => response.json())
           .then(data => {
             console.log('Received announcement:', data);
