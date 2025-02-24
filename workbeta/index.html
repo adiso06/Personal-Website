@@ -66,6 +66,11 @@
       <input type="text" id="searchBox" placeholder="Type to search..." class="search-input" autofocus>
     </div>
 
+    <!-- Announcement Banner - Desktop Only -->
+    <div class="announcement-banner" style="display: none;">
+      <span class="announcement-text"></span>
+    </div>
+
     <div class="container mt-4">
       <!-- Additional Resources Section -->
       <div class="row mb-4">
@@ -82,7 +87,7 @@
      <script>
       document.addEventListener("DOMContentLoaded", function () {
         const modeToggle = document.getElementById("modeToggle");
-        const body = document.body;
+        const body = document.body
 
         // Approximate sunrise and sunset times
         const sunriseHour = 7; // 7:00 AM
@@ -340,8 +345,23 @@
       function loadBookmarks() {
         console.log('Starting to load bookmarks...');
         fetchWithCache(STATIC_JSON_URL)
-          .then(bookmarks => {
-            console.log('Parsed bookmarks:', bookmarks);
+          .then(data => {
+            console.log('Parsed data:', data);
+            
+            // Handle announcement if it exists
+            if (data.announcement) {
+              const bannerElement = document.querySelector('.announcement-banner');
+              const textElement = document.querySelector('.announcement-text');
+              if (data.announcement.trim()) {
+                textElement.textContent = data.announcement;
+                bannerElement.style.display = 'block';
+              } else {
+                bannerElement.style.display = 'none';
+              }
+            }
+
+            // Existing bookmarks code
+            const bookmarks = data.bookmarks || data; // Handle both new and old data format
             const container = document.getElementById('dynamicBookmarks');
             if (!container) {
               console.error('Could not find dynamicBookmarks container!');

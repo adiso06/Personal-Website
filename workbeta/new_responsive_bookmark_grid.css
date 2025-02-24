@@ -183,6 +183,34 @@ body {
     background-color: #666;
 }
 
+.announcement-banner {
+    text-align: center;
+    padding: 8px;
+    margin: 10px auto;
+    max-width: 800px;
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    font-size: 0.9rem;
+  }
+  
+  .announcement-text {
+    color: inherit;
+    opacity: 0.8;
+  }
+  
+  /* Hide on mobile */
+  @media (max-width: 768px) {
+    .announcement-banner {
+      display: none;
+    }
+  }
+  
+  /* Dark mode support */
+  .dark-mode .announcement-banner {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .inner-container {
