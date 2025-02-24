@@ -248,65 +248,131 @@
       const STATIC_JSON_URL = './bookmarks.json';
       const GAS_URL = 'https://script.google.com/macros/s/AKfycbxMCRmQLRh2FinB0cLJRPRSQof5T-50tQ9MhOwOHoXgdQFBB34SMzB6kaKP2S74tGb2wg/exec';
 
-      async function fetchWithCache(url) {
-        console.log('Starting data fetch...');
-        
-        try {
-          // First try to get bookmarks from static JSON
-          const fullUrl = window.location.href.replace(/\/[^/]*$/, '') + '/' + STATIC_JSON_URL;
-          console.log('Loading bookmarks from:', fullUrl);
-          const bookmarksResponse = await fetch(fullUrl);
-          
-          if (!bookmarksResponse.ok) {
-            throw new Error(`Static JSON not available (${bookmarksResponse.status})`);
-          }
-          const jsonData = await bookmarksResponse.json();
-          console.log('Successfully loaded data from static JSON:', jsonData);
+      // Immediately load and parse the JSON file when script loads
+      let bookmarksData = null;
+      fetch('./bookmarks.json')
+        .then(response => response.json())
+        .then(data => {
+          bookmarksData = data;
+          renderBookmarks(data.bookmarks || data);
+          // Set initial announcement
+          updateAnnouncement(data.announcement || '');
+        })
+        .catch(console.error);
 
-          // Separately fetch announcement from Google Sheets to override static one
-          console.log('Fetching fresh announcement...');
-          const announcementResponse = await fetch(`${GAS_URL}?action=getAnnouncement`);
-          const announcementData = await announcementResponse.json();
-          console.log('Fresh announcement data:', announcementData);
-
-          return {
-            data: jsonData.bookmarks || jsonData, // Handle both formats
-            announcement: announcementData.announcement || jsonData.announcement // Use fresh announcement, fall back to static
-          };
-
-        } catch (error) {
-          console.error('Error loading static JSON, falling back to Google Sheets:', error);
-          const response = await fetch(GAS_URL);
-          return await response.json();
+      // Separate function to update announcement
+      function updateAnnouncement(text) {
+        const bannerElement = document.querySelector('.announcement-banner');
+        const textElement = document.querySelector('.announcement-text');
+        if (text && text.trim()) {
+          textElement.textContent = text;
+          bannerElement.style.display = 'block';
+        } else {
+          bannerElement.style.display = 'none';
         }
       }
 
-      // Update the forceRefresh function
-      async function forceRefresh() {
-        console.log('Force refreshing data...');
-        // Clear local cache
-        localStorage.removeItem('bookmarks_cache');
-        localStorage.removeItem('bookmarks_cache_expiry');
+      // Separate function to render bookmarks
+      function renderBookmarks(bookmarks) {
+        const container = document.getElementById('dynamicBookmarks');
+        if (!container) return;
         
-        try {
-          // Directly fetch from Google Sheets
-          const response = await fetch(`${GAS_URL}?action=refresh`);
-          if (!response.ok) {
-            throw new Error(`Failed to fetch from Google Sheets: ${response.status}`);
+        container.innerHTML = ''; // Clear existing content
+        
+        // Group bookmarks by category
+        const groupedBookmarks = {};
+        bookmarks.forEach(bookmark => {
+          if (!groupedBookmarks[bookmark.Category]) {
+            groupedBookmarks[bookmark.Category] = [];
           }
+          groupedBookmarks[bookmark.Category].push(bookmark);
+        });
+
+        // Create HTML for each category
+        Object.entries(groupedBookmarks).forEach(([category, items]) => {
+          const categoryDiv = document.createElement('div');
+          categoryDiv.className = 'category-section mb-4';
+          
+          const categoryHeader = document.createElement('h3');
+          categoryHeader.className = 'text-center mb-3';
+          categoryHeader.textContent = category;
+          categoryDiv.appendChild(categoryHeader);
+
+          const row = document.createElement('div');
+          row.className = 'row';
+
+          items.forEach(item => {
+            const col = document.createElement('div');
+            col.className = 'col-md-4';
+            
+            if (item.Type === 'dropdown') {
+              try {
+                const links = item.Links;
+                col.innerHTML = `
+                  <div class="inner-container">
+                    <div class="dropdown">
+                      <a href="#" onclick="return false;">${item.Name}</a>
+                      <div class="dropdown-content">
+                        ${links.map(link => `
+                          <a href="${link.url}" target="_blank">${link.name}</a>
+                        `).join('')}
+                      </div>
+                    </div>
+                  </div>
+                `;
+                
+                // Add click tracking to dropdown links
+                col.querySelectorAll('.dropdown-content a').forEach(link => {
+                  link.addEventListener('click', function() {
+                    trackLinkClick(this.textContent, category);
+                  });
+                });
+              } catch (e) {
+                console.error('Error creating dropdown for', item.Name, e);
+              }
+            } else {
+              col.innerHTML = `
+                <div class="inner-container">
+                  <a href="${item.URL}" target="_blank">${item.Name}</a>
+                </div>
+              `;
+              
+              // Add click tracking to regular links
+              const link = col.querySelector('a');
+              link.addEventListener('click', function() {
+                trackLinkClick(item.Name, category);
+              });
+            }
+            
+            row.appendChild(col);
+          });
+
+          categoryDiv.appendChild(row);
+          container.appendChild(categoryDiv);
+        });
+      }
+
+      // Fetch fresh announcement in the background
+      fetch(`${GAS_URL}?action=getAnnouncement`)
+        .then(response => response.json())
+        .then(data => {
+          if (data.success && data.announcement) {
+            updateAnnouncement(data.announcement);
+          }
+        })
+        .catch(console.error);
+
+      // Update the refresh function
+      async function forceRefresh() {
+        try {
+          const response = await fetch(`${GAS_URL}?action=refresh`);
           const data = await response.json();
-          console.log('Successfully refreshed from Google Sheets');
-          
-          // Update cache with new data
-          localStorage.setItem('bookmarks_cache', JSON.stringify(data));
-          localStorage.setItem('bookmarks_cache_expiry', (Date.now() + CACHE_DURATION).toString());
-          
-          // Reload bookmarks display
-          loadBookmarks();
+          if (data.success) {
+            renderBookmarks(data.data);
+            updateAnnouncement(data.announcement);
+          }
         } catch (error) {
           console.error('Refresh failed:', error);
-          // Fallback to normal load process
-          loadBookmarks();
         }
       }
 
@@ -317,121 +383,6 @@
       refreshButton.title = 'Refresh from Google Sheets';
       refreshButton.onclick = forceRefresh;
       document.body.appendChild(refreshButton);
-
-      // Function to load and display bookmarks
-      function loadBookmarks() {
-        console.log('Starting to load bookmarks...');
-        fetchWithCache(STATIC_JSON_URL)
-          .then(data => {
-            console.log('Received data:', data);
-            
-            // Handle announcement banner
-            const bannerElement = document.querySelector('.announcement-banner');
-            const textElement = document.querySelector('.announcement-text');
-            if (data.announcement && data.announcement.trim()) {
-              console.log('Setting announcement:', data.announcement);
-              textElement.textContent = data.announcement;
-              bannerElement.style.display = 'block';
-            } else {
-              console.log('No announcement found');
-              bannerElement.style.display = 'none';
-            }
-
-            // Handle bookmarks - data.data is the array from bookmarks.json
-            const bookmarks = Array.isArray(data.data) ? data.data : data.data.bookmarks || [];
-            console.log('Processing bookmarks:', bookmarks);
-            
-            const container = document.getElementById('dynamicBookmarks');
-            if (!container) {
-              console.error('Could not find dynamicBookmarks container!');
-              return;
-            }
-            container.innerHTML = ''; // Clear existing content
-            
-            // Group bookmarks by category
-            const groupedBookmarks = {};
-            bookmarks.forEach(bookmark => {
-              if (!groupedBookmarks[bookmark.Category]) {
-                groupedBookmarks[bookmark.Category] = [];
-              }
-              groupedBookmarks[bookmark.Category].push(bookmark);
-            });
-
-            // Create HTML for each category
-            Object.entries(groupedBookmarks).forEach(([category, items]) => {
-              console.log(`Rendering category: ${category} with ${items.length} items`);
-              const categoryDiv = document.createElement('div');
-              categoryDiv.className = 'category-section mb-4';
-              
-              const categoryHeader = document.createElement('h3');
-              categoryHeader.className = 'text-center mb-3';
-              categoryHeader.textContent = category;
-              categoryDiv.appendChild(categoryHeader);
-
-              const row = document.createElement('div');
-              row.className = 'row';
-
-              items.forEach(item => {
-                console.log('Rendering item:', item);
-                const col = document.createElement('div');
-                col.className = 'col-md-4';
-                
-                if (item.Type === 'dropdown') {
-                  try {
-                    const links = item.Links;
-                    col.innerHTML = `
-                      <div class="inner-container">
-                        <div class="dropdown">
-                          <a href="#" onclick="return false;">${item.Name}</a>
-                          <div class="dropdown-content">
-                            ${links.map(link => `
-                              <a href="${link.url}" target="_blank">${link.name}</a>
-                            `).join('')}
-                          </div>
-                        </div>
-                      </div>
-                    `;
-                    
-                    // Add click tracking to dropdown links
-                    col.querySelectorAll('.dropdown-content a').forEach(link => {
-                      link.addEventListener('click', function() {
-                        trackLinkClick(this.textContent, category);
-                      });
-                    });
-                  } catch (e) {
-                    console.error('Error creating dropdown for', item.Name, e);
-                  }
-                } else {
-                  col.innerHTML = `
-                    <div class="inner-container">
-                      <a href="${item.URL}" target="_blank">${item.Name}</a>
-                    </div>
-                  `;
-                  
-                  // Add click tracking to regular links
-                  const link = col.querySelector('a');
-                  link.addEventListener('click', function() {
-                    trackLinkClick(item.Name, category);
-                  });
-                }
-                
-                row.appendChild(col);
-              });
-
-              categoryDiv.appendChild(row);
-              container.appendChild(categoryDiv);
-            });
-          })
-          .catch(error => {
-            console.error('Error loading bookmarks:', error);
-          });
-      }
-
-      // Make sure loadBookmarks is called when the page loads
-      document.addEventListener('DOMContentLoaded', function() {
-        console.log('DOM loaded, calling loadBookmarks');
-        loadBookmarks();
-      });
     </script>
   </body>
 
