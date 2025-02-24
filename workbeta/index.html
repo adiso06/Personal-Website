@@ -247,15 +247,23 @@
       const STATIC_JSON_URL = './bookmarks.json';
       const GAS_URL = 'https://script.google.com/macros/s/AKfycbxMCRmQLRh2FinB0cLJRPRSQof5T-50tQ9MhOwOHoXgdQFBB34SMzB6kaKP2S74tGb2wg/exec';
 
-      // Function to update announcement banner
+      // Function to update announcement banner independently
       function updateAnnouncement(text) {
+        console.log('Updating announcement banner with:', text);
         const bannerElement = document.querySelector('.announcement-banner');
         const textElement = document.querySelector('.announcement-text');
+        if (!bannerElement || !textElement) {
+          console.error('Banner elements not found');
+          return;
+        }
+        
         if (text && text.trim()) {
           textElement.textContent = text;
           bannerElement.style.display = 'block';
+          console.log('Banner updated and shown');
         } else {
           bannerElement.style.display = 'none';
+          console.log('Banner hidden due to empty text');
         }
       }
 
@@ -325,23 +333,22 @@
         });
       }
 
-      // Load bookmarks from local JSON with no-cache
-      console.log('Starting initial load...');
-      fetch(STATIC_JSON_URL, {
-        cache: 'no-store',
-        headers: {
-          'Cache-Control': 'no-cache',
-          'Pragma': 'no-cache'
-        }
-      })
+      // Load static content immediately
+      console.log('Starting initial static load...');
+      fetch(STATIC_JSON_URL, { cache: 'no-store' })
         .then(response => response.json())
         .then(data => {
-          console.log('Loaded bookmarks from JSON:', data);
+          console.log('Loaded static bookmarks:', data);
+          // Render bookmarks immediately
           renderBookmarks(data.bookmarks || data);
+          // Show static announcement if available
+          if (data.announcement) {
+            updateAnnouncement(data.announcement);
+          }
         })
-        .catch(error => console.error('Error loading bookmarks:', error));
+        .catch(error => console.error('Error loading static bookmarks:', error));
 
-      // Separate announcement fetch that always goes to Google Sheets
+      // Separate function for dynamic announcement updates
       async function fetchAnnouncement() {
         console.log('Fetching fresh announcement...');
         try {
@@ -357,19 +364,32 @@
           console.log('Received announcement data:', data);
           
           if (data.success && typeof data.announcement === 'string') {
-            console.log('Updating announcement to:', data.announcement);
+            console.log('Valid announcement received:', data.announcement);
             updateAnnouncement(data.announcement);
           } else {
-            console.warn('Invalid announcement data:', data);
+            console.warn('Invalid announcement data structure:', data);
           }
         } catch (error) {
           console.error('Error fetching announcement:', error);
         }
       }
 
-      // Call fetchAnnouncement immediately and set up periodic refresh
-      fetchAnnouncement();
-      setInterval(fetchAnnouncement, 30000); // Refresh every 30 seconds
+      // Start dynamic updates after initial load
+      document.addEventListener('DOMContentLoaded', () => {
+        // Wait a bit after page load before fetching dynamic content
+        setTimeout(() => {
+          console.log('Starting dynamic updates...');
+          fetchAnnouncement();
+          // Set up periodic updates
+          setInterval(fetchAnnouncement, 30000);
+        }, 2000); // Wait 2 seconds after page load
+      });
+
+      // Optional: Add a manual refresh button
+      function refreshAnnouncement() {
+        console.log('Manual announcement refresh requested');
+        fetchAnnouncement();
+      }
     </script>
   </body>
 
