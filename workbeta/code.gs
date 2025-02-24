@@ -57,16 +57,27 @@ function doGet(e) {
       .setMimeType(ContentService.MimeType.JSON)
       .setHeaders(refreshHeaders);
     }
+    else if (e.parameter.action === 'getAnnouncement') {
+      return getAnnouncement();
+    }
   }
 
   // Default behavior: return bookmarks with caching enabled
-  const output = getBookmarks();
-  return ContentService.createTextOutput(JSON.stringify(output))
-    .setMimeType(ContentService.MimeType.JSON)
-    .setHeaders({
-      ...headers,
-      'Cache-Control': 'public, max-age=300'
-    });
+  const bookmarks = getBookmarks();
+  
+  // Fetch announcement from the "Settings" sheet
+  const settingsSheet = SpreadsheetApp.openById(SHEET_ID).getSheetByName('Settings');
+  const announcement = settingsSheet ? settingsSheet.getRange('B1').getValue() : '';
+
+  return ContentService.createTextOutput(JSON.stringify({
+    bookmarks: bookmarks,
+    announcement: announcement
+  }))
+  .setMimeType(ContentService.MimeType.JSON)
+  .setHeaders({
+    ...headers,
+    'Cache-Control': 'public, max-age=300'
+  });
 }
 
 function handleRefresh() {
@@ -261,4 +272,40 @@ function setup() {
   sheet.getRange(1, 1, 1, headers.length)
     .setFontWeight('bold')
     .setBackground('#f3f3f3');
+}
+function onEdit(e) {
+  // Check if the edit was made in the correct sheet
+  if (e.source.getSheetName() === SHEET_NAME) {
+    // Call generate-bookmarks functionality via webhook
+    const GITHUB_REPO = 'adiso06/Personal-Website/';
+    const GITHUB_TOKEN = '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'; // Store this securely
+    
+    const url = `https://api.github.com/repos/${GITHUB_REPO}/dispatches`;
+    
+    const options = {
+      'method': 'post',
+      'headers': {
+        'Authorization': `token ${GITHUB_TOKEN}`,
+        'Accept': 'application/vnd.github.v3+json'
+      },
+      'payload': JSON.stringify({
+        'event_type': 'google_sheets_update'
+      })
+    };
+    
+    try {
+      UrlFetchApp.fetch(url, options);
+    } catch (error) {
+      console.error('Failed to trigger GitHub action:', error);
+    }
+  }
+}
+
+// Add this new function to handle announcement requests
+function getAnnouncement() {
+  const sheet = SpreadsheetApp.openById(SHEET_ID).getSheetByName('Settings');
+  const announcement = sheet ? sheet.getRange('A1').getValue() : '';
+  return ContentService.createTextOutput(JSON.stringify({
+    announcement: announcement
+  })).setMimeType(ContentService.MimeType.JSON);
 }

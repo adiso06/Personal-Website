@@ -61,6 +61,10 @@
   </script>
 
   <body>
+    <div class="announcement-banner" style="display: none;">
+      <span class="announcement-text"></span>
+    </div>
+
     <!-- Search Box -->
     <div class="search-container">
       <input type="text" id="searchBox" placeholder="Type to search..." class="search-input" autofocus>
@@ -253,7 +257,25 @@
         const cacheExpiry = 'bookmarks_cache_expiry';
         const CACHE_DURATION = 7 * 24 * 60 * 60 * 1000; // 7 days
 
-        // Check cache first
+        // Always fetch announcement from Google Apps Script
+        try {
+          const announcementResponse = await fetch(`${GAS_URL}?action=getAnnouncement`);
+          if (announcementResponse.ok) {
+            const announcementData = await announcementResponse.json();
+            const bannerElement = document.querySelector('.announcement-banner');
+            const textElement = document.querySelector('.announcement-text');
+            if (announcementData.announcement && announcementData.announcement.trim()) {
+              textElement.textContent = announcementData.announcement;
+              bannerElement.style.display = 'block';
+            } else {
+              bannerElement.style.display = 'none';
+            }
+          }
+        } catch (error) {
+          console.log('Failed to fetch announcement:', error);
+        }
+
+        // Rest of cache checking logic for bookmarks
         const cachedData = localStorage.getItem(cacheKey);
         const expiryTime = localStorage.getItem(cacheExpiry);
         
@@ -348,18 +370,6 @@
           .then(data => {
             console.log('Parsed data:', data);
             
-            // Handle announcement if it exists
-            if (data.announcement) {
-              const bannerElement = document.querySelector('.announcement-banner');
-              const textElement = document.querySelector('.announcement-text');
-              if (data.announcement.trim()) {
-                textElement.textContent = data.announcement;
-                bannerElement.style.display = 'block';
-              } else {
-                bannerElement.style.display = 'none';
-              }
-            }
-
             // Handle bookmarks
             const bookmarks = data.bookmarks || data; // Handle both new and old data format
             const container = document.getElementById('dynamicBookmarks');
