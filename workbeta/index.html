@@ -249,59 +249,30 @@
       const GAS_URL = 'https://script.google.com/macros/s/AKfycbxMCRmQLRh2FinB0cLJRPRSQof5T-50tQ9MhOwOHoXgdQFBB34SMzB6kaKP2S74tGb2wg/exec';
       
       async function fetchWithCache(url) {
-        const cacheKey = 'bookmarks_cache';
-        const cacheExpiry = 'bookmarks_cache_expiry';
-        const CACHE_DURATION = 7 * 24 * 60 * 60 * 1000; // 7 days
-
-        // Check cache first
-        const cachedData = localStorage.getItem(cacheKey);
-        const expiryTime = localStorage.getItem(cacheExpiry);
+        // Always fetch fresh announcement from Google Sheets
+        const announcementResponse = await fetch(`${GAS_URL}?action=getAnnouncement`);
+        const announcementData = await announcementResponse.json();
         
-        if (cachedData && expiryTime && Date.now() < parseInt(expiryTime)) {
-          console.log('Using cached data');
-          return JSON.parse(cachedData);
-        }
-
-        // Try static JSON first
+        // Get bookmarks from static JSON
+        let bookmarksData;
         try {
           const fullUrl = window.location.href.replace(/\/[^/]*$/, '') + '/' + STATIC_JSON_URL;
-          console.log('Attempting to load static JSON from:', fullUrl);
           const response = await fetch(fullUrl);
           if (!response.ok) {
-            console.log('Static JSON response not OK:', response.status, response.statusText);
             throw new Error(`Static JSON not available (${response.status})`);
           }
-          const data = await response.json();
-          console.log('Successfully loaded static JSON');
-          
-          // Store in cache
-          localStorage.setItem(cacheKey, JSON.stringify(data));
-          localStorage.setItem(cacheExpiry, (Date.now() + CACHE_DURATION).toString());
-          
-          return data;
+          bookmarksData = await response.json();
         } catch (error) {
-          console.log('Static JSON failed:', error);
-          console.log('Falling back to Google Apps Script...');
-          
-          // Fall back to Google Apps Script
-          try {
-            const response = await fetch(GAS_URL);
-            const data = await response.json();
-            console.log('Successfully loaded from Google Apps Script');
-            
-            localStorage.setItem(cacheKey, JSON.stringify(data));
-            localStorage.setItem(cacheExpiry, (Date.now() + CACHE_DURATION).toString());
-            
-            return data;
-          } catch (gasError) {
-            console.error('Both static and GAS failed:', gasError);
-            if (cachedData) {
-              console.log('Using expired cache as last resort');
-              return JSON.parse(cachedData);
-            }
-            throw gasError;
-          }
+          console.log('Static JSON failed, falling back to Google Apps Script...');
+          const response = await fetch(GAS_URL);
+          bookmarksData = await response.json();
         }
+
+        // Combine static bookmarks with fresh announcement
+        return {
+          ...bookmarksData,
+          announcement: announcementData.announcement
+        };
       }
 
       // Update the forceRefresh function
