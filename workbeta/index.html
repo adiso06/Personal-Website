@@ -244,21 +244,49 @@
 
     <!-- Add this script before the closing body tag -->
     <script>
-      // Update these constants
       const STATIC_JSON_URL = './bookmarks.json';
       const GAS_URL = 'https://script.google.com/macros/s/AKfycbxMCRmQLRh2FinB0cLJRPRSQof5T-50tQ9MhOwOHoXgdQFBB34SMzB6kaKP2S74tGb2wg/exec';
 
-      // Immediately load and parse the JSON file when script loads
-      let bookmarksData = null;
-      fetch('./bookmarks.json')
+      // Load bookmarks from local JSON with no-cache
+      console.log('Starting initial load...');
+      fetch(STATIC_JSON_URL, {
+        cache: 'no-store',
+        headers: {
+          'Cache-Control': 'no-cache',
+          'Pragma': 'no-cache'
+        }
+      })
         .then(response => response.json())
         .then(data => {
-          bookmarksData = data;
+          console.log('Loaded bookmarks from JSON:', data);
           renderBookmarks(data.bookmarks || data);
-          // Set initial announcement
-          updateAnnouncement(data.announcement || '');
         })
-        .catch(console.error);
+        .catch(error => console.error('Error loading bookmarks:', error));
+
+      // Separate announcement fetch that always goes to Google Sheets
+      function fetchAnnouncement() {
+        console.log('Fetching announcement from Google Sheets...');
+        fetch(`${GAS_URL}?action=getAnnouncement&t=${Date.now()}`, {
+          cache: 'no-store',
+          headers: {
+            'Cache-Control': 'no-cache',
+            'Pragma': 'no-cache'
+          }
+        })
+          .then(response => response.json())
+          .then(data => {
+            console.log('Received announcement:', data);
+            if (data.success) {
+              updateAnnouncement(data.announcement);
+            }
+          })
+          .catch(error => console.error('Error fetching announcement:', error));
+      }
+
+      // Call fetchAnnouncement immediately and set up periodic refresh
+      fetchAnnouncement();
+      // Refresh announcement every 30 seconds
+      setInterval(fetchAnnouncement, 30000);
 
       // Separate function to update announcement
       function updateAnnouncement(text) {
@@ -351,38 +379,6 @@
           container.appendChild(categoryDiv);
         });
       }
-
-      // Fetch fresh announcement in the background
-      fetch(`${GAS_URL}?action=getAnnouncement`)
-        .then(response => response.json())
-        .then(data => {
-          if (data.success && data.announcement) {
-            updateAnnouncement(data.announcement);
-          }
-        })
-        .catch(console.error);
-
-      // Update the refresh function
-      async function forceRefresh() {
-        try {
-          const response = await fetch(`${GAS_URL}?action=refresh`);
-          const data = await response.json();
-          if (data.success) {
-            renderBookmarks(data.data);
-            updateAnnouncement(data.announcement);
-          }
-        } catch (error) {
-          console.error('Refresh failed:', error);
-        }
-      }
-
-      // Update the refresh button creation
-      const refreshButton = document.createElement('button');
-      refreshButton.innerHTML = '🔄';
-      refreshButton.style.cssText = 'position: fixed; bottom: 60px; left: 10px; padding: 5px; border-radius: 5px; cursor: pointer;';
-      refreshButton.title = 'Refresh from Google Sheets';
-      refreshButton.onclick = forceRefresh;
-      document.body.appendChild(refreshButton);
     </script>
   </body>
 
