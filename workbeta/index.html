@@ -252,6 +252,7 @@
         // Always fetch fresh announcement from Google Sheets
         const announcementResponse = await fetch(`${GAS_URL}?action=getAnnouncement`);
         const announcementData = await announcementResponse.json();
+        console.log('Fetched announcement:', announcementData);
         
         // Get bookmarks from static JSON
         let bookmarksData;
@@ -268,9 +269,9 @@
           bookmarksData = await response.json();
         }
 
-        // Combine static bookmarks with fresh announcement
+        // Return combined data (bookmarks array with announcement)
         return {
-          ...bookmarksData,
+          data: bookmarksData, // bookmarks.json is already an array
           announcement: announcementData.announcement
         };
       }
@@ -332,7 +333,7 @@
             }
 
             // Handle bookmarks
-            const bookmarks = data.bookmarks || data; // Handle both new and old data format
+            const bookmarks = data.data || data; // Handle both new and old data format
             const container = document.getElementById('dynamicBookmarks');
             if (!container) {
               console.error('Could not find dynamicBookmarks container!');
