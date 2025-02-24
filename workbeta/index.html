@@ -247,43 +247,7 @@
       const STATIC_JSON_URL = './bookmarks.json';
       const GAS_URL = 'https://script.google.com/macros/s/AKfycbxMCRmQLRh2FinB0cLJRPRSQof5T-50tQ9MhOwOHoXgdQFBB34SMzB6kaKP2S74tGb2wg/exec';
 
-      // Load bookmarks from local JSON with no-cache
-      console.log('Starting initial load...');
-      fetch(STATIC_JSON_URL, {
-        cache: 'no-store',
-        headers: {
-          'Cache-Control': 'no-cache',
-          'Pragma': 'no-cache'
-        }
-      })
-        .then(response => response.json())
-        .then(data => {
-          console.log('Loaded bookmarks from JSON:', data);
-          renderBookmarks(data.bookmarks || data);
-        })
-        .catch(error => console.error('Error loading bookmarks:', error));
-
-      // Separate announcement fetch that always goes to Google Sheets
-      function fetchAnnouncement() {
-        console.log('Fetching announcement from Google Sheets...');
-        // Use simple GET request without custom headers to avoid CORS preflight
-        fetch(`${GAS_URL}?action=getAnnouncement&t=${Date.now()}`)
-          .then(response => response.json())
-          .then(data => {
-            console.log('Received announcement:', data);
-            if (data.success) {
-              updateAnnouncement(data.announcement);
-            }
-          })
-          .catch(error => console.error('Error fetching announcement:', error));
-      }
-
-      // Call fetchAnnouncement immediately and set up periodic refresh
-      fetchAnnouncement();
-      // Refresh announcement every 30 seconds
-      setInterval(fetchAnnouncement, 30000);
-
-      // Separate function to update announcement
+      // Function to update announcement banner
       function updateAnnouncement(text) {
         const bannerElement = document.querySelector('.announcement-banner');
         const textElement = document.querySelector('.announcement-text');
@@ -295,12 +259,13 @@
         }
       }
 
-      // Separate function to render bookmarks
+      // Function to render bookmarks
       function renderBookmarks(bookmarks) {
+        console.log('Rendering bookmarks:', bookmarks);
         const container = document.getElementById('dynamicBookmarks');
         if (!container) return;
         
-        container.innerHTML = ''; // Clear existing content
+        container.innerHTML = '';
         
         // Group bookmarks by category
         const groupedBookmarks = {};
@@ -329,42 +294,27 @@
             col.className = 'col-md-4';
             
             if (item.Type === 'dropdown') {
-              try {
-                const links = item.Links;
-                col.innerHTML = `
-                  <div class="inner-container">
-                    <div class="dropdown">
-                      <a href="#" onclick="return false;">${item.Name}</a>
-                      <div class="dropdown-content">
-                        ${links.map(link => `
-                          <a href="${link.url}" target="_blank">${link.name}</a>
-                        `).join('')}
-                      </div>
+              const links = Array.isArray(item.Links) ? item.Links : [];
+              col.innerHTML = `
+                <div class="inner-container">
+                  <div class="dropdown">
+                    <a href="#" onclick="return false;">${item.Name}</a>
+                    <div class="dropdown-content">
+                      ${links.map(link => `
+                        <a href="${link.url}" target="_blank" 
+                           onclick="trackLinkClick('${link.name}', '${category}')">${link.name}</a>
+                      `).join('')}
                     </div>
                   </div>
-                `;
-                
-                // Add click tracking to dropdown links
-                col.querySelectorAll('.dropdown-content a').forEach(link => {
-                  link.addEventListener('click', function() {
-                    trackLinkClick(this.textContent, category);
-                  });
-                });
-              } catch (e) {
-                console.error('Error creating dropdown for', item.Name, e);
-              }
+                </div>
+              `;
             } else {
               col.innerHTML = `
                 <div class="inner-container">
-                  <a href="${item.URL}" target="_blank">${item.Name}</a>
+                  <a href="${item.URL}" target="_blank" 
+                     onclick="trackLinkClick('${item.Name}', '${category}')">${item.Name}</a>
                 </div>
               `;
-              
-              // Add click tracking to regular links
-              const link = col.querySelector('a');
-              link.addEventListener('click', function() {
-                trackLinkClick(item.Name, category);
-              });
             }
             
             row.appendChild(col);
@@ -374,6 +324,63 @@
           container.appendChild(categoryDiv);
         });
       }
+
+      // Function to fetch announcement from Google Sheets
+      async function fetchAnnouncement() {
+        console.log('Fetching fresh announcement...');
+        try {
+          const response = await fetch(`${GAS_URL}?action=getAnnouncement&t=${Date.now()}`);
+          if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+          const data = await response.json();
+          
+          console.log('Received announcement data:', data);
+          if (data.success && data.announcement !== undefined) {
+            console.log('Updating announcement to:', data.announcement);
+            updateAnnouncement(data.announcement);
+          } else {
+            console.warn('Invalid announcement data:', data);
+          }
+        } catch (error) {
+          console.error('Error fetching announcement:', error);
+        }
+      }
+
+      // Function to force refresh all data
+      async function forceRefresh() {
+        console.log('Forcing refresh of all data...');
+        try {
+          const response = await fetch(`${GAS_URL}?action=refresh&t=${Date.now()}`);
+          if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+          const data = await response.json();
+          
+          if (data.success) {
+            console.log('Refresh successful, updating UI...');
+            renderBookmarks(data.data);
+            updateAnnouncement(data.announcement);
+          } else {
+            console.error('Refresh failed:', data.error);
+          }
+        } catch (error) {
+          console.error('Error during refresh:', error);
+        }
+      }
+
+      // Initial load of bookmarks from static JSON
+      console.log('Starting initial load...');
+      fetch(STATIC_JSON_URL, { cache: 'no-store' })
+        .then(response => {
+          if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+          return response.json();
+        })
+        .then(data => {
+          console.log('Loaded static bookmarks:', data);
+          renderBookmarks(data.bookmarks || data);
+        })
+        .catch(error => console.error('Error loading static bookmarks:', error));
+
+      // Initial fetch of announcement and set up periodic refresh
+      fetchAnnouncement();
+      setInterval(fetchAnnouncement, 30000); // Refresh every 30 seconds
     </script>
   </body>
 
