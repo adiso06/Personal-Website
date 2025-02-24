@@ -184,39 +184,37 @@ body {
 }
 
 .announcement-banner {
-    background-color: #f8d7da; /* Light red/pink background */
-    color: #721c24; /* Darker red text */
-    padding: 10px;
+    background-color: #f8f9fa; /* Light gray background */
+    color: #495057; /* Soft dark text */
+    padding: 12px 20px;
     text-align: center;
     width: 100%;
-    position: relative;
     margin-bottom: 20px;
-    border: 1px solid #f5c6cb;
-    border-radius: 4px;
+    border: 1px solid #e9ecef; /* Very light gray border */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Subtle shadow */
+    font-family: Arial, sans-serif;
 }
 
 .announcement-text {
-    font-size: 16px;
+    font-size: 15px;
+    line-height: 1.5;
+    font-weight: normal;
 }
 
 /* Dark mode support */
 .dark-mode .announcement-banner {
-    background-color: #2c1518;
-    color: #f8d7da;
-    border-color: #721c24;
+    background-color: #2d2d2d; /* Darker but not too dark */
+    color: #e9ecef; /* Light gray text */
+    border-color: #404040;
 }
 
 /* Hide on mobile */
 @media (max-width: 768px) {
     .announcement-banner {
-      display: none;
+        display: none;
     }
-  }
-  
-  /* Dark mode support */
-  .dark-mode .announcement-banner {
-    background-color: rgba(0, 0, 0, 0.2);
-  }
+}
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
