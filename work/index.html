@@ -26,6 +26,29 @@
     }
     gtag("js", new Date());
     gtag("config", "G-2W0HK77092");
+
+    // Add event listener after DOM loads to track link clicks
+    document.addEventListener('DOMContentLoaded', function() {
+      // Track all link clicks
+      document.addEventListener('click', function(e) {
+        const link = e.target.closest('a');
+        if (!link) return;  // Exit if click wasn't on a link
+
+        // Get the link text and href
+        const linkText = link.textContent.trim();
+        const linkHref = link.getAttribute('href');
+        
+        // Get the section name (from closest h2)
+        const section = link.closest('.row.mb-4')?.querySelector('h2')?.textContent || 'Unknown Section';
+
+        // Send event to Google Analytics
+        gtag('event', 'link_click', {
+          'event_category': section,
+          'event_label': linkText,
+          'link_url': linkHref
+        });
+      });
+    });
   </script>
 
   <!-- IP check for Sunrise link -->
