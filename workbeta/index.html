@@ -249,31 +249,36 @@
       const GAS_URL = 'https://script.google.com/macros/s/AKfycbxMCRmQLRh2FinB0cLJRPRSQof5T-50tQ9MhOwOHoXgdQFBB34SMzB6kaKP2S74tGb2wg/exec';
       
       async function fetchWithCache(url) {
-        // Always fetch fresh announcement from Google Sheets
-        const announcementResponse = await fetch(`${GAS_URL}?action=getAnnouncement`);
-        const announcementData = await announcementResponse.json();
-        console.log('Fetched announcement:', announcementData);
+        console.log('Starting data fetch...');
         
-        // Get bookmarks from static JSON
-        let bookmarksData;
         try {
+          // First try to get bookmarks from static JSON
           const fullUrl = window.location.href.replace(/\/[^/]*$/, '') + '/' + STATIC_JSON_URL;
-          const response = await fetch(fullUrl);
-          if (!response.ok) {
-            throw new Error(`Static JSON not available (${response.status})`);
+          console.log('Loading bookmarks from:', fullUrl);
+          const bookmarksResponse = await fetch(fullUrl);
+          
+          if (!bookmarksResponse.ok) {
+            throw new Error(`Static JSON not available (${bookmarksResponse.status})`);
           }
-          bookmarksData = await response.json();
-        } catch (error) {
-          console.log('Static JSON failed, falling back to Google Apps Script...');
-          const response = await fetch(GAS_URL);
-          bookmarksData = await response.json();
-        }
+          const bookmarksData = await bookmarksResponse.json();
+          console.log('Successfully loaded bookmarks from static JSON');
 
-        // Return combined data (bookmarks array with announcement)
-        return {
-          data: bookmarksData, // bookmarks.json is already an array
-          announcement: announcementData.announcement
-        };
+          // Separately fetch announcement
+          console.log('Fetching announcement...');
+          const announcementResponse = await fetch(`${GAS_URL}?action=getAnnouncement`);
+          const announcementData = await announcementResponse.json();
+          console.log('Announcement data:', announcementData);
+
+          return {
+            data: bookmarksData, // bookmarks.json is already the array we need
+            announcement: announcementData.announcement
+          };
+
+        } catch (error) {
+          console.error('Error loading static JSON, falling back to Google Sheets:', error);
+          const response = await fetch(GAS_URL);
+          return await response.json();
+        }
       }
 
       // Update the forceRefresh function
@@ -318,22 +323,24 @@
         console.log('Starting to load bookmarks...');
         fetchWithCache(STATIC_JSON_URL)
           .then(data => {
-            console.log('Parsed data:', data);
+            console.log('Received data:', data);
             
-            // Handle announcement if it exists
-            if (data.announcement) {
-              const bannerElement = document.querySelector('.announcement-banner');
-              const textElement = document.querySelector('.announcement-text');
-              if (data.announcement.trim()) {
-                textElement.textContent = data.announcement;
-                bannerElement.style.display = 'block';
-              } else {
-                bannerElement.style.display = 'none';
-              }
+            // Handle announcement banner
+            const bannerElement = document.querySelector('.announcement-banner');
+            const textElement = document.querySelector('.announcement-text');
+            if (data.announcement && data.announcement.trim()) {
+              console.log('Setting announcement:', data.announcement);
+              textElement.textContent = data.announcement;
+              bannerElement.style.display = 'block';
+            } else {
+              console.log('No announcement found');
+              bannerElement.style.display = 'none';
             }
 
-            // Handle bookmarks
-            const bookmarks = data.data || data; // Handle both new and old data format
+            // Handle bookmarks - data.data is the array from bookmarks.json
+            const bookmarks = Array.isArray(data.data) ? data.data : data.data.bookmarks || [];
+            console.log('Processing bookmarks:', bookmarks);
+            
             const container = document.getElementById('dynamicBookmarks');
             if (!container) {
               console.error('Could not find dynamicBookmarks container!');
@@ -344,7 +351,6 @@
             // Group bookmarks by category
             const groupedBookmarks = {};
             bookmarks.forEach(bookmark => {
-              console.log('Processing bookmark:', bookmark);
               if (!groupedBookmarks[bookmark.Category]) {
                 groupedBookmarks[bookmark.Category] = [];
               }

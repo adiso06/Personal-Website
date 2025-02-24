@@ -1,4 +1,4 @@
-// Set this to your Google Sheet ID
+`// Set this to your Google Sheet ID
 const SHEET_ID = '1wJUC_pM_IAbuv8aKkmvMhThLe_ulZ-VmcBiSNxlrnOk';
 const SHEET_NAME = 'Hospital Bookmarks';
 const ADMIN_PASSWORD = 'password'; // Add your desired admin password here
@@ -313,4 +313,4 @@ function getAnnouncement() {
   return ContentService.createTextOutput(JSON.stringify({
     announcement: announcement
   })).setMimeType(ContentService.MimeType.JSON);
-}
+}`
