@@ -41,11 +41,12 @@
         // Get the section name (from closest h2)
         const section = link.closest('.row.mb-4')?.querySelector('h2')?.textContent || 'Unknown Section';
 
-        // Send event to Google Analytics
+        // Send event to Google Analytics 4
         gtag('event', 'link_click', {
           'event_category': section,
           'event_label': linkText,
-          'link_url': linkHref
+          'link_text': linkText,
+          'link_section': section
         });
       });
     });
