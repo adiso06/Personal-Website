@@ -260,18 +260,18 @@
           if (!bookmarksResponse.ok) {
             throw new Error(`Static JSON not available (${bookmarksResponse.status})`);
           }
-          const bookmarksData = await bookmarksResponse.json();
-          console.log('Successfully loaded bookmarks from static JSON');
+          const jsonData = await bookmarksResponse.json();
+          console.log('Successfully loaded data from static JSON:', jsonData);
 
-          // Separately fetch announcement
-          console.log('Fetching announcement...');
+          // Separately fetch announcement from Google Sheets to override static one
+          console.log('Fetching fresh announcement...');
           const announcementResponse = await fetch(`${GAS_URL}?action=getAnnouncement`);
           const announcementData = await announcementResponse.json();
-          console.log('Announcement data:', announcementData);
+          console.log('Fresh announcement data:', announcementData);
 
           return {
-            data: bookmarksData, // bookmarks.json is already the array we need
-            announcement: announcementData.announcement
+            data: jsonData.bookmarks || jsonData, // Handle both formats
+            announcement: announcementData.announcement || jsonData.announcement // Use fresh announcement, fall back to static
           };
 
         } catch (error) {
