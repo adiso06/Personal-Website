@@ -1,397 +1,367 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Hospital Bookmarks</title>
-    <link
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="new_responsive_bookmark_grid.css"
-    />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preload" href="bookmarks.json" as="fetch" crossorigin="anonymous">
-    <link rel="preload" href="new_responsive_bookmark_grid.css" as="style">
-  </head>
+// Configuration constants
+const SHEET_ID = '1wJUC_pM_IAbuv8aKkmvMhThLe_ulZ-VmcBiSNxlrnOk';
+const SHEET_NAME = 'Hospital Bookmarks';
+const SETTINGS_SHEET_NAME = 'Settings';
+const ANNOUNCEMENT_CELL = 'B1';
+const ADMIN_PASSWORD = 'password'; // Add your desired admin password here
 
-  <!-- Google tag (gtag.js) -->
-  <script
-    async
-    src="https://www.googletagmanager.com/gtag/js?id=G-2W0HK77092"
-  ></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
+// Standard headers for all responses
+const CORS_HEADERS = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+  'Access-Control-Allow-Headers': 'Content-Type',
+  'Content-Type': 'application/json',
+  'Cache-Control': 'no-store, no-cache, must-revalidate',
+  'Pragma': 'no-cache',
+  'Expires': '0'
+};
+
+function createResponse(data, success = true, error = null) {
+  const response = {
+    success: success,
+    timestamp: new Date().getTime()
+  };
+
+  if (success) {
+    Object.assign(response, data);
+  } else {
+    response.error = error.toString();
+    console.error('Error in response:', error);
+  }
+
+  return ContentService.createTextOutput(JSON.stringify(response))
+    .setMimeType(ContentService.MimeType.JSON)
+    .setHeaders(CORS_HEADERS);
+}
+
+function getSettingsSheet() {
+  try {
+    const ss = SpreadsheetApp.openById(SHEET_ID);
+    const sheet = ss.getSheetByName(SETTINGS_SHEET_NAME);
+    if (!sheet) {
+      throw new Error(`Settings sheet "${SETTINGS_SHEET_NAME}" not found`);
     }
-    gtag("js", new Date());
-    gtag("config", "G-2W0HK77092");
+    return sheet;
+  } catch (error) {
+    console.error('Error accessing Settings sheet:', error);
+    throw error;
+  }
+}
 
-    // Function to track link clicks
-    function trackLinkClick(linkName, section) {
-      gtag('event', 'click', {
-        'event_category': 'Resource Link',
-        'event_label': linkName,
-        'section_name': section
-      });
+function getBookmarksSheet() {
+  try {
+    const ss = SpreadsheetApp.openById(SHEET_ID);
+    const sheet = ss.getSheetByName(SHEET_NAME);
+    if (!sheet) {
+      throw new Error(`Bookmarks sheet "${SHEET_NAME}" not found`);
     }
-  </script>
+    return sheet;
+  } catch (error) {
+    console.error('Error accessing Bookmarks sheet:', error);
+    throw error;
+  }
+}
 
-  <!-- IP check for Sunrise link -->
-  <script>
-    async function setSunriseLink() {
-      const sunriseLink = document.getElementById('sunriseLink');
-      if (!sunriseLink) return; // Exit if element doesn't exist
-      
-      try {
-        const response = await fetch('https://myremoteaccess.northwell.edu/logon/LogonPoint/tmindex.html');
-        if (response.ok) {
-          sunriseLink.href = 'https://myremoteaccess.northwell.edu/logon/LogonPoint/tmindex.html';
-        } else {
-          sunriseLink.href = 'https://myremoteaccess2.northwell.edu/logon/LogonPoint/tmindex.html';
-        }
-      } catch (error) {
-        console.log('Primary Sunrise link failed, using backup');
-        sunriseLink.href = 'https://myremoteaccess2.northwell.edu/logon/LogonPoint/tmindex.html';
-      }
-    }
-    document.addEventListener("DOMContentLoaded", function () {
-      setSunriseLink();
-    });
-  </script>
+function getAnnouncement() {
+  try {
+    const sheet = getSettingsSheet();
+    // Get only the announcement value
+    const announcement = sheet.getRange(ANNOUNCEMENT_CELL).getValue().toString();
+    
+    // Log the value we're about to return
+    console.log('Sending announcement:', announcement);
+    
+    // Return ONLY the announcement data
+    return ContentService.createTextOutput(JSON.stringify({
+      success: true,
+      announcement: announcement,
+      timestamp: new Date().getTime()
+    }))
+    .setMimeType(ContentService.MimeType.JSON)
+    .setHeaders(CORS_HEADERS);
+  } catch (error) {
+    console.error('Error fetching announcement:', error);
+    return ContentService.createTextOutput(JSON.stringify({
+      success: false,
+      error: error.toString(),
+      timestamp: new Date().getTime()
+    }))
+    .setMimeType(ContentService.MimeType.JSON)
+    .setHeaders(CORS_HEADERS);
+  }
+}
 
-  <body>
-    <!-- Search Box -->
-    <div class="search-container">
-      <input type="text" id="searchBox" placeholder="Type to search..." class="search-input" autofocus>
-    </div>
+function getBookmarks() {
+  try {
+    const sheet = getBookmarksSheet();
+    const data = sheet.getDataRange().getValues();
+    const headers = data[0];
+    
+    const bookmarks = data.slice(1).map(row => {
+      const bookmark = {
+        Category: row[headers.indexOf('Category')] || '',
+        Name: row[headers.indexOf('Name')] || '',
+        URL: row[headers.indexOf('URL')] || '',
+        Type: row[headers.indexOf('Type')] || 'link'
+      };
 
-    <!-- Announcement Banner - Desktop Only -->
-    <div class="announcement-banner" style="display: none;">
-      <span class="announcement-text"></span>
-    </div>
-
-    <div class="container mt-4">
-      <!-- Additional Resources Section -->
-      <div class="row mb-4">
-        <div id="dynamicBookmarks" class="col-12">
-          <!-- Bookmarks will be loaded here -->
-        </div>
-      </div>
-    </div>
-
-    <!-- A simple bottom-left toggle button for dark/light, with NO huge z-index -->
-    <button id="modeToggle">Toggle 🌞/🌙</button>
-
-    <!-- Minimal scripts for toggling dark/light mode -->
-     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const modeToggle = document.getElementById("modeToggle");
-        const body = document.body
-
-        // Approximate sunrise and sunset times
-        const sunriseHour = 7; // 7:00 AM
-        const sunsetHour = 19; // 7:00 PM
-
-        // Get the current local hour
-        function getLocalHour() {
-          const now = new Date();
-          return now.getHours(); // Returns the hour (0-23) in the user's local time zone
-        }
-
-        // Apply mode based on the current hour
-        function applyMode() {
-          const currentHour = getLocalHour();
-          if (currentHour >= sunriseHour && currentHour < sunsetHour) {
-            body.classList.add("light-mode");
-            body.classList.remove("dark-mode");
-            localStorage.setItem("mySiteMode", "light");
-            modeToggle.textContent = "🌙"; // Show Moon icon for toggling to dark mode
-          } else {
-            body.classList.add("dark-mode");
-            body.classList.remove("light-mode");
-            localStorage.setItem("mySiteMode", "dark");
-            modeToggle.textContent = "☀️"; // Show Sun icon for toggling to light mode
-          }
-        }
-
-        // Manual toggle button functionality
-        modeToggle.addEventListener("click", function () {
-          if (body.classList.contains("dark-mode")) {
-            body.classList.remove("dark-mode");
-            body.classList.add("light-mode");
-            localStorage.setItem("mySiteMode", "light");
-            modeToggle.textContent = "🌙"; // Show Moon icon
-          } else {
-            body.classList.remove("light-mode");
-            body.classList.add("dark-mode");
-            localStorage.setItem("mySiteMode", "dark");
-            modeToggle.textContent = "☀️"; // Show Sun icon
-          }
-        });
-
-        // On page load, apply mode
-        const savedMode = localStorage.getItem("mySiteMode");
-        if (savedMode) {
-          if (savedMode === "dark") {
-            body.classList.add("dark-mode");
-            body.classList.remove("light-mode");
-            modeToggle.textContent = "☀️";
-          } else {
-            body.classList.add("light-mode");
-            body.classList.remove("dark-mode");
-            modeToggle.textContent = "🌙";
-          }
-        } else {
-          applyMode();
-        }
-      });
-    </script>
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
-    <!-- Search functionality -->
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const searchBox = document.getElementById('searchBox');
-        
-        // Auto-focus search box and handle keyboard events
-        document.addEventListener('keydown', function(e) {
-          if (document.activeElement.tagName === 'INPUT' && document.activeElement !== searchBox) {
-            return;
-          }
-          
-          if (e.key.length === 1 || e.key === 'Backspace') {
-            searchBox.focus();
-          }
-        });
-
-        // Add click tracking to all links
-        document.querySelectorAll('.inner-container a').forEach(link => {
-          link.addEventListener('click', function(e) {
-            const section = this.closest('.category-section').querySelector('h3').textContent;
-            trackLinkClick(this.textContent, section);
-          });
-        });
-
-        // Track search usage
-        let searchTimeout;
-        searchBox.addEventListener('input', function() {
-          const searchTerm = this.value.toLowerCase();
-          
-          // Track search after 1 second of no typing
-          clearTimeout(searchTimeout);
-          if (searchTerm) {
-            searchTimeout = setTimeout(() => {
-              gtag('event', 'search', {
-                'event_category': 'Resource Search',
-                'event_label': searchTerm
-              });
-            }, 1000);
-          }
-          
-          const containers = document.querySelectorAll('.inner-container');
-          const sections = document.querySelectorAll('.category-section');
-          
-          containers.forEach(container => {
-            const link = container.querySelector('a');
-            const dropdownLinks = container.querySelectorAll('.dropdown-content a');
-            const section = container.closest('.category-section');
-            const sectionText = section ? section.querySelector('h3').textContent.toLowerCase() : '';
-            
-            // Check main link and dropdown links
-            let matches = false;
-            if (link.textContent.toLowerCase().includes(searchTerm)) {
-              matches = true;
-            }
-            dropdownLinks.forEach(dropLink => {
-              if (dropLink.textContent.toLowerCase().includes(searchTerm)) {
-                matches = true;
-              }
-            });
-            if (sectionText.includes(searchTerm)) {
-              matches = true;
-            }
-
-            // Apply fade effect instead of hiding
-            container.style.opacity = matches ? '1' : '0.1';
-            container.style.transition = 'opacity 0.3s ease';
-          });
-          
-          // Handle section visibility based on visible items
-          sections.forEach(section => {
-            const visibleContainers = Array.from(section.querySelectorAll('.inner-container'))
-              .some(container => container.style.opacity !== '0.1');
-            section.style.opacity = visibleContainers ? '1' : '0.1';
-            section.style.transition = 'opacity 0.3s ease';
-          });
-        });
-
-        // Clear search when pressing Escape
-        document.addEventListener('keydown', function(e) {
-          if (e.key === 'Escape') {
-            searchBox.value = '';
-            searchBox.dispatchEvent(new Event('input'));
-            searchBox.blur();
-          }
-        });
-      });
-    </script>
-
-    <!-- Add this script before the closing body tag -->
-    <script>
-      const STATIC_JSON_URL = './bookmarks.json';
-      const GAS_URL = 'https://script.google.com/macros/s/AKfycbxMCRmQLRh2FinB0cLJRPRSQof5T-50tQ9MhOwOHoXgdQFBB34SMzB6kaKP2S74tGb2wg/exec';
-
-      // Function to update announcement banner independently
-      function updateAnnouncement(text) {
-        console.log('Updating announcement banner with:', text);
-        const bannerElement = document.querySelector('.announcement-banner');
-        const textElement = document.querySelector('.announcement-text');
-        if (!bannerElement || !textElement) {
-          console.error('Banner elements not found');
-          return;
-        }
-        
-        if (text && text.trim()) {
-          textElement.textContent = text;
-          bannerElement.style.display = 'block';
-          console.log('Banner updated and shown');
-        } else {
-          bannerElement.style.display = 'none';
-          console.log('Banner hidden due to empty text');
-        }
-      }
-
-      // Function to render bookmarks
-      function renderBookmarks(bookmarks) {
-        console.log('Rendering bookmarks:', bookmarks);
-        const container = document.getElementById('dynamicBookmarks');
-        if (!container) return;
-        
-        container.innerHTML = '';
-        
-        // Group bookmarks by category
-        const groupedBookmarks = {};
-        bookmarks.forEach(bookmark => {
-          if (!groupedBookmarks[bookmark.Category]) {
-            groupedBookmarks[bookmark.Category] = [];
-          }
-          groupedBookmarks[bookmark.Category].push(bookmark);
-        });
-
-        // Create HTML for each category
-        Object.entries(groupedBookmarks).forEach(([category, items]) => {
-          const categoryDiv = document.createElement('div');
-          categoryDiv.className = 'category-section mb-4';
-          
-          const categoryHeader = document.createElement('h3');
-          categoryHeader.className = 'text-center mb-3';
-          categoryHeader.textContent = category;
-          categoryDiv.appendChild(categoryHeader);
-
-          const row = document.createElement('div');
-          row.className = 'row';
-
-          items.forEach(item => {
-            const col = document.createElement('div');
-            col.className = 'col-md-4';
-            
-            if (item.Type === 'dropdown') {
-              const links = Array.isArray(item.Links) ? item.Links : [];
-              col.innerHTML = `
-                <div class="inner-container">
-                  <div class="dropdown">
-                    <a href="#" onclick="return false;">${item.Name}</a>
-                    <div class="dropdown-content">
-                      ${links.map(link => `
-                        <a href="${link.url}" target="_blank" 
-                           onclick="trackLinkClick('${link.name}', '${category}')">${link.name}</a>
-                      `).join('')}
-                    </div>
-                  </div>
-                </div>
-              `;
-            } else {
-              col.innerHTML = `
-                <div class="inner-container">
-                  <a href="${item.URL}" target="_blank" 
-                     onclick="trackLinkClick('${item.Name}', '${category}')">${item.Name}</a>
-                </div>
-              `;
-            }
-            
-            row.appendChild(col);
-          });
-
-          categoryDiv.appendChild(row);
-          container.appendChild(categoryDiv);
-        });
-      }
-
-      // Load static content immediately
-      console.log('Starting initial static load...');
-      fetch(STATIC_JSON_URL, { cache: 'no-store' })
-        .then(response => response.json())
-        .then(data => {
-          console.log('Loaded static bookmarks:', data);
-          // Render bookmarks immediately
-          renderBookmarks(data.bookmarks || data);
-          // Show static announcement if available
-          if (data.announcement) {
-            updateAnnouncement(data.announcement);
-          }
-        })
-        .catch(error => console.error('Error loading static bookmarks:', error));
-
-      // Separate function for dynamic announcement updates
-      async function fetchAnnouncement() {
-        console.log('Fetching fresh announcement...');
+      if (bookmark.Type === 'dropdown') {
+        const linksStr = row[headers.indexOf('Links')] || '[]';
         try {
-          const response = await fetch(`${GAS_URL}?action=getAnnouncement&t=${Date.now()}`, {
-            cache: 'no-store'
-          });
-          
-          if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+          bookmark.Links = JSON.parse(linksStr);
+          if (!Array.isArray(bookmark.Links)) {
+            bookmark.Links = [];
           }
-          
-          const data = await response.json();
-          console.log('Received announcement data:', data);
-          
-          if (data.success && typeof data.announcement === 'string') {
-            console.log('Valid announcement received:', data.announcement);
-            updateAnnouncement(data.announcement);
-          } else {
-            console.warn('Invalid announcement data structure:', data);
-          }
-        } catch (error) {
-          console.error('Error fetching announcement:', error);
+        } catch (e) {
+          console.warn(`Failed to parse Links for ${bookmark.Name}:`, e);
+          bookmark.Links = [];
         }
       }
 
-      // Start dynamic updates after initial load
-      document.addEventListener('DOMContentLoaded', () => {
-        // Wait a bit after page load before fetching dynamic content
-        setTimeout(() => {
-          console.log('Starting dynamic updates...');
-          fetchAnnouncement();
-          // Set up periodic updates
-          setInterval(fetchAnnouncement, 30000);
-        }, 2000); // Wait 2 seconds after page load
-      });
+      return bookmark;
+    });
 
-      // Optional: Add a manual refresh button
-      function refreshAnnouncement() {
-        console.log('Manual announcement refresh requested');
-        fetchAnnouncement();
+    return bookmarks;
+  } catch (error) {
+    throw new Error(`Failed to fetch bookmarks: ${error.message}`);
+  }
+}
+
+function doGet(e) {
+  console.log('Received GET request with parameters:', e.parameter);
+
+  // Add validation for the event object
+  if (!e || !e.parameter || !e.parameter.action) {
+    return ContentService.createTextOutput(JSON.stringify({
+      success: false,
+      error: 'No action specified'
+    }))
+    .setMimeType(ContentService.MimeType.JSON)
+    .setHeaders(CORS_HEADERS);
+  }
+
+  // Handle announcement request
+  if (e.parameter.action === 'getAnnouncement') {
+    console.log('Fetching announcement');
+    const sheet = getSettingsSheet();
+    const announcement = sheet.getRange(ANNOUNCEMENT_CELL).getValue();
+    console.log('Found announcement:', announcement);
+    
+    return ContentService.createTextOutput(JSON.stringify({
+      success: true,
+      announcement: announcement
+    }))
+    .setMimeType(ContentService.MimeType.JSON)
+    .setHeaders(CORS_HEADERS);
+  }
+
+  // Handle refresh request
+  if (e.parameter.action === 'refresh') {
+    return ContentService.createTextOutput(JSON.stringify({
+      success: true,
+      data: getBookmarks()
+    }))
+    .setMimeType(ContentService.MimeType.JSON)
+    .setHeaders(CORS_HEADERS);
+  }
+
+  // Invalid action
+  return ContentService.createTextOutput(JSON.stringify({
+    success: false,
+    error: 'Invalid action specified'
+  }))
+  .setMimeType(ContentService.MimeType.JSON)
+  .setHeaders(CORS_HEADERS);
+}
+
+function handleRefresh() {
+  try {
+    // Clear cache by returning fresh data
+    const bookmarks = getBookmarks();
+    return ContentService.createTextOutput(JSON.stringify({
+      success: true,
+      message: 'Refresh successful',
+      data: bookmarks
+    }))
+    .setMimeType(ContentService.MimeType.JSON)
+    .setHeaders({
+      'Cache-Control': 'no-store',
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type'
+    });
+  } catch (error) {
+    return ContentService.createTextOutput(JSON.stringify({
+      success: false,
+      message: 'Refresh failed: ' + error.toString()
+    }))
+    .setMimeType(ContentService.MimeType.JSON)
+    .setHeaders({
+      'Cache-Control': 'no-store',
+      'Access-Control-Allow-Origin': '*'
+    });
+  }
+}
+
+function doPost(e) {
+  // Add validation for the event object
+  if (!e) {
+    return ContentService.createTextOutput(JSON.stringify({
+      status: 'error',
+      message: 'No request data received'
+    })).setMimeType(ContentService.MimeType.JSON);
+  }
+
+  try {
+    // First try to get data from postData
+    if (e.postData && e.postData.contents) {
+      Logger.log('Received POST data:', e.postData.contents);
+      const postData = JSON.parse(e.postData.contents);
+      
+      if (postData.action === 'delete') {
+        return deleteBookmark(postData.url);
+      } else {
+        return addBookmark(postData);
       }
-    </script>
-  </body>
+    }
+    
+    // Fallback to parameter data if postData is not available
+    const formData = e.parameter;
+    if (formData) {
+      if (formData.action === 'delete') {
+        return deleteBookmark(formData.url);
+      } else {
+        return addBookmark(formData);
+      }
+    }
 
- 
-</html>
+    // If no data was found in either location
+    return ContentService.createTextOutput(JSON.stringify({
+      status: 'error',
+      message: 'No valid data found in request'
+    })).setMimeType(ContentService.MimeType.JSON);
+
+  } catch (error) {
+    Logger.log('Error in doPost:', error);
+    return ContentService.createTextOutput(JSON.stringify({
+      status: 'error',
+      message: 'Error processing request: ' + error.message
+    })).setMimeType(ContentService.MimeType.JSON);
+  }
+}
+
+function addBookmark(data) {
+  const sheet = SpreadsheetApp.openById(SHEET_ID).getSheetByName(SHEET_NAME);
+  
+  // Log the incoming data
+  Logger.log('Adding bookmark with data:', data);
+
+  let links = '';
+  if (data.type === 'dropdown' && data.links) {
+    // If links is already a string, use it; otherwise, stringify it
+    links = typeof data.links === 'string' ? data.links : JSON.stringify(data.links);
+  }
+
+  const newRow = [
+    data.category || data.Category,
+    data.name || data.Name,
+    data.url || data.URL || '',
+    data.type || 'link',
+    links
+  ];
+
+  sheet.appendRow(newRow);
+  
+  return ContentService.createTextOutput(JSON.stringify({
+    status: 'success',
+    message: 'Bookmark added successfully'
+  })).setMimeType(ContentService.MimeType.JSON);
+}
+
+function deleteBookmark(identifier) {
+  if (!identifier) {
+    return ContentService.createTextOutput(JSON.stringify({
+      status: 'error',
+      message: 'No identifier provided for deletion'
+    })).setMimeType(ContentService.MimeType.JSON);
+  }
+
+  const sheet = SpreadsheetApp.openById(SHEET_ID).getSheetByName(SHEET_NAME);
+  const data = sheet.getDataRange().getValues();
+  const headers = data[0];
+  let deleted = false;
+
+  // Find the row to delete (match by URL or Name)
+  for (let i = data.length - 1; i >= 1; i--) {
+    const row = data[i];
+    if (row[headers.indexOf('URL')] === identifier || 
+        row[headers.indexOf('Name')] === identifier) {
+      sheet.deleteRow(i + 1);
+      deleted = true;
+      break;
+    }
+  }
+  
+  return ContentService.createTextOutput(JSON.stringify({
+    status: deleted ? 'success' : 'error',
+    message: deleted ? 'Bookmark deleted successfully' : 'Bookmark not found'
+  })).setMimeType(ContentService.MimeType.JSON);
+}
+
+// Utility function to validate URLs
+function isValidUrl(url) {
+  try {
+    new URL(url);
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+
+// Setup function to create the initial sheet structure
+function setup() {
+  const ss = SpreadsheetApp.openById(SHEET_ID);
+  let sheet = ss.getSheetByName(SHEET_NAME);
+  
+  // Create sheet if it doesn't exist
+  if (!sheet) {
+    sheet = ss.insertSheet(SHEET_NAME);
+  }
+  
+  // Set up headers
+  const headers = ['Category', 'Name', 'URL', 'Type', 'Links'];
+  sheet.getRange(1, 1, 1, headers.length).setValues([headers]);
+  
+  // Optional: Format headers
+  sheet.getRange(1, 1, 1, headers.length)
+    .setFontWeight('bold')
+    .setBackground('#f3f3f3');
+}
+
+function onEdit(e) {
+  // Check if the edit was made in the correct sheet
+  if (e.source.getSheetName() === SHEET_NAME) {
+    // Call generate-bookmarks functionality via webhook
+    const GITHUB_REPO = 'adiso06/Personal-Website/';
+    const GITHUB_TOKEN = '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'; // Store this securely
+    
+    const url = `https://api.github.com/repos/${GITHUB_REPO}/dispatches`;
+    
+    const options = {
+      'method': 'post',
+      'headers': {
+        'Authorization': `token ${GITHUB_TOKEN}`,
+        'Accept': 'application/vnd.github.v3+json'
+      },
+      'payload': JSON.stringify({
+        'event_type': 'google_sheets_update'
+      })
+    };
+    
+    try {
+      UrlFetchApp.fetch(url, options);
+    } catch (error) {
+      console.error('Failed to trigger GitHub action:', error);
+    }
+  }
+}
