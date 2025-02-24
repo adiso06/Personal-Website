@@ -5,6 +5,7 @@ const path = require('path');
 // Your Google Sheets configuration
 const SPREADSHEET_ID = '1wJUC_pM_IAbuv8aKkmvMhThLe_ulZ-VmcBiSNxlrnOk';
 const SHEET_NAME = 'Sheet1';
+const SETTINGS_SHEET = 'Settings';
 
 async function generateBookmarksJson() {
   try {
@@ -36,6 +37,14 @@ async function generateBookmarksJson() {
         spreadsheet.data.sheets.map(s => s.properties.title).join(', ')
       }`);
     }
+
+    // Get the announcement from Settings sheet
+    const settingsResponse = await sheets.spreadsheets.values.get({
+      spreadsheetId: SPREADSHEET_ID,
+      range: `${SETTINGS_SHEET}!B1`,
+    });
+    
+    const announcement = settingsResponse.data.values?.[0]?.[0] || '';
 
     // Now get the data using the sheet's ID
     const response = await sheets.spreadsheets.values.get({
@@ -78,9 +87,15 @@ async function generateBookmarksJson() {
       return bookmark;
     });
 
+    // Create the final output object including both bookmarks and announcement
+    const output = {
+      bookmarks: bookmarks,
+      announcement: announcement
+    };
+
     const outputPath = path.join(__dirname, 'bookmarks.json');
-    await fs.writeFile(outputPath, JSON.stringify(bookmarks, null, 2));
-    console.log('Successfully generated bookmarks.json');
+    await fs.writeFile(outputPath, JSON.stringify(output, null, 2));
+    console.log('Successfully generated bookmarks.json with announcement');
   } catch (error) {
     console.error('Error generating bookmarks:', error);
     if (error.errors) {
