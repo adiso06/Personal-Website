@@ -207,6 +207,12 @@
       "Type": "link"
     },
     {
+      "Category": "Education",
+      "Name": "White Book",
+      "URL": "https://www.dropbox.com/scl/fi/ciuhqvzs1b6olb4xnizfy/MGH-Housestaff-Manual-2024-2025.pdf?rlkey=hazf90wlhl9ygjlhw29ajmd6l&e=3&st=przhdhdv&dl=0",
+      "Type": "link"
+    },
+    {
       "Category": "Research",
       "Name": "IRB Home",
       "URL": "https://northwellhealth.my.irbmanager.com/Login.aspx",
@@ -225,5 +231,5 @@
       "Type": "link"
     }
   ],
-  "announcement": "1:25 refresh"
+  "announcement": ""
 }
