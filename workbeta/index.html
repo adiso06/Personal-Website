@@ -325,16 +325,38 @@
         });
       }
 
-      // Function to fetch announcement from Google Sheets
+      // Load bookmarks from local JSON with no-cache
+      console.log('Starting initial load...');
+      fetch(STATIC_JSON_URL, {
+        cache: 'no-store',
+        headers: {
+          'Cache-Control': 'no-cache',
+          'Pragma': 'no-cache'
+        }
+      })
+        .then(response => response.json())
+        .then(data => {
+          console.log('Loaded bookmarks from JSON:', data);
+          renderBookmarks(data.bookmarks || data);
+        })
+        .catch(error => console.error('Error loading bookmarks:', error));
+
+      // Separate announcement fetch that always goes to Google Sheets
       async function fetchAnnouncement() {
         console.log('Fetching fresh announcement...');
         try {
-          const response = await fetch(`${GAS_URL}?action=getAnnouncement&t=${Date.now()}`);
-          if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-          const data = await response.json();
+          const response = await fetch(`${GAS_URL}?action=getAnnouncement&t=${Date.now()}`, {
+            cache: 'no-store'
+          });
           
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+          
+          const data = await response.json();
           console.log('Received announcement data:', data);
-          if (data.success && data.announcement !== undefined) {
+          
+          if (data.success && typeof data.announcement === 'string') {
             console.log('Updating announcement to:', data.announcement);
             updateAnnouncement(data.announcement);
           } else {
@@ -345,40 +367,7 @@
         }
       }
 
-      // Function to force refresh all data
-      async function forceRefresh() {
-        console.log('Forcing refresh of all data...');
-        try {
-          const response = await fetch(`${GAS_URL}?action=refresh&t=${Date.now()}`);
-          if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-          const data = await response.json();
-          
-          if (data.success) {
-            console.log('Refresh successful, updating UI...');
-            renderBookmarks(data.data);
-            updateAnnouncement(data.announcement);
-          } else {
-            console.error('Refresh failed:', data.error);
-          }
-        } catch (error) {
-          console.error('Error during refresh:', error);
-        }
-      }
-
-      // Initial load of bookmarks from static JSON
-      console.log('Starting initial load...');
-      fetch(STATIC_JSON_URL, { cache: 'no-store' })
-        .then(response => {
-          if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-          return response.json();
-        })
-        .then(data => {
-          console.log('Loaded static bookmarks:', data);
-          renderBookmarks(data.bookmarks || data);
-        })
-        .catch(error => console.error('Error loading static bookmarks:', error));
-
-      // Initial fetch of announcement and set up periodic refresh
+      // Call fetchAnnouncement immediately and set up periodic refresh
       fetchAnnouncement();
       setInterval(fetchAnnouncement, 30000); // Refresh every 30 seconds
     </script>
