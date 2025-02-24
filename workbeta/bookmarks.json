@@ -1,226 +1,229 @@
-[
-  {
-    "Category": "Electronic Medical Records",
-    "Name": "Sunrise",
-    "URL": "https://myremoteaccess.northwell.edu/logon/LogonPoint/tmindex.html",
-    "Type": "link"
-  },
-  {
-    "Category": "Electronic Medical Records",
-    "Name": "AllScripts",
-    "URL": "https://twwebprod.northwell.edu",
-    "Type": "link"
-  },
-  {
-    "Category": "Electronic Medical Records",
-    "Name": "Muse App",
-    "URL": "http://museapp.nslijhs.net:8080/Search/New",
-    "Type": "link"
-  },
-  {
-    "Category": "Electronic Medical Records",
-    "Name": "ISTOP",
-    "URL": "https://commerce.health.state.ny.us/",
-    "Type": "link"
-  },
-  {
-    "Category": "Electronic Medical Records",
-    "Name": "Airstrip Tele (updated)",
-    "URL": "https://airstripfed.northwell.edu/nsuh/#/",
-    "Type": "link"
-  },
-  {
-    "Category": "Electronic Medical Records",
-    "Name": "EMR Account Unlock",
-    "URL": "https://northwell.us.trustedauth.com/#/reset",
-    "Type": "link"
-  },
-  {
-    "Category": "Residency",
-    "Name": "North Shore - On Call",
-    "URL": "http://www.amion.com/cgi-bin/ocs?Lo=nwell+ns",
-    "Type": "link"
-  },
-  {
-    "Category": "Residency",
-    "Name": "Am I On",
-    "URL": "https://amion.doximity.com/",
-    "Type": "link"
-  },
-  {
-    "Category": "Residency",
-    "Name": "Anonymous Box",
-    "URL": "https://bit.ly/nslijfeedback",
-    "Type": "link"
-  },
-  {
-    "Category": "Residency",
-    "Name": "MedHub - Northwell",
-    "URL": "https://northwell.medhub.com/",
-    "Type": "link"
-  },
-  {
-    "Category": "Residency",
-    "Name": "Resident Facesheet",
-    "URL": "",
-    "Type": "dropdown",
-    "Links": [
-      {
-        "name": "MSGO Residents",
-        "url": "/work/resources/residents2023.jpg"
-      },
-      {
-        "name": "PGY1 Prelim",
-        "url": "/work/resources/PGY1_Prelim.pdf"
-      },
-      {
-        "name": "PGY1 Cat.",
-        "url": "/work/resources/PGY1_Categorical.pdf"
-      },
-      {
-        "name": "PGY2 Residents",
-        "url": "/work/resources/PGY2.pdf"
-      },
-      {
-        "name": "PGY3 Residents",
-        "url": "/work/resources/PGY3.pdf"
-      }
-    ]
-  },
-  {
-    "Category": "Residency",
-    "Name": "Noon Conference Attendance",
-    "URL": "https://forms.office.com/r/b1vSgMCzvU",
-    "Type": "link"
-  },
-  {
-    "Category": "Residency",
-    "Name": "Run a Code/ACLS",
-    "URL": "https://adityasood.me/cpr",
-    "Type": "link"
-  },
-  {
-    "Category": "Documents/Forms",
-    "Name": "ICU Documents",
-    "URL": "",
-    "Type": "dropdown",
-    "Links": [
-      {
-        "name": "Heparin Normogram",
-        "url": "/work/resources/ICU/Heparin Nomogram Protocol.pdf"
-      },
-      {
-        "name": "Phenobarnital Taper",
-        "url": "/work/resources/ICU/Phenobarb taper for nsuh lij.pdf"
-      }
-    ]
-  },
-  {
-    "Category": "Documents/Forms",
-    "Name": "NS Consents",
-    "URL": "",
-    "Type": "dropdown",
-    "Links": [
-      {
-        "name": "Blood Consent",
-        "url": "http://64.72.139.12/pdfs3/NORTH_SHORE-ENGLISH-VD002.pdf"
-      },
-      {
-        "name": "Procedure Consent",
-        "url": "http://64.72.139.12/pdfs3/NORTH_SHORE-ENGLISH-VD010.pdf"
-      },
-      {
-        "name": "NS Cath Consent",
-        "url": "/work/resources/Forms/NS Cath Consent.pdf"
-      },
-      {
-        "name": "NS Lumbar Puncture Consent",
-        "url": "http://64.72.139.12/pdfs3/NORTH_SHORE-ENGLISH-VD108.pdf"
-      }
-    ]
-  },
-  {
-    "Category": "Documents/Forms",
-    "Name": "LIJ Consents",
-    "URL": "",
-    "Type": "dropdown",
-    "Links": [
-      {
-        "name": "Blood Consent",
-        "url": "http://64.72.139.12/pdfs3/LIJ-ENGLISH-VD002.pdf"
-      },
-      {
-        "name": "Procedure Consent",
-        "url": "http://64.72.139.12/pdfs3/LIJ-ENGLISH-VD010.pdf"
-      },
-      {
-        "name": "LIJ MRI Gadolinium",
-        "url": "/work/resources/Forms/LIJ - MRI Gadolinium IV Contrast.pdf"
-      },
-      {
-        "name": "LIJ MRI Safety Screen",
-        "url": "/work/resources/Forms/LIJ - MRI Safety Screening Form.pdf"
-      },
-      {
-        "name": "LIJ Consent for LP",
-        "url": "http://64.72.139.12/pdfs3/LIJ-ENGLISH-VD108.pdf"
-      },
-      {
-        "name": "LIJ Chemotherapy Consent",
-        "url": "http://64.72.139.12/pdfs3/LIJ-ENGLISH-VD036.pdf"
-      }
-    ]
-  },
-  {
-    "Category": "Documents/Forms",
-    "Name": "Attending Phone Numbers",
-    "URL": "/work/resources/ICU/Private MDs.pdf",
-    "Type": "link"
-  },
-  {
-    "Category": "Documents/Forms",
-    "Name": "Work Excuse Forms",
-    "URL": "",
-    "Type": "dropdown",
-    "Links": [
-      {
-        "name": "LIJ Doctor's Note",
-        "url": "/work/resources/Notes/LIJ Doctor Note.pdf"
-      },
-      {
-        "name": "NSUH Doctor's Note",
-        "url": "/work/resources/Notes/NSUH Doctor Note.pdf"
-      }
-    ]
-  },
-  {
-    "Category": "Clinic",
-    "Name": "Intern Didactics Zoom link - 2021",
-    "URL": "https://bit.ly/clinicstream",
-    "Type": "link"
-  },
-  {
-    "Category": "Clinic",
-    "Name": "Clinic Dropbox",
-    "URL": "https://northwell-my.sharepoint.com/:f:/g/personal/mhellerman1_northwell_edu/Ejc7plLfcLVEp-Qv41hEFYgBK5lOFCWQ5Dkfy6wQ0gtSkQ?e=1nsfo8",
-    "Type": "link"
-  },
-  {
-    "Category": "Research",
-    "Name": "IRB Home",
-    "URL": "https://northwellhealth.my.irbmanager.com/Login.aspx",
-    "Type": "link"
-  },
-  {
-    "Category": "Research",
-    "Name": "Northwell RedCap",
-    "URL": "https://redcap.northwell.edu/redcap_v13.11.4/index.php?pid=25865",
-    "Type": "link"
-  },
-  {
-    "Category": "Research",
-    "Name": "Conference Request Form",
-    "URL": "/work/resources/2023ConferenceRequestForm.docx",
-    "Type": "link"
-  }
-]
+{
+  "bookmarks": [
+    {
+      "Category": "Electronic Medical Records",
+      "Name": "Sunrise",
+      "URL": "https://myremoteaccess.northwell.edu/logon/LogonPoint/tmindex.html",
+      "Type": "link"
+    },
+    {
+      "Category": "Electronic Medical Records",
+      "Name": "AllScripts",
+      "URL": "https://twwebprod.northwell.edu",
+      "Type": "link"
+    },
+    {
+      "Category": "Electronic Medical Records",
+      "Name": "Muse App",
+      "URL": "http://museapp.nslijhs.net:8080/Search/New",
+      "Type": "link"
+    },
+    {
+      "Category": "Electronic Medical Records",
+      "Name": "ISTOP",
+      "URL": "https://commerce.health.state.ny.us/",
+      "Type": "link"
+    },
+    {
+      "Category": "Electronic Medical Records",
+      "Name": "Airstrip Tele (updated)",
+      "URL": "https://airstripfed.northwell.edu/nsuh/#/",
+      "Type": "link"
+    },
+    {
+      "Category": "Electronic Medical Records",
+      "Name": "EMR Account Unlock",
+      "URL": "https://northwell.us.trustedauth.com/#/reset",
+      "Type": "link"
+    },
+    {
+      "Category": "Residency",
+      "Name": "North Shore - On Call",
+      "URL": "http://www.amion.com/cgi-bin/ocs?Lo=nwell+ns",
+      "Type": "link"
+    },
+    {
+      "Category": "Residency",
+      "Name": "Am I On",
+      "URL": "https://amion.doximity.com/",
+      "Type": "link"
+    },
+    {
+      "Category": "Residency",
+      "Name": "Anonymous Box",
+      "URL": "https://bit.ly/nslijfeedback",
+      "Type": "link"
+    },
+    {
+      "Category": "Residency",
+      "Name": "MedHub - Northwell",
+      "URL": "https://northwell.medhub.com/",
+      "Type": "link"
+    },
+    {
+      "Category": "Residency",
+      "Name": "Resident Facesheet",
+      "URL": "",
+      "Type": "dropdown",
+      "Links": [
+        {
+          "name": "MSGO Residents",
+          "url": "/work/resources/residents2023.jpg"
+        },
+        {
+          "name": "PGY1 Prelim",
+          "url": "/work/resources/PGY1_Prelim.pdf"
+        },
+        {
+          "name": "PGY1 Cat.",
+          "url": "/work/resources/PGY1_Categorical.pdf"
+        },
+        {
+          "name": "PGY2 Residents",
+          "url": "/work/resources/PGY2.pdf"
+        },
+        {
+          "name": "PGY3 Residents",
+          "url": "/work/resources/PGY3.pdf"
+        }
+      ]
+    },
+    {
+      "Category": "Residency",
+      "Name": "Noon Conference Attendance",
+      "URL": "https://forms.office.com/r/b1vSgMCzvU",
+      "Type": "link"
+    },
+    {
+      "Category": "Residency",
+      "Name": "Run a Code/ACLS",
+      "URL": "https://adityasood.me/cpr",
+      "Type": "link"
+    },
+    {
+      "Category": "Documents/Forms",
+      "Name": "ICU Documents",
+      "URL": "",
+      "Type": "dropdown",
+      "Links": [
+        {
+          "name": "Heparin Normogram",
+          "url": "/work/resources/ICU/Heparin Nomogram Protocol.pdf"
+        },
+        {
+          "name": "Phenobarnital Taper",
+          "url": "/work/resources/ICU/Phenobarb taper for nsuh lij.pdf"
+        }
+      ]
+    },
+    {
+      "Category": "Documents/Forms",
+      "Name": "NS Consents",
+      "URL": "",
+      "Type": "dropdown",
+      "Links": [
+        {
+          "name": "Blood Consent",
+          "url": "http://64.72.139.12/pdfs3/NORTH_SHORE-ENGLISH-VD002.pdf"
+        },
+        {
+          "name": "Procedure Consent",
+          "url": "http://64.72.139.12/pdfs3/NORTH_SHORE-ENGLISH-VD010.pdf"
+        },
+        {
+          "name": "NS Cath Consent",
+          "url": "/work/resources/Forms/NS Cath Consent.pdf"
+        },
+        {
+          "name": "NS Lumbar Puncture Consent",
+          "url": "http://64.72.139.12/pdfs3/NORTH_SHORE-ENGLISH-VD108.pdf"
+        }
+      ]
+    },
+    {
+      "Category": "Documents/Forms",
+      "Name": "LIJ Consents",
+      "URL": "",
+      "Type": "dropdown",
+      "Links": [
+        {
+          "name": "Blood Consent",
+          "url": "http://64.72.139.12/pdfs3/LIJ-ENGLISH-VD002.pdf"
+        },
+        {
+          "name": "Procedure Consent",
+          "url": "http://64.72.139.12/pdfs3/LIJ-ENGLISH-VD010.pdf"
+        },
+        {
+          "name": "LIJ MRI Gadolinium",
+          "url": "/work/resources/Forms/LIJ - MRI Gadolinium IV Contrast.pdf"
+        },
+        {
+          "name": "LIJ MRI Safety Screen",
+          "url": "/work/resources/Forms/LIJ - MRI Safety Screening Form.pdf"
+        },
+        {
+          "name": "LIJ Consent for LP",
+          "url": "http://64.72.139.12/pdfs3/LIJ-ENGLISH-VD108.pdf"
+        },
+        {
+          "name": "LIJ Chemotherapy Consent",
+          "url": "http://64.72.139.12/pdfs3/LIJ-ENGLISH-VD036.pdf"
+        }
+      ]
+    },
+    {
+      "Category": "Documents/Forms",
+      "Name": "Attending Phone Numbers",
+      "URL": "/work/resources/ICU/Private MDs.pdf",
+      "Type": "link"
+    },
+    {
+      "Category": "Documents/Forms",
+      "Name": "Work Excuse Forms",
+      "URL": "",
+      "Type": "dropdown",
+      "Links": [
+        {
+          "name": "LIJ Doctor's Note",
+          "url": "/work/resources/Notes/LIJ Doctor Note.pdf"
+        },
+        {
+          "name": "NSUH Doctor's Note",
+          "url": "/work/resources/Notes/NSUH Doctor Note.pdf"
+        }
+      ]
+    },
+    {
+      "Category": "Clinic",
+      "Name": "Intern Didactics Zoom link - 2021",
+      "URL": "https://bit.ly/clinicstream",
+      "Type": "link"
+    },
+    {
+      "Category": "Clinic",
+      "Name": "Clinic Dropbox",
+      "URL": "https://northwell-my.sharepoint.com/:f:/g/personal/mhellerman1_northwell_edu/Ejc7plLfcLVEp-Qv41hEFYgBK5lOFCWQ5Dkfy6wQ0gtSkQ?e=1nsfo8",
+      "Type": "link"
+    },
+    {
+      "Category": "Research",
+      "Name": "IRB Home",
+      "URL": "https://northwellhealth.my.irbmanager.com/Login.aspx",
+      "Type": "link"
+    },
+    {
+      "Category": "Research",
+      "Name": "Northwell RedCap",
+      "URL": "https://redcap.northwell.edu/redcap_v13.11.4/index.php?pid=25865",
+      "Type": "link"
+    },
+    {
+      "Category": "Research",
+      "Name": "Conference Request Form",
+      "URL": "/work/resources/2023ConferenceRequestForm.docx",
+      "Type": "link"
+    }
+  ],
+  "announcement": "Banner1testing"
+}
