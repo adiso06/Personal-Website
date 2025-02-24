@@ -184,18 +184,33 @@ body {
 }
 
 .announcement-banner {
-    background-color: #f8d7da;
-    color: #721c24;
-    padding: 10px;
+    background-color: #e8f5e9; /* Light, friendly green background */
+    color: #2e7d32; /* Darker green text for contrast */
+    padding: 12px 20px;
     text-align: center;
     width: 100%;
-    position: fixed;
-    top: 0;
-    z-index: 1000;
+    margin-bottom: 20px; /* Space between banner and content */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Subtle shadow */
+    animation: fadeIn 0.5s ease-in; /* Smooth fade in animation */
 }
 
 .announcement-text {
-    font-weight: bold;
+    font-size: 16px;
+    font-weight: 500; /* Semi-bold */
+    line-height: 1.4;
+}
+
+/* Animation for smooth appearance */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Dark mode support */
+.dark-mode .announcement-banner {
+    background-color: #1b5e20; /* Darker green for dark mode */
+    color: #c8e6c9; /* Light green text for dark mode */
 }
 
 /* Hide on mobile */
