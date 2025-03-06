@@ -171,6 +171,16 @@ document.addEventListener('DOMContentLoaded', function() {
     const stickyFilter = document.getElementById('sticky-filter');
     if (!stickyFilter) return;
     
+    // Check if on mobile (width <= 768px)
+    const isMobile = window.innerWidth <= 768;
+    
+    // Always hide on mobile devices
+    if (isMobile) {
+      stickyFilter.classList.remove('visible');
+      stickyFilter.classList.add('hidden');
+      return;
+    }
+    
     if (isInRelevantSection()) {
       stickyFilter.classList.add('visible');
       stickyFilter.classList.remove('hidden');

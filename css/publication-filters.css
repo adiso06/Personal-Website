@@ -309,6 +309,10 @@ body {
     bottom: 80px;
     padding: 10px;
     max-height: 45vh; /* Slightly taller on mobile */
+    display: none !important; /* Completely hide on mobile regardless of other classes */
+    visibility: hidden !important; /* Ensure it's truly hidden */
+    opacity: 0 !important; /* Ensure full transparency */
+    pointer-events: none !important; /* Prevent interaction */
   }
   
   .filter-section-title {
