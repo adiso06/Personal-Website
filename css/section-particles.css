@@ -1,0 +1,56 @@
+/**
+ * Section-specific particles styling
+ * This applies only to specific sections rather than the entire page
+ */
+
+/* About section particles container */
+#about-particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-color: transparent;
+}
+
+/* Container for the section with particles */
+.section-with-particles {
+  position: relative;
+  overflow: hidden; /* Keep particles inside */
+  background-color: rgba(51, 179, 141, 0.05); /* Very subtle tint to help particles stand out */
+}
+
+/* Ensure content stays above particles */
+.section-with-particles .container,
+.section-with-particles .row,
+.section-with-particles h1,
+.section-with-particles p,
+.section-with-particles div,
+.section-with-particles img,
+.section-with-particles .portrait,
+.section-with-particles .portrait-title,
+.section-with-particles #profile,
+.section-with-particles ul {
+  position: relative;
+  z-index: 1;
+}
+
+/* Particle colors for different themes */
+body.light-mode .section-with-particles {
+  --particle-color: rgba(51, 179, 141, 0.8); /* Brighter green color */
+}
+
+body.dark-mode .section-with-particles {
+  --particle-color: rgba(51, 179, 141, 0.8); /* Brighter green color */
+}
+
+/* Add special styling for VSCode browser preview */
+.vsc-initialized .section-with-particles #about-particles {
+  position: absolute !important;
+  width: 100% !important;
+  height: 100% !important;
+  top: 0 !important;
+  left: 0 !important;
+} 

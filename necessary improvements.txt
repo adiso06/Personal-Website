@@ -1,0 +1,60 @@
+1. Technical / Code-Level Improvements
+	1.	Ensure Mobile-Friendliness / Responsive Behavior
+• Your layout is largely responsive, but on smaller screens, some sections (e.g. the grid of links, the posters section) can overflow or produce awkward spacing.
+• Review all images/tables to make sure they scale properly in mobile view.
+• Double-check that Bootstrap classes (like .img-fluid, .table-responsive, etc.) are consistently used so nothing “breaks” on phone-sized screens.
+	2.	Check for Redundant / Duplicate IDs
+• There are two id=“skills” sections in the code (the “Links” section and the “Skills” section). Make sure each ID is unique so linking and in-page navigation aren’t confused.
+• Similarly, watch out for repeated or empty  IDs.
+	3.	Use Semantic HTML5 and ARIA Roles
+• Where possible, replace generic  elements with semantic tags like , , , , etc.
+• This helps with accessibility and SEO.
+• You can also add ARIA roles or aria-labels to the navigation to improve screen-reader experiences.
+	4.	Review SEO Metadata
+• You have meta descriptions and Twitter/OG tags, which is great. However, the  and  are empty. Fill these to optimize when sharing on social media.
+• Add descriptive  tags for each page if you plan to have separate sub-pages or sections.
+• Make sure each main section has well-structured heading tags (e.g. only one , then ,  for sub-sections).
+	5.	Consolidate and Minify CSS/JS
+• Currently, Bootstrap CSS, Grid CSS, and your custom CSS are all in one place, plus references to Google Fonts. You can reduce page load times by:
+• Combining multiple CSS files into one minified file.
+• Combining or minifying any additional JavaScript.
+• This is particularly helpful if you expect heavier traffic or if you want a leaner site experience.
+	6.	Optimize Images
+• Some images (like publication banners or the large headshot) appear quite large. You can speed up page loads by:
+• Compressing or resizing them to a more appropriate dimension.
+• Using srcset or responsive image techniques so that mobile devices get smaller image downloads.
+• You may also consider lazy-loading images – especially the many thumbnails in the “Links,” “Publications,” and “Posters” sections.
+	7.	Accessibility Checks
+• Test your site with a screen reader or an online accessibility checker.
+• Verify color contrasts are sufficient (especially the green text on white and any grey text on white).
+• Provide alt attributes for all images for better accessibility.
+	8.	Use a Package Manager / Build Process (Optional)
+• If you plan on expanding the site, consider using a simple build process (e.g. with npm + a gulp/webpack script) to handle:
+• Automatic CSS/JS minification.
+• Auto-prefixing for CSS vendor prefixes.
+• Compression of images.
+
+2. Feature / Design / Content Improvements
+	1.	Reorganize the Long CV-Like Sections
+• You have a wealth of info under “Publications,” “Abstracts,” and “Posters,” which is fantastic. But the page becomes very long and can feel overwhelming.
+• Some potential options:
+• Move them to dedicated tabs: a tab for “Publications,” a tab for “Abstracts,” etc. that shows up as a trisection style thing that if you click will then show that instead. or add filters so that people can only see work in a certain topic (GI, oncology, etc). would have to categorize and tag them yourself based on title.
+	2.	Showcase Publications More Dynamically
+• Instead of just listing each publication’s text (which can get long), think about:
+• A clickable toggle that reveals the abstract or additional details.
+• Tagging or filtering by topic (e.g. “Dermatology,” “Oncology,” “Gastroenterology,” etc.) so someone can jump to what they want.
+	3.	Interactive Elements / Sliders / Filter
+• For your “Links” images, consider a simple image gallery where, on hover, you might show a description or call to action.
+• For publications, you could incorporate a filterable list (like an Isotope or MixItUp gallery), so users can filter by year or subject area.
+• IT WOULD BE SIGNIFICANTLY QOL IMRPOVEMENT IF research updates were automatically pulled from google scholar or researchgate or another similiar service automatically every month so that this is not a manual process.
+	4.	Show Quick-Stats or Infographics
+• If you want to emphasize certain aspects (like number of publications or total citations), consider a small stats area:
+• E.g. “X peer-reviewed publications,” “Y citations,” “Z nonprofit projects done,” etc.
+• This is a nice visual highlight that breaks up text.
+	5.	Side-by-Side Timeline of Nonprofit / Education / Professional
+• A timeline or portfolio-like layout for your nonprofit projects vs. your medical career could provide a quick, visual summary.
+• Timelines help reduce “wall of text” issues and let people track your activities chronologically.
+	6.	Ensure Everything’s Easy to Update
+• If you find manual HTML updates too tedious, you might consider a static site generator (e.g., Jekyll, Hugo) or a simple CMS so you can:
+• Add publications by editing a Markdown file or a simple form, letting the system rebuild automatically. IT WOULD BE SIGNIFICANTLY QOL IMRPOVEMENT IF research updates were automatically pulled from google scholar or researchgate or another similiar service automatically every month so that this is not a manual process.
+• This keeps the content management simpler than diving into raw HTML for every new poster or publication.

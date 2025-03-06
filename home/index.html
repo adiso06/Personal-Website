@@ -2,65 +2,265 @@
 <html lang="en">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-    <title>Links</title>
+    <meta charset="UTF-8">
+    <title>Links Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content=""/>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <meta name="description" content="Personal dashboard with quick access to various services and applications">
+    <meta name="keywords" content="dashboard, links, services">
+    <meta name="author" content="Aditya Sood">
+    
+    <!-- Performance Optimizations -->
+    <link rel="preconnect" href="https://stackpath.bootstrapcdn.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://stackpath.bootstrapcdn.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Links Dashboard">
+    <meta property="og:description" content="Personal dashboard with quick access to various services and applications">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Links Dashboard">
+    <meta name="twitter:description" content="Personal dashboard with quick access to various services and applications">
+    
+    <!-- CSS Files -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="new_responsive_bookmark_grid.css">
+    <link rel="stylesheet" href="css/grid.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    
+    <!-- Custom Styles -->
+    <style>
+        :root {
+            --bg-color: #2c3e50;
+            --text-color: #ecf0f1;
+            --button-bg: rgba(255, 255, 255, 0.1);
+            --button-border: rgba(255, 255, 255, 0.2);
+            --button-hover-bg: rgba(255, 255, 255, 0.2);
+            --button-focus-outline: rgba(255, 255, 255, 0.3);
+        }
+        
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        body.light-mode {
+            --bg-color: #ecf0f1;
+            --text-color: #2c3e50;
+            --button-bg: rgba(44, 62, 80, 0.1);
+            --button-border: rgba(44, 62, 80, 0.2);
+            --button-hover-bg: rgba(44, 62, 80, 0.2);
+            --button-focus-outline: rgba(44, 62, 80, 0.3);
+            --shadow-color: rgba(0, 0, 0, 0.05);
+            --hover-shadow-color: rgba(0, 0, 0, 0.1);
+            --ripple-color: rgba(44, 62, 80, 0.3);
+        }
+        
+        .header-logo {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 30px;
+        }
+        
+        .main-title {
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+        
+        .bookmark-button {
+            background-color: var(--button-bg);
+            color: var(--text-color);
+            border: 1px solid var(--button-border);
+            transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+        }
+        
+        .bookmark-button:hover,
+        .bookmark-button:focus {
+            background-color: var(--button-hover-bg);
+            color: var(--text-color);
+            outline: none;
+            box-shadow: 0 0 0 3px var(--button-focus-outline);
+        }
+        
+        footer {
+            margin-top: 40px;
+            padding: 20px 0;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+        
+        /* Ensure images are responsive */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        /* Skip to content link for accessibility */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--bg-color);
+            color: var(--text-color);
+            padding: 8px;
+            z-index: 100;
+        }
+        
+        .skip-link:focus {
+            top: 0;
+        }
+        
+        /* Theme toggle button */
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--button-bg);
+            color: var(--text-color);
+            border: 1px solid var(--button-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 100;
+            transition: background-color 0.3s;
+        }
+        
+        .theme-toggle:hover {
+            background-color: var(--button-hover-bg);
+        }
+    </style>
 </head>
 
-<body style="background-color:grey;">
-    <div class="container">
-        <div class="col-xs-12">
-            <div class="text-center" style="padding-top: 30px; padding-bottom: 30px;">
-                <img class="backdrop linktree">
+<body>
+    <a href="#services-grid" class="skip-link">Skip to main content</a>
+    
+    <!-- Theme toggle button -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+        <i class="fas fa-moon" id="themeIcon"></i>
+    </button>
+    
+    <header class="container pt-4" role="banner">
+        <div class="row">
+            <div class="col-12 text-center">
+                <img class="header-logo" src="images/logo5.png" alt="Dashboard Logo" aria-label="Site Logo" width="200" height="auto" loading="lazy">
+                <h1 class="main-title">Services Dashboard</h1>
             </div>
         </div>
-    </div>
+    </header>
 
-    <div class="container">
-        <div class="text-center">
-            <script>
-                var ipAddress = '108.41.112.19';
+    <main class="bookmark-container" role="main">
+        <section class="bookmark-grid" id="services-grid" aria-label="Services Grid" role="navigation">
+            <div class="bookmark-item">
+                <button onclick="navigateTo(5001)" type="button" class="bookmark-button btn" aria-label="Radarr">
+                    <i class="fas fa-film"></i> Radarr
+                </button>
+            </div>
+            <div class="bookmark-item">
+                <button onclick="navigateTo(5002)" type="button" class="bookmark-button btn" aria-label="Misc">
+                    <i class="fas fa-box"></i> Misc
+                </button>
+            </div>
+            <div class="bookmark-item">
+                <button onclick="navigateTo(5003)" type="button" class="bookmark-button btn" aria-label="Sonarr">
+                    <i class="fas fa-tv"></i> Sonarr
+                </button>
+            </div>
+            <div class="bookmark-item">
+                <button onclick="navigateTo(5006)" type="button" class="bookmark-button btn" aria-label="Readarr">
+                    <i class="fas fa-book"></i> Readarr
+                </button>
+            </div>
+            <div class="bookmark-item">
+                <button onclick="navigateTo(5007)" type="button" class="bookmark-button btn" aria-label="Audiobookshelf">
+                    <i class="fas fa-headphones"></i> Audiobookshelf
+                </button>
+            </div>
+            <div class="bookmark-item">
+                <button onclick="navigateTo(5005)" type="button" class="bookmark-button btn" aria-label="Tautulli">
+                    <i class="fas fa-chart-bar"></i> Tautulli
+                </button>
+            </div>
+            <div class="bookmark-item">
+                <button onclick="navigateToS(5009)" type="button" class="bookmark-button btn" aria-label="Docker">
+                    <i class="fab fa-docker"></i> Docker
+                </button>
+            </div>
+            <div class="bookmark-item">
+                <button onclick="navigateToS(34002)" type="button" class="bookmark-button btn" aria-label="Home Assistant">
+                    <i class="fas fa-home"></i> Home Assistant
+                </button>
+            </div>
+            <!-- You can add more bookmark items here -->
+        </section>
+    </main>
 
-                function navigateTo(port) {
-                    location.href = 'http://' + ipAddress + ':' + port; }
-                function navigateToS(port) {
-                    location.href = 'https://' + ipAddress + ':' + port;
+    <footer class="container text-center">
+        <p>&copy; 2023 Personal Dashboard. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // IP address configuration
+        var ipAddress = '108.41.112.19';
+
+        // Navigation functions
+        function navigateTo(port) {
+            location.href = 'http://' + ipAddress + ':' + port;
+        }
+        
+        function navigateToS(port) {
+            location.href = 'https://' + ipAddress + ':' + port;
+        }
+        
+        // Theme toggle functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            const themeToggle = document.getElementById('themeToggle');
+            const themeIcon = document.getElementById('themeIcon');
+            
+            // Check for saved theme preference or use default
+            const currentTheme = localStorage.getItem('theme') || 'dark';
+            document.body.classList.toggle('light-mode', currentTheme === 'light');
+            updateThemeIcon(currentTheme);
+            
+            // Add event listener for theme toggle
+            themeToggle.addEventListener('click', () => {
+                const isDark = !document.body.classList.contains('light-mode');
+                document.body.classList.toggle('light-mode');
+                const theme = isDark ? 'light' : 'dark';
+                localStorage.setItem('theme', theme);
+                updateThemeIcon(theme);
+            });
+            
+            function updateThemeIcon(theme) {
+                if (theme === 'light') {
+                    themeIcon.classList.remove('fa-moon');
+                    themeIcon.classList.add('fa-sun');
+                } else {
+                    themeIcon.classList.remove('fa-sun');
+                    themeIcon.classList.add('fa-moon');
                 }
-            </script>
-
-            <div style="padding-bottom: 30px;">
-                <button onclick="navigateTo(5001)" type="button" class="btn btn-outline-light" style="width: 50%; padding-top:10px; padding-bottom:10px; padding-left:20px; padding-right:20px; font-weight: 600;">Radarr</button>
-            </div>
-            <div style="padding-bottom: 30px;">
-                <button onclick="navigateTo(5002)" type="button" class="btn btn-outline-light" style="width: 50%; padding-top:10px; padding-bottom:10px; font-weight: 600;">Misc</button>
-            </div>
-            <div style="padding-bottom: 30px;">
-                <button onclick="navigateTo(5003)" type="button" class="btn btn-outline-light" style="width: 50%; padding-top:10px; padding-bottom:10px; font-weight: 600;">Sonarr</button>
-            </div>
-            <div style="padding-bottom: 30px;">
-                <button onclick="navigateTo(5006)" type="button" class="btn btn-outline-light" style="width: 50%; padding-top:10px; padding-bottom:10px; font-weight: 600;">Readarr</button>
-            </div>
-            <div style="padding-bottom: 30px;">
-                <button onclick="navigateTo(5007)" type="button" class="btn btn-outline-light" style="width: 50%; padding-top:10px; padding-bottom:10px; font-weight: 600;">Audiobookshelf</button>
-            </div>
-            <div style="padding-bottom: 30px;">
-                <button onclick="navigateTo(5005)" type="button" class="btn btn-outline-light" style="width: 50%; padding-top:10px; padding-bottom:10px; font-weight: 600;">Tautulli</button>
-            </div>
-            <div style="padding-bottom: 30px;">
-                <button onclick="navigateToS(5009)" type="button" class="btn btn-outline-light" style="width: 50%; padding-top:10px; padding-bottom:10px; font-weight: 600;">Docker</button>
-            </div>
-            <div style="padding-bottom: 30px;">
-                <button onclick="navigateToS(34002)" type="button" class="btn btn-outline-light" style="width: 50%; padding-top:10px; padding-bottom:10px; font-weight: 600;">Home Assistant</button>
-            </div>
+            }
             
-            
-            <!-- Add more buttons here, using the navigateTo function with the appropriate port number -->
-        </div>
-    </div>
+            // Initialize animation indexes for staggered animation
+            const bookmarkItems = document.querySelectorAll('.bookmark-item');
+            bookmarkItems.forEach((item, index) => {
+                item.style.setProperty('--item-index', index);
+            });
+        });
+    </script>
 </body>
 
 </html>

@@ -1,0 +1,14 @@
+/* Research publication numbering styles */
+.research-number {
+  font-weight: bold;
+  margin-right: 5px;
+  display: inline-block;
+  min-width: 25px;
+  color: #33B38D; /* Match the site theme color */
+}
+
+/* Ensure the numbering doesn't show on hidden items */
+.view-list-item.hidden .research-number,
+.view-list-item[style*="display: none"] .research-number {
+  display: none;
+} 

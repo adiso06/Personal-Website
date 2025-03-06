@@ -4,23 +4,48 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="generator" content="Aditya Sood Personal Website">
 		<meta name="author" content="Aditya Sood">
-		<meta name="description" content="Student, Innovator, Researcher">
+		<meta name="description" content="Aditya Sood's personal portfolio showcasing work in medical research, nonprofit organizations, and technology projects.">
+		<meta name="keywords" content="Aditya Sood, medical research, nonprofit, technology, portfolio">
 		<link rel="alternate" hreflang="en-us" href="index.html">
 		<meta name="theme-color" content="#33B38D">
+		
+		<!-- Open Graph / Social Media Meta Tags -->
+		<meta property="og:title" content="Aditya Sood - Personal Portfolio">
+		<meta property="og:description" content="Aditya Sood's personal portfolio showcasing work in medical research, nonprofit organizations, and technology projects.">
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="https://www.adityasood.com">
+		<meta property="og:image" content="/img/profile.jpg">
+		<meta property="og:site_name" content="Aditya Sood">
+		<meta property="og:locale" content="en-us">
+		
+		<!-- Twitter Card Tags -->
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:site" content="@theadityasood">
+		<meta name="twitter:creator" content="@theadityasood">
+		<meta name="twitter:title" content="Aditya Sood - Personal Portfolio">
+		<meta name="twitter:description" content="Medical research, nonprofit work, and technology projects by Aditya Sood">
+		<meta name="twitter:image" content="/img/profile.jpg">
+		
+		<!-- Performance optimizations -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link rel="preconnect" href="https://www.googletagmanager.com">
+		<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+		<link rel="dns-prefetch" href="https://fonts.gstatic.com">
+		
 		<link rel="stylesheet" href="css/grid.css">
-		<link rel="stylesheet" href="fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono&amp;display=swap">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono&amp;display=swap">
 		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/publication-filters.css">
+		<link rel="stylesheet" href="css/publication-numbering.css">
+		<link rel="stylesheet" href="css/section-particles.css">
+		
+		<!-- Favicon -->
 		<link rel="icon" type="image/png" href="img/icon-32.png">
 		<link rel="apple-touch-icon" type="image/png" href="/img/icon-32.png">
-		<meta property="twitter:card" content="summary_large_image">
-		<meta property="twitter:site" content="@theadityasood">
-		<meta property="twitter:creator" content="@theaditysood">
-		<meta property="og:site_name" content="">
-		<meta property="og:url" content="/">
-		<meta property="og:title" content="">
-		<meta property="og:description" content="Student, Innovator, Researcher">
-		<meta property="og:locale" content="en-us">
+		
 		<title>Aditya Sood</title>
 	</head>
 	<!-- Google tag (gtag.js) -->
@@ -32,7 +57,7 @@
 
   gtag('config', 'G-2W0HK77092');
 </script>
-	<body id="top" data-spy="scroll" data-offset="70" data-target="#navbar-main" >
+	<body id="top" data-spy="scroll" data-offset="70" data-target="#navbar-main" class="dark-mode">
 		<aside class="search-results" id="search">
 			<div class="container">
 				<section class="search-header">
@@ -55,6 +80,7 @@
 				</section>
 			</div>
 		</aside>
+
 		<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0 compensate-for-scrollbar" id="navbar-main">
 			<div class="container">
 				<a class="navbar-brand" href="index.html"></a>
@@ -92,7 +118,10 @@
 			</div>
 		</nav>
 		<span class="js-widget-page d-none"></span>  
-		<section id="about" class="home-section wg-about   "  >
+		<section id="about" class="home-section wg-about section-with-particles" style="position: relative; min-height: 400px; background-color: rgba(51, 179, 141, 0.05);">
+			<!-- Particles container specifically for this section -->
+			<div id="about-particles" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; z-index: 0;"></div>
+			
 			<div class="container">
 				<div class="row" itemprop="author" itemscope itemtype="http://schema.org/Person" itemref="person-email">
 					<div class="col-12 col-lg-4">
@@ -101,22 +130,6 @@
 							<div class="portrait-title">
 								<h2 itemprop="name">Aditya Sood</h2>
 								<h3 itemprop="jobTitle">Student, Innovator, Researcher</h3>
-								
-									<!--<h3 itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
-									  <a href="https://www.sainsburywellcome.org/web/" target="_blank" itemprop="url" rel="noopener">
-									  <span itemprop="name">Sainsbury Wellcome Centre</span>
-									  </a>
-									</h3>
-									<h3 itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
-									  <a href="https://www.ucl.ac.uk/gatsby/" target="_blank" itemprop="url" rel="noopener">
-									  <span itemprop="name">Gatsby Computational Neuroscience Unit</span>
-									  </a>
-									</h3>
-									<h3 itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
-									  <a href="https://www.ucl.ac.uk/" target="_blank" itemprop="url" rel="noopener">
-									  <span itemprop="name">University College London (UCL)</span>
-									  </a>
-									</h3>-->
 							</div>
 							
 							<ul class="network-icon" aria-hidden="false">
@@ -133,8 +146,8 @@
 						<h1>About me</h1>
 						<p>I&rsquo;m Aditya Sood, and am currently doing my Internal Medicine residency at North Shore University Hospital.</p>
 						<p>A little bit about me: </p>
-                        <p><strong><font color=#33b38d>I always say yes.</font></strong> In both my personal and professional life, I’m a big believer that every opportunity given to me has something for me to learn from. </p>
-                        <p><strong><font color=#33b38d>I love to get into the thick of things</font></strong> and examine the details of what I’m looking at. For instance, when COVID struck, my first instinct was to get involved: my friends and I began to deliver meals to fatigued healthcare workers and struggling homeless shelters with Feed the Frontlines GA. </p>
+                        <p><strong><font color=#33b38d>I always say yes.</font></strong> In both my personal and professional life, I'm a big believer that every opportunity given to me has something for me to learn from. </p>
+                        <p><strong><font color=#33b38d>I love to get into the thick of things</font></strong> and examine the details of what I'm looking at. For instance, when COVID struck, my first instinct was to get involved: my friends and I began to deliver meals to fatigued healthcare workers and struggling homeless shelters with Feed the Frontlines GA. </p>
                         <p><strong><font color=#33b38d>I'm a practical problem solver.</font></strong> Whether it's figuring out how to use R to answer interesting questions, or 3d print random objects to fix small problems around my apartment, I'm always thinking about how we can figure out the next step and then accomplish it.</p>
 						<div class="row">
 							<div class="col-md-5">
@@ -179,27 +192,8 @@
 				<h1>Links</h1>
 			</div>
 		</div>
-		<style>
-			#grid {
-			display: grid;
-			grid-template-columns: repeat(3, minmax(150px, 1fr));
-            grid-template-rows: repeat(auto-fill, 1fr);
-            grid-auto-flow: row;
-			grid-gap: 0px;overflow: hidden;
-            }
-			.
-			#grid > div {
-			font-size: 30px;
-			padding:1px;
-			color: #ffffff;
-			background: #ffffff;
-			text-align: center;
-            overflow: hidden;
-			}
-			}
-		</style>
-            <div class="row">
-            <div class="col-md-2"></div><div class="col-md-8">
+		<div class="row">
+			<div class="col-md-2"></div><div class="col-md-8">
 		<div id="grid">
             <div><a href="https://www.coca-colascholarsfoundation.org/"><img src="/img/coke1.jpg" alt="Coke Scholarship"; height: 200px;
   width: 200px;
@@ -209,12 +203,12 @@
   object-fit: cover></a></div>
             <div><a href="https://www.wtfcorg.wix.com/ghys/"><img src="/img/ghys1.jpg" alt="Global Health Youth Summit"></a></div>
             <div><a href="https://www.hackstart.co/"><img src="/img/hs1.jpg" alt="HackStart"></a></div>
-            <div><a href="https://stice.uga.edu/team_stice.html"><img src="/img/rbc1.jpg" alt="Regenerative Bioscience Center"></a></div>
+            <div><a href="https://stice.uga.edu/stice-students-alumni"><img src="/img/rbc1.jpg" alt="Regenerative Bioscience Center"></a></div>
             <div><a href="https://21stcenturyleaders.org/tag/aditya-sood"><img src="/img/cbs2.jpg" alt="21st Century Leaders"></a></div>
             <div><a href="https://www.murthy.com/2015/04/22/indianamerican-teenager-honored-with-2015-immigrant-youth-achievement-award/"><img src="/img/aic1.jpg" alt="American Immigration Council"></a></div>
             <div><a href="https://www.workingtogetherforchange.com"><img src="/img/wtfc1.jpg" alt="WTFC"></a></div>
             <div><a href="https://www.youtube.com/watch?v=tAbsvshIGk8"><img src="/img/ted2.jpg" alt="TEDx Talk"></a></div>
-
+            <!--<div><a href="https://www.globalindian.com/youth/story/global-indian-exclusive/teens-nitish-and-aditya-sood-are-uplifting-the-homeless-in-atlanta/"><img src="/img/gi1.jpg" alt="Global Indian"></a></div>-->	
  </div><div class="col-md-2"></div></div>
             </div></section>
 		<section id="skills" class="home-section wg-featurette   "  >
@@ -337,85 +331,162 @@
 				</div>
 			</div>
 		</section>
-		<section id="publications" class="home-section wg-pages   "  >
+		<section id="publications" class="home-section wg-pages" style="padding-top: 0; margin-top: 0;">
 			<div class="container">
 				<div class="row">
 					<div class="col-12 col-lg-4 section-heading">
 						<h1>Publications</h1>
 					</div>
 					<div class="col-12 col-lg-8">
+						<!-- Move the filter container outside of the normal flow -->
+						<!-- Publications content follows -->
 						
-                        
+						<!-- Existing publication items... -->
+						
+						<div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle" data-field="Ethics,Dermatology">
+							<a href="https://doi.org/10.1016/j.jaad.2022.07.030"  itemprop="url"><span itemprop="name">Recommending expensive treatments: An ethical analysis</span></a> 
+							<br><h8> Journal of the American Academy of Dermatology | 2022</h8>   
+							<div class="article-metadata" itemprop="author">
+								<span itemprop="author name" itemtype="http://schema.org/Person"> <strong> Sood A. </strong>, Sangari A., Stoff B.K.</span>
+								<div class="btn-links">
+									<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://doi.org/10.1016/j.jaad.2022.07.030" target="_blank" rel="noopener">
+										<i class="fab fa-github mr-1"></i>
+										DOI: 10.1016/j.jaad.2022.07.030
+									</a>      
+								</div>
+							</div>
+						</div>
 
-
-
-  <div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle">
-    <a href="https://doi.org/10.1016/j.jaad.2022.07.030"  itemprop="url"><span itemprop="name">Recommending expensive treatments: An ethical analysis</span></a> 
-    <br><h8> Journal of the American Academy of Dermatology | 2022</h8>   
-    <div class="article-metadata" itemprop="author">
-      <span itemprop="author name" itemtype="http://schema.org/Person"> <strong> Sood A. </strong>, Sangari A., Stoff B.K.</span>
-      <div class="btn-links">
-       <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://doi.org/10.1016/j.jaad.2022.07.030" target="_blank" rel="noopener">
-				<i class="fab fa-github mr-1"></i>
-				DOI: 10.1016/j.jaad.2022.07.030
-            </a>      
-      </div>
-    </div>
-  </div>
-
-  <div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle">
-    <a href="https://doi:10.1016/j.jaad.2022.03.038"  itemprop="url"><span itemprop="name">Navigating internet-based misinformation with patients in clinic</span></a>    
-    <br><h8> Journal of the American Academy of Dermatology | 2022</h8>
-    <div class="article-metadata" itemprop="author">
-        <span itemprop="author name" itemtype="http://schema.org/Person"><strong> Sood A. </strong>, Sangari A., and Stoff B.K.</span>
-        <div class="btn-links">
-            <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://doi.org/10.1016/j.jaad.2022.03.038" target="_blank" rel="noopener">
-				<i class="fab fa-github mr-1"></i>
-				DOI: doi:10.1016/j.jaad.2022.03.038
-            </a>      
-        </div>
+						<div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle" data-field="Ethics,Dermatology">
+							<a href="https://doi:10.1016/j.jaad.2022.03.038"  itemprop="url"><span itemprop="name">Navigating internet-based misinformation with patients in clinic</span></a>    
+							<br><h8> Journal of the American Academy of Dermatology | 2022</h8>
+							<div class="article-metadata" itemprop="author">
+								<span itemprop="author name" itemtype="http://schema.org/Person"><strong> Sood A. </strong>, Sangari A., and Stoff B.K.</span>
+								<div class="btn-links">
+									<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://doi.org/10.1016/j.jaad.2022.03.038" target="_blank" rel="noopener">
+										<i class="fab fa-github mr-1"></i>
+										DOI: doi:10.1016/j.jaad.2022.03.038
+									</a>      
+								</div>
         
-    </div>
-  </div>
+							</div>
+						</div>
 
 
 
-  <div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle">
-    <a href="https://doi.org/10.1111/cup.14137"  itemprop="url"><span itemprop="name">Challenging ethical scenarios reported by American Society of Dermatopathology members: a qualitative analysis</span></a>    
-    <br><h8> Journal of the American Academy of Dermatology | 2021</h8>
-    <div class="article-metadata" itemprop="author">
-      <span itemprop="author name" itemtype="http://schema.org/Person"><strong> Sood A. </strong>, Brahmbhatt M., Flowers N., Yeung H., Vong G., and Stoff B.K.</span>
-    
-           <div class="btn-links">
-            <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://doi.org/10.1111/cup.14137" target="_blank" rel="noopener">
-				<i class="fab fa-github mr-1"></i>
-        DOI: 10.1111/cup.14137
-               </a>
-      </div>
-    </div>
-  </div>
+						<div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle" data-field="Ethics,Dermatology">
+							<a href="https://doi.org/10.1111/cup.14137"  itemprop="url"><span itemprop="name">Challenging ethical scenarios reported by American Society of Dermatopathology members: a qualitative analysis</span></a>    
+							<br><h8> Journal of the American Academy of Dermatology | 2021</h8>
+							<div class="article-metadata" itemprop="author">
+								<span itemprop="author name" itemtype="http://schema.org/Person"><strong> Sood A. </strong>, Brahmbhatt M., Flowers N., Yeung H., Vong G., and Stoff B.K.</span>
+							
+								<div class="btn-links">
+									<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://doi.org/10.1111/cup.14137" target="_blank" rel="noopener">
+										<i class="fab fa-github mr-1"></i>
+										DOI: 10.1111/cup.14137
+									</a>
+								</div>
+							</div>
+						</div>
 
 
-  <div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle">
-    <a href="https://doi.org/10.1016/j.jaad.2021.11.031"  itemprop="url"><span itemprop="name">The ethics of using biased Artificial Intelligence programs in clinic</span></a>    
-    <br><h8> Journal of the American Academy of Dermatology | 2021</h8>
-    <div class="article-metadata" itemprop="author">
-      <span itemprop="author name" itemtype="http://schema.org/Person"><strong> Sood A. </strong>, Sangari A., Chen J., and Stoff B.K.</span>
-      <div class="btn-links">
-      <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://doi.org/10.1016/j.jaad.2021.11.031" target="_blank" rel="noopener">
-				<i class="fab fa-github mr-1"></i>
-				OI: 10.1016/j.jaad.2021.11.031
-            </a> 
-      </div>
-    </div>
-  </div> 
+						<div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle" data-field="Ethics,Dermatology">
+							<a href="https://doi.org/10.1016/j.jaad.2021.11.031"  itemprop="url"><span itemprop="name">The ethics of using biased Artificial Intelligence programs in clinic</span></a>    
+							<br><h8> Journal of the American Academy of Dermatology | 2021</h8>
+							<div class="article-metadata" itemprop="author">
+								<span itemprop="author name" itemtype="http://schema.org/Person"><strong> Sood A. </strong>, Sangari A., Chen J., and Stoff B.K.</span>
+								<div class="btn-links">
+								<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://doi.org/10.1016/j.jaad.2021.11.031" target="_blank" rel="noopener">
+										<i class="fab fa-github mr-1"></i>
+										OI: 10.1016/j.jaad.2021.11.031
+									</a> 
+								</div>
+							</div>
+						</div> 
 
+						<div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle" data-field="Ethics,Dermatology">
+							<a href="#" itemprop="url"><span itemprop="name">What to do when you are curbsided by your patient's plus one</span></a>    
+							<br><h8>Journal of the American Academy of Dermatology | Vol. 90, No. 3 | 671-672 | 2024</h8>
+							<div class="article-metadata" itemprop="author">
+								<span itemprop="author name" itemtype="http://schema.org/Person">Sangari A., <strong>Sood A.</strong>, Stoff B.K.</span>
+							</div>
+						</div>
+
+						<div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle" data-field="Ethics,AI">
+							<a href="#" itemprop="url"><span itemprop="name">What is wrong with a black box? Addressing the use of unexplainable artificial intelligence in patient care</span></a>    
+							<br><h8>Journal of the American Academy of Dermatology | Vol. 91, No. 4 | 784-785 | 2024</h8>
+							<div class="article-metadata" itemprop="author">
+								<span itemprop="author name" itemtype="http://schema.org/Person">Sangari A., <strong>Sood A.</strong>, Lozeau D.</span>
+							</div>
+						</div>
+
+						<div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle" data-field="Critical-Care">
+							<a href="#" itemprop="url"><span itemprop="name">Effects of altering harmonic structure on the recognition of simulated auditory arterial pressure alarms</span></a>    
+							<br><h8>British Journal of Anaesthesia | Vol. 131, No. 6 | e178-e180 | 2023</h8>
+							<div class="article-metadata" itemprop="author">
+								<span itemprop="author name" itemtype="http://schema.org/Person">Bingham M.A., Cummins M.L., Tong A., Purcell P., Sangari A., <strong>Sood A.</strong>, Schlesinger J.J.</span>
+							</div>
+						</div>
+
+						<div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle" data-field="Critical-Care">
+							<a href="#" itemprop="url"><span itemprop="name">A spatiotemporal and multisensory approach to designing wearable clinical ICU alarms</span></a>    
+							<br><h8>Journal of Medical Systems | Vol. 47, No. 1 | 105 | 2023</h8>
+							<div class="article-metadata" itemprop="author">
+								<span itemprop="author name" itemtype="http://schema.org/Person">Sangari A., Bingham M.A., Cummins M., <strong>Sood A.</strong>, Tong A., Purcell P., Schlesinger J.J.</span>
+							</div>
+						</div>
+
+						<div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle" data-field="Ethics,Healthcare-Economics">
+							<a href="#" itemprop="url"><span itemprop="name">Ethics of charging for patient portal messages: A new type of e-visit</span></a>    
+							<br><h8>Journal of the American Academy of Dermatology | 2024</h8>
+							<div class="article-metadata" itemprop="author">
+								<span itemprop="author name" itemtype="http://schema.org/Person">Sangari A., Huang C., <strong>Sood A.</strong>, Lozeau D.</span>
+							</div>
+						</div>
+
+						<div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle" data-field="Dermatology">
+							<a href="#" itemprop="url"><span itemprop="name">Hidradenitis suppurativa and psychosocial well-being: a cross-sectional survey analysis from the All of Us research program</span></a>    
+							<br><h8>Archives of Dermatological Research | Vol. 316, No. 7 | 445 | 2024</h8>
+							<div class="article-metadata" itemprop="author">
+								<span itemprop="author name" itemtype="http://schema.org/Person">Jain S., Tushe S., <strong>Sood A.</strong>, Yeung H., Orenstein L.A.V.</span>
+							</div>
+						</div>
+
+						<div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle" data-field="Dermatology">
+							<a href="#" itemprop="url"><span itemprop="name">Caring for transgender populations: A primer for the dermatopathologist</span></a>    
+							<br><h8>Journal of Cutaneous Pathology | Vol. 50, No. 3 | 284-287 | 2023</h8>
+							<div class="article-metadata" itemprop="author">
+								<span itemprop="author name" itemtype="http://schema.org/Person"><strong>Sood A.</strong>, Stoff B.K., Yeung H.</span>
+							</div>
+						</div>
+
+						<div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle" data-field="Dermatopathology">
+							<a href="#" itemprop="url"><span itemprop="name">Developing a virtual global dermatology curriculum: Qualitative analysis based on a pilot study in Ethiopia</span></a>    
+							<br><h8>JAAD International | Vol. 10 | 41-43 | 2023</h8>
+							<div class="article-metadata" itemprop="author">
+								<span itemprop="author name" itemtype="http://schema.org/Person">Revankar R., <strong>Sood A.</strong>, Patel H., Bilcha K., Befekadu A., Yeung H., Stoff B.</span>
+							</div>
+						</div>
+
+						<div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle" data-field="Orthopedics">
+							<a href="#" itemprop="url"><span itemprop="name">Predictive Factors Influencing the Return to Sports Following Arthroscopic Knee Meniscectomy in Sports Persons: A Prospective Cohort Study</span></a>    
+							<br><h8>Cureus | Vol. 15, No. 11 | 2023</h8>
+							<div class="article-metadata" itemprop="author">
+								<span itemprop="author name" itemtype="http://schema.org/Person">Yadav A., Kushwaha S., Kamal R., Khan F.A., <strong>Sood A.</strong>, Kushwaha S.</span>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
-            </div>
 		</section>
-		<section id="abstracts" class="home-section wg-pages">
+		<!-- Add the filter container here, outside the publications section -->
+		<div class="filter-container unified-filter" id="sticky-filter">
+			<span class="filter-section-title">Filter Publications by:</span>
+			<div id="dynamic-filters">
+				<!-- Filters will be dynamically inserted here by JavaScript -->
+			</div>
+		</div>
+		<section id="abstracts" class="home-section wg-pages" style="padding-top: 0;">
 			<div class="container">
 			  <div class="row">
 				<div class="col-12 col-lg-4 section-heading">
@@ -423,11 +494,13 @@
 				</div>
 				<div class="col-12 col-lg-8">
 		  
+                  <!-- Filter Controls (Removed) -->
+				  
 				  <!-- Gastroenterology -->
-				  <h2>Gastroenterology</h2>
+				  <h2 class="category-heading">Gastroenterology</h2>
 				  
 				  <!-- Entry 1 -->
-				  <div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle">
+				  <div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle" data-field="Gastroenterology">
 					<a href="#" itemprop="url">
 					  <span itemprop="name">Mo1531 Outcomes of Early Transplantation for Patients with Alcohol-Related Liver Disease</span>
 					</a>
@@ -441,7 +514,7 @@
 				  </div>
 				  
 				  <!-- Entry 2 -->
-				  <div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle">
+				  <div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle" data-field="Gastroenterology">
 					<a href="#" itemprop="url">
 					  <span itemprop="name">Mo1510 Predictive Validity of Evidence-Based Scoring Scales for Assessing Relapse in Patients Transplanted for Alcohol-Related Liver Disease</span>
 					</a>
@@ -455,7 +528,7 @@
 				  </div>
 				  
 				  <!-- Entry 3 -->
-				  <div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle">
+				  <div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle" data-field="Gastroenterology">
 					<a href="#" itemprop="url">
 					  <span itemprop="name">Su1540 The Impact of GLP Agonists on Cirrhosis, Hepatocellular Carcinoma, and Mortality in Patients with MASH: A Five-Year Analysis</span>
 					</a>
@@ -469,7 +542,7 @@
 				  </div>
 				  
 				  <!-- Entry 11 -->
-				  <div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle">
+				  <div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle" data-field="Gastroenterology,Oncology">
 					<a href="#" itemprop="url">
 					  <span itemprop="name">S34 Therapeutic Advantages of GLP-1 Receptor Agonists: Survival and Insights from Large Retrospective Pancreatic Cancer Cohorts</span>
 					</a>
@@ -483,7 +556,7 @@
 				  </div>
 				  
 				  <!-- Entry 13 -->
-				  <div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle">
+				  <div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle" data-field="Gastroenterology">
 					<a href="#" itemprop="url">
 					  <span itemprop="name">S4329 Obliterative Portal Venopathy: A Case of Non-Cirrhotic Variceal Bleed</span>
 					</a>
@@ -497,7 +570,7 @@
 				  </div>
 				  
 				  <!-- Entry 14 -->
-				  <div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle">
+				  <div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle" data-field="Gastroenterology,Oncology">
 					<a href="#" itemprop="url">
 					  <span itemprop="name">S35 Improvements in Treatment of Pancreatic Cancers Over the Last Forty Years</span>
 					</a>
@@ -511,7 +584,7 @@
 				  </div>
 				  
 				  <!-- Entry 15 -->
-				  <div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle">
+				  <div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle" data-field="Gastroenterology,Cardiology">
 					<a href="#" itemprop="url">
 					  <span itemprop="name">S1786 Comparing the Effects of Carvedilol and Metoprolol on Patients with Cardiovascular Disease and MASLD</span>
 					</a>
@@ -525,7 +598,7 @@
 				  </div>
 				  
 				  <!-- Entry 23 -->
-				  <div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle">
+				  <div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle" data-field="Gastroenterology">
 					<a href="#" itemprop="url">
 					  <span itemprop="name">A1C Goals Reconsidered: Lower A1C Targets Can Improve Progression to Cirrhosis Despite Worsening Mortality for Patients with Type 2 Diabetes and MASLD</span>
 					</a>
@@ -539,7 +612,7 @@
 				  </div>
 				  
 				  <!-- Entry 23b -->
-				  <div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle">
+				  <div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle" data-field="Gastroenterology">
 					<a href="#" itemprop="url">
 					  <span itemprop="name">Impact of Pre-Transplant Steroid Therapy on Early Post-Transplant Infections in Alcohol-Associated Hepatitis Patients Undergoing Liver Transplantation</span>
 					</a>
@@ -553,10 +626,10 @@
 				  </div>
 				  
 				  <!-- Oncology -->
-				  <h2>Oncology</h2>
+				  <h2 class="category-heading">Oncology</h2>
 				  
 				  <!-- Entry 4 -->
-				  <div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle">
+				  <div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle" data-field="Oncology">
 					<a href="#" itemprop="url">
 					  <span itemprop="name">EP. 13D. 13 Exploring COVID-19's Impact on Treatment and Survival in Small Cell Lung Cancer</span>
 					</a>
@@ -570,7 +643,7 @@
 				  </div>
 				  
 				  <!-- Entry 5 -->
-				  <div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle">
+				  <div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle" data-field="Oncology">
 					<a href="#" itemprop="url">
 					  <span itemprop="name">P2. 10B. 06 Improvements in Survival Outcomes of Large Cell Carcinoma Over Past Two Decades (2000-2020)</span>
 					</a>
@@ -584,7 +657,7 @@
 				  </div>
 				  
 				  <!-- Entry 6 -->
-				  <div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle">
+				  <div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle" data-field="Oncology">
 					<a href="#" itemprop="url">
 					  <span itemprop="name">EP. 11A. 21 Target Switching as an Effective Second-Line Strategy for Refractory Metastatic NSCLC</span>
 					</a>
@@ -598,7 +671,7 @@
 				  </div>
 				  
 				  <!-- Entry 7 -->
-				  <div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle">
+				  <div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle" data-field="Oncology">
 					<a href="#" itemprop="url">
 					  <span itemprop="name">EP. 05A. 06 Timing of Thoracentesis in Hospitalized Patients with Malignant Pleural Effusion: A Study of the US National Inpatient Sample</span>
 					</a>
@@ -612,7 +685,7 @@
 				  </div>
 				  
 				  <!-- Entry 8 -->
-				  <div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle">
+				  <div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle" data-field="Oncology">
 					<a href="#" itemprop="url">
 					  <span itemprop="name">P4. 11E. 19 The Effect of COVID-19 on Treatment Outcomes in Non-Small Cell Lung Cancer Patients: A Propensity Score Matched Analysis</span>
 					</a>
@@ -626,7 +699,7 @@
 				  </div>
 				  
 				  <!-- Entry 9 -->
-				  <div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle">
+				  <div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle" data-field="Oncology">
 					<a href="#" itemprop="url">
 					  <span itemprop="name">EP. 14A. 03 Analyzing the Impact of COVID-19 Infection on Adverse Outcomes in Mesothelioma: A Multicenter Study</span>
 					</a>
@@ -640,7 +713,7 @@
 				  </div>
 				  
 				  <!-- Entry 18 -->
-				  <div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle">
+				  <div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle" data-field="Oncology">
 					<a href="#" itemprop="url">
 					  <span itemprop="name">492 Target Switching as a Second-Line Strategy for Refractory Metastatic NSCLC</span>
 					</a>
@@ -654,69 +727,57 @@
 				  </div>
 				  
 				  <!-- Cardiology -->
-				  <h2>Cardiology</h2>
+				  <h2 class="category-heading">Cardiology</h2>
 				  
 				  <!-- Entry 10 -->
-				  <div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle">
-					<a href="#" itemprop="url">
-					  <span itemprop="name">Epidemiology of Patients Undergoing a Rapid Response within the First 24 Hours of Admission at an Urban Academic Center</span>
-					</a>
-					<br>
-					<h8>Circulation | Vol. 150, Suppl_1 | A4139117-A4139117 | 2024</h8>
+				  <div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle" data-field="Cardiology">
+					<a href="https://www.ahajournals.org/doi/abs/10.1161/circ.150.suppl_1.4139117" itemprop="url"><span itemprop="name">Epidemiology of Patients Undergoing a Rapid Response within the First 24 Hours of Admission at an Urban Academic Center</span></a>
+					<br><h8>Circulation | Vol. 150, Suppl_1 | A4139117-A4139117 | 2024</h8>
 					<div class="article-metadata" itemprop="author">
-					  <span itemprop="author name" itemtype="http://schema.org/Person">
-						Cyr, A.; Patel, P.; Jnani, J.; Chang, J.; Jassal, A.; Leung, C.; Li, S.; Palati, S.; Guntaka, S.; Salam, S.
-					  </span>
+						<span itemprop="author name" itemtype="http://schema.org/Person">
+							Cyr, A.; Patel, P.; Jnani, J.; Chang, J.; Jassal, A.; Leung, C.; Li, S.; Palati, S.; Guntaka, S.; Salam, S.
+						</span>
 					</div>
 				  </div>
 				  
 				  <!-- Entry 12 -->
-				  <div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle">
-					<a href="#" itemprop="url">
-					  <span itemprop="name">The Utility of the Modified Shock Index (MSI) in Risk Stratification of Patients with STEMI</span>
-					</a>
-					<br>
-					<h8>Circulation | Vol. 150, Suppl_1 | A4145277-A4145277 | 2024</h8>
+				  <div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle" data-field="Cardiology">
+					<a href="https://www.ahajournals.org/doi/abs/10.1161/circ.150.suppl_1.4145277" itemprop="url"><span itemprop="name">The Utility of the Modified Shock Index (MSI) in Risk Stratification of Patients with STEMI</span></a>
+					<br><h8>Circulation | Vol. 150, Suppl_1 | A4145277-A4145277 | 2024</h8>
 					<div class="article-metadata" itemprop="author">
-					  <span itemprop="author name" itemtype="http://schema.org/Person">
-						Jnani, J.; Weintraub, S.; George, R.; Impastato, B.; Kamel, M.; <strong>Sood, A.</strong>; Hsieh, J.; Srivastava, S.; Tsai, A.; Alboucai, J.
-					  </span>
+						<span itemprop="author name" itemtype="http://schema.org/Person">
+							Jnani, J.; Weintraub, S.; George, R.; Impastato, B.; Kamel, M.; <strong>Sood, A.</strong>; Hsieh, J.; Srivastava, S.; Tsai, A.; Alboucai, J.
+						</span>
 					</div>
 				  </div>
 				  
 				  <!-- Entry 16 -->
-				  <div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle">
-					<a href="#" itemprop="url">
-					  <span itemprop="name">Comparing Cardiovascular Outcomes in Patients with Lyme Disease and Babesiosis: A Retrospective Cohort Study</span>
-					</a>
-					<br>
-					<h8>Circulation | Vol. 150, Suppl_1 | A4129453-A4129453 | 2024</h8>
+				  <div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle" data-field="Cardiology">
+					<a href="https://www.ahajournals.org/doi/abs/10.1161/circ.150.suppl_1.4129453" itemprop="url"><span itemprop="name">Comparing Cardiovascular Outcomes in Patients with Lyme Disease and Babesiosis: A Retrospective Cohort Study</span></a>
+					<br><h8>Circulation | Vol. 150, Suppl_1 | A4129453-A4129453 | 2024</h8>
 					<div class="article-metadata" itemprop="author">
-					  <span itemprop="author name" itemtype="http://schema.org/Person">
-						George, R.; Varadarajan, S.; Chang, J.; <strong>Sood, A.</strong>; Pierce, M.
-					  </span>
+						<span itemprop="author name" itemtype="http://schema.org/Person">
+							George, R.; Varadarajan, S.; Chang, J.; <strong>Sood, A.</strong>; Pierce, M.
+						</span>
 					</div>
 				  </div>
 				  
 				  <!-- Entry 17 -->
-				  <div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle">
-					<a href="#" itemprop="url">
-					  <span itemprop="name">Evaluation of Gender, Racial and Ethnic Differences in Time to PCI in the Pre and Post Covid-19 Era</span>
-					</a>
-					<br>
-					<h8>Circulation | Vol. 150, Suppl_1 | A4119613-A4119613 | 2024</h8>
+				  <div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle" data-field="Cardiology">
+					<a href="https://www.ahajournals.org/doi/abs/10.1161/circ.150.suppl_1.4119613" itemprop="url"><span itemprop="name">Evaluation of Gender, Racial and Ethnic Differences in Time to PCI in the Pre and Post Covid-19 Era</span></a>
+					<br><h8>Circulation | Vol. 150, Suppl_1 | A4119613-A4119613 | 2024</h8>
 					<div class="article-metadata" itemprop="author">
-					  <span itemprop="author name" itemtype="http://schema.org/Person">
-						Jnani, J.; Kamel, M.; Weintraub, S.; George, R.; Impastato, B.; <strong>Sood, A.</strong>; Tsai, A.; Hsieh, J.; Cheng, A.; Alboucai, J.
-					  </span>
+						<span itemprop="author name" itemtype="http://schema.org/Person">
+							Jnani, J.; Kamel, M.; Weintraub, S.; George, R.; Impastato, B.; <strong>Sood, A.</strong>; Tsai, A.; Hsieh, J.; Cheng, A.; Alboucai, J.
+						</span>
 					</div>
 				  </div>
 				  
 				  <!-- Hematology -->
-				  <h2>Hematology</h2>
+				  <h2 class="category-heading">Hematology</h2>
 				  
 				  <!-- Entry 19 -->
-				  <div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle">
+				  <div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle" data-field="Hematology">
 					<a href="#" itemprop="url">
 					  <span itemprop="name">Influence of COVID-19 on Acute Myeloid Leukemia Treatment Efficacy: Insights from a Propensity Score-Matched Cohort Study</span>
 					</a>
@@ -730,7 +791,7 @@
 				  </div>
 				  
 				  <!-- Entry 20 -->
-				  <div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle">
+				  <div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle" data-field="Hematology">
 					<a href="#" itemprop="url">
 					  <span itemprop="name">Advances in Acute Lymphoblastic Leukemia: A Longitudinal Analysis of Survival Trends and Treatment Modalities</span>
 					</a>
@@ -744,7 +805,7 @@
 				  </div>
 				  
 				  <!-- Entry 21 -->
-				  <div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle">
+				  <div class="view-list-item" itemscope itemtype="http://schema.org/ScholarlyArticle" data-field="Hematology">
 					<a href="#" itemprop="url">
 					  <span itemprop="name">Clinical Outcomes of Extreme Leukocytosis in ICU Patients: An Insight into Mortality and Supportive Care Needs</span>
 					</a>
@@ -765,13 +826,14 @@
 		  </section>
 		  
 
-		<section id="posters" class="home-section wg-pages   "  >
+		<section id="posters" class="home-section wg-pages   " style="padding-top: 0;" >
 			<div class="container">
 				<div class="row">
 					<div class="col-12 col-lg-4 section-heading">
 						<h1>Posters</h1>
 					</div>
 					<div class="col-12 col-lg-8">
+                        <!-- Filter Controls (Removed) -->
 						<!--<h7>National</h7>
 						<hr />-->
                     <ol style="list-style-type: decimal;">
@@ -782,80 +844,80 @@
 </style>
  
                                            
-<h7>COVID-19</h7>
+<h7 class="category-heading">COVID-19</h7>
 
 <ul>
-    <li style="font-size: 16px;"><span style="color: black;">Sood A. and Sood A. (2022) &ldquo;COVID-19&rsquo;s Effect on Digitization of Future Work: Complementary Role of Non-Pharmaceutical Interventions&rdquo;</span></li>
-    <li style="font-size: 16px;"><span style="color: black;">Farooq P., <strong>Sood A.</strong>, Das S., and Bharadwaj S. (2021) &ldquo;Analysis of the Use of Telemedicine in Management of COVID-19 Patients in India&rdquo;</span></li>
-    <li style="font-size: 16px;"><span style="color: black;">Mehra N., <strong>Sood A.</strong>, Bharadwaj S., Das S., and Farooq P. (2021) &ldquo;Assessment of the Impact of Social Determinants of Health on COVID-19 Outcomes in India&rdquo;</span></li>
-    <li style=" font-size: 16px;"><span style="color: black;">Sood A. and <strong>Sood A.</strong> (2020) &ldquo;COVID-19&rsquo;s Effect on Digitization of Future Work: A Multinational Diffusion Study using Functional Data Analysis&rdquo; Special Session on &ldquo;COVID-19&rsquo;s Effect on Digitization of Future Work Transformation&rdquo; Invited talk by Department of Labor, US Government and APEC Conference on Labor Market Impact and Social Protection in the COVID-19 Era.</span></li>
+    <li style="font-size: 16px;" data-field="COVID-19"><span style="color: black;">Sood A. and Sood A. (2022) &ldquo;COVID-19&rsquo;s Effect on Digitization of Future Work: Complementary Role of Non-Pharmaceutical Interventions&rdquo;</span></li>
+    <li style="font-size: 16px;" data-field="COVID-19"><span style="color: black;">Farooq P., <strong>Sood A.</strong>, Das S., and Bharadwaj S. (2021) &ldquo;Analysis of the Use of Telemedicine in Management of COVID-19 Patients in India&rdquo;</span></li>
+    <li style="font-size: 16px;" data-field="COVID-19"><span style="color: black;">Mehra N., <strong>Sood A.</strong>, Bharadwaj S., Das S., and Farooq P. (2021) &ldquo;Assessment of the Impact of Social Determinants of Health on COVID-19 Outcomes in India&rdquo;</span></li>
+    <li style=" font-size: 16px;" data-field="COVID-19"><span style="color: black;">Sood A. and <strong>Sood A.</strong> (2020) &ldquo;COVID-19&rsquo;s Effect on Digitization of Future Work: A Multinational Diffusion Study using Functional Data Analysis&rdquo; Special Session on &ldquo;COVID-19&rsquo;s Effect on Digitization of Future Work Transformation&rdquo; Invited talk by Department of Labor, US Government and APEC Conference on Labor Market Impact and Social Protection in the COVID-19 Era.</span></li>
 </ul>
-<h7>Dermatology</h7>
+<h7 class="category-heading">Dermatology</h7>
 
 <ul>
-    <li style="font-size: 16px;"><strong><span style="color:black;">Sood A.</span></strong><span style="color: black;">, Dieudonne R., Chopra D., Westerkam L., Siira M., Sayed C., Lev-Tov H., Orenstein L.V. (2022) &ldquo;Examining Food Insecurity in Patients with Hidradenitis Suppurativa&rdquo;.</span></li>
-    <li style="font-size: 16px;"><span style="color: black;">Echuri H., <strong>Sood A.</strong>, Dieudonne R., Siira M., Baranowski M., Orenstein, L.V. (2022 )&ldquo;Prevalence of hyponatremia in a cohort of patients with hidradenitis suppurativa&rdquo;.</span></li>
-    <li style="font-size: 16px;"><span style="color: black;">Mohammed Y., Chopra D., <strong>Sood A.</strong>, Westerkam L., Siira M., Sayed C., Lev-Tov H., Orenstein L.V. (2021) &ldquo;The Role of the Microbiome in the Pathogenesis of Hidradenitis Suppurativa&rdquo;</span></li>
+    <li style="font-size: 16px;" data-field="Dermatology"><strong><span style="color:black;">Sood A.</span></strong><span style="color: black;">, Dieudonne R., Chopra D., Westerkam L., Siira M., Sayed C., Lev-Tov H., Orenstein L.V. (2022) &ldquo;Examining Food Insecurity in Patients with Hidradenitis Suppurativa&rdquo;.</span></li>
+    <li style="font-size: 16px;" data-field="Dermatology"><span style="color: black;">Echuri H., <strong>Sood A.</strong>, Dieudonne R., Siira M., Baranowski M., Orenstein, L.V. (2022 )&ldquo;Prevalence of hyponatremia in a cohort of patients with hidradenitis suppurativa&rdquo;.</span></li>
+    <li style="font-size: 16px;" data-field="Dermatology"><span style="color: black;">Mohammed Y., Chopra D., <strong>Sood A.</strong>, Westerkam L., Siira M., Sayed C., Lev-Tov H., Orenstein L.V. (2021) &ldquo;The Role of the Microbiome in the Pathogenesis of Hidradenitis Suppurativa&rdquo;</span></li>
 </ul>
-<h7>Public Health</h7>
+<h7 class="category-heading">Public Health</h7>
 
 <ul>
-    <li style="font-size: 16px;"><span style="color: black;">Farooq P., Mehra, N. and<strong>&nbsp;Sood</strong> <strong>A</strong>. (2021) &ldquo; Do increased vaccination sites per person lead to increased vaccination rates - a study of Alabama&rdquo;.&nbsp;</span>   <ol style="list-style-type: circle; font-family: initial; font-size: initial;">
+    <li style="font-size: 16px;" data-field="Public-Health"><span style="color: black;">Farooq P., Mehra, N. and<strong>&nbsp;Sood</strong> <strong>A</strong>. (2021) &ldquo; Do increased vaccination sites per person lead to increased vaccination rates - a study of Alabama&rdquo;.&nbsp;</span>   <ol style="list-style-type: circle; font-family: initial; font-size: initial;">
             <li style=" font-size: 16px;"><span style="color: black;">&nbsp; &nbsp;AMA Research Challenge Semifinalist</span></li>
         </ol></li>
 </ul>
                         
-<h7>Medicine and Technology</h7>
+<h7 class="category-heading">Medicine and Technology</h7>
 
 <ul>
-    <li style="font-size: 16px;"><span style="color: black;"><strong>Sood A.</strong></span><span style="color: black;">&nbsp;</span>and<span style="color: black;">&nbsp;Sangari A. (2021) &ldquo;Bias Prevention in Global Adoption of Artificial Intelligence Based Health Management Systems&rdquo;</span>
+    <li style="font-size: 16px;" data-field="Medicine-Technology,AI"><span style="color: black;"><strong>Sood A.</strong></span><span style="color: black;">&nbsp;</span>and<span style="color: black;">&nbsp;Sangari A. (2021) &ldquo;Bias Prevention in Global Adoption of Artificial Intelligence Based Health Management Systems&rdquo;</span>
              <ol style="list-style-type: circle; font-family: initial; font-size: initial;">
             <li style=" font-size: 16px;"><span style="color: black;">&nbsp; &nbsp;Winner of Best Poster in Category</span></li>
         </ol></li>
-    <li style="font-size: 16px;"><span style="color: black;">Sangari A.&nbsp;</span>and<span style="color: black;">&nbsp;<strong>Sood A.</strong>, &ldquo;Establishing Global Guidelines for Integrating Artificial Intelligence Systems into Clinical Care&rdquo;</span></li>
-    <li style=" font-size: 16px;"><span style="color: black;">Sangari A., Sangari A., <strong>Sood A.,&nbsp;</strong>and<strong>&nbsp;</strong>Sood N. (2020) &ldquo;Evaluating the Extent to which Posted Personally Identifying Information Jeopardizes the Privacy of Users of Breastcancer.org&rdquo;, Emory Global Perioperative Alliance Virtual Symposium</span></li>
+    <li style="font-size: 16px;" data-field="Medicine-Technology,AI"><span style="color: black;">Sangari A.&nbsp;</span>and<span style="color: black;">&nbsp;<strong>Sood A.</strong>, &ldquo;Establishing Global Guidelines for Integrating Artificial Intelligence Systems into Clinical Care&rdquo;</span></li>
+    <li style=" font-size: 16px;" data-field="Medicine-Technology,Privacy"><span style="color: black;">Sangari A., Sangari A., <strong>Sood A.,&nbsp;</strong>and<strong>&nbsp;</strong>Sood N. (2020) &ldquo;Evaluating the Extent to which Posted Personally Identifying Information Jeopardizes the Privacy of Users of Breastcancer.org&rdquo;, Emory Global Perioperative Alliance Virtual Symposium</span></li>
     
 </ul>
                         
-<h7>Dermatopathology</h7>
+<h7 class="category-heading">Dermatopathology</h7>
 
   <ul>
-    <li style=" font-size: 16px;"><strong>Sood A.&nbsp;</strong>and Anand D. <span style="color: black;">(2019), &ldquo;Atypical Lymphocytic Lobular Panniculitis&rdquo;, American Society of Dermatopathology&nbsp;</span></li>
+    <li style=" font-size: 16px;" data-field="Dermatopathology,Dermatology"><strong>Sood A.&nbsp;</strong>and Anand D. <span style="color: black;">(2019), &ldquo;Atypical Lymphocytic Lobular Panniculitis&rdquo;, American Society of Dermatopathology&nbsp;</span></li>
       
-    <li style=" font-size: 16px;"><strong>Sood A.&nbsp;</strong>and Anand D. <span style="color: black;">(2019), &ldquo;Lamotrigine-Induced Cutaneous CD 30+ Anaplastic Large Cell Lymphoma&rdquo;, American Society of Dermatopathology&nbsp;</span></li>
+    <li style=" font-size: 16px;" data-field="Dermatopathology,Dermatology"><strong>Sood A.&nbsp;</strong>and Anand D. <span style="color: black;">(2019), &ldquo;Lamotrigine-Induced Cutaneous CD 30+ Anaplastic Large Cell Lymphoma&rdquo;, American Society of Dermatopathology&nbsp;</span></li>
     
-    <li style=" font-size: 16px;"><strong>Sood A.&nbsp;</strong>and Anand D. <span style="color: black;">(2019), &ldquo;Degos Disease&rdquo;, American Society of Dermatopathology&nbsp;</span></li>
+    <li style=" font-size: 16px;" data-field="Dermatopathology,Dermatology"><strong>Sood A.&nbsp;</strong>and Anand D. <span style="color: black;">(2019), &ldquo;Degos Disease&rdquo;, American Society of Dermatopathology&nbsp;</span></li>
       
-    <li style=" font-size: 16px;"><strong>Sood A.&nbsp;</strong>and Anand D. <span style="color: black;">(2019), &ldquo;Atypical Lymphocytic Lobular Panniculitis&rdquo;, Zola Cooper Dermatopathologic Conference&nbsp;</span></li>
+    <li style=" font-size: 16px;" data-field="Dermatopathology,Dermatology"><strong>Sood A.&nbsp;</strong>and Anand D. <span style="color: black;">(2019), &ldquo;Atypical Lymphocytic Lobular Panniculitis&rdquo;, Zola Cooper Dermatopathologic Conference&nbsp;</span></li>
     
-    <li style=" font-size: 16px;"><strong>Sood A.&nbsp;</strong>and Anand D. <span style="color: black;">(2019), &ldquo;Lamotrigine-Induced Cutaneous CD 30+ Anaplastic Large Cell Lymphoma&rdquo;, Zola Cooper Dermatopathologic Conference&nbsp;</span></li>
+    <li style=" font-size: 16px;" data-field="Dermatopathology,Dermatology"><strong>Sood A.&nbsp;</strong>and Anand D. <span style="color: black;">(2019), &ldquo;Lamotrigine-Induced Cutaneous CD 30+ Anaplastic Large Cell Lymphoma&rdquo;, Zola Cooper Dermatopathologic Conference&nbsp;</span></li>
     
-    <li style=" font-size: 16px;"><strong>Sood A.&nbsp;</strong>and Anand D. <span style="color: black;">(2019), &ldquo;Degos Disease&rdquo;, Zola Cooper Dermatopathologic Conference&nbsp;</span></li>
+    <li style=" font-size: 16px;" data-field="Dermatopathology,Dermatology"><strong>Sood A.&nbsp;</strong>and Anand D. <span style="color: black;">(2019), &ldquo;Degos Disease&rdquo;, Zola Cooper Dermatopathologic Conference&nbsp;</span></li>
     
-    <li style="margin: 0in; font-size: 16px;  color: black;"><strong><span style="color:windowtext;">Sood A.&nbsp;</span></strong><span style="color: windowtext;">and Anand D.&nbsp;</span>(2017), &ldquo;Ectopic Extramammary Paget&rsquo;s Disease Presenting on the Face- An Extraordinary Case Presentation &amp; Discussion&rdquo;, Zola Cooper Dermatopathologic Conference</li>
+    <li style="margin: 0in; font-size: 16px;  color: black;" data-field="Dermatopathology,Dermatology"><strong><span style="color:windowtext;">Sood A.&nbsp;</span></strong><span style="color: windowtext;">and Anand D.&nbsp;</span>(2017), &ldquo;Ectopic Extramammary Paget&rsquo;s Disease Presenting on the Face- An Extraordinary Case Presentation &amp; Discussion&rdquo;, Zola Cooper Dermatopathologic Conference</li>
     
-    <li style="margin: 0in; font-size: 16px;  color: black;"><strong><span style="color:windowtext;">Sood A.&nbsp;</span></strong><span style="color: windowtext;">and Anand D.&nbsp;</span>(2017), &ldquo;The lesser known CD8+ Cutaneous T-cell Lymphomas- What are they &amp; why should we know about them?&rdquo;, Zola Cooper Dermatopathologic Conference</li>
+    <li style="margin: 0in; font-size: 16px;  color: black;" data-field="Dermatopathology,Dermatology"><strong><span style="color:windowtext;">Sood A.&nbsp;</span></strong><span style="color: windowtext;">and Anand D.&nbsp;</span>(2017), &ldquo;The lesser known CD8+ Cutaneous T-cell Lymphomas- What are they &amp; why should we know about them?&rdquo;, Zola Cooper Dermatopathologic Conference</li>
     
-    <li style="margin: 0in; font-size: 16px;  color: black;"><strong><span style="color:windowtext;">Sood A.&nbsp;</span></strong><span style="color: windowtext;">and Anand D.&nbsp;</span>(2016) &ldquo;Diffuse dermal angiomatosis/Reactive angioendotheliomatosis- What is this, and why should I know about it?&rdquo;, Zola Cooper Dermatopathologic Conference</li>
+    <li style="margin: 0in; font-size: 16px;  color: black;" data-field="Dermatopathology,Dermatology"><strong><span style="color:windowtext;">Sood A.&nbsp;</span></strong><span style="color: windowtext;">and Anand D.&nbsp;</span>(2016) &ldquo;Diffuse dermal angiomatosis/Reactive angioendotheliomatosis- What is this, and why should I know about it?&rdquo;, Zola Cooper Dermatopathologic Conference</li>
     
-    <li style="margin: 0in; font-size: 16px;  color: black;"><strong><span style="color:windowtext;">Sood A.&nbsp;</span></strong><span style="color: windowtext;">and Anand D.&nbsp;</span>(2016) &ldquo;Blastic Plasmacytoid Dendritic Cell Neoplasm- An under recognized but deadly tumor&rdquo;, Zola Cooper Dermatopathologic Conference</li>
+    <li style="margin: 0in; font-size: 16px;  color: black;" data-field="Dermatopathology,Dermatology"><strong><span style="color:windowtext;">Sood A.&nbsp;</span></strong><span style="color: windowtext;">and Anand D.&nbsp;</span>(2016) &ldquo;Blastic Plasmacytoid Dendritic Cell Neoplasm- An under recognized but deadly tumor&rdquo;, Zola Cooper Dermatopathologic Conference</li>
    
-    <li style="margin: 0in; font-size: 16px;  color: black;"><strong><span style="color:windowtext;">Sood A.&nbsp;</span></strong><span style="color: windowtext;">and Anand D. <span style="color: black;">(2021), &ldquo;ALK-Positive Spitz Tumor&rdquo;, Zola-Cooper Dermatopathologic Conference</span></li>
-    <li style=" font-size: 16px;"><strong>Sood A.&nbsp;</strong>and Anand D. <span style="color: black;">(2021), &ldquo;Aggressive Digital Papillary Adenocarcinoma&rdquo;, Zola-Cooper Dermatopathologic Conference</span></li>
+    <li style="margin: 0in; font-size: 16px;  color: black;" data-field="Dermatopathology,Dermatology"><strong><span style="color:windowtext;">Sood A.&nbsp;</span></strong><span style="color: windowtext;">and Anand D. <span style="color: black;">(2021), &ldquo;ALK-Positive Spitz Tumor&rdquo;, Zola-Cooper Dermatopathologic Conference</span></li>
+    <li style=" font-size: 16px;" data-field="Dermatopathology,Dermatology"><strong>Sood A.&nbsp;</strong>and Anand D. <span style="color: black;">(2021), &ldquo;Aggressive Digital Papillary Adenocarcinoma&rdquo;, Zola-Cooper Dermatopathologic Conference</span></li>
       </ul>                   
                         
-<h7>Stem Cells</h7>
+<h7 class="category-heading">Stem Cells</h7>
 <ul>
-    <li style="margin: 0in; font-size: 16px;  color: black;"><strong>Sood A.</strong>, Calloway C., and Daniel T. (2016), &ldquo;Oligodendrocyte Precursor Cell Specification: Convergence of Shh, Tgf-&beta; &amp; Notch Signaling,&rdquo; Regenerative Bioscience Undergraduate Symposium, University of Georgia.</li>  
-    <li style="margin: 0in; font-size: 16px;  color: black;"><strong>Sood A.&nbsp;</strong>and Daniel T. (2017), &ldquo;Oligodendrocyte Precursor Cell Specification: Convergence of Shh, Tgf-&beta; &amp; Notch Signaling,&rdquo; Regenerative Bioscience Undergraduate Symposium, University of Georgia</li>
+    <li style="margin: 0in; font-size: 16px;  color: black;" data-field="Stem-Cells"><strong>Sood A.</strong>, Calloway C., and Daniel T. (2016), &ldquo;Oligodendrocyte Precursor Cell Specification: Convergence of Shh, Tgf-&beta; &amp; Notch Signaling,&rdquo; Regenerative Bioscience Undergraduate Symposium, University of Georgia.</li>  
+    <li style="margin: 0in; font-size: 16px;  color: black;" data-field="Stem-Cells"><strong>Sood A.&nbsp;</strong>and Daniel T. (2017), &ldquo;Oligodendrocyte Precursor Cell Specification: Convergence of Shh, Tgf-&beta; &amp; Notch Signaling,&rdquo; Regenerative Bioscience Undergraduate Symposium, University of Georgia</li>
                         </ul>                       
-<h7>Nephrology/Translational Work</h7>   
+<h7 class="category-heading">Nephrology/Translational Work</h7>   
                         <ul>
-                            <li style="margin: 0in; font-size: 16px;  color: black;"><strong>Sood A.&nbsp;</strong>et al. (2018), &ldquo;Effect of Metformin on Urine Concentrating Ability in Sickle Cell Mice,&rdquo; Kidney, Urologic, and Hematologic Diseases Summer Undergraduate Research Symposium at Harvard University</li>
-                           <li style=" font-size: 16px;"><strong>Sood A.&nbsp;</strong>et al. (2018), &ldquo;Effect of Metformin on Urine Concentrating Ability in Sickle Cell Mice,&rdquo; American Society of Nephrology</li></ul>
-              <h7>Psychology</h7>   
+                            <li style="margin: 0in; font-size: 16px;  color: black;" data-field="Nephrology"><strong>Sood A.&nbsp;</strong>et al. (2018), &ldquo;Effect of Metformin on Urine Concentrating Ability in Sickle Cell Mice,&rdquo; Kidney, Urologic, and Hematologic Diseases Summer Undergraduate Research Symposium at Harvard University</li>
+                           <li style=" font-size: 16px;" data-field="Nephrology"><strong>Sood A.&nbsp;</strong>et al. (2018), &ldquo;Effect of Metformin on Urine Concentrating Ability in Sickle Cell Mice,&rdquo; American Society of Nephrology</li></ul>
+              <h7 class="category-heading">Psychology</h7>   
                         <ul>
-                        <li style="margin: 0in; font-size: 16px;  color: black;"><strong>Sood A.&nbsp;</strong>(2017), &ldquo;Exploring Group Configuration and its Effect On Group Performance,&rdquo; Undergraduate Research Symposium, University of Georgia</li>
+                        <li style="margin: 0in; font-size: 16px;  color: black;" data-field="Psychology"><strong>Sood A.&nbsp;</strong>(2017), &ldquo;Exploring Group Configuration and its Effect On Group Performance,&rdquo; Undergraduate Research Symposium, University of Georgia</li>
     </ul>
                     </div>
                 </div>
@@ -901,5 +963,47 @@
          
 </section>
             
-                    </body>
+            <script src="js/publication-filters.js"></script>
+		
+		<!-- Load particles.js and section-specific configuration -->
+		<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+		<script>
+			// Verify that particles.js loaded correctly
+			if (typeof particlesJS === 'function') {
+				console.log("✅ particles.js loaded successfully");
+			} else {
+				console.error("❌ particles.js failed to load");
+			}
+		</script>
+		<script src="js/section-particles.js"></script>
+		
+		<!-- Theme toggle -->
+		<script>
+			document.addEventListener('DOMContentLoaded', function() {
+				// Check for saved theme preference or use default
+				const currentTheme = localStorage.getItem('theme') || 'dark';
+				document.body.classList.toggle('light-mode', currentTheme === 'light');
+				document.body.classList.toggle('dark-mode', currentTheme === 'dark');
+				
+				// Fix for VSCode browser preview
+				if (document.body.classList.contains('vsc-initialized')) {
+					// Reset any ancestor elements that might be causing spacing issues
+					document.documentElement.style.margin = '0';
+					document.documentElement.style.padding = '0';
+					document.body.style.margin = '0';
+					document.body.style.padding = '0';
+					document.body.style.marginTop = '0';
+					document.body.style.paddingTop = '0';
+				}
+				
+				// Theme toggle button click handler
+				document.querySelector('.js-dark-toggle')?.addEventListener('click', function() {
+					const isDark = document.body.classList.contains('dark-mode');
+					document.body.classList.toggle('dark-mode', !isDark);
+					document.body.classList.toggle('light-mode', isDark);
+					localStorage.setItem('theme', isDark ? 'light' : 'dark');
+				});
+			});
+		</script>
+	</body>
 </html>
