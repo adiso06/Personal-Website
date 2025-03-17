@@ -18,8 +18,10 @@
 #sticky-filter {
   position: fixed;
   bottom: 100px; /* Position at bottom of viewport but above footer */
-  left: 20px;
-  width: 320px; /* Increased width to accommodate longer tags */
+  left: 50%; /* Center based on viewport */
+  transform: translateX(-50%); /* Center the element */
+  margin-left: -360px; /* Offset to align with section headings */
+  width: 280px; /* Width that fits within the col-lg-4 space */
   max-height: 50vh;
   overflow-y: auto;
   z-index: 1000; /* Ensure it's above other content */
@@ -302,37 +304,30 @@ body {
 }
 
 /* Mobile adjustments */
-@media (max-width: 768px) {
+@media (max-width: 991px) {
   #sticky-filter {
-    width: 260px; /* Increased mobile width further */
-    left: 10px;
-    bottom: 80px;
-    padding: 10px;
-    max-height: 45vh; /* Slightly taller on mobile */
-    display: none !important; /* Completely hide on mobile regardless of other classes */
-    visibility: hidden !important; /* Ensure it's truly hidden */
-    opacity: 0 !important; /* Ensure full transparency */
-    pointer-events: none !important; /* Prevent interaction */
+    position: static; /* Not fixed on mobile/tablet */
+    transform: none;
+    margin-left: 0;
+    left: auto;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
   }
-  
-  .filter-section-title {
-    font-size: 0.75rem;
-    margin-bottom: 6px;
+}
+
+/* Specific override for medium screens */
+@media (min-width: 992px) and (max-width: 1199px) {
+  #sticky-filter {
+    margin-left: -300px; /* Adjust for smaller screens */
+    width: 240px;
   }
-  
-  #dynamic-filters button {
-    font-size: 0.7rem;
-    padding: 2px 6px;
-    margin: 2px;
-  }
-  
-  .filter-button {
-    padding: 0.2rem 0.5rem;
-    font-size: 0.7rem;
-    margin-right: 3px;
-    margin-bottom: 3px;
-    min-height: 22px; /* Slightly smaller on mobile */
-    border-radius: 14px; /* Slightly less rounded on mobile */
+}
+
+/* Wider screens */
+@media (min-width: 1200px) {
+  #sticky-filter {
+    margin-left: -360px; /* Aligned with section headings */
   }
 }
 

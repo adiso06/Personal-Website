@@ -1,89 +1,161 @@
-`// Set this to your Google Sheet ID
+// Configuration constants
 const SHEET_ID = '1wJUC_pM_IAbuv8aKkmvMhThLe_ulZ-VmcBiSNxlrnOk';
 const SHEET_NAME = 'Hospital Bookmarks';
+const SETTINGS_SHEET_NAME = 'Settings';
+const ANNOUNCEMENT_CELL = 'B1';
 const ADMIN_PASSWORD = 'password'; // Add your desired admin password here
 
-function doGet(e) {
-  // Add CORS headers for all responses
-  const headers = {
-    // Allow requests from any origin
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-    'Access-Control-Allow-Headers': 'Content-Type',
+// Standard headers for all responses (cannot be applied to TextOutput)
+// const CORS_HEADERS = {
+//   'Access-Control-Allow-Origin': '*',
+//   'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+//   'Access-Control-Allow-Headers': 'Content-Type',
+//   'Content-Type': 'application/json',
+//   'Cache-Control': 'no-store, no-cache, must-revalidate',
+//   'Pragma': 'no-cache',
+//   'Expires': '0'
+// };
+
+function createResponse(data, success = true, error = null) {
+  const response = {
+    success: success,
+    timestamp: new Date().getTime()
   };
 
-  // Handle OPTIONS preflight request
-  if (e.parameter.method === 'OPTIONS') {
-    return ContentService.createTextOutput('')
-      .setMimeType(ContentService.MimeType.TEXT)
-      .setHeaders(headers);
+  if (success) {
+    Object.assign(response, data);
+  } else {
+    response.error = error.toString();
+    console.error('Error in response:', error);
   }
 
-  // Add logging to debug the request
-  Logger.log('Received request with parameters:', e.parameter);
-  
-  // Handle admin actions if present
-  if (e && e.parameter && e.parameter.action) {
-    Logger.log('Action detected:', e.parameter.action);
+  return ContentService.createTextOutput(JSON.stringify(response))
+    .setMimeType(ContentService.MimeType.JSON);
+}
+
+function getSettingsSheet() {
+  try {
+    const ss = SpreadsheetApp.openById(SHEET_ID);
+    const sheet = ss.getSheetByName(SETTINGS_SHEET_NAME);
+    if (!sheet) {
+      throw new Error(`Settings sheet "${SETTINGS_SHEET_NAME}" not found`);
+    }
+    return sheet;
+  } catch (error) {
+    console.error('Error accessing Settings sheet:', error);
+    throw error;
+  }
+}
+
+function getBookmarksSheet() {
+  try {
+    const ss = SpreadsheetApp.openById(SHEET_ID);
+    const sheet = ss.getSheetByName(SHEET_NAME);
+    if (!sheet) {
+      throw new Error(`Bookmarks sheet "${SHEET_NAME}" not found`);
+    }
+    return sheet;
+  } catch (error) {
+    console.error('Error accessing Bookmarks sheet:', error);
+    throw error;
+  }
+}
+
+function getAnnouncement() {
+  try {
+    const sheet = getSettingsSheet();
+    // Get only the announcement value
+    const announcement = sheet.getRange(ANNOUNCEMENT_CELL).getValue().toString();
     
-    if (e.parameter.action === 'login') {
-      const response = {
-        type: 'login',
-        success: e.parameter.password === ADMIN_PASSWORD,
-        message: e.parameter.password === ADMIN_PASSWORD ? 'Login successful' : 'Invalid password'
+    // Log the value we're about to return
+    console.log('Sending announcement:', announcement);
+    
+    // Return ONLY the announcement data
+    return ContentService.createTextOutput(JSON.stringify({
+      success: true,
+      announcement: announcement,
+      timestamp: new Date().getTime()
+    }))
+    .setMimeType(ContentService.MimeType.JSON);
+  } catch (error) {
+    console.error('Error fetching announcement:', error);
+    return ContentService.createTextOutput(JSON.stringify({
+      success: false,
+      error: error.toString(),
+      timestamp: new Date().getTime()
+    }))
+    .setMimeType(ContentService.MimeType.JSON);
+  }
+}
+
+function getBookmarks() {
+  try {
+    const sheet = getBookmarksSheet();
+    const data = sheet.getDataRange().getValues();
+    const headers = data[0];
+    
+    const bookmarks = data.slice(1).map(row => {
+      const bookmark = {
+        Category: row[headers.indexOf('Category')] || '',
+        Name: row[headers.indexOf('Name')] || '',
+        URL: row[headers.indexOf('URL')] || '',
+        Type: row[headers.indexOf('Type')] || 'link'
       };
-      
-      return ContentService.createTextOutput(JSON.stringify(response))
-        .setMimeType(ContentService.MimeType.JSON)
-        .setHeaders(headers);
-    } 
-    else if (e.parameter.action === 'refresh') {
-      const bookmarks = getBookmarks();
-      const settingsSheet = SpreadsheetApp.openById(SHEET_ID).getSheetByName('Settings');
-      const announcement = settingsSheet ? settingsSheet.getRange('B1').getValue() : '';
-      
-      const refreshHeaders = {
-        ...headers,
-        'Cache-Control': 'no-store, no-cache, must-revalidate',
-        'Pragma': 'no-cache',
-        'Expires': '0'
-      };
-      
-      return ContentService.createTextOutput(JSON.stringify({
-        success: true,
-        data: bookmarks,
-        announcement: announcement
-      }))
-      .setMimeType(ContentService.MimeType.JSON)
-      .setHeaders(refreshHeaders);
-    }
-    else if (e.parameter.action === 'getAnnouncement') {
-      const settingsSheet = SpreadsheetApp.openById(SHEET_ID).getSheetByName('Settings');
-      const announcement = settingsSheet ? settingsSheet.getRange('B1').getValue() : '';
-      return ContentService.createTextOutput(JSON.stringify({
-        success: true,
-        announcement: announcement
-      }))
-      .setMimeType(ContentService.MimeType.JSON)
-      .setHeaders(headers);
-    }
+
+      if (bookmark.Type === 'dropdown') {
+        const linksStr = row[headers.indexOf('Links')] || '[]';
+        try {
+          bookmark.Links = JSON.parse(linksStr);
+          if (!Array.isArray(bookmark.Links)) {
+            bookmark.Links = [];
+          }
+        } catch (e) {
+          console.warn(`Failed to parse Links for ${bookmark.Name}:`, e);
+          bookmark.Links = [];
+        }
+      }
+
+      return bookmark;
+    });
+
+    return bookmarks;
+  } catch (error) {
+    throw new Error(`Failed to fetch bookmarks: ${error.message}`);
+  }
+}
+
+function doGet(e) {
+  console.log('Received GET request with parameters:', e.parameter);
+
+  // Add validation for the event object
+  if (!e || !e.parameter || !e.parameter.action) {
+    return ContentService.createTextOutput(JSON.stringify({
+      success: false,
+      error: 'No action specified'
+    }))
+    .setMimeType(ContentService.MimeType.JSON);
   }
 
-  // Default behavior: return bookmarks with caching enabled
-  const bookmarks = getBookmarks();
-  const settingsSheet = SpreadsheetApp.openById(SHEET_ID).getSheetByName('Settings');
-  const announcement = settingsSheet ? settingsSheet.getRange('B1').getValue() : '';
+  // Handle announcement request
+  if (e.parameter.action === 'getAnnouncement') {
+    return getAnnouncement();
+  }
 
+  // Handle refresh request
+  if (e.parameter.action === 'refresh') {
+    return ContentService.createTextOutput(JSON.stringify({
+      success: true,
+      data: getBookmarks()
+    }))
+    .setMimeType(ContentService.MimeType.JSON);
+  }
+
+  // Invalid action
   return ContentService.createTextOutput(JSON.stringify({
-    success: true,
-    data: bookmarks,
-    announcement: announcement
+    success: false,
+    error: 'Invalid action specified'
   }))
-  .setMimeType(ContentService.MimeType.JSON)
-  .setHeaders({
-    ...headers,
-    'Cache-Control': 'public, max-age=300'
-  });
+  .setMimeType(ContentService.MimeType.JSON);
 }
 
 function handleRefresh() {
@@ -95,23 +167,13 @@ function handleRefresh() {
       message: 'Refresh successful',
       data: bookmarks
     }))
-    .setMimeType(ContentService.MimeType.JSON)
-    .setHeaders({
-      'Cache-Control': 'no-store',
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-      'Access-Control-Allow-Headers': 'Content-Type'
-    });
+    .setMimeType(ContentService.MimeType.JSON);
   } catch (error) {
     return ContentService.createTextOutput(JSON.stringify({
       success: false,
       message: 'Refresh failed: ' + error.toString()
     }))
-    .setMimeType(ContentService.MimeType.JSON)
-    .setHeaders({
-      'Cache-Control': 'no-store',
-      'Access-Control-Allow-Origin': '*'
-    });
+    .setMimeType(ContentService.MimeType.JSON);
   }
 }
 
@@ -160,35 +222,6 @@ function doPost(e) {
       message: 'Error processing request: ' + error.message
     })).setMimeType(ContentService.MimeType.JSON);
   }
-}
-
-function getBookmarks() {
-  const sheet = SpreadsheetApp.openById(SHEET_ID).getSheetByName('Sheet1');
-  const data = sheet.getDataRange().getValues();
-  const headers = data[0];
-  const bookmarks = [];
-
-  for (let i = 1; i < data.length; i++) {
-    const row = data[i];
-    const bookmark = {
-      Category: row[headers.indexOf('Category')],
-      Name: row[headers.indexOf('Name')],
-      URL: row[headers.indexOf('URL')],
-      Type: row[headers.indexOf('Type')] || 'link'
-    };
-
-    if (bookmark.Type === 'dropdown') {
-      try {
-        bookmark.Links = JSON.parse(row[headers.indexOf('Links')] || '[]');
-      } catch (e) {
-        bookmark.Links = [];
-      }
-    }
-
-    bookmarks.push(bookmark);
-  }
-
-  return bookmarks;
 }
 
 function addBookmark(data) {
@@ -278,6 +311,7 @@ function setup() {
     .setFontWeight('bold')
     .setBackground('#f3f3f3');
 }
+
 function onEdit(e) {
   // Check if the edit was made in the correct sheet
   if (e.source.getSheetName() === SHEET_NAME) {
@@ -305,12 +339,3 @@ function onEdit(e) {
     }
   }
 }
-
-// Add this new function to handle announcement requests
-function getAnnouncement() {
-  const sheet = SpreadsheetApp.openById(SHEET_ID).getSheetByName('Settings');
-  const announcement = sheet ? sheet.getRange('A1').getValue() : '';
-  return ContentService.createTextOutput(JSON.stringify({
-    announcement: announcement
-  })).setMimeType(ContentService.MimeType.JSON);
-}`

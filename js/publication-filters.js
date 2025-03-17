@@ -218,19 +218,47 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
     
-    // Sort categories alphabetically but keep "All" first
-    const sortedCategories = Array.from(categories).sort();
-    const allIndex = sortedCategories.indexOf('All');
-    if (allIndex > -1) {
-      sortedCategories.splice(allIndex, 1);
-      sortedCategories.unshift('All');
-    }
+    // Count publications by category for frequency ordering
+    const categoryCount = {};
+    categories.forEach(category => {
+      if (category !== 'All') {
+        categoryCount[category] = 0;
+      }
+    });
+    
+    // Count occurrences of each category
+    items.forEach(item => {
+      const fields = item.getAttribute('data-field');
+      if (fields) {
+        fields.split(',').forEach(field => {
+          const trimmedField = field.trim();
+          if (trimmedField !== 'All') {
+            categoryCount[trimmedField] = (categoryCount[trimmedField] || 0) + 1;
+          }
+        });
+      }
+    });
+    
+    // Custom ordering: predefined order for specific categories, then by frequency
+    const predefinedOrder = ['All', 'Gastroenterology', 'Hematology', 'Oncology'];
+    const remainingCategories = Array.from(categories)
+      .filter(category => !predefinedOrder.includes(category))
+      .sort((a, b) => {
+        // Sort by count (higher first)
+        return categoryCount[b] - categoryCount[a];
+      });
+    
+    // Combine predefined and remaining categories
+    const customOrderedCategories = [
+      ...predefinedOrder.filter(cat => categories.has(cat)),
+      ...remainingCategories
+    ];
     
     // Clear any existing content
     filterContainer.innerHTML = '';
     
     // Create and append filter buttons
-    sortedCategories.forEach(category => {
+    customOrderedCategories.forEach(category => {
       const button = document.createElement('button');
       button.className = 'filter-button';
       button.setAttribute('data-field', category);
