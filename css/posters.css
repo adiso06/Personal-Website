@@ -1,0 +1,74 @@
+/* Posters Section Styling */
+#posters {
+    padding: 2rem 0;
+}
+
+#posters .section-heading {
+    margin-bottom: 2rem;
+}
+
+#posters .category-heading {
+    color: var(--primary);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 2rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid rgba(51, 179, 141, 0.2);
+}
+
+#posters ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 2rem;
+}
+
+#posters ul li {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    padding: 0.5rem 0;
+    transition: all 0.3s ease;
+}
+
+#posters ul li:hover {
+    background-color: rgba(51, 179, 141, 0.05);
+    padding-left: 0.5rem;
+}
+
+#posters ul li strong {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+#posters ul li ol {
+    list-style-type: circle;
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+    padding-left: 1.5rem;
+}
+
+#posters ul li ol li {
+    font-size: 0.9rem;
+    color: var(--gray);
+    margin-bottom: 0.25rem;
+    padding: 0;
+}
+
+#posters ul li ol li:hover {
+    background-color: transparent;
+    padding-left: 0;
+}
+
+/* Dark mode support */
+.dark-mode #posters .category-heading {
+    color: var(--primary);
+    border-bottom-color: rgba(51, 179, 141, 0.3);
+}
+
+.dark-mode #posters ul li:hover {
+    background-color: rgba(51, 179, 141, 0.1);
+}
+
+.dark-mode #posters ul li ol li {
+    color: var(--gray);
+} 
