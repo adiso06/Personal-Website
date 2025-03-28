@@ -38,34 +38,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Intersection Observer to detect when publications section enters viewport
-  const pubsContainer = document.getElementById('publications-container');
-  if (pubsContainer) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        // When publications container enters viewport
-        if (entry.isIntersecting && entry.intersectionRatio > 0.1) {
-          // Calculate position to scroll to (top of filter)
-          const scrollToPosition = pubsContainer.getBoundingClientRect().top + window.pageYOffset - 20;
-          
-          // Scroll to show filter at top
-          window.scrollTo({
-            top: scrollToPosition,
-            behavior: 'smooth'
-          });
-          
-          // Disconnect after scrolling once
-          observer.disconnect();
-        }
-      });
-    }, {
-      threshold: 0.1 // Trigger when 10% of the element is visible
-    });
-    
-    // Start observing the publications container
-    observer.observe(pubsContainer);
-  }
-
   // Reference to the filter container and its content area
   const stickyFilter = document.getElementById('sticky-filter');
   const dynamicFilters = document.getElementById('dynamic-filters');
