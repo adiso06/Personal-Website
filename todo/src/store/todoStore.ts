@@ -2,7 +2,7 @@ import { create } from 'zustand';
 import { collection, doc, updateDoc, setDoc, deleteDoc } from 'firebase/firestore';
 import { db } from '../lib/firebase';
 import { getDefaultList } from '../lib/initializeData';
-import type { TodoList, TodoItem } from '../types';
+import type { TodoList, TodoItem } from '../types/index';
 
 interface TodoStore {
   lists: TodoList[];
@@ -19,6 +19,73 @@ interface TodoStore {
   toggleDarkMode: () => void;
 }
 
+// Helper function to find and update items in lists or sublists
+const findAndUpdateItem = (
+  lists: TodoList[],
+  listId: string,
+  itemId: string,
+  sublist?: string,
+  updateFn?: (item: TodoItem) => void
+): { lists: TodoList[]; updated: boolean } => {
+  const listIndex = lists.findIndex(l => l.id === listId);
+  if (listIndex === -1) return { lists, updated: false };
+  
+  const listsCopy = [...lists];
+  const list = listsCopy[listIndex];
+  let updated = false;
+  
+  if (sublist && list.sublists?.[sublist]) {
+    const itemIndex = list.sublists[sublist].findIndex(i => i.id === itemId);
+    if (itemIndex !== -1) {
+      if (updateFn) {
+        updateFn(list.sublists[sublist][itemIndex]);
+      }
+      updated = true;
+    }
+  } else if (list.items) {
+    const itemIndex = list.items.findIndex(i => i.id === itemId);
+    if (itemIndex !== -1) {
+      if (updateFn) {
+        updateFn(list.items[itemIndex]);
+      }
+      updated = true;
+    }
+  }
+  
+  return { lists: listsCopy, updated };
+};
+
+// Helper function to find and delete items in lists or sublists
+const findAndDeleteItem = (
+  lists: TodoList[],
+  listId: string,
+  itemId: string,
+  sublist?: string
+): { lists: TodoList[]; updated: boolean } => {
+  const listIndex = lists.findIndex(l => l.id === listId);
+  if (listIndex === -1) return { lists, updated: false };
+  
+  const listsCopy = [...lists];
+  const list = listsCopy[listIndex];
+  let updated = false;
+  
+  if (sublist && list.sublists?.[sublist]) {
+    const itemIndex = list.sublists[sublist].findIndex(i => i.id === itemId);
+    if (itemIndex !== -1) {
+      list.sublists[sublist].splice(itemIndex, 1);
+      updated = true;
+    }
+  } else if (list.items) {
+    const itemIndex = list.items.findIndex(i => i.id === itemId);
+    if (itemIndex !== -1) {
+      list.items.splice(itemIndex, 1);
+      updated = true;
+    }
+  }
+  
+  return { lists: listsCopy, updated };
+};
+
 export const useTodoStore = create<TodoStore>((set, get) => ({
   lists: [],
   darkMode: localStorage.getItem('darkMode') === 'true',
@@ -26,64 +93,43 @@ export const useTodoStore = create<TodoStore>((set, get) => ({
   setLists: (lists) => set({ lists }),
   
   toggleItem: async (listId, itemId, sublist) => {
-    const lists = [...get().lists];
-    const listIndex = lists.findIndex(l => l.id === listId);
-    if (listIndex === -1) return;
-    
-    const list = lists[listIndex];
-    let updated = false;
-    
-    if (sublist && list.sublists?.[sublist]) {
-      const itemIndex = list.sublists[sublist].findIndex(i => i.id === itemId);
-      if (itemIndex !== -1) {
-        list.sublists[sublist][itemIndex].completed = !list.sublists[sublist][itemIndex].completed;
-        updated = true;
-      }
-    } else if (list.items) {
-      const itemIndex = list.items.findIndex(i => i.id === itemId);
-      if (itemIndex !== -1) {
-        list.items[itemIndex].completed = !list.items[itemIndex].completed;
-        updated = true;
-      }
-    }
+    const { lists, updated } = findAndUpdateItem(
+      get().lists,
+      listId,
+      itemId,
+      sublist,
+      (item) => { item.completed = !item.completed; }
+    );
     
     if (updated) {
-      await updateDoc(doc(db, 'lists', listId), {
-        items: list.items,
-        sublists: list.sublists
-      });
-      set({ lists });
+      const list = lists.find(l => l.id === listId);
+      if (list) {
+        await updateDoc(doc(db, 'lists', listId), {
+          items: list.items,
+          sublists: list.sublists
+        });
+        set({ lists });
+      }
     }
   },
 
   deleteItem: async (listId, itemId, sublist) => {
-    const lists = [...get().lists];
-    const listIndex = lists.findIndex(l => l.id === listId);
-    if (listIndex === -1) return;
-    
-    const list = lists[listIndex];
-    let updated = false;
-    
-    if (sublist && list.sublists?.[sublist]) {
-      const itemIndex = list.sublists[sublist].findIndex(i => i.id === itemId);
-      if (itemIndex !== -1) {
-        list.sublists[sublist].splice(itemIndex, 1);
-        updated = true;
-      }
-    } else if (list.items) {
-      const itemIndex = list.items.findIndex(i => i.id === itemId);
-      if (itemIndex !== -1) {
-        list.items.splice(itemIndex, 1);
-        updated = true;
-      }
-    }
+    const { lists, updated } = findAndDeleteItem(
+      get().lists,
+      listId,
+      itemId,
+      sublist
+    );
     
     if (updated) {
-      await updateDoc(doc(db, 'lists', listId), {
-        items: list.items,
-        sublists: list.sublists
-      });
-      set({ lists });
+      const list = lists.find(l => l.id === listId);
+      if (list) {
+        await updateDoc(doc(db, 'lists', listId), {
+          items: list.items,
+          sublists: list.sublists
+        });
+        set({ lists });
+      }
     }
   },
   

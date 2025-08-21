@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { Plus, RotateCcw, Save, Trash2, ListPlus, ChevronDown } from 'lucide-react';
 import type { TodoList as TodoListType } from '../types';
 import { useTodoStore } from '../store/todoStore';
@@ -7,13 +7,10 @@ import { TodoSublist } from './TodoSublist';
 
 interface Props {
   list: TodoListType;
-  onToggle: (itemId: string, sublist?: string) => void;
-  onAdd: (text: string, sublist?: string) => void;
-  onReset: () => void;
 }
 
-export function TodoList({ list, onToggle, onAdd, onReset }: Props) {
-  const { createSublist, saveAsDefault, deleteList, deleteItem } = useTodoStore();
+export function TodoList({ list }: Props) {
+  const { createSublist, saveAsDefault, deleteList, deleteItem, toggleItem, addItem, resetList } = useTodoStore();
   const [newItemText, setNewItemText] = useState('');
   const [newSublistName, setNewSublistName] = useState('');
   const [showSublistInput, setShowSublistInput] = useState(false);
@@ -33,7 +30,7 @@ export function TodoList({ list, onToggle, onAdd, onReset }: Props) {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (newItemText.trim()) {
-      onAdd(newItemText.trim());
+      addItem(list.id, newItemText.trim());
       setNewItemText('');
     }
   };
@@ -47,13 +44,17 @@ export function TodoList({ list, onToggle, onAdd, onReset }: Props) {
     }
   };
 
-  const completedCount = (list.items?.filter(item => item.completed).length || 0) +
-    (list.sublists ? Object.values(list.sublists).reduce((acc, items) => 
-      acc + (items?.filter(item => item.completed).length || 0), 0) : 0);
+  const { completedCount, totalCount } = useMemo(() => {
+    const completed = (list.items?.filter(item => item.completed).length || 0) +
+      (list.sublists ? Object.values(list.sublists).reduce((acc, items) => 
+        acc + (items?.filter(item => item.completed).length || 0), 0) : 0);
 
-  const totalCount = (list.items?.length || 0) +
-    (list.sublists ? Object.values(list.sublists).reduce((acc, items) => 
-      acc + (items?.length || 0), 0) : 0);
+    const total = (list.items?.length || 0) +
+      (list.sublists ? Object.values(list.sublists).reduce((acc, items) => 
+        acc + (items?.length || 0), 0) : 0);
+
+    return { completedCount: completed, totalCount: total };
+  }, [list.items, list.sublists]);
 
   return (
     <div className="w-full bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-100 dark:border-gray-700">
@@ -81,7 +82,7 @@ export function TodoList({ list, onToggle, onAdd, onReset }: Props) {
               <Save size={20} />
             </button>
             <button
-              onClick={onReset}
+              onClick={() => resetList(list.id)}
               className="p-2 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-lg text-white transition-colors"
               title="Reset to Default"
             >
@@ -153,7 +154,7 @@ export function TodoList({ list, onToggle, onAdd, onReset }: Props) {
                   id={item.id}
                   text={item.text}
                   completed={item.completed}
-                  onToggle={(itemId) => onToggle(itemId)}
+                  onToggle={(itemId) => toggleItem(list.id, itemId)}
                   onDelete={(itemId) => deleteItem(list.id, itemId)}
                 />
               ))}
@@ -167,8 +168,8 @@ export function TodoList({ list, onToggle, onAdd, onReset }: Props) {
                     name={sublist}
                     items={items}
                     isExpanded={expandedSublists.has(sublist)}
-                    onToggle={(itemId) => onToggle(itemId, sublist)}
-                    onAdd={(text) => onAdd(text, sublist)}
+                    onToggle={(itemId) => toggleItem(list.id, itemId, sublist)}
+                    onAdd={(text) => addItem(list.id, text, sublist)}
                     onDelete={(itemId) => deleteItem(list.id, itemId, sublist)}
                     onToggleExpand={() => toggleSublist(sublist)}
                   />

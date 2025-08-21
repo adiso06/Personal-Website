@@ -8,7 +8,7 @@ import { initializeFirestore } from './lib/initializeData';
 import { useEffect, useState } from 'react';
 
 function App() {
-  const { lists, setLists, toggleItem, addItem, resetList, createList, darkMode, toggleDarkMode } = useTodoStore();
+  const { lists, setLists, createList, darkMode, toggleDarkMode } = useTodoStore();
   const [isInitialized, setIsInitialized] = useState(false);
   const [newListName, setNewListName] = useState('');
 
@@ -77,9 +77,6 @@ function App() {
             <TodoList
               key={list.id}
               list={list}
-              onToggle={(itemId, sublist) => toggleItem(list.id, itemId, sublist)}
-              onAdd={(text, sublist) => addItem(list.id, text, sublist)}
-              onReset={() => resetList(list.id)}
             />
           ))}
         </div>
