@@ -1,7 +1,7 @@
 # Flight Tracker
 
 _Auto-updated from forwarded emails._
-_Last updated: 2/8/2026, 2:28:10 AM ET_
+_Last updated: 2/8/2026, 2:51:11 AM ET_
 
 ## Upcoming flights
 
@@ -13,7 +13,7 @@ _Last updated: 2/8/2026, 2:28:10 AM ET_
   - WN486: HOU 12:00 PM → ONT 01:35 PM
 - Live status: https://www.flightaware.com/live/flight/WN107 | https://www.flightaware.com/live/flight/WN486
 - Source email: Fwd: You're going to Ontario on 02/22 (AYQR8B)!
-- Source count: 2 email(s)
+- Source count: 3 email(s)
 
 ### Wed, Feb 25, 2026 — American Airlines (IFWAUN)
 - Route: **ONT → LGA**
