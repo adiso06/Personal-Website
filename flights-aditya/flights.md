@@ -13,14 +13,7 @@ _Last updated: 2/8/2026, 5:42:00 PM ET_
   - WN486: HOU 12:00 PM → ONT 01:35 PM
 - Live status: https://www.flightaware.com/live/flight/WN107 | https://www.flightaware.com/live/flight/WN486
 - Source email: Fwd: You're going to Ontario on 02/22 (AYQR8B)!
-- Source count: 3 email(s)
-
-### Sun, Feb 22, 2026 — Southwest Airlines (AYQR8B)
-- Route: **??? → ONT**
-- Passenger: Aditya Sood
-- Notes: Pre-trip rental car marketing email tied to existing Ontario itinerary; no itinerary change details provided.
-- Source email: 02/22 Ontario trip (AYQR8B): Got a hotel?
-- Source count: 2 email(s)
+- Source count: 5 email(s)
 
 ### Wed, Feb 25, 2026 — American Airlines (IFWAUN)
 - Route: **ONT → LGA**
