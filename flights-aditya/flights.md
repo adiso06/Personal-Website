@@ -1,7 +1,7 @@
 # Flight Tracker
 
 _Auto-updated from forwarded emails._
-_Last updated: 2/8/2026, 3:34:52 PM ET_
+_Last updated: 2/8/2026, 3:36:11 PM ET_
 
 ## Upcoming flights
 
@@ -19,8 +19,8 @@ _Last updated: 2/8/2026, 3:34:52 PM ET_
 - Route: **??? → ONT**
 - Passenger: Aditya Sood
 - Notes: Pre-trip rental car marketing email tied to existing Ontario itinerary; no itinerary change details provided.
-- Source email: 02/22 Ontario trip (AYQR8B): Need a rental car?
-- Source count: 1 email(s)
+- Source email: 02/22 Ontario trip (AYQR8B): Got a hotel?
+- Source count: 2 email(s)
 
 ### Wed, Feb 25, 2026 — American Airlines (IFWAUN)
 - Route: **ONT → LGA**
