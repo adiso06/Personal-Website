@@ -1,7 +1,7 @@
 # Flight Tracker
 
 _Auto-updated from forwarded emails._
-_Last updated: 2/9/2026, 11:51:34 PM ET_
+_Last updated: 2/10/2026, 1:53:51 AM ET_
 
 ## Upcoming flights
 
@@ -57,6 +57,15 @@ _Last updated: 2/9/2026, 11:51:34 PM ET_
 - Source email: Turkish Airlines - Ticket Details
 - Source count: 1 email(s)
 
+### Wed, Apr 1, 2026 — Pegasus Airlines (1PWMEK)
+- Route: **ASR → ADB**
+- Passenger: Aditya Sood
+- Segments:
+  - Wed, Apr 1, 2026 — 3191: ASR 23:35 → ADB 01:05
+- Notes: Forwarded Pegasus confirmation email; includes second passenger Chhaya Arora on same PNR.
+- Source email: Fwd: PC3191 Izmir: Your booking is confirmed! View your ticket now
+- Source count: 1 email(s)
+
 ### Sun, Apr 5, 2026 — Turkish Airlines (UVVJ6R)
 - Route: **IST → JFK**
 - Passenger: Aditya Sood
@@ -76,3 +85,4 @@ _Last updated: 2/9/2026, 11:51:34 PM ET_
 
 - Mon, Mar 9, 2026: LGA→SNA (AE6LOI)
 - Mon, Mar 30, 2026: IST→ASR (VPBMRV)
+- Wed, Apr 1, 2026: ASR→ADB (1PWMEK)
