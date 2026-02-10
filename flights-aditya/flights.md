@@ -1,7 +1,7 @@
 # Flight Tracker
 
 _Auto-updated from forwarded emails._
-_Last updated: 2/10/2026, 3:54:57 AM ET_
+_Last updated: 2/10/2026, 3:55:03 AM ET_
 
 ## Upcoming flights
 
@@ -72,8 +72,8 @@ _Last updated: 2/10/2026, 3:54:57 AM ET_
 - Segments:
   - TK2321: ADB 12:55 → IST 14:20
 - Live status: https://www.flightaware.com/live/flight/TK2321
-- Source email: Turkish Airlines - Ticket Details
-- Source count: 1 email(s)
+- Source email: Fwd: Turkish Airlines - Ticket Details
+- Source count: 2 email(s)
 
 ### Sun, Apr 5, 2026 — Turkish Airlines (UVVJ6R)
 - Route: **IST → JFK**
