@@ -1,7 +1,7 @@
 # Flight Tracker
 
 _Auto-updated from forwarded emails._
-_Last updated: 2/9/2026, 10:26:26 PM ET_
+_Last updated: 2/9/2026, 10:27:04 PM ET_
 
 ## Upcoming flights
 
@@ -44,7 +44,6 @@ _Last updated: 2/9/2026, 10:26:26 PM ET_
   - TK2: JFK 20:40 → IST 13:45
   - TK11: IST 18:40 → JFK 22:30
 - Live status: https://www.flightaware.com/live/flight/TK2 | https://www.flightaware.com/live/flight/TK11
-- Notes: Email appears to be a Turkish Airlines ticket-details template with likely itinerary context (JFK↔IST), but no trustworthy structured itinerary fields (date, flight numbers, times, PNR) were extracted. Cannot determine duplicate vs update against existing records.
 - Source email: Turkish Airlines - Ticket Details
 - Source count: 1 email(s)
 
