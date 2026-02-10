@@ -1,7 +1,7 @@
 # Flight Tracker
 
 _Auto-updated from forwarded emails._
-_Last updated: 2/9/2026, 11:00:57 PM ET_
+_Last updated: 2/9/2026, 11:06:33 PM ET_
 
 ## Upcoming flights
 
@@ -37,15 +37,13 @@ _Last updated: 2/9/2026, 11:00:57 PM ET_
 - Source email: Fwd: You're going to Orange County, CA on 03/09 (AE6LOI)!
 - Source count: 1 email(s)
 
-### Thu, Mar 26, 2026 — Turkish Airlines (UVVJ6R)
-- Route: **JFK → IST**
-- Passenger: ADITYA SOOD; CHHAYA ARORA
+### Mon, Mar 30, 2026 — Turkish Airlines (VPBMRV)
+- Route: **IST → ASR**
+- Passenger: Aditya Sood
 - Segments:
-  - TK2: JFK 20:40 → IST 13:45
-  - TK11: IST 18:40 → JFK 22:30
-- Live status: https://www.flightaware.com/live/flight/TK2 | https://www.flightaware.com/live/flight/TK11
-- Notes: New round-trip booking not present in current database. Outbound arrives next day in IST.
-- Source email: Fwd: Turkish Airlines - Ticket Details
+  - Mon, Mar 30, 2026 — TK2014: IST 11:00 → ASR 12:30
+- Live status: https://www.flightaware.com/live/flight/TK2014
+- Source email: Turkish Airlines - Ticket Details
 - Source count: 1 email(s)
 
 ## Likely round-trip pairings
@@ -55,4 +53,4 @@ _Last updated: 2/9/2026, 11:00:57 PM ET_
 ## Flights without a detected return leg
 
 - Mon, Mar 9, 2026: LGA→SNA (AE6LOI)
-- Thu, Mar 26, 2026: JFK→IST (UVVJ6R)
+- Mon, Mar 30, 2026: IST→ASR (VPBMRV)
