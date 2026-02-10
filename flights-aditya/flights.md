@@ -1,7 +1,7 @@
 # Flight Tracker
 
 _Auto-updated from forwarded emails._
-_Last updated: 2/9/2026, 10:27:11 PM ET_
+_Last updated: 2/9/2026, 11:00:50 PM ET_
 
 ## Upcoming flights
 
@@ -39,12 +39,13 @@ _Last updated: 2/9/2026, 10:27:11 PM ET_
 
 ### Thu, Mar 26, 2026 — Turkish Airlines (UVVJ6R)
 - Route: **JFK → IST**
-- Passenger: Aditya Sood
+- Passenger: ADITYA SOOD; CHHAYA ARORA
 - Segments:
-  - Thu, Mar 26, 2026 — TK2: JFK 20:40 → IST 13:45
-  - Sun, Apr 5, 2026 — TK11: IST 18:40 → JFK 22:30
+  - TK2: JFK 20:40 → IST 13:45
+  - TK11: IST 18:40 → JFK 22:30
 - Live status: https://www.flightaware.com/live/flight/TK2 | https://www.flightaware.com/live/flight/TK11
-- Source email: Turkish Airlines - Ticket Details
+- Notes: New round-trip booking not present in current database. Outbound arrives next day in IST.
+- Source email: Fwd: Turkish Airlines - Ticket Details
 - Source count: 1 email(s)
 
 ## Likely round-trip pairings
