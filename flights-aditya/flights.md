@@ -42,7 +42,8 @@ _Last updated: 2/9/2026, 11:51:34 PM ET_
 - Passenger: Aditya Sood
 - Segments:
   - Thu, Mar 26, 2026 — TK2: JFK 20:40 → IST 13:45
-- Live status: https://www.flightaware.com/live/flight/TK2
+  - Sat, Apr 4, 2026 — TK2321: ADB 12:55 → IST 14:20
+- Live status: https://www.flightaware.com/live/flight/TK2 | https://www.flightaware.com/live/flight/TK2321
 - Notes: Round-trip booking under confirmation UVVJ6R; second passenger listed as Chhaya Arora.
 - Source email: Fwd: Turkish Airlines - Ticket Details
 - Source count: 1 email(s)
