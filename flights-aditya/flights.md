@@ -1,20 +1,9 @@
 # Flight Tracker
 
 _Auto-updated from forwarded emails._
-_Last updated: 2/9/2026, 10:25:19 PM ET_
+_Last updated: 2/9/2026, 10:26:26 PM ET_
 
 ## Upcoming flights
-
-### Tue, Feb 10, 2026 — American Airlines (UVVJ6R)
-- Route: **JFK → JFK**
-- Passenger: name New York - Istanbul Istanbul - New York ADITYA SOOD Adult JFK - IST
-- Segments:
-  - AA2: JFK 20:40 → IST 13:45
-  - AA11: IST 18:40 → JFK 22:30
-- Live status: https://www.flightaware.com/live/flight/AA2 | https://www.flightaware.com/live/flight/AA11
-- Notes: Email appears to be a Turkish Airlines ticket-details template with likely itinerary context (JFK↔IST), but no trustworthy structured itinerary fields (date, flight numbers, times, PNR) were extracted. Cannot determine duplicate vs update against existing records.
-- Source email: Turkish Airlines - Ticket Details
-- Source count: 1 email(s)
 
 ### Sun, Feb 22, 2026 — Southwest Airlines (AYQR8B)
 - Route: **LGA → ONT**
@@ -48,11 +37,22 @@ _Last updated: 2/9/2026, 10:25:19 PM ET_
 - Source email: Fwd: You're going to Orange County, CA on 03/09 (AE6LOI)!
 - Source count: 1 email(s)
 
+### Thu, Mar 26, 2026 — Turkish Airlines (UVVJ6R)
+- Route: **JFK → IST**
+- Passenger: Aditya Sood
+- Segments:
+  - TK2: JFK 20:40 → IST 13:45
+  - TK11: IST 18:40 → JFK 22:30
+- Live status: https://www.flightaware.com/live/flight/TK2 | https://www.flightaware.com/live/flight/TK11
+- Notes: Email appears to be a Turkish Airlines ticket-details template with likely itinerary context (JFK↔IST), but no trustworthy structured itinerary fields (date, flight numbers, times, PNR) were extracted. Cannot determine duplicate vs update against existing records.
+- Source email: Turkish Airlines - Ticket Details
+- Source count: 1 email(s)
+
 ## Likely round-trip pairings
 
 - LGA ↔ ONT: Sun, Feb 22, 2026 LGA→ONT (AYQR8B) + Wed, Feb 25, 2026 ONT→LGA (IFWAUN)
 
 ## Flights without a detected return leg
 
-- Tue, Feb 10, 2026: JFK→JFK (UVVJ6R)
 - Mon, Mar 9, 2026: LGA→SNA (AE6LOI)
+- Thu, Mar 26, 2026: JFK→IST (UVVJ6R)
