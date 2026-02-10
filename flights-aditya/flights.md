@@ -56,6 +56,16 @@ _Last updated: 2/9/2026, 11:51:34 PM ET_
 - Source email: Turkish Airlines - Ticket Details
 - Source count: 1 email(s)
 
+### Sat, Apr 4, 2026 — Turkish Airlines (UVVJ6R)
+- Route: **ADB → IST**
+- Passenger: Aditya Sood
+- Segments:
+  - Sat, Apr 4, 2026 — TK2321: ADB 12:55 → IST 14:20
+- Live status: https://www.flightaware.com/live/flight/TK2321
+- Notes: Added from forwarded itinerary text in chat; validate against source email when available.
+- Source email: Turkish Airlines - Ticket Details (chat-provided segment)
+- Source count: 1 email(s)
+
 ### Sun, Apr 5, 2026 — Turkish Airlines (UVVJ6R)
 - Route: **IST → JFK**
 - Passenger: Aditya Sood
