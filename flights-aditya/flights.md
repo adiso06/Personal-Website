@@ -57,7 +57,6 @@ _Last updated: 2/9/2026, 11:51:34 PM ET_
 - Source email: Turkish Airlines - Ticket Details
 - Source count: 1 email(s)
 
-[REMOVED-ADB-STANDALONE]
 ### Sun, Apr 5, 2026 — Turkish Airlines (UVVJ6R)
 - Route: **IST → JFK**
 - Passenger: Aditya Sood
