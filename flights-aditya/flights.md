@@ -1,7 +1,7 @@
 # Flight Tracker
 
 _Auto-updated from forwarded emails._
-_Last updated: 2/8/2026, 5:42:00 PM ET_
+_Last updated: 2/9/2026, 10:21:50 PM ET_
 
 ## Upcoming flights
 
@@ -37,6 +37,13 @@ _Last updated: 2/8/2026, 5:42:00 PM ET_
 - Source email: Fwd: You're going to Orange County, CA on 03/09 (AE6LOI)!
 - Source count: 1 email(s)
 
+### Date unknown — Turkish Airlines
+- Route: **JFK → IST**
+- Passenger: ADITYA SOOD
+- Notes: Email appears to be a Turkish Airlines ticket-details template with likely itinerary context (JFK↔IST), but no trustworthy structured itinerary fields (date, flight numbers, times, PNR) were extracted. Cannot determine duplicate vs update against existing records.
+- Source email: Turkish Airlines - Ticket Details
+- Source count: 1 email(s)
+
 ## Likely round-trip pairings
 
 - LGA ↔ ONT: Sun, Feb 22, 2026 LGA→ONT (AYQR8B) + Wed, Feb 25, 2026 ONT→LGA (IFWAUN)
@@ -44,3 +51,4 @@ _Last updated: 2/8/2026, 5:42:00 PM ET_
 ## Flights without a detected return leg
 
 - Mon, Mar 9, 2026: LGA→SNA (AE6LOI)
+- Date unknown: JFK→IST
