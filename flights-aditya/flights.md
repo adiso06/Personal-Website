@@ -41,8 +41,8 @@ _Last updated: 2/9/2026, 10:27:11 PM ET_
 - Route: **JFK → IST**
 - Passenger: Aditya Sood
 - Segments:
-  - TK2: JFK 20:40 → IST 13:45
-  - TK11: IST 18:40 → JFK 22:30
+  - Thu, Mar 26, 2026 — TK2: JFK 20:40 → IST 13:45
+  - Sun, Apr 5, 2026 — TK11: IST 18:40 → JFK 22:30
 - Live status: https://www.flightaware.com/live/flight/TK2 | https://www.flightaware.com/live/flight/TK11
 - Source email: Turkish Airlines - Ticket Details
 - Source count: 1 email(s)
