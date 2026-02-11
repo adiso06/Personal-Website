@@ -1,7 +1,7 @@
 # Flight Tracker
 
 _Auto-updated from forwarded emails._
-_Last updated: 2/10/2026, 3:55:03 AM ET_
+_Last updated: 2/11/2026, 12:16:37 AM ET_
 
 ## Upcoming flights
 
@@ -66,6 +66,17 @@ _Last updated: 2/10/2026, 3:55:03 AM ET_
 - Source email: Fwd: PC3191 Izmir: Your booking is confirmed! View your ticket now
 - Source count: 1 email(s)
 
+### Sat, Apr 4, 2026 — Turkish Airlines (U4HZA7)
+- Route: **JFK → DEL**
+- Passenger: Aditya Sood
+- Segments:
+  - Sat, Apr 4, 2026 — TK2: JFK 20:40 → IST 13:45
+  - TK716: IST 20:15 → DEL 04:50
+- Live status: https://www.flightaware.com/live/flight/TK2 | https://www.flightaware.com/live/flight/TK716
+- Notes: Deterministic extract indicates JFK→IST→DEL on 2026-04-04, but current flight database already has 2026-04-04 ADB→IST and 2026-04-05 IST→JFK. Email body text is empty, so this cannot be confidently classified as new vs update.
+- Source email: Turkish Airlines - Ticket Details
+- Source count: 1 email(s)
+
 ### Sat, Apr 4, 2026 — Turkish Airlines (V2BMCN)
 - Route: **ADB → IST**
 - Passenger: Aditya Sood
@@ -95,4 +106,5 @@ _Last updated: 2/10/2026, 3:55:03 AM ET_
 - Mon, Mar 9, 2026: LGA→SNA (AE6LOI)
 - Mon, Mar 30, 2026: IST→ASR (VPBMRV)
 - Wed, Apr 1, 2026: ASR→ADB (1PWMEK)
+- Sat, Apr 4, 2026: JFK→DEL (U4HZA7)
 - Sat, Apr 4, 2026: ADB→IST (V2BMCN)
