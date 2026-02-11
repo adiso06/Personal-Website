@@ -97,8 +97,14 @@ _Last updated: 2/11/2026, 12:45:10 AM ET_
 ## Likely round-trip pairings
 
 - LGA ↔ ONT: Sun, Feb 22, 2026 LGA→ONT (AYQR8B) + Wed, Feb 25, 2026 ONT→LGA (IFWAUN)
-- LGA ↔ DEL: Mon, Mar 9, 2026 LGA→SNA (AE6LOI) + Thu, Apr 9, 2026 DEL→JFK (U4HZA7)
+- JFK ↔ Turkey/India multi-city (confirmed):
+  - Thu, Mar 26, 2026 — JFK→IST (U4HZA7)
+  - Mon, Mar 30, 2026 — IST→ASR (VPBMRV)
+  - Wed, Apr 1, 2026 — ASR→ADB (1PWMEK)
+  - Sat, Apr 4, 2026 — ADB→IST (V2BMCN)
+  - Sat, Apr 4, 2026 — IST→DEL (U4HZA7)
+  - Thu, Apr 9, 2026 — DEL→IST→JFK (U4HZA7)
 
 ## Flights without a detected return leg
 
-- None
+- Mon, Mar 9, 2026: LGA→SNA (AE6LOI)
