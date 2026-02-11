@@ -59,7 +59,7 @@ _Last updated: 2/11/2026, 12:45:10 AM ET_
 - Route: **ASR → ADB**
 - Passenger: Aditya Sood
 - Segments:
-  - None3191: ASR 23:35 → ADB 01:05
+  - 3191: ASR 23:35 → ADB 01:05
 - Notes: Forwarded Pegasus confirmation email; includes second passenger Chhaya Arora on same PNR.
 - Source email: Fwd: PC3191 Izmir: Your booking is confirmed! View your ticket now
 - Source count: 1 email(s)
