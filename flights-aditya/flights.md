@@ -1,7 +1,7 @@
 # Flight Tracker
 
 _Auto-updated from forwarded emails._
-_Last updated: 2/15/2026, 9:54:13 PM ET_
+_Last updated: 2/22/2026, 5:40:39 AM ET_
 
 ## Upcoming flights
 
@@ -9,11 +9,11 @@ _Last updated: 2/15/2026, 9:54:13 PM ET_
 - Route: **LGA → ONT**
 - Passenger: Aditya Sood
 - Segments:
-  - WN107: LGA 06:00 AM → HOU 09:25 AM
-  - WN486: HOU 12:00 PM → ONT 01:35 PM
-- Live status: https://www.flightaware.com/live/flight/WN107 | https://www.flightaware.com/live/flight/WN486
-- Source email: Fwd: You're going to Ontario on 02/22 (AYQR8B)!
-- Source count: 5 email(s)
+  - Sun, Feb 22, 2026 — WN2360: LGA 06:50 AM → DEN 09:30 AM
+  - Sun, Feb 22, 2026 — WN4790: DEN 04:40 PM → ONT 06:05 PM
+- Live status: https://www.flightaware.com/live/flight/WN2360 | https://www.flightaware.com/live/flight/WN4790
+- Source email: Aditya Sood's 02/22 Ontario trip (AYQR8B): Your change is confirmed.
+- Source count: 6 email(s)
 
 ### Wed, Feb 25, 2026 — American Airlines (IFWAUN)
 - Route: **ONT → LGA**
