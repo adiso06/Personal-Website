@@ -11,7 +11,7 @@ _Last updated: 2/22/2026, 5:40:39 AM ET_
 - Segments:
   - Sun, Feb 22, 2026 — WN2360: LGA 06:50 AM → DEN 09:30 AM
   - Sun, Feb 22, 2026 — WN4790: DEN 04:40 PM → ONT 06:05 PM
-- Live status: https://www.flightaware.com/live/flight/WN2360 | https://www.flightaware.com/live/flight/WN4790
+- Live status: https://www.flightaware.com/live/flight/SWA2360 | https://www.flightaware.com/live/flight/SWA4790
 - Source email: Aditya Sood's 02/22 Ontario trip (AYQR8B): Your change is confirmed.
 - Source count: 6 email(s)
 
@@ -33,7 +33,7 @@ _Last updated: 2/22/2026, 5:40:39 AM ET_
 - Segments:
   - WN3793: LGA 08:30 AM → DEN 11:05 AM
   - WN2016: DEN 02:20 PM → SNA 03:50 PM
-- Live status: https://www.flightaware.com/live/flight/WN3793 | https://www.flightaware.com/live/flight/WN2016
+- Live status: https://www.flightaware.com/live/flight/SWA3793 | https://www.flightaware.com/live/flight/SWA2016
 - Source email: Fwd: You're going to Orange County, CA on 03/09 (AE6LOI)!
 - Source count: 1 email(s)
 
