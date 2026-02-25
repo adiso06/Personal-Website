@@ -21,7 +21,7 @@ _Last updated: 2/22/2026, 5:40:39 AM ET_
 - Segments:
   - AA1833: ONT 6:00 AM → DFW 11:02 AM
   - AA876: DFW 12:37 PM → LGA 5:01 PM
-- Live status: https://www.flightaware.com/live/flight/AA1833 | https://www.flightaware.com/live/flight/AA876
+- Live status: https://www.flightaware.com/live/flight/AAL1833 | https://www.flightaware.com/live/flight/AAL876
 - Capital One code: H-N-KE89WU
 - Notes: Booked via Capital One Travel (H-N-KE89WU).
 - Source email: Fwd: View your Capital One Travel Confirmation
