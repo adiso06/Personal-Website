@@ -55,30 +55,30 @@
     .dark .theme-toggle .knob { transform: translateX(20px); }
   </style>
 </head>
-<body class="min-h-screen p-4 md:p-8 max-w-4xl mx-auto">
+<body class="min-h-screen px-3 py-4 md:p-8 max-w-4xl mx-auto">
 
-  <header class="flex justify-between items-center mb-10">
+  <header class="flex justify-between items-center mb-6 md:mb-10">
     <div>
-      <h1 class="text-2xl font-bold tracking-tight text-c-text">Flight Tracker</h1>
-      <p class="text-c-dim text-xs font-mono mt-1">Updated 2/25/2026, 4:16:14 PM ET</p>
+      <h1 class="text-xl md:text-2xl font-bold tracking-tight text-c-text">Flight Tracker</h1>
+      <p class="text-c-dim text-[10px] md:text-xs font-mono mt-1">Updated 2/25/2026, 4:32:46 PM ET</p>
     </div>
-    <div class="flex items-center gap-4">
+    <div class="flex items-center gap-3 md:gap-4">
       <button onclick="toggleTheme()" class="theme-toggle bg-c-btn" aria-label="Toggle theme">
         <div class="knob"><span class="dark-icon" style="display:none">&#9790;</span><span class="light-icon">&#9728;</span></div>
       </button>
-      <a href="https://flightaware.com/" target="_blank" class="text-c-dim hover:text-blue-500 text-xs font-mono transition">FlightAware &nearr;</a>
+      <a href="https://flightaware.com/" target="_blank" class="text-c-dim hover:text-blue-500 text-[10px] md:text-xs font-mono transition hidden md:inline">FlightAware &nearr;</a>
     </div>
   </header>
 
   <main>
     
     <section class="mb-10">
-      <div class="sticky top-0 z-10 backdrop-blur-md bg-c-sticky border-b border-c-line py-4 mb-6 -mx-4 px-4 flex justify-between items-baseline">
-        <div class="flex items-baseline">
-          <h2 class="text-2xl font-bold tracking-tight text-c-text uppercase">Los Angeles</h2>
+      <div class="sticky top-0 z-10 backdrop-blur-md bg-c-sticky border-b border-c-line py-3 md:py-4 mb-4 md:mb-6 -mx-4 px-4 flex justify-between items-baseline gap-2">
+        <div class="flex items-baseline flex-wrap gap-y-1">
+          <h2 class="text-xl md:text-2xl font-bold tracking-tight text-c-text uppercase">Los Angeles</h2>
           <span class="text-xs text-c-muted ml-2">3 nights</span>
         </div>
-        <span class="font-mono text-xs text-c-dim uppercase tracking-widest border border-c-badge rounded-full px-3 py-1">Feb 22 – Feb 25</span>
+        <span class="font-mono text-[10px] md:text-xs text-c-dim uppercase tracking-widest border border-c-badge rounded-full px-2 md:px-3 py-1 whitespace-nowrap">Feb 22 – Feb 25</span>
       </div>
       <div class="bg-c-seg rounded-2xl p-4 md:p-6">
         
@@ -87,40 +87,41 @@
         <div class="absolute left-0 top-2 w-2 h-2 rounded-full bg-gray-400"></div>
         
     <article class="card rounded-2xl overflow-hidden shadow-lg transition hover:shadow-xl group opacity-70">
-      <div class="p-5 md:p-6 relative overflow-hidden">
+      <div class="p-4 md:p-6 relative overflow-hidden">
         
         <div class="absolute top-0 right-0 text-c-dim text-[10px] font-bold px-3 py-1 uppercase tracking-wider">Completed</div>
 
-        <div class="flex justify-between items-start mb-4">
-          <div class="flex items-center gap-3">
-            <img src="https://logo.clearbit.com/southwest.com" alt="Southwest Airlines" class="w-10 h-10 rounded-full object-cover shadow-lg bg-white" onerror="this.outerHTML='<div class=\'w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-lg shadow-lg\'>S</div>'">
-            <div>
-              <h2 class="text-lg font-bold text-c-text leading-tight">LGA <span class="text-c-dim mx-1">&#9992;</span> ONT</h2>
-              <button onclick="navigator.clipboard.writeText('AYQR8B');this.querySelector('.copied').style.display='inline';this.querySelector('.label').style.display='none';setTimeout(()=>{this.querySelector('.copied').style.display='none';this.querySelector('.label').style.display='inline'},1500)" class="text-blue-500 text-sm font-medium hover:underline cursor-pointer transition inline-flex items-center gap-1">
+        <div class="flex items-start gap-3 mb-4">
+          <img src="https://www.google.com/s2/favicons?domain=southwest.com&sz=128" alt="Southwest Airlines" width="40" height="40" loading="lazy" class="w-9 h-9 md:w-10 md:h-10 rounded-full object-cover shadow-lg bg-white shrink-0" onerror="this.outerHTML='<div class=\'w-9 h-9 md:w-10 md:h-10 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-lg shadow-lg shrink-0\'>S</div>'">
+          <div class="flex-1 min-w-0">
+            <div class="flex justify-between items-start gap-2">
+              <div class="min-w-0">
+                <h2 class="text-base md:text-lg font-bold text-c-text leading-tight">LGA <span class="text-c-dim mx-1">&#9992;</span> ONT</h2>
+                <button onclick="navigator.clipboard.writeText('AYQR8B');this.querySelector('.copied').style.display='inline';this.querySelector('.label').style.display='none';setTimeout(()=>{this.querySelector('.copied').style.display='none';this.querySelector('.label').style.display='inline'},1500)" class="text-blue-500 text-sm font-medium hover:underline cursor-pointer transition inline-flex items-center gap-1">
         <span class="label">Southwest Airlines &bull; AYQR8B</span>
         <span class="copied text-green-500" style="display:none">Copied!</span>
         <svg class="w-3.5 h-3.5 opacity-40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
        </button>
+              </div>
+              <div class="text-right shrink-0">
+                <div class="text-lg md:text-2xl font-bold text-c-text whitespace-nowrap">Sun, Feb 22</div>
+                <div class="text-xs font-mono mt-0.5 text-c-dim">3 days ago</div>
+              </div>
             </div>
-          </div>
-          <div class="text-right">
-            <div class="text-2xl font-bold text-c-text">Sun, Feb 22</div>
-            <div class="text-xs font-mono mt-1 text-c-dim">3 days ago</div>
+            
           </div>
         </div>
 
-        <div class="bg-c-seg rounded-xl p-3 md:p-4">
+        <div class="bg-c-seg rounded-xl p-2.5 md:p-4">
           
-      <div class="flex items-center justify-between py-2 border-b border-c-seg last:border-0">
-        <div class="flex items-center gap-3">
+      <div class="flex items-center justify-between gap-2 py-2 border-b border-c-seg last:border-0">
+        <div class="flex items-center gap-2 min-w-0">
           <div class="text-xs font-mono text-c-muted bg-c-bg2 px-1.5 py-0.5 rounded">WN2360</div>
-          <div class="flex items-center gap-2">
-            <span class="font-bold text-c-text">LGA</span>
-            <span class="text-c-dim">&rarr;</span>
-            <span class="font-bold text-c-text">DEN</span>
-          </div>
+          <span class="font-bold text-c-text">LGA</span>
+          <span class="text-c-dim">&rarr;</span>
+          <span class="font-bold text-c-text">DEN</span>
         </div>
-        <div class="text-sm text-c-muted">
+        <div class="text-xs md:text-sm text-c-muted whitespace-nowrap">
           6:50a - 9:30a
         </div>
       </div>
@@ -128,16 +129,14 @@
             <svg class="w-3 h-3 text-c-dim" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
             <span class="text-xs font-mono text-c-dim">7h 10m layover at DEN</span>
           </div>
-      <div class="flex items-center justify-between py-2 border-b border-c-seg last:border-0">
-        <div class="flex items-center gap-3">
+      <div class="flex items-center justify-between gap-2 py-2 border-b border-c-seg last:border-0">
+        <div class="flex items-center gap-2 min-w-0">
           <div class="text-xs font-mono text-c-muted bg-c-bg2 px-1.5 py-0.5 rounded">WN4790</div>
-          <div class="flex items-center gap-2">
-            <span class="font-bold text-c-text">DEN</span>
-            <span class="text-c-dim">&rarr;</span>
-            <span class="font-bold text-c-text">ONT</span>
-          </div>
+          <span class="font-bold text-c-text">DEN</span>
+          <span class="text-c-dim">&rarr;</span>
+          <span class="font-bold text-c-text">ONT</span>
         </div>
-        <div class="text-sm text-c-muted">
+        <div class="text-xs md:text-sm text-c-muted whitespace-nowrap">
           4:40p - 6:05p
         </div>
       </div>
@@ -153,40 +152,41 @@
         <div class="absolute left-0 top-2 w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.5)]"></div>
         
     <article class="card rounded-2xl overflow-hidden shadow-lg transition hover:shadow-xl group ">
-      <div class="p-5 md:p-6 relative overflow-hidden">
+      <div class="p-4 md:p-6 relative overflow-hidden">
         <div class="absolute top-0 right-0 bg-blue-500 text-white text-[10px] font-bold px-3 py-1 rounded-bl-xl uppercase tracking-wider">Next Up</div>
         
 
-        <div class="flex justify-between items-start mb-4">
-          <div class="flex items-center gap-3">
-            <img src="https://logo.clearbit.com/aa.com" alt="American Airlines" class="w-10 h-10 rounded-full object-cover shadow-lg bg-white" onerror="this.outerHTML='<div class=\'w-10 h-10 rounded-full bg-sky-700 flex items-center justify-center text-white font-bold text-lg shadow-lg\'>A</div>'">
-            <div>
-              <h2 class="text-lg font-bold text-c-text leading-tight">ONT <span class="text-c-dim mx-1">&#9992;</span> LGA<span class="text-xs text-c-muted font-mono ml-2">11h 1m total</span></h2>
-              <button onclick="navigator.clipboard.writeText('IFWAUN');this.querySelector('.copied').style.display='inline';this.querySelector('.label').style.display='none';setTimeout(()=>{this.querySelector('.copied').style.display='none';this.querySelector('.label').style.display='inline'},1500)" class="text-blue-500 text-sm font-medium hover:underline cursor-pointer transition inline-flex items-center gap-1">
+        <div class="flex items-start gap-3 mb-4">
+          <img src="https://www.google.com/s2/favicons?domain=aa.com&sz=128" alt="American Airlines" width="40" height="40" loading="lazy" class="w-9 h-9 md:w-10 md:h-10 rounded-full object-cover shadow-lg bg-white shrink-0" onerror="this.outerHTML='<div class=\'w-9 h-9 md:w-10 md:h-10 rounded-full bg-sky-700 flex items-center justify-center text-white font-bold text-lg shadow-lg shrink-0\'>A</div>'">
+          <div class="flex-1 min-w-0">
+            <div class="flex justify-between items-start gap-2">
+              <div class="min-w-0">
+                <h2 class="text-base md:text-lg font-bold text-c-text leading-tight">ONT <span class="text-c-dim mx-1">&#9992;</span> LGA</h2>
+                <button onclick="navigator.clipboard.writeText('IFWAUN');this.querySelector('.copied').style.display='inline';this.querySelector('.label').style.display='none';setTimeout(()=>{this.querySelector('.copied').style.display='none';this.querySelector('.label').style.display='inline'},1500)" class="text-blue-500 text-sm font-medium hover:underline cursor-pointer transition inline-flex items-center gap-1">
         <span class="label">American Airlines &bull; IFWAUN</span>
         <span class="copied text-green-500" style="display:none">Copied!</span>
         <svg class="w-3.5 h-3.5 opacity-40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
        </button>
+              </div>
+              <div class="text-right shrink-0">
+                <div class="text-lg md:text-2xl font-bold text-c-text whitespace-nowrap">Wed, Feb 25</div>
+                <div class="text-xs font-mono mt-0.5 text-orange-500 font-bold animate-pulse">Today</div>
+              </div>
             </div>
-          </div>
-          <div class="text-right">
-            <div class="text-2xl font-bold text-c-text">Wed, Feb 25</div>
-            <div class="text-xs font-mono mt-1 text-orange-500 font-bold animate-pulse">Today</div>
+            <div class="mt-1"><span class="text-xs text-c-muted font-mono ml-2">11h 1m total</span></div>
           </div>
         </div>
 
-        <div class="bg-c-seg rounded-xl p-3 md:p-4">
+        <div class="bg-c-seg rounded-xl p-2.5 md:p-4">
           
-      <div class="flex items-center justify-between py-2 border-b border-c-seg last:border-0">
-        <div class="flex items-center gap-3">
+      <div class="flex items-center justify-between gap-2 py-2 border-b border-c-seg last:border-0">
+        <div class="flex items-center gap-2 min-w-0">
           <a href="https://www.flightaware.com/live/flight/AAL1833" target="_blank" class="text-xs font-mono text-blue-500 hover:text-blue-600 bg-c-bg2 px-1.5 py-0.5 rounded hover:underline transition">AA1833</a>
-          <div class="flex items-center gap-2">
-            <span class="font-bold text-c-text">ONT</span>
-            <span class="text-c-dim">&rarr;</span>
-            <span class="font-bold text-c-text">DFW</span>
-          </div>
+          <span class="font-bold text-c-text">ONT</span>
+          <span class="text-c-dim">&rarr;</span>
+          <span class="font-bold text-c-text">DFW</span>
         </div>
-        <div class="text-sm text-c-muted">
+        <div class="text-xs md:text-sm text-c-muted whitespace-nowrap">
           6:00a - 11:02a
         </div>
       </div>
@@ -194,16 +194,14 @@
             <svg class="w-3 h-3 text-c-dim" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
             <span class="text-xs font-mono text-c-dim">1h 35m layover at DFW</span>
           </div>
-      <div class="flex items-center justify-between py-2 border-b border-c-seg last:border-0">
-        <div class="flex items-center gap-3">
+      <div class="flex items-center justify-between gap-2 py-2 border-b border-c-seg last:border-0">
+        <div class="flex items-center gap-2 min-w-0">
           <a href="https://www.flightaware.com/live/flight/AAL876" target="_blank" class="text-xs font-mono text-blue-500 hover:text-blue-600 bg-c-bg2 px-1.5 py-0.5 rounded hover:underline transition">AA876</a>
-          <div class="flex items-center gap-2">
-            <span class="font-bold text-c-text">DFW</span>
-            <span class="text-c-dim">&rarr;</span>
-            <span class="font-bold text-c-text">LGA</span>
-          </div>
+          <span class="font-bold text-c-text">DFW</span>
+          <span class="text-c-dim">&rarr;</span>
+          <span class="font-bold text-c-text">LGA</span>
         </div>
-        <div class="text-sm text-c-muted">
+        <div class="text-xs md:text-sm text-c-muted whitespace-nowrap">
           12:37p - 5:01p
         </div>
       </div>
@@ -224,12 +222,12 @@
     </section>
   
     <section class="mb-10">
-      <div class="sticky top-0 z-10 backdrop-blur-md bg-c-sticky border-b border-c-line py-4 mb-6 -mx-4 px-4 flex justify-between items-baseline">
-        <div class="flex items-baseline">
-          <h2 class="text-2xl font-bold tracking-tight text-c-text uppercase">Los Angeles</h2>
+      <div class="sticky top-0 z-10 backdrop-blur-md bg-c-sticky border-b border-c-line py-3 md:py-4 mb-4 md:mb-6 -mx-4 px-4 flex justify-between items-baseline gap-2">
+        <div class="flex items-baseline flex-wrap gap-y-1">
+          <h2 class="text-xl md:text-2xl font-bold tracking-tight text-c-text uppercase">Los Angeles</h2>
           <span class="text-xs text-c-muted ml-2">12 nights</span>
         </div>
-        <span class="font-mono text-xs text-c-dim uppercase tracking-widest border border-c-badge rounded-full px-3 py-1">Mar 9 – Mar 21</span>
+        <span class="font-mono text-[10px] md:text-xs text-c-dim uppercase tracking-widest border border-c-badge rounded-full px-2 md:px-3 py-1 whitespace-nowrap">Mar 9 – Mar 21</span>
       </div>
       <div class="bg-c-seg rounded-2xl p-4 md:p-6">
         
@@ -238,40 +236,41 @@
         <div class="absolute left-0 top-2 w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.5)]"></div>
         
     <article class="card rounded-2xl overflow-hidden shadow-lg transition hover:shadow-xl group ">
-      <div class="p-5 md:p-6 relative overflow-hidden">
+      <div class="p-4 md:p-6 relative overflow-hidden">
         <div class="absolute top-0 right-0 bg-blue-500 text-white text-[10px] font-bold px-3 py-1 rounded-bl-xl uppercase tracking-wider">Next Up</div>
         
 
-        <div class="flex justify-between items-start mb-4">
-          <div class="flex items-center gap-3">
-            <img src="https://logo.clearbit.com/southwest.com" alt="Southwest Airlines" class="w-10 h-10 rounded-full object-cover shadow-lg bg-white" onerror="this.outerHTML='<div class=\'w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-lg shadow-lg\'>S</div>'">
-            <div>
-              <h2 class="text-lg font-bold text-c-text leading-tight">LGA <span class="text-c-dim mx-1">&#9992;</span> SNA<span class="text-xs text-c-muted font-mono ml-2">7h 20m total</span></h2>
-              <button onclick="navigator.clipboard.writeText('AE6LOI');this.querySelector('.copied').style.display='inline';this.querySelector('.label').style.display='none';setTimeout(()=>{this.querySelector('.copied').style.display='none';this.querySelector('.label').style.display='inline'},1500)" class="text-blue-500 text-sm font-medium hover:underline cursor-pointer transition inline-flex items-center gap-1">
+        <div class="flex items-start gap-3 mb-4">
+          <img src="https://www.google.com/s2/favicons?domain=southwest.com&sz=128" alt="Southwest Airlines" width="40" height="40" loading="lazy" class="w-9 h-9 md:w-10 md:h-10 rounded-full object-cover shadow-lg bg-white shrink-0" onerror="this.outerHTML='<div class=\'w-9 h-9 md:w-10 md:h-10 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-lg shadow-lg shrink-0\'>S</div>'">
+          <div class="flex-1 min-w-0">
+            <div class="flex justify-between items-start gap-2">
+              <div class="min-w-0">
+                <h2 class="text-base md:text-lg font-bold text-c-text leading-tight">LGA <span class="text-c-dim mx-1">&#9992;</span> SNA</h2>
+                <button onclick="navigator.clipboard.writeText('AE6LOI');this.querySelector('.copied').style.display='inline';this.querySelector('.label').style.display='none';setTimeout(()=>{this.querySelector('.copied').style.display='none';this.querySelector('.label').style.display='inline'},1500)" class="text-blue-500 text-sm font-medium hover:underline cursor-pointer transition inline-flex items-center gap-1">
         <span class="label">Southwest Airlines &bull; AE6LOI</span>
         <span class="copied text-green-500" style="display:none">Copied!</span>
         <svg class="w-3.5 h-3.5 opacity-40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
        </button>
+              </div>
+              <div class="text-right shrink-0">
+                <div class="text-lg md:text-2xl font-bold text-c-text whitespace-nowrap">Mon, Mar 9</div>
+                <div class="text-xs font-mono mt-0.5 text-yellow-500">in 12 days</div>
+              </div>
             </div>
-          </div>
-          <div class="text-right">
-            <div class="text-2xl font-bold text-c-text">Mon, Mar 9</div>
-            <div class="text-xs font-mono mt-1 text-yellow-500">in 12 days</div>
+            <div class="mt-1"><span class="text-xs text-c-muted font-mono ml-2">7h 20m total</span></div>
           </div>
         </div>
 
-        <div class="bg-c-seg rounded-xl p-3 md:p-4">
+        <div class="bg-c-seg rounded-xl p-2.5 md:p-4">
           
-      <div class="flex items-center justify-between py-2 border-b border-c-seg last:border-0">
-        <div class="flex items-center gap-3">
+      <div class="flex items-center justify-between gap-2 py-2 border-b border-c-seg last:border-0">
+        <div class="flex items-center gap-2 min-w-0">
           <a href="https://www.flightaware.com/live/flight/SWA3793" target="_blank" class="text-xs font-mono text-blue-500 hover:text-blue-600 bg-c-bg2 px-1.5 py-0.5 rounded hover:underline transition">WN3793</a>
-          <div class="flex items-center gap-2">
-            <span class="font-bold text-c-text">LGA</span>
-            <span class="text-c-dim">&rarr;</span>
-            <span class="font-bold text-c-text">DEN</span>
-          </div>
+          <span class="font-bold text-c-text">LGA</span>
+          <span class="text-c-dim">&rarr;</span>
+          <span class="font-bold text-c-text">DEN</span>
         </div>
-        <div class="text-sm text-c-muted">
+        <div class="text-xs md:text-sm text-c-muted whitespace-nowrap">
           8:30a - 11:05a
         </div>
       </div>
@@ -279,16 +278,14 @@
             <svg class="w-3 h-3 text-c-dim" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
             <span class="text-xs font-mono text-c-dim">3h 15m layover at DEN</span>
           </div>
-      <div class="flex items-center justify-between py-2 border-b border-c-seg last:border-0">
-        <div class="flex items-center gap-3">
+      <div class="flex items-center justify-between gap-2 py-2 border-b border-c-seg last:border-0">
+        <div class="flex items-center gap-2 min-w-0">
           <a href="https://www.flightaware.com/live/flight/SWA2016" target="_blank" class="text-xs font-mono text-blue-500 hover:text-blue-600 bg-c-bg2 px-1.5 py-0.5 rounded hover:underline transition">WN2016</a>
-          <div class="flex items-center gap-2">
-            <span class="font-bold text-c-text">DEN</span>
-            <span class="text-c-dim">&rarr;</span>
-            <span class="font-bold text-c-text">SNA</span>
-          </div>
+          <span class="font-bold text-c-text">DEN</span>
+          <span class="text-c-dim">&rarr;</span>
+          <span class="font-bold text-c-text">SNA</span>
         </div>
-        <div class="text-sm text-c-muted">
+        <div class="text-xs md:text-sm text-c-muted whitespace-nowrap">
           2:20p - 3:50p
         </div>
       </div>
@@ -304,40 +301,41 @@
         <div class="absolute left-0 top-2 w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.5)]"></div>
         
     <article class="card rounded-2xl overflow-hidden shadow-lg transition hover:shadow-xl group ">
-      <div class="p-5 md:p-6 relative overflow-hidden">
+      <div class="p-4 md:p-6 relative overflow-hidden">
         
         
 
-        <div class="flex justify-between items-start mb-4">
-          <div class="flex items-center gap-3">
-            <img src="https://logo.clearbit.com/aa.com" alt="American Airlines" class="w-10 h-10 rounded-full object-cover shadow-lg bg-white" onerror="this.outerHTML='<div class=\'w-10 h-10 rounded-full bg-sky-700 flex items-center justify-center text-white font-bold text-lg shadow-lg\'>A</div>'">
-            <div>
-              <h2 class="text-lg font-bold text-c-text leading-tight">ONT <span class="text-c-dim mx-1">&#9992;</span> EWR<span class="text-xs text-c-muted font-mono ml-2">10h 1m total</span></h2>
-              <button onclick="navigator.clipboard.writeText('CHWBQM');this.querySelector('.copied').style.display='inline';this.querySelector('.label').style.display='none';setTimeout(()=>{this.querySelector('.copied').style.display='none';this.querySelector('.label').style.display='inline'},1500)" class="text-blue-500 text-sm font-medium hover:underline cursor-pointer transition inline-flex items-center gap-1">
+        <div class="flex items-start gap-3 mb-4">
+          <img src="https://www.google.com/s2/favicons?domain=aa.com&sz=128" alt="American Airlines" width="40" height="40" loading="lazy" class="w-9 h-9 md:w-10 md:h-10 rounded-full object-cover shadow-lg bg-white shrink-0" onerror="this.outerHTML='<div class=\'w-9 h-9 md:w-10 md:h-10 rounded-full bg-sky-700 flex items-center justify-center text-white font-bold text-lg shadow-lg shrink-0\'>A</div>'">
+          <div class="flex-1 min-w-0">
+            <div class="flex justify-between items-start gap-2">
+              <div class="min-w-0">
+                <h2 class="text-base md:text-lg font-bold text-c-text leading-tight">ONT <span class="text-c-dim mx-1">&#9992;</span> EWR</h2>
+                <button onclick="navigator.clipboard.writeText('CHWBQM');this.querySelector('.copied').style.display='inline';this.querySelector('.label').style.display='none';setTimeout(()=>{this.querySelector('.copied').style.display='none';this.querySelector('.label').style.display='inline'},1500)" class="text-blue-500 text-sm font-medium hover:underline cursor-pointer transition inline-flex items-center gap-1">
         <span class="label">American Airlines &bull; CHWBQM</span>
         <span class="copied text-green-500" style="display:none">Copied!</span>
         <svg class="w-3.5 h-3.5 opacity-40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
        </button>
+              </div>
+              <div class="text-right shrink-0">
+                <div class="text-lg md:text-2xl font-bold text-c-text whitespace-nowrap">Sat, Mar 21</div>
+                <div class="text-xs font-mono mt-0.5 text-green-500">in 24 days</div>
+              </div>
             </div>
-          </div>
-          <div class="text-right">
-            <div class="text-2xl font-bold text-c-text">Sat, Mar 21</div>
-            <div class="text-xs font-mono mt-1 text-green-500">in 24 days</div>
+            <div class="mt-1"><span class="text-xs text-c-muted font-mono ml-2">10h 1m total</span></div>
           </div>
         </div>
 
-        <div class="bg-c-seg rounded-xl p-3 md:p-4">
+        <div class="bg-c-seg rounded-xl p-2.5 md:p-4">
           
-      <div class="flex items-center justify-between py-2 border-b border-c-seg last:border-0">
-        <div class="flex items-center gap-3">
+      <div class="flex items-center justify-between gap-2 py-2 border-b border-c-seg last:border-0">
+        <div class="flex items-center gap-2 min-w-0">
           <a href="https://www.flightaware.com/live/flight/AAL1666" target="_blank" class="text-xs font-mono text-blue-500 hover:text-blue-600 bg-c-bg2 px-1.5 py-0.5 rounded hover:underline transition">AA1666</a>
-          <div class="flex items-center gap-2">
-            <span class="font-bold text-c-text">ONT</span>
-            <span class="text-c-dim">&rarr;</span>
-            <span class="font-bold text-c-text">PHX</span>
-          </div>
+          <span class="font-bold text-c-text">ONT</span>
+          <span class="text-c-dim">&rarr;</span>
+          <span class="font-bold text-c-text">PHX</span>
         </div>
-        <div class="text-sm text-c-muted">
+        <div class="text-xs md:text-sm text-c-muted whitespace-nowrap">
           7:59p - 9:19p
         </div>
       </div>
@@ -345,16 +343,14 @@
             <svg class="w-3 h-3 text-c-dim" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
             <span class="text-xs font-mono text-c-dim">1h 2m layover at PHX</span>
           </div>
-      <div class="flex items-center justify-between py-2 border-b border-c-seg last:border-0">
-        <div class="flex items-center gap-3">
+      <div class="flex items-center justify-between gap-2 py-2 border-b border-c-seg last:border-0">
+        <div class="flex items-center gap-2 min-w-0">
           <a href="https://www.flightaware.com/live/flight/AAL2669" target="_blank" class="text-xs font-mono text-blue-500 hover:text-blue-600 bg-c-bg2 px-1.5 py-0.5 rounded hover:underline transition">AA2669</a>
-          <div class="flex items-center gap-2">
-            <span class="font-bold text-c-text">PHX</span>
-            <span class="text-c-dim">&rarr;</span>
-            <span class="font-bold text-c-text">EWR</span>
-          </div>
+          <span class="font-bold text-c-text">PHX</span>
+          <span class="text-c-dim">&rarr;</span>
+          <span class="font-bold text-c-text">EWR</span>
         </div>
-        <div class="text-sm text-c-muted">
+        <div class="text-xs md:text-sm text-c-muted whitespace-nowrap">
           10:21p - 6:00a
         </div>
       </div>
@@ -370,12 +366,12 @@
     </section>
   
     <section class="mb-10">
-      <div class="sticky top-0 z-10 backdrop-blur-md bg-c-sticky border-b border-c-line py-4 mb-6 -mx-4 px-4 flex justify-between items-baseline">
-        <div class="flex items-baseline">
-          <h2 class="text-2xl font-bold tracking-tight text-c-text uppercase">IST</h2>
+      <div class="sticky top-0 z-10 backdrop-blur-md bg-c-sticky border-b border-c-line py-3 md:py-4 mb-4 md:mb-6 -mx-4 px-4 flex justify-between items-baseline gap-2">
+        <div class="flex items-baseline flex-wrap gap-y-1">
+          <h2 class="text-xl md:text-2xl font-bold tracking-tight text-c-text uppercase">IST</h2>
           <span class="text-xs text-c-muted ml-2">14 nights</span>
         </div>
-        <span class="font-mono text-xs text-c-dim uppercase tracking-widest border border-c-badge rounded-full px-3 py-1">Mar 26 – Apr 9</span>
+        <span class="font-mono text-[10px] md:text-xs text-c-dim uppercase tracking-widest border border-c-badge rounded-full px-2 md:px-3 py-1 whitespace-nowrap">Mar 26 – Apr 9</span>
       </div>
       <div class="bg-c-seg rounded-2xl p-4 md:p-6">
         
@@ -384,40 +380,41 @@
         <div class="absolute left-0 top-2 w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.5)]"></div>
         
     <article class="card rounded-2xl overflow-hidden shadow-lg transition hover:shadow-xl group ">
-      <div class="p-5 md:p-6 relative overflow-hidden">
+      <div class="p-4 md:p-6 relative overflow-hidden">
         <div class="absolute top-0 right-0 bg-blue-500 text-white text-[10px] font-bold px-3 py-1 rounded-bl-xl uppercase tracking-wider">Next Up</div>
         
 
-        <div class="flex justify-between items-start mb-4">
-          <div class="flex items-center gap-3">
-            <img src="https://logo.clearbit.com/turkishairlines.com" alt="Turkish Airlines" class="w-10 h-10 rounded-full object-cover shadow-lg bg-white" onerror="this.outerHTML='<div class=\'w-10 h-10 rounded-full bg-red-600 flex items-center justify-center text-white font-bold text-lg shadow-lg\'>T</div>'">
-            <div>
-              <h2 class="text-lg font-bold text-c-text leading-tight">JFK <span class="text-c-dim mx-1">&#9992;</span> IST<span class="text-xs text-c-muted font-mono ml-2">17h 5m total</span></h2>
-              <button onclick="navigator.clipboard.writeText('U4HZA7');this.querySelector('.copied').style.display='inline';this.querySelector('.label').style.display='none';setTimeout(()=>{this.querySelector('.copied').style.display='none';this.querySelector('.label').style.display='inline'},1500)" class="text-blue-500 text-sm font-medium hover:underline cursor-pointer transition inline-flex items-center gap-1">
+        <div class="flex items-start gap-3 mb-4">
+          <img src="https://www.google.com/s2/favicons?domain=turkishairlines.com&sz=128" alt="Turkish Airlines" width="40" height="40" loading="lazy" class="w-9 h-9 md:w-10 md:h-10 rounded-full object-cover shadow-lg bg-white shrink-0" onerror="this.outerHTML='<div class=\'w-9 h-9 md:w-10 md:h-10 rounded-full bg-red-600 flex items-center justify-center text-white font-bold text-lg shadow-lg shrink-0\'>T</div>'">
+          <div class="flex-1 min-w-0">
+            <div class="flex justify-between items-start gap-2">
+              <div class="min-w-0">
+                <h2 class="text-base md:text-lg font-bold text-c-text leading-tight">JFK <span class="text-c-dim mx-1">&#9992;</span> IST</h2>
+                <button onclick="navigator.clipboard.writeText('U4HZA7');this.querySelector('.copied').style.display='inline';this.querySelector('.label').style.display='none';setTimeout(()=>{this.querySelector('.copied').style.display='none';this.querySelector('.label').style.display='inline'},1500)" class="text-blue-500 text-sm font-medium hover:underline cursor-pointer transition inline-flex items-center gap-1">
         <span class="label">Turkish Airlines &bull; U4HZA7</span>
         <span class="copied text-green-500" style="display:none">Copied!</span>
         <svg class="w-3.5 h-3.5 opacity-40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
        </button>
+              </div>
+              <div class="text-right shrink-0">
+                <div class="text-lg md:text-2xl font-bold text-c-text whitespace-nowrap">Thu, Mar 26</div>
+                <div class="text-xs font-mono mt-0.5 text-green-500">in 29 days</div>
+              </div>
             </div>
-          </div>
-          <div class="text-right">
-            <div class="text-2xl font-bold text-c-text">Thu, Mar 26</div>
-            <div class="text-xs font-mono mt-1 text-green-500">in 29 days</div>
+            <div class="mt-1"><span class="text-xs text-c-muted font-mono ml-2">17h 5m total</span></div>
           </div>
         </div>
 
-        <div class="bg-c-seg rounded-xl p-3 md:p-4">
+        <div class="bg-c-seg rounded-xl p-2.5 md:p-4">
           
-      <div class="flex items-center justify-between py-2 border-b border-c-seg last:border-0">
-        <div class="flex items-center gap-3">
+      <div class="flex items-center justify-between gap-2 py-2 border-b border-c-seg last:border-0">
+        <div class="flex items-center gap-2 min-w-0">
           <a href="https://www.flightaware.com/live/flight/THY2" target="_blank" class="text-xs font-mono text-blue-500 hover:text-blue-600 bg-c-bg2 px-1.5 py-0.5 rounded hover:underline transition">TK2</a>
-          <div class="flex items-center gap-2">
-            <span class="font-bold text-c-text">JFK</span>
-            <span class="text-c-dim">&rarr;</span>
-            <span class="font-bold text-c-text">IST</span>
-          </div>
+          <span class="font-bold text-c-text">JFK</span>
+          <span class="text-c-dim">&rarr;</span>
+          <span class="font-bold text-c-text">IST</span>
         </div>
-        <div class="text-sm text-c-muted">
+        <div class="text-xs md:text-sm text-c-muted whitespace-nowrap">
           20:40 - 13:45
         </div>
       </div>
@@ -433,40 +430,41 @@
         <div class="absolute left-0 top-2 w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.5)]"></div>
         
     <article class="card rounded-2xl overflow-hidden shadow-lg transition hover:shadow-xl group ">
-      <div class="p-5 md:p-6 relative overflow-hidden">
+      <div class="p-4 md:p-6 relative overflow-hidden">
         
         
 
-        <div class="flex justify-between items-start mb-4">
-          <div class="flex items-center gap-3">
-            <img src="https://logo.clearbit.com/turkishairlines.com" alt="Turkish Airlines" class="w-10 h-10 rounded-full object-cover shadow-lg bg-white" onerror="this.outerHTML='<div class=\'w-10 h-10 rounded-full bg-red-600 flex items-center justify-center text-white font-bold text-lg shadow-lg\'>T</div>'">
-            <div>
-              <h2 class="text-lg font-bold text-c-text leading-tight">IST <span class="text-c-dim mx-1">&#9992;</span> ASR<span class="text-xs text-c-muted font-mono ml-2">1h 30m total</span></h2>
-              <button onclick="navigator.clipboard.writeText('VPBMRV');this.querySelector('.copied').style.display='inline';this.querySelector('.label').style.display='none';setTimeout(()=>{this.querySelector('.copied').style.display='none';this.querySelector('.label').style.display='inline'},1500)" class="text-blue-500 text-sm font-medium hover:underline cursor-pointer transition inline-flex items-center gap-1">
+        <div class="flex items-start gap-3 mb-4">
+          <img src="https://www.google.com/s2/favicons?domain=turkishairlines.com&sz=128" alt="Turkish Airlines" width="40" height="40" loading="lazy" class="w-9 h-9 md:w-10 md:h-10 rounded-full object-cover shadow-lg bg-white shrink-0" onerror="this.outerHTML='<div class=\'w-9 h-9 md:w-10 md:h-10 rounded-full bg-red-600 flex items-center justify-center text-white font-bold text-lg shadow-lg shrink-0\'>T</div>'">
+          <div class="flex-1 min-w-0">
+            <div class="flex justify-between items-start gap-2">
+              <div class="min-w-0">
+                <h2 class="text-base md:text-lg font-bold text-c-text leading-tight">IST <span class="text-c-dim mx-1">&#9992;</span> ASR</h2>
+                <button onclick="navigator.clipboard.writeText('VPBMRV');this.querySelector('.copied').style.display='inline';this.querySelector('.label').style.display='none';setTimeout(()=>{this.querySelector('.copied').style.display='none';this.querySelector('.label').style.display='inline'},1500)" class="text-blue-500 text-sm font-medium hover:underline cursor-pointer transition inline-flex items-center gap-1">
         <span class="label">Turkish Airlines &bull; VPBMRV</span>
         <span class="copied text-green-500" style="display:none">Copied!</span>
         <svg class="w-3.5 h-3.5 opacity-40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
        </button>
+              </div>
+              <div class="text-right shrink-0">
+                <div class="text-lg md:text-2xl font-bold text-c-text whitespace-nowrap">Mon, Mar 30</div>
+                <div class="text-xs font-mono mt-0.5 text-green-500">in 33 days</div>
+              </div>
             </div>
-          </div>
-          <div class="text-right">
-            <div class="text-2xl font-bold text-c-text">Mon, Mar 30</div>
-            <div class="text-xs font-mono mt-1 text-green-500">in 33 days</div>
+            <div class="mt-1"><span class="text-xs text-c-muted font-mono ml-2">1h 30m total</span></div>
           </div>
         </div>
 
-        <div class="bg-c-seg rounded-xl p-3 md:p-4">
+        <div class="bg-c-seg rounded-xl p-2.5 md:p-4">
           
-      <div class="flex items-center justify-between py-2 border-b border-c-seg last:border-0">
-        <div class="flex items-center gap-3">
+      <div class="flex items-center justify-between gap-2 py-2 border-b border-c-seg last:border-0">
+        <div class="flex items-center gap-2 min-w-0">
           <a href="https://www.flightaware.com/live/flight/THY2014" target="_blank" class="text-xs font-mono text-blue-500 hover:text-blue-600 bg-c-bg2 px-1.5 py-0.5 rounded hover:underline transition">TK2014</a>
-          <div class="flex items-center gap-2">
-            <span class="font-bold text-c-text">IST</span>
-            <span class="text-c-dim">&rarr;</span>
-            <span class="font-bold text-c-text">ASR</span>
-          </div>
+          <span class="font-bold text-c-text">IST</span>
+          <span class="text-c-dim">&rarr;</span>
+          <span class="font-bold text-c-text">ASR</span>
         </div>
-        <div class="text-sm text-c-muted">
+        <div class="text-xs md:text-sm text-c-muted whitespace-nowrap">
           11:00 - 12:30
         </div>
       </div>
@@ -482,40 +480,41 @@
         <div class="absolute left-0 top-2 w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.5)]"></div>
         
     <article class="card rounded-2xl overflow-hidden shadow-lg transition hover:shadow-xl group ">
-      <div class="p-5 md:p-6 relative overflow-hidden">
+      <div class="p-4 md:p-6 relative overflow-hidden">
         
         
 
-        <div class="flex justify-between items-start mb-4">
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-c-btn flex items-center justify-center text-white font-bold text-lg shadow-lg">P</div>
-            <div>
-              <h2 class="text-lg font-bold text-c-text leading-tight">ASR <span class="text-c-dim mx-1">&#9992;</span> ADB<span class="text-xs text-c-muted font-mono ml-2">1h 30m total</span></h2>
-              <button onclick="navigator.clipboard.writeText('1PWMEK');this.querySelector('.copied').style.display='inline';this.querySelector('.label').style.display='none';setTimeout(()=>{this.querySelector('.copied').style.display='none';this.querySelector('.label').style.display='inline'},1500)" class="text-blue-500 text-sm font-medium hover:underline cursor-pointer transition inline-flex items-center gap-1">
+        <div class="flex items-start gap-3 mb-4">
+          <div class="w-9 h-9 md:w-10 md:h-10 rounded-full bg-c-btn flex items-center justify-center text-white font-bold text-lg shadow-lg shrink-0">P</div>
+          <div class="flex-1 min-w-0">
+            <div class="flex justify-between items-start gap-2">
+              <div class="min-w-0">
+                <h2 class="text-base md:text-lg font-bold text-c-text leading-tight">ASR <span class="text-c-dim mx-1">&#9992;</span> ADB</h2>
+                <button onclick="navigator.clipboard.writeText('1PWMEK');this.querySelector('.copied').style.display='inline';this.querySelector('.label').style.display='none';setTimeout(()=>{this.querySelector('.copied').style.display='none';this.querySelector('.label').style.display='inline'},1500)" class="text-blue-500 text-sm font-medium hover:underline cursor-pointer transition inline-flex items-center gap-1">
         <span class="label">Pegasus Airlines &bull; 1PWMEK</span>
         <span class="copied text-green-500" style="display:none">Copied!</span>
         <svg class="w-3.5 h-3.5 opacity-40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
        </button>
+              </div>
+              <div class="text-right shrink-0">
+                <div class="text-lg md:text-2xl font-bold text-c-text whitespace-nowrap">Wed, Apr 1</div>
+                <div class="text-xs font-mono mt-0.5 text-green-500">in 35 days</div>
+              </div>
             </div>
-          </div>
-          <div class="text-right">
-            <div class="text-2xl font-bold text-c-text">Wed, Apr 1</div>
-            <div class="text-xs font-mono mt-1 text-green-500">in 35 days</div>
+            <div class="mt-1"><span class="text-xs text-c-muted font-mono ml-2">1h 30m total</span></div>
           </div>
         </div>
 
-        <div class="bg-c-seg rounded-xl p-3 md:p-4">
+        <div class="bg-c-seg rounded-xl p-2.5 md:p-4">
           
-      <div class="flex items-center justify-between py-2 border-b border-c-seg last:border-0">
-        <div class="flex items-center gap-3">
+      <div class="flex items-center justify-between gap-2 py-2 border-b border-c-seg last:border-0">
+        <div class="flex items-center gap-2 min-w-0">
           <div class="text-xs font-mono text-c-muted bg-c-bg2 px-1.5 py-0.5 rounded">3191</div>
-          <div class="flex items-center gap-2">
-            <span class="font-bold text-c-text">ASR</span>
-            <span class="text-c-dim">&rarr;</span>
-            <span class="font-bold text-c-text">ADB</span>
-          </div>
+          <span class="font-bold text-c-text">ASR</span>
+          <span class="text-c-dim">&rarr;</span>
+          <span class="font-bold text-c-text">ADB</span>
         </div>
-        <div class="text-sm text-c-muted">
+        <div class="text-xs md:text-sm text-c-muted whitespace-nowrap">
           23:35 - 1:05
         </div>
       </div>
@@ -531,40 +530,41 @@
         <div class="absolute left-0 top-2 w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.5)]"></div>
         
     <article class="card rounded-2xl overflow-hidden shadow-lg transition hover:shadow-xl group ">
-      <div class="p-5 md:p-6 relative overflow-hidden">
+      <div class="p-4 md:p-6 relative overflow-hidden">
         
         
 
-        <div class="flex justify-between items-start mb-4">
-          <div class="flex items-center gap-3">
-            <img src="https://logo.clearbit.com/turkishairlines.com" alt="Turkish Airlines" class="w-10 h-10 rounded-full object-cover shadow-lg bg-white" onerror="this.outerHTML='<div class=\'w-10 h-10 rounded-full bg-red-600 flex items-center justify-center text-white font-bold text-lg shadow-lg\'>T</div>'">
-            <div>
-              <h2 class="text-lg font-bold text-c-text leading-tight">ADB <span class="text-c-dim mx-1">&#9992;</span> IST<span class="text-xs text-c-muted font-mono ml-2">1h 25m total</span></h2>
-              <button onclick="navigator.clipboard.writeText('V2BMCN');this.querySelector('.copied').style.display='inline';this.querySelector('.label').style.display='none';setTimeout(()=>{this.querySelector('.copied').style.display='none';this.querySelector('.label').style.display='inline'},1500)" class="text-blue-500 text-sm font-medium hover:underline cursor-pointer transition inline-flex items-center gap-1">
+        <div class="flex items-start gap-3 mb-4">
+          <img src="https://www.google.com/s2/favicons?domain=turkishairlines.com&sz=128" alt="Turkish Airlines" width="40" height="40" loading="lazy" class="w-9 h-9 md:w-10 md:h-10 rounded-full object-cover shadow-lg bg-white shrink-0" onerror="this.outerHTML='<div class=\'w-9 h-9 md:w-10 md:h-10 rounded-full bg-red-600 flex items-center justify-center text-white font-bold text-lg shadow-lg shrink-0\'>T</div>'">
+          <div class="flex-1 min-w-0">
+            <div class="flex justify-between items-start gap-2">
+              <div class="min-w-0">
+                <h2 class="text-base md:text-lg font-bold text-c-text leading-tight">ADB <span class="text-c-dim mx-1">&#9992;</span> IST</h2>
+                <button onclick="navigator.clipboard.writeText('V2BMCN');this.querySelector('.copied').style.display='inline';this.querySelector('.label').style.display='none';setTimeout(()=>{this.querySelector('.copied').style.display='none';this.querySelector('.label').style.display='inline'},1500)" class="text-blue-500 text-sm font-medium hover:underline cursor-pointer transition inline-flex items-center gap-1">
         <span class="label">Turkish Airlines &bull; V2BMCN</span>
         <span class="copied text-green-500" style="display:none">Copied!</span>
         <svg class="w-3.5 h-3.5 opacity-40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
        </button>
+              </div>
+              <div class="text-right shrink-0">
+                <div class="text-lg md:text-2xl font-bold text-c-text whitespace-nowrap">Sat, Apr 4</div>
+                <div class="text-xs font-mono mt-0.5 text-green-500">in 38 days</div>
+              </div>
             </div>
-          </div>
-          <div class="text-right">
-            <div class="text-2xl font-bold text-c-text">Sat, Apr 4</div>
-            <div class="text-xs font-mono mt-1 text-green-500">in 38 days</div>
+            <div class="mt-1"><span class="text-xs text-c-muted font-mono ml-2">1h 25m total</span></div>
           </div>
         </div>
 
-        <div class="bg-c-seg rounded-xl p-3 md:p-4">
+        <div class="bg-c-seg rounded-xl p-2.5 md:p-4">
           
-      <div class="flex items-center justify-between py-2 border-b border-c-seg last:border-0">
-        <div class="flex items-center gap-3">
+      <div class="flex items-center justify-between gap-2 py-2 border-b border-c-seg last:border-0">
+        <div class="flex items-center gap-2 min-w-0">
           <a href="https://www.flightaware.com/live/flight/THY2321" target="_blank" class="text-xs font-mono text-blue-500 hover:text-blue-600 bg-c-bg2 px-1.5 py-0.5 rounded hover:underline transition">TK2321</a>
-          <div class="flex items-center gap-2">
-            <span class="font-bold text-c-text">ADB</span>
-            <span class="text-c-dim">&rarr;</span>
-            <span class="font-bold text-c-text">IST</span>
-          </div>
+          <span class="font-bold text-c-text">ADB</span>
+          <span class="text-c-dim">&rarr;</span>
+          <span class="font-bold text-c-text">IST</span>
         </div>
-        <div class="text-sm text-c-muted">
+        <div class="text-xs md:text-sm text-c-muted whitespace-nowrap">
           12:55 - 14:20
         </div>
       </div>
@@ -580,40 +580,41 @@
         <div class="absolute left-0 top-2 w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.5)]"></div>
         
     <article class="card rounded-2xl overflow-hidden shadow-lg transition hover:shadow-xl group ">
-      <div class="p-5 md:p-6 relative overflow-hidden">
+      <div class="p-4 md:p-6 relative overflow-hidden">
         
         
 
-        <div class="flex justify-between items-start mb-4">
-          <div class="flex items-center gap-3">
-            <img src="https://logo.clearbit.com/turkishairlines.com" alt="Turkish Airlines" class="w-10 h-10 rounded-full object-cover shadow-lg bg-white" onerror="this.outerHTML='<div class=\'w-10 h-10 rounded-full bg-red-600 flex items-center justify-center text-white font-bold text-lg shadow-lg\'>T</div>'">
-            <div>
-              <h2 class="text-lg font-bold text-c-text leading-tight">IST <span class="text-c-dim mx-1">&#9992;</span> DEL<span class="text-xs text-c-muted font-mono ml-2">8h 35m total</span></h2>
-              <button onclick="navigator.clipboard.writeText('U4HZA7');this.querySelector('.copied').style.display='inline';this.querySelector('.label').style.display='none';setTimeout(()=>{this.querySelector('.copied').style.display='none';this.querySelector('.label').style.display='inline'},1500)" class="text-blue-500 text-sm font-medium hover:underline cursor-pointer transition inline-flex items-center gap-1">
+        <div class="flex items-start gap-3 mb-4">
+          <img src="https://www.google.com/s2/favicons?domain=turkishairlines.com&sz=128" alt="Turkish Airlines" width="40" height="40" loading="lazy" class="w-9 h-9 md:w-10 md:h-10 rounded-full object-cover shadow-lg bg-white shrink-0" onerror="this.outerHTML='<div class=\'w-9 h-9 md:w-10 md:h-10 rounded-full bg-red-600 flex items-center justify-center text-white font-bold text-lg shadow-lg shrink-0\'>T</div>'">
+          <div class="flex-1 min-w-0">
+            <div class="flex justify-between items-start gap-2">
+              <div class="min-w-0">
+                <h2 class="text-base md:text-lg font-bold text-c-text leading-tight">IST <span class="text-c-dim mx-1">&#9992;</span> DEL</h2>
+                <button onclick="navigator.clipboard.writeText('U4HZA7');this.querySelector('.copied').style.display='inline';this.querySelector('.label').style.display='none';setTimeout(()=>{this.querySelector('.copied').style.display='none';this.querySelector('.label').style.display='inline'},1500)" class="text-blue-500 text-sm font-medium hover:underline cursor-pointer transition inline-flex items-center gap-1">
         <span class="label">Turkish Airlines &bull; U4HZA7</span>
         <span class="copied text-green-500" style="display:none">Copied!</span>
         <svg class="w-3.5 h-3.5 opacity-40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
        </button>
+              </div>
+              <div class="text-right shrink-0">
+                <div class="text-lg md:text-2xl font-bold text-c-text whitespace-nowrap">Sat, Apr 4</div>
+                <div class="text-xs font-mono mt-0.5 text-green-500">in 38 days</div>
+              </div>
             </div>
-          </div>
-          <div class="text-right">
-            <div class="text-2xl font-bold text-c-text">Sat, Apr 4</div>
-            <div class="text-xs font-mono mt-1 text-green-500">in 38 days</div>
+            <div class="mt-1"><span class="text-xs text-c-muted font-mono ml-2">8h 35m total</span></div>
           </div>
         </div>
 
-        <div class="bg-c-seg rounded-xl p-3 md:p-4">
+        <div class="bg-c-seg rounded-xl p-2.5 md:p-4">
           
-      <div class="flex items-center justify-between py-2 border-b border-c-seg last:border-0">
-        <div class="flex items-center gap-3">
+      <div class="flex items-center justify-between gap-2 py-2 border-b border-c-seg last:border-0">
+        <div class="flex items-center gap-2 min-w-0">
           <a href="https://www.flightaware.com/live/flight/THY716" target="_blank" class="text-xs font-mono text-blue-500 hover:text-blue-600 bg-c-bg2 px-1.5 py-0.5 rounded hover:underline transition">TK716</a>
-          <div class="flex items-center gap-2">
-            <span class="font-bold text-c-text">IST</span>
-            <span class="text-c-dim">&rarr;</span>
-            <span class="font-bold text-c-text">DEL</span>
-          </div>
+          <span class="font-bold text-c-text">IST</span>
+          <span class="text-c-dim">&rarr;</span>
+          <span class="font-bold text-c-text">DEL</span>
         </div>
-        <div class="text-sm text-c-muted">
+        <div class="text-xs md:text-sm text-c-muted whitespace-nowrap">
           20:15 - 4:50
         </div>
       </div>
@@ -629,40 +630,41 @@
         <div class="absolute left-0 top-2 w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.5)]"></div>
         
     <article class="card rounded-2xl overflow-hidden shadow-lg transition hover:shadow-xl group ">
-      <div class="p-5 md:p-6 relative overflow-hidden">
+      <div class="p-4 md:p-6 relative overflow-hidden">
         
         
 
-        <div class="flex justify-between items-start mb-4">
-          <div class="flex items-center gap-3">
-            <img src="https://logo.clearbit.com/turkishairlines.com" alt="Turkish Airlines" class="w-10 h-10 rounded-full object-cover shadow-lg bg-white" onerror="this.outerHTML='<div class=\'w-10 h-10 rounded-full bg-red-600 flex items-center justify-center text-white font-bold text-lg shadow-lg\'>T</div>'">
-            <div>
-              <h2 class="text-lg font-bold text-c-text leading-tight">DEL <span class="text-c-dim mx-1">&#9992;</span> JFK<span class="text-xs text-c-muted font-mono ml-2">11h 35m total</span></h2>
-              <button onclick="navigator.clipboard.writeText('U4HZA7');this.querySelector('.copied').style.display='inline';this.querySelector('.label').style.display='none';setTimeout(()=>{this.querySelector('.copied').style.display='none';this.querySelector('.label').style.display='inline'},1500)" class="text-blue-500 text-sm font-medium hover:underline cursor-pointer transition inline-flex items-center gap-1">
+        <div class="flex items-start gap-3 mb-4">
+          <img src="https://www.google.com/s2/favicons?domain=turkishairlines.com&sz=128" alt="Turkish Airlines" width="40" height="40" loading="lazy" class="w-9 h-9 md:w-10 md:h-10 rounded-full object-cover shadow-lg bg-white shrink-0" onerror="this.outerHTML='<div class=\'w-9 h-9 md:w-10 md:h-10 rounded-full bg-red-600 flex items-center justify-center text-white font-bold text-lg shadow-lg shrink-0\'>T</div>'">
+          <div class="flex-1 min-w-0">
+            <div class="flex justify-between items-start gap-2">
+              <div class="min-w-0">
+                <h2 class="text-base md:text-lg font-bold text-c-text leading-tight">DEL <span class="text-c-dim mx-1">&#9992;</span> JFK</h2>
+                <button onclick="navigator.clipboard.writeText('U4HZA7');this.querySelector('.copied').style.display='inline';this.querySelector('.label').style.display='none';setTimeout(()=>{this.querySelector('.copied').style.display='none';this.querySelector('.label').style.display='inline'},1500)" class="text-blue-500 text-sm font-medium hover:underline cursor-pointer transition inline-flex items-center gap-1">
         <span class="label">Turkish Airlines &bull; U4HZA7</span>
         <span class="copied text-green-500" style="display:none">Copied!</span>
         <svg class="w-3.5 h-3.5 opacity-40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
        </button>
+              </div>
+              <div class="text-right shrink-0">
+                <div class="text-lg md:text-2xl font-bold text-c-text whitespace-nowrap">Thu, Apr 9</div>
+                <div class="text-xs font-mono mt-0.5 text-green-500">in 43 days</div>
+              </div>
             </div>
-          </div>
-          <div class="text-right">
-            <div class="text-2xl font-bold text-c-text">Thu, Apr 9</div>
-            <div class="text-xs font-mono mt-1 text-green-500">in 43 days</div>
+            <div class="mt-1"><span class="text-xs text-c-muted font-mono ml-2">11h 35m total</span></div>
           </div>
         </div>
 
-        <div class="bg-c-seg rounded-xl p-3 md:p-4">
+        <div class="bg-c-seg rounded-xl p-2.5 md:p-4">
           
-      <div class="flex items-center justify-between py-2 border-b border-c-seg last:border-0">
-        <div class="flex items-center gap-3">
+      <div class="flex items-center justify-between gap-2 py-2 border-b border-c-seg last:border-0">
+        <div class="flex items-center gap-2 min-w-0">
           <a href="https://www.flightaware.com/live/flight/THY7751" target="_blank" class="text-xs font-mono text-blue-500 hover:text-blue-600 bg-c-bg2 px-1.5 py-0.5 rounded hover:underline transition">TK7751</a>
-          <div class="flex items-center gap-2">
-            <span class="font-bold text-c-text">DEL</span>
-            <span class="text-c-dim">&rarr;</span>
-            <span class="font-bold text-c-text">IST</span>
-          </div>
+          <span class="font-bold text-c-text">DEL</span>
+          <span class="text-c-dim">&rarr;</span>
+          <span class="font-bold text-c-text">IST</span>
         </div>
-        <div class="text-sm text-c-muted">
+        <div class="text-xs md:text-sm text-c-muted whitespace-nowrap">
           6:20 - 11:35
         </div>
       </div>
@@ -670,16 +672,14 @@
             <svg class="w-3 h-3 text-c-dim" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
             <span class="text-xs font-mono text-c-dim">2h 35m layover at IST</span>
           </div>
-      <div class="flex items-center justify-between py-2 border-b border-c-seg last:border-0">
-        <div class="flex items-center gap-3">
+      <div class="flex items-center justify-between gap-2 py-2 border-b border-c-seg last:border-0">
+        <div class="flex items-center gap-2 min-w-0">
           <a href="https://www.flightaware.com/live/flight/THY1" target="_blank" class="text-xs font-mono text-blue-500 hover:text-blue-600 bg-c-bg2 px-1.5 py-0.5 rounded hover:underline transition">TK1</a>
-          <div class="flex items-center gap-2">
-            <span class="font-bold text-c-text">IST</span>
-            <span class="text-c-dim">&rarr;</span>
-            <span class="font-bold text-c-text">JFK</span>
-          </div>
+          <span class="font-bold text-c-text">IST</span>
+          <span class="text-c-dim">&rarr;</span>
+          <span class="font-bold text-c-text">JFK</span>
         </div>
-        <div class="text-sm text-c-muted">
+        <div class="text-xs md:text-sm text-c-muted whitespace-nowrap">
           14:10 - 17:55
         </div>
       </div>
