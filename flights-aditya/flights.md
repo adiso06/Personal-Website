@@ -43,7 +43,7 @@ _Last updated: 2/22/2026, 5:40:39 AM ET_
 - Segments:
   - Sat, Mar 21, 2026 — AA1666: ONT 7:59 PM → PHX 9:19 PM
   - Sat, Mar 21, 2026 — AA2669: PHX 10:21 PM → EWR 6:00 AM
-- Live status: https://flightaware.com/live/flight/AAL1666 | https://flightaware.com/live/flight/AAL2669
+- Live status: https://www.flightaware.com/live/flight/AAL1666 | https://www.flightaware.com/live/flight/AAL2669
 - Notes: New one-way itinerary. Arrives on 2026-03-22.
 - Source email: Your trip confirmation (ONT - EWR)
 - Source count: 1 email(s)
@@ -53,7 +53,7 @@ _Last updated: 2/22/2026, 5:40:39 AM ET_
 - Passenger: Aditya Sood
 - Segments:
   - Thu, Mar 26, 2026 — TK2: JFK 20:40 → IST 13:45
-- Live status: https://www.flightaware.com/live/flight/TK2
+- Live status: https://www.flightaware.com/live/flight/THY2
 - Notes: Authoritative itinerary from full ticket email (2 passengers: Aditya Sood + Chhaya Arora; ticket numbers 2352292123193/3194).
 - Source email: Turkish Airlines - Ticket Details
 - Source count: 1 email(s)
@@ -63,7 +63,7 @@ _Last updated: 2/22/2026, 5:40:39 AM ET_
 - Passenger: Aditya Sood
 - Segments:
   - Mon, Mar 30, 2026 — TK2014: IST 11:00 → ASR 12:30
-- Live status: https://www.flightaware.com/live/flight/TK2014
+- Live status: https://www.flightaware.com/live/flight/THY2014
 - Source email: Turkish Airlines - Ticket Details
 - Source count: 1 email(s)
 
@@ -81,7 +81,7 @@ _Last updated: 2/22/2026, 5:40:39 AM ET_
 - Passenger: Aditya Sood
 - Segments:
   - Sat, Apr 4, 2026 — TK716: IST 20:15 → DEL 04:50
-- Live status: https://www.flightaware.com/live/flight/TK716
+- Live status: https://www.flightaware.com/live/flight/THY716
 - Notes: Authoritative itinerary from full ticket email (2 passengers: Aditya Sood + Chhaya Arora; ticket numbers 2352292123193/3194).
 - Source email: Turkish Airlines - Ticket Details
 - Source count: 1 email(s)
@@ -91,7 +91,7 @@ _Last updated: 2/22/2026, 5:40:39 AM ET_
 - Passenger: Aditya Sood
 - Segments:
   - TK2321: ADB 12:55 → IST 14:20
-- Live status: https://www.flightaware.com/live/flight/TK2321
+- Live status: https://www.flightaware.com/live/flight/THY2321
 - Source email: Fwd: Turkish Airlines - Ticket Details
 - Source count: 2 email(s)
 
@@ -101,7 +101,7 @@ _Last updated: 2/22/2026, 5:40:39 AM ET_
 - Segments:
   - Thu, Apr 9, 2026 — TK7751: DEL 06:20 → IST 11:35
   - Thu, Apr 9, 2026 — TK1: IST 14:10 → JFK 17:55
-- Live status: https://www.flightaware.com/live/flight/TK1
+- Live status: https://www.flightaware.com/live/flight/THY1
 - Notes: Authoritative itinerary from full ticket email (2 passengers: Aditya Sood + Chhaya Arora; ticket numbers 2352292123193/3194). Return includes DEL→IST on IndiGo (TK7751 marketed by Turkish), 2h35m layover in IST.
 - Source email: Turkish Airlines - Ticket Details
 - Source count: 1 email(s)
