@@ -1,7 +1,7 @@
 # Flight Tracker
 
 _Auto-updated from forwarded emails._
-_Last updated: 3/23/2026, 4:22:00 AM ET_
+_Last updated: 3/24/2026, 1:37:12 PM ET_
 
 ## Upcoming flights
 
@@ -86,14 +86,36 @@ _Last updated: 3/23/2026, 4:22:00 AM ET_
 - Source email: Your trip confirmation (PVR - JFK)
 - Source count: 1 email(s)
 
+### Thu, Jun 4, 2026 — Frontier Airlines (RKGJ3K)
+- Route: **LGA → ATL**
+- Passenger: Aditya Sood
+- Segments:
+  - Thu, Jun 4, 2026 — F94347: LGA 10:00 PM → ATL 12:25 AM
+- Live status: https://www.flightaware.com/live/flight/FFT4347
+- Notes: Round-trip booking; 2 passengers listed (Aditya Sood, Chhaya Arora).
+- Source email: Your Flight Confirmation Code RKGJ3K
+- Source count: 1 email(s)
+
+### Sun, Jun 7, 2026 — Frontier Airlines (RKGJ3K)
+- Route: **ATL → LGA**
+- Passenger: Aditya Sood
+- Segments:
+  - Sun, Jun 7, 2026 — F93458: ATL 6:35 PM → LGA 8:56 PM
+- Live status: https://www.flightaware.com/live/flight/FFT3458
+- Notes: Return leg of same confirmation RKGJ3K.
+- Source email: Your Flight Confirmation Code RKGJ3K
+- Source count: 1 email(s)
+
 ## Likely round-trip pairings
 
 - LGA ↔ ONT: Sun, Feb 22, 2026 LGA→ONT (AYQR8B) + Wed, Feb 25, 2026 ONT→LGA (IFWAUN)
-- NYC → Mexico City → Puerto Vallarta → NYC: Fri, Mar 27, 2026 JFK→MEX (O788YR) + Wed, Apr 1, 2026 MEX→PVR (XCCZ9P) + Sat, Apr 4, 2026 PVR→JFK (JMFYYL)
+- LGA ↔ ATL: Thu, Jun 4, 2026 LGA→ATL (RKGJ3K) + Sun, Jun 7, 2026 ATL→LGA (RKGJ3K)
 
 ## Flights without a detected return leg
 
 - Mon, Mar 9, 2026: LGA→SNA (AE6LOI)
 - Wed, Mar 11, 2026: JFK→ONT (MANUAL)
 - Sat, Mar 21, 2026: ONT→EWR (CHWBQM)
-
+- Fri, Mar 27, 2026: JFK→MEX (O788YR)
+- Wed, Apr 1, 2026: MEX→PVR (XCCZ9P)
+- Sat, Apr 4, 2026: PVR→JFK (JMFYYL)
