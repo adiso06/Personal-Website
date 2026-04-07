@@ -1,7 +1,7 @@
 # Flight Tracker
 
 _Auto-updated from forwarded emails._
-_Last updated: 4/7/2026, 10:27:13 AM ET_
+_Last updated: 4/7/2026, 10:27:22 AM ET_
 
 ## Upcoming flights
 
@@ -116,10 +116,21 @@ _Last updated: 4/7/2026, 10:27:13 AM ET_
 - Source email: Your trip confirmation (LGA - ORD)
 - Source count: 1 email(s)
 
+### Mon, Jul 27, 2026 — American Airlines (FKNKAG)
+- Route: **ORD → LGA**
+- Passenger: Unknown Passenger
+- Segments:
+  - Mon, Jul 27, 2026 — AA3050: ORD 8:04 PM → LGA 10:27 PM
+- Live status: https://www.flightaware.com/live/flight/AAL3050
+- Notes: Return leg from round-trip confirmation.
+- Source email: Your trip confirmation (LGA - ORD)
+- Source count: 1 email(s)
+
 ## Likely round-trip pairings
 
 - LGA ↔ ONT: Sun, Feb 22, 2026 LGA→ONT (AYQR8B) + Wed, Feb 25, 2026 ONT→LGA (IFWAUN)
 - LGA ↔ ATL: Thu, Jun 4, 2026 LGA→ATL (RKGJ3K) + Sun, Jun 7, 2026 ATL→LGA (RKGJ3K)
+- LGA ↔ ORD: Sat, Jul 25, 2026 LGA→ORD (FKNKAG) + Mon, Jul 27, 2026 ORD→LGA (FKNKAG)
 
 ## Flights without a detected return leg
 
@@ -129,4 +140,3 @@ _Last updated: 4/7/2026, 10:27:13 AM ET_
 - Fri, Mar 27, 2026: JFK→MEX (O788YR)
 - Wed, Apr 1, 2026: MEX→PVR (XCCZ9P)
 - Sat, Apr 4, 2026: PVR→JFK (JMFYYL)
-- Sat, Jul 25, 2026: LGA→ORD (FKNKAG)
