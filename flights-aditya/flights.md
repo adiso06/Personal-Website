@@ -1,7 +1,7 @@
 # Flight Tracker
 
 _Auto-updated from forwarded emails._
-_Last updated: 3/24/2026, 1:37:12 PM ET_
+_Last updated: 4/7/2026, 10:27:02 AM ET_
 
 ## Upcoming flights
 
@@ -106,6 +106,16 @@ _Last updated: 3/24/2026, 1:37:12 PM ET_
 - Source email: Your Flight Confirmation Code RKGJ3K
 - Source count: 1 email(s)
 
+### Sat, Jul 25, 2026 — American Airlines (FKNKAG)
+- Route: **LGA → ORD**
+- Passenger: Unknown Passenger
+- Segments:
+  - Sat, Jul 25, 2026 — AA2079: LGA 4:10 PM → ORD 6:58 PM
+- Live status: https://www.flightaware.com/live/flight/AAL2079
+- Notes: Outbound leg from round-trip confirmation.
+- Source email: Your trip confirmation (LGA - ORD)
+- Source count: 1 email(s)
+
 ## Likely round-trip pairings
 
 - LGA ↔ ONT: Sun, Feb 22, 2026 LGA→ONT (AYQR8B) + Wed, Feb 25, 2026 ONT→LGA (IFWAUN)
@@ -119,3 +129,4 @@ _Last updated: 3/24/2026, 1:37:12 PM ET_
 - Fri, Mar 27, 2026: JFK→MEX (O788YR)
 - Wed, Apr 1, 2026: MEX→PVR (XCCZ9P)
 - Sat, Apr 4, 2026: PVR→JFK (JMFYYL)
+- Sat, Jul 25, 2026: LGA→ORD (FKNKAG)
