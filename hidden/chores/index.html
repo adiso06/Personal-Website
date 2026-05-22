@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chore Dashboard</title>
+    <style>
+        :root {
+            --bg-color: #f4f7f6;
+            --card-bg: #ffffff;
+            --aditya-color: #3b82f6;
+            --chhaya-color: #10b981;
+            --cat-color: #8b5cf6;
+            --text-main: #333333;
+            --text-muted: #6b7280;
+            --border-color: #e5e7eb;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .status-strip {
+            width: min(820px, 100%);
+            background: rgba(255,255,255,0.85);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.04);
+            padding: 14px 18px;
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        .status-strip strong {
+            font-weight: 600;
+        }
+
+        .status-strip.is-error {
+            border-color: #fca5a5;
+            background: #fff1f2;
+        }
+
+        .status-strip.is-warning {
+            border-color: #fcd34d;
+            background: #fffbeb;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            width: 100%;
+            max-width: 400px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-header {
+            padding: 20px;
+            color: white;
+            text-align: center;
+        }
+
+        .header-aditya { background-color: var(--aditya-color); }
+        .header-chhaya { background-color: var(--chhaya-color); }
+
+        .card-header h2 {
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .section-title {
+            background-color: #f9fafb;
+            padding: 12px 20px;
+            margin: 0;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            border-bottom: 1px solid var(--border-color);
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .cat-icon { color: var(--cat-color); font-size: 1.1rem; }
+
+        .task-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .task-item {
+            display: flex;
+            align-items: center;
+            padding: 15px 20px;
+            border-bottom: 1px solid var(--border-color);
+            transition: background-color 0.2s ease;
+        }
+
+        .task-item:last-child {
+            border-bottom: none;
+        }
+
+        .task-item:hover {
+            background-color: #f9fafb;
+        }
+
+        .checkbox {
+            appearance: none;
+            width: 22px;
+            height: 22px;
+            border: 2px solid #d1d5db;
+            border-radius: 6px;
+            margin-right: 15px;
+            cursor: pointer;
+            position: relative;
+            outline: none;
+            flex-shrink: 0;
+        }
+
+        .checkbox:checked {
+            background-color: var(--text-main);
+            border-color: var(--text-main);
+        }
+
+        .checkbox:checked::after {
+            content: "✓";
+            position: absolute;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .task-name {
+            flex-grow: 1;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .checkbox:checked + .task-name {
+            text-decoration: line-through;
+            color: var(--text-muted);
+        }
+
+        .badge {
+            background-color: #f3f4f6;
+            color: var(--text-muted);
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 10px; flex-direction: column; align-items: center; }
+            .card { max-width: 100%; margin-bottom: 10px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="status-strip" id="sync-status">
+        <strong>Syncing chores...</strong> Daily tasks reset each night, and deep-clean tasks reset every Monday.
+    </div>
+
+    <div class="card">
+        <div class="card-header header-aditya">
+            <h2>Aditya</h2>
+        </div>
+
+        <h3 class="section-title"><span class="cat-icon">🐈‍⬛</span> Daily Cat Chores</h3>
+        <ul class="task-list">
+            <li class="task-item">
+                <input type="checkbox" class="checkbox" id="a_cat1" data-type="daily">
+                <label for="a_cat1" class="task-name">Cat food</label>
+            </li>
+            <li class="task-item">
+                <input type="checkbox" class="checkbox" id="a_cat2" data-type="daily">
+                <label for="a_cat2" class="task-name">Cat litter</label>
+            </li>
+            <li class="task-item">
+                <input type="checkbox" class="checkbox" id="a_cat3" data-type="daily">
+                <label for="a_cat3" class="task-name">Sweep</label>
+            </li>
+        </ul>
+
+        <h3 class="section-title">Daily Operations</h3>
+        <ul class="task-list">
+            <li class="task-item">
+                <input type="checkbox" class="checkbox" id="a1" data-type="daily">
+                <label for="a1" class="task-name">Couch pickup</label>
+                <span class="badge">1.0</span>
+            </li>
+            <li class="task-item">
+                <input type="checkbox" class="checkbox" id="a2" data-type="daily">
+                <label for="a2" class="task-name">Socks</label>
+                <span class="badge">1.0</span>
+            </li>
+            <li class="task-item">
+                <input type="checkbox" class="checkbox" id="a3" data-type="daily">
+                <label for="a3" class="task-name">Trash</label>
+                <span class="badge">1.67</span>
+            </li>
+            <li class="task-item">
+                <input type="checkbox" class="checkbox" id="a4" data-type="daily">
+                <label for="a4" class="task-name">Counters</label>
+                <span class="badge">2.0</span>
+            </li>
+            <li class="task-item">
+                <input type="checkbox" class="checkbox" id="a5" data-type="daily">
+                <label for="a5" class="task-name">Sink clean</label>
+                <span class="badge">1.0</span>
+            </li>
+            <li class="task-item">
+                <input type="checkbox" class="checkbox" id="a6" data-type="daily">
+                <label for="a6" class="task-name">Dishes load</label>
+                <span class="badge">2.0</span>
+            </li>
+            <li class="task-item">
+                <input type="checkbox" class="checkbox" id="a7" data-type="daily">
+                <label for="a7" class="task-name">Big dish clean</label>
+                <span class="badge">2.0</span>
+            </li>
+            <li class="task-item">
+                <input type="checkbox" class="checkbox" id="a8" data-type="daily">
+                <label for="a8" class="task-name">Dishload empty</label>
+                <span class="badge">1.33</span>
+            </li>
+        </ul>
+
+        <h3 class="section-title">Weekly / Deep Clean</h3>
+        <ul class="task-list">
+            <li class="task-item">
+                <input type="checkbox" class="checkbox" id="a9" data-type="weekly">
+                <label for="a9" class="task-name">Vacuum</label>
+                <span class="badge">1.33</span>
+            </li>
+            <li class="task-item">
+                <input type="checkbox" class="checkbox" id="a10" data-type="weekly">
+                <label for="a10" class="task-name">Wash sheets</label>
+                <span class="badge">1.33</span>
+            </li>
+            <li class="task-item">
+                <input type="checkbox" class="checkbox" id="a11" data-type="weekly">
+                <label for="a11" class="task-name">Sweep floors (Kitchen)</label>
+                <span class="badge">1.67</span>
+            </li>
+            <li class="task-item">
+                <input type="checkbox" class="checkbox" id="a12" data-type="weekly">
+                <label for="a12" class="task-name">Fridge inside</label>
+                <span class="badge">2.0</span>
+            </li>
+            <li class="task-item">
+                <input type="checkbox" class="checkbox" id="a13" data-type="weekly">
+                <label for="a13" class="task-name">Fridge outside</label>
+                <span class="badge">1.0</span>
+            </li>
+            <li class="task-item">
+                <input type="checkbox" class="checkbox" id="a14" data-type="weekly">
+                <label for="a14" class="task-name">Tub</label>
+                <span class="badge">2.0</span>
+            </li>
+            <li class="task-item">
+                <input type="checkbox" class="checkbox" id="a15" data-type="weekly">
+                <label for="a15" class="task-name">Wet mop floor</label>
+                <span class="badge">2.0</span>
+            </li>
+            <li class="task-item">
+                <input type="checkbox" class="checkbox" id="a16" data-type="weekly">
+                <label for="a16" class="task-name">Blanket wash</label>
+                <span class="badge">1.33</span>
+            </li>
+            <li class="task-item">
+                <input type="checkbox" class="checkbox" id="a17" data-type="weekly">
+                <label for="a17" class="task-name">Watering plants</label>
+                <span class="badge">1.33</span>
+            </li>
+            <li class="task-item">
+                <input type="checkbox" class="checkbox" id="a18" data-type="weekly">
+                <label for="a18" class="task-name">Grocery shopping</label>
+                <span class="badge">4.0</span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <div class="card-header header-chhaya">
+            <h2>Chhaya</h2>
+        </div>
+
+        <h3 class="section-title">Daily Operations</h3>
+        <ul class="task-list">
+            <li class="task-item">
+                <input type="checkbox" class="checkbox" id="c1" data-type="daily">
+                <label for="c1" class="task-name">Coffee maker (House)</label>
+                <span class="badge">1.0</span>
+            </li>
+            <li class="task-item">
+                <input type="checkbox" class="checkbox" id="c2" data-type="daily">
+                <label for="c2" class="task-name">Cooking</label>
+                <span class="badge">12.0</span>
+            </li>
+        </ul>
+
+        <h3 class="section-title">Weekly / Deep Clean</h3>
+        <ul class="task-list">
+            <li class="task-item">
+                <input type="checkbox" class="checkbox" id="c3" data-type="weekly">
+                <label for="c3" class="task-name">Wipe surfaces (Bedroom)</label>
+                <span class="badge">1.0</span>
+            </li>
+            <li class="task-item">
+                <input type="checkbox" class="checkbox" id="c4" data-type="weekly">
+                <label for="c4" class="task-name">Mats (Kitchen)</label>
+                <span class="badge">1.0</span>
+            </li>
+            <li class="task-item">
+                <input type="checkbox" class="checkbox" id="c5" data-type="weekly">
+                <label for="c5" class="task-name">Coffee maker (Kitchen)</label>
+                <span class="badge">1.0</span>
+            </li>
+            <li class="task-item">
+                <input type="checkbox" class="checkbox" id="c6" data-type="weekly">
+                <label for="c6" class="task-name">Ovens</label>
+                <span class="badge">2.0</span>
+            </li>
+            <li class="task-item">
+                <input type="checkbox" class="checkbox" id="c7" data-type="weekly">
+                <label for="c7" class="task-name">Wipe floors, mirrors, sink</label>
+                <span class="badge">2.67</span>
+            </li>
+            <li class="task-item">
+                <input type="checkbox" class="checkbox" id="c8" data-type="weekly">
+                <label for="c8" class="task-name">Doors (Bathroom)</label>
+                <span class="badge">2.0</span>
+            </li>
+            <li class="task-item">
+                <input type="checkbox" class="checkbox" id="c9" data-type="weekly">
+                <label for="c9" class="task-name">Carpets (wash + vacuum)</label>
+                <span class="badge">1.67</span>
+            </li>
+            <li class="task-item">
+                <input type="checkbox" class="checkbox" id="c10" data-type="weekly">
+                <label for="c10" class="task-name">Dust lamps</label>
+                <span class="badge">2.0</span>
+            </li>
+            <li class="task-item">
+                <input type="checkbox" class="checkbox" id="c11" data-type="weekly">
+                <label for="c11" class="task-name">Clean shelves</label>
+                <span class="badge">2.0</span>
+            </li>
+            <li class="task-item">
+                <input type="checkbox" class="checkbox" id="c12" data-type="weekly">
+                <label for="c12" class="task-name">Wipe mirror (Living Room)</label>
+                <span class="badge">1.0</span>
+            </li>
+        </ul>
+    </div>
+
+    <script type="module">
+        const LOCAL_STORAGE_KEY = 'choreDashboardStateV2';
+        const DEVICE_ID_KEY = 'choreDashboardDeviceId';
+        const RESET_TIME_ZONE = 'America/New_York';
+        const FIREBASE_CONFIG = {
+            apiKey: 'AIzaSyBq0KwZ8urihRvMB2vUEuNfbG1PCcZqwt4',
+            authDomain: 'todo-list-8465d.firebaseapp.com',
+            projectId: 'todo-list-8465d',
+            storageBucket: 'todo-list-8465d.firebasestorage.app',
+            messagingSenderId: '908700447494',
+            appId: '1:908700447494:web:52bdf252fcb405300c6487',
+            measurementId: 'G-P2KR4PEWQS'
+        };
+        const COLLECTION_NAME = 'dashboards';
+        const DOCUMENT_ID = 'hidden-chores-tasklist';
+        const DAILY_RESET_LABEL = 'Daily tasks reset nightly';
+        const WEEKLY_RESET_LABEL = 'deep-clean tasks reset every Monday';
+
+        const checkboxes = Array.from(document.querySelectorAll('.checkbox'));
+        const syncStatus = document.getElementById('sync-status');
+        const dailyTaskIds = checkboxes
+            .filter((checkbox) => checkbox.dataset.type === 'daily')
+            .map((checkbox) => checkbox.id);
+        const weeklyTaskIds = checkboxes
+            .filter((checkbox) => checkbox.dataset.type === 'weekly')
+            .map((checkbox) => checkbox.id);
+
+        let state = null;
+        let firestoreApi = null;
+        let docRef = null;
+        let unsubscribe = null;
+        let resetInterval = null;
+
+        function getDeviceId() {
+            const existingId = localStorage.getItem(DEVICE_ID_KEY);
+            if (existingId) {
+                return existingId;
+            }
+
+            const newId = crypto.randomUUID();
+            localStorage.setItem(DEVICE_ID_KEY, newId);
+            return newId;
+        }
+
+        const deviceId = getDeviceId();
+
+        function setStatus(message, tone = 'default') {
+            syncStatus.textContent = message;
+            syncStatus.classList.remove('is-error', 'is-warning');
+
+            if (tone === 'error') {
+                syncStatus.classList.add('is-error');
+            } else if (tone === 'warning') {
+                syncStatus.classList.add('is-warning');
+            }
+        }
+
+        function getDefaultTaskMap() {
+            return Object.fromEntries(checkboxes.map((checkbox) => [checkbox.id, false]));
+        }
+
+        function getTimeZoneDateParts(date = new Date()) {
+            const formatter = new Intl.DateTimeFormat('en-CA', {
+                timeZone: RESET_TIME_ZONE,
+                year: 'numeric',
+                month: '2-digit',
+                day: '2-digit'
+            });
+
+            const parts = formatter.formatToParts(date);
+            const values = {};
+
+            parts.forEach((part) => {
+                if (part.type !== 'literal') {
+                    values[part.type] = part.value;
+                }
+            });
+
+            return {
+                year: Number(values.year),
+                month: Number(values.month),
+                day: Number(values.day)
+            };
+        }
+
+        function formatDateKey(year, month, day) {
+            return [
+                String(year).padStart(4, '0'),
+                String(month).padStart(2, '0'),
+                String(day).padStart(2, '0')
+            ].join('-');
+        }
+
+        function getDayKey(date = new Date()) {
+            const { year, month, day } = getTimeZoneDateParts(date);
+            return formatDateKey(year, month, day);
+        }
+
+        function getWeekKey(date = new Date()) {
+            const { year, month, day } = getTimeZoneDateParts(date);
+            const zonedDate = new Date(Date.UTC(year, month - 1, day, 12));
+            const weekday = zonedDate.getUTCDay();
+            const daysSinceMonday = (weekday + 6) % 7;
+
+            zonedDate.setUTCDate(zonedDate.getUTCDate() - daysSinceMonday);
+
+            return formatDateKey(
+                zonedDate.getUTCFullYear(),
+                zonedDate.getUTCMonth() + 1,
+                zonedDate.getUTCDate()
+            );
+        }
+
+        function buildDefaultState(date = new Date()) {
+            return {
+                tasks: getDefaultTaskMap(),
+                lastDailyReset: getDayKey(date),
+                lastWeeklyReset: getWeekKey(date)
+            };
+        }
+
+        function normalizeState(rawState) {
+            const defaultState = buildDefaultState();
+            const rawTasks = rawState && typeof rawState.tasks === 'object' && rawState.tasks !== null
+                ? rawState.tasks
+                : {};
+
+            return {
+                tasks: Object.fromEntries(
+                    Object.keys(defaultState.tasks).map((taskId) => [taskId, Boolean(rawTasks[taskId])])
+                ),
+                lastDailyReset: typeof rawState?.lastDailyReset === 'string'
+                    ? rawState.lastDailyReset
+                    : defaultState.lastDailyReset,
+                lastWeeklyReset: typeof rawState?.lastWeeklyReset === 'string'
+                    ? rawState.lastWeeklyReset
+                    : defaultState.lastWeeklyReset
+            };
+        }
+
+        function applyResetRules(sourceState, date = new Date()) {
+            const nextState = {
+                tasks: { ...sourceState.tasks },
+                lastDailyReset: sourceState.lastDailyReset,
+                lastWeeklyReset: sourceState.lastWeeklyReset
+            };
+            const todayKey = getDayKey(date);
+            const weekKey = getWeekKey(date);
+            let changed = false;
+
+            if (nextState.lastDailyReset !== todayKey) {
+                dailyTaskIds.forEach((taskId) => {
+                    nextState.tasks[taskId] = false;
+                });
+                nextState.lastDailyReset = todayKey;
+                changed = true;
+            }
+
+            if (nextState.lastWeeklyReset !== weekKey) {
+                weeklyTaskIds.forEach((taskId) => {
+                    nextState.tasks[taskId] = false;
+                });
+                nextState.lastWeeklyReset = weekKey;
+                changed = true;
+            }
+
+            return { state: nextState, changed };
+        }
+
+        function saveLocalState(nextState) {
+            localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(nextState));
+        }
+
+        function loadLocalState() {
+            try {
+                const rawState = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY) || 'null');
+                return normalizeState(rawState);
+            } catch (error) {
+                return buildDefaultState();
+            }
+        }
+
+        function applyStateToDom(nextState) {
+            state = nextState;
+            checkboxes.forEach((checkbox) => {
+                checkbox.checked = Boolean(nextState.tasks[checkbox.id]);
+            });
+            saveLocalState(nextState);
+        }
+
+        async function connectFirebase() {
+            const [{ initializeApp }, firestoreModule] = await Promise.all([
+                import('https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js'),
+                import('https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js')
+            ]);
+            const app = initializeApp(FIREBASE_CONFIG);
+
+            firestoreApi = {
+                db: firestoreModule.getFirestore(app),
+                serverTimestamp: firestoreModule.serverTimestamp,
+                setDoc: firestoreModule.setDoc,
+                updateDoc: firestoreModule.updateDoc,
+                onSnapshot: firestoreModule.onSnapshot,
+                doc: firestoreModule.doc,
+                runTransaction: firestoreModule.runTransaction
+            };
+            docRef = firestoreApi.doc(firestoreApi.db, COLLECTION_NAME, DOCUMENT_ID);
+        }
+
+        async function syncResetsToCloud() {
+            if (!firestoreApi || !docRef) {
+                return;
+            }
+
+            await firestoreApi.runTransaction(firestoreApi.db, async (transaction) => {
+                const snapshot = await transaction.get(docRef);
+                const sourceState = snapshot.exists()
+                    ? normalizeState(snapshot.data())
+                    : normalizeState(state || buildDefaultState());
+                const { state: nextState, changed } = applyResetRules(sourceState);
+
+                if (!snapshot.exists() || changed) {
+                    transaction.set(docRef, {
+                        tasks: nextState.tasks,
+                        lastDailyReset: nextState.lastDailyReset,
+                        lastWeeklyReset: nextState.lastWeeklyReset,
+                        updatedAt: firestoreApi.serverTimestamp(),
+                        updatedBy: deviceId
+                    }, { merge: true });
+                }
+            });
+        }
+
+        async function updateTaskInCloud(taskId, checked) {
+            if (!firestoreApi || !docRef) {
+                return;
+            }
+
+            try {
+                await firestoreApi.updateDoc(docRef, {
+                    [`tasks.${taskId}`]: checked,
+                    updatedAt: firestoreApi.serverTimestamp(),
+                    updatedBy: deviceId
+                });
+            } catch (error) {
+                await firestoreApi.setDoc(docRef, {
+                    tasks: { ...buildDefaultState().tasks, [taskId]: checked },
+                    lastDailyReset: getDayKey(),
+                    lastWeeklyReset: getWeekKey(),
+                    updatedAt: firestoreApi.serverTimestamp(),
+                    updatedBy: deviceId
+                }, { merge: true });
+            }
+        }
+
+        function startResetWatcher() {
+            if (resetInterval) {
+                clearInterval(resetInterval);
+            }
+
+            resetInterval = window.setInterval(async () => {
+                const { state: nextState, changed } = applyResetRules(state || buildDefaultState());
+
+                if (!changed) {
+                    return;
+                }
+
+                applyStateToDom(nextState);
+
+                if (firestoreApi) {
+                    try {
+                        await syncResetsToCloud();
+                    } catch (error) {
+                        setStatus(`Saved on this device only for now. ${DAILY_RESET_LABEL}, and ${WEEKLY_RESET_LABEL}.`, 'warning');
+                    }
+                }
+            }, 60 * 1000);
+        }
+
+        function attachCheckboxListeners() {
+            checkboxes.forEach((checkbox) => {
+                checkbox.addEventListener('change', async (event) => {
+                    const target = event.target;
+                    const currentState = state || buildDefaultState();
+                    const nextState = {
+                        ...currentState,
+                        tasks: {
+                            ...currentState.tasks,
+                            [target.id]: target.checked
+                        }
+                    };
+
+                    applyStateToDom(nextState);
+
+                    if (!firestoreApi) {
+                        setStatus(`Saved on this device only. ${DAILY_RESET_LABEL}, and ${WEEKLY_RESET_LABEL}.`, 'warning');
+                        return;
+                    }
+
+                    try {
+                        await syncResetsToCloud();
+                        await updateTaskInCloud(target.id, target.checked);
+                    } catch (error) {
+                        setStatus(`Saved on this device only for now. ${DAILY_RESET_LABEL}, and ${WEEKLY_RESET_LABEL}.`, 'warning');
+                    }
+                });
+            });
+        }
+
+        async function subscribeToSharedState() {
+            unsubscribe = firestoreApi.onSnapshot(docRef, async (snapshot) => {
+                if (!snapshot.exists()) {
+                    try {
+                        await syncResetsToCloud();
+                        return;
+                    } catch (error) {
+                        setStatus(`Using local backup only. ${DAILY_RESET_LABEL}, and ${WEEKLY_RESET_LABEL}.`, 'warning');
+                        return;
+                    }
+                }
+
+                const remoteState = normalizeState(snapshot.data());
+                const { state: nextState, changed } = applyResetRules(remoteState);
+                applyStateToDom(nextState);
+
+                if (changed) {
+                    try {
+                        await syncResetsToCloud();
+                    } catch (error) {
+                        setStatus(`Saved on this device only for now. ${DAILY_RESET_LABEL}, and ${WEEKLY_RESET_LABEL}.`, 'warning');
+                        return;
+                    }
+                }
+
+                setStatus(`Shared across devices. ${DAILY_RESET_LABEL}, and ${WEEKLY_RESET_LABEL}.`);
+            }, () => {
+                setStatus(`Cloud sync unavailable right now. ${DAILY_RESET_LABEL}, and ${WEEKLY_RESET_LABEL}.`, 'warning');
+            });
+        }
+
+        async function initializeDashboard() {
+            const localState = loadLocalState();
+            const { state: initialState } = applyResetRules(localState);
+            applyStateToDom(initialState);
+            attachCheckboxListeners();
+            startResetWatcher();
+
+            try {
+                await connectFirebase();
+                await syncResetsToCloud();
+                await subscribeToSharedState();
+                setStatus(`Shared across devices. ${DAILY_RESET_LABEL}, and ${WEEKLY_RESET_LABEL}.`);
+            } catch (error) {
+                setStatus(`Cloud sync unavailable right now. ${DAILY_RESET_LABEL}, and ${WEEKLY_RESET_LABEL}.`, 'warning');
+            }
+        }
+
+        document.addEventListener('visibilitychange', async () => {
+            if (document.visibilityState !== 'visible') {
+                return;
+            }
+
+            const { state: nextState, changed } = applyResetRules(state || buildDefaultState());
+            applyStateToDom(nextState);
+
+            if (changed && firestoreApi) {
+                try {
+                    await syncResetsToCloud();
+                } catch (error) {
+                    setStatus(`Saved on this device only for now. ${DAILY_RESET_LABEL}, and ${WEEKLY_RESET_LABEL}.`, 'warning');
+                }
+            }
+        });
+
+        window.addEventListener('beforeunload', () => {
+            if (unsubscribe) {
+                unsubscribe();
+            }
+
+            if (resetInterval) {
+                clearInterval(resetInterval);
+            }
+        });
+
+        initializeDashboard();
+    </script>
+</body>
+</html>
