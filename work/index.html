@@ -108,16 +108,48 @@
               id="sunrise-link"
               href="https://myremoteaccess.northwell.edu/logon/LogonPoint/tmindex.html"
               target="_blank"
-              >Sunrise</a
+              >Epic <span class="new-tag">NEW</span></a
             >
           </div>
         </div>
 
         <div class="col-md-4">
           <div class="inner-container">
-            <a href="https://twwebprod.northwell.edu" target="_blank"
-              >AllScripts</a
-            >
+            <div class="dropdown">
+              <a href="#" target="_blank">Epic Workflow Help <span class="new-tag">NEW</span></a>
+              <div class="dropdown-content">
+                <a href="/work/resources/EPIC%20Workflows/00%20Mandatory%20Inpatient%20EPIC%20Day-to-Day%20Workflow.pdf"
+                  >Mandatory Inpatient EPIC Day-to-Day Workflow</a
+                >
+                <a href="/work/resources/EPIC%20Workflows/01%20How%20to%20Start%20Your%20Day,%20Pre-Chart,%20and%20Do%20IDRs%20in%20EPIC.pdf"
+                  >How to Start Your Day, Pre-Chart, and Do IDRs</a
+                >
+                <a href="/work/resources/EPIC%20Workflows/02%20How%20to%20Write%20Notes%20in%20EPIC.pdf"
+                  >How to Write Notes</a
+                >
+                <a href="/work/resources/EPIC%20Workflows/03%20How%20to%20Place%20Orders%20in%20EPIC.pdf"
+                  >How to Place Orders</a
+                >
+                <a href="/work/resources/EPIC%20Workflows/04%20How%20to%20Chat%20in%20EPIC.pdf"
+                  >How to Chat</a
+                >
+                <a href="/work/resources/EPIC%20Workflows/05%20How%20to%20Place%20a%20Consult%20in%20EPIC.pdf"
+                  >How to Place a Consult</a
+                >
+                <a href="/work/resources/EPIC%20Workflows/06%20How%20to%20Do%20a%20Handoff%20and%20Sign%20Out%20in%20EPIC.pdf"
+                  >How to Do a Handoff and Sign Out</a
+                >
+                <a href="/work/resources/EPIC%20Workflows/07%20How%20to%20Admit%20a%20Patient%20in%20EPIC.pdf"
+                  >How to Admit a Patient</a
+                >
+                <a href="/work/resources/EPIC%20Workflows/08%20How%20to%20Discharge%20a%20Patient%20in%20EPIC.pdf"
+                  >How to Discharge a Patient</a
+                >
+                <a href="/work/resources/EPIC%20Workflows/10%20Rapid%20Response%20Workflow.pdf"
+                  >Rapid Response Workflow</a
+                >
+              </div>
+            </div>
           </div>
         </div>
 
@@ -232,7 +264,7 @@
 
       <div class="col-md-4">
         <div class="inner-container">
-          <a href="https://adityasood.me/swap" target="_blank">Swap Finder <span class="new-tag">NEW</span></a>
+          <a href="https://adityasood.me/swap" target="_blank">Swap Finder</a>
         </div>
       </div>
       </div>
@@ -241,6 +273,12 @@
       <div class="row mb-4">
         <div class="col-12">
           <h2 class="text-center">Documents/Forms</h2>
+        </div>
+
+        <div class="col-md-4">
+          <div class="inner-container">
+            <a href="https://ai.northwell.edu" target="_blank">AI Hub <span class="new-tag">NEW</span></a>
+          </div>
         </div>
 
         <div class="col-md-4">
@@ -510,20 +548,28 @@
             const link = container.querySelector('a');
             const dropdownLinks = container.querySelectorAll('.dropdown-content a');
             const section = container.closest('.row.mb-4');
-            const sectionText = section ? section.querySelector('h2').textContent.toLowerCase() : '';
+            const sectionText = section ? (section.querySelector('h2')?.textContent.toLowerCase() || '') : '';
             
             // Check main link and dropdown links
             let matches = false;
             if (link.textContent.toLowerCase().includes(searchTerm)) {
               matches = true;
             }
+            let dropdownChildMatches = false;
             dropdownLinks.forEach(dropLink => {
               if (dropLink.textContent.toLowerCase().includes(searchTerm)) {
                 matches = true;
+                dropdownChildMatches = true;
               }
             });
             if (sectionText.includes(searchTerm)) {
               matches = true;
+            }
+
+            // Open the dropdown when a search term hits one of its items
+            const dropdown = container.querySelector('.dropdown');
+            if (dropdown) {
+              dropdown.classList.toggle('search-open', searchTerm !== '' && dropdownChildMatches);
             }
 
             // Apply fade effect instead of hiding
