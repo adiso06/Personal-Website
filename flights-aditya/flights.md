@@ -1,7 +1,7 @@
 # Flight Tracker
 
 _Auto-updated from forwarded emails._
-_Last updated: 7/12/2026, 12:50:59 PM ET_
+_Last updated: 7/12/2026, 12:52:14 PM ET_
 
 ## Upcoming flights
 
@@ -130,18 +130,20 @@ _Last updated: 7/12/2026, 12:50:59 PM ET_
 - Route: **JFK → MEX**
 - Passenger: Aditya Sood
 - Segments:
-  - Fri, Sep 4, 2026 — 7940: JFK 06:29PM → MEX 10:20PM
+  - Fri, Sep 4, 2026 — DL7940: JFK 06:29 PM → MEX 10:20 PM
+- Live status: https://www.flightaware.com/live/flight/DAL7940
 - Notes: DL7940 is operated by Aeromexico.
 - Source email: Your Flight Receipt - ADITYA SOOD 04SEP26
-- Source count: 1 email(s)
+- Source count: 2 email(s)
 
 ### Mon, Sep 7, 2026 — Delta Air Lines (GYSCKP)
 - Route: **MEX → JFK**
 - Passenger: Aditya Sood
 - Segments:
-  - Mon, Sep 7, 2026 — 624: MEX 02:15PM → JFK 09:31PM
+  - Mon, Sep 7, 2026 — DL624: MEX 02:15 PM → JFK 09:31 PM
+- Live status: https://www.flightaware.com/live/flight/DAL624
 - Source email: Your Flight Receipt - ADITYA SOOD 04SEP26
-- Source count: 1 email(s)
+- Source count: 2 email(s)
 
 ## Likely round-trip pairings
 
