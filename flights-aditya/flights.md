@@ -1,7 +1,7 @@
 # Flight Tracker
 
 _Auto-updated from forwarded emails._
-_Last updated: 4/7/2026, 10:27:41 AM ET_
+_Last updated: 7/12/2026, 12:50:59 PM ET_
 
 ## Upcoming flights
 
@@ -126,11 +126,29 @@ _Last updated: 4/7/2026, 10:27:41 AM ET_
 - Source email: Your trip confirmation (LGA - ORD)
 - Source count: 1 email(s)
 
+### Fri, Sep 4, 2026 — Delta Air Lines (GYSCKP)
+- Route: **JFK → MEX**
+- Passenger: Aditya Sood
+- Segments:
+  - Fri, Sep 4, 2026 — 7940: JFK 06:29PM → MEX 10:20PM
+- Notes: DL7940 is operated by Aeromexico.
+- Source email: Your Flight Receipt - ADITYA SOOD 04SEP26
+- Source count: 1 email(s)
+
+### Mon, Sep 7, 2026 — Delta Air Lines (GYSCKP)
+- Route: **MEX → JFK**
+- Passenger: Aditya Sood
+- Segments:
+  - Mon, Sep 7, 2026 — 624: MEX 02:15PM → JFK 09:31PM
+- Source email: Your Flight Receipt - ADITYA SOOD 04SEP26
+- Source count: 1 email(s)
+
 ## Likely round-trip pairings
 
 - LGA ↔ ONT: Sun, Feb 22, 2026 LGA→ONT (AYQR8B) + Wed, Feb 25, 2026 ONT→LGA (IFWAUN)
 - LGA ↔ ATL: Thu, Jun 4, 2026 LGA→ATL (RKGJ3K) + Sun, Jun 7, 2026 ATL→LGA (RKGJ3K)
 - LGA ↔ ORD: Sat, Jul 25, 2026 LGA→ORD (FKNKAG) + Mon, Jul 27, 2026 ORD→LGA (FKNKAG)
+- JFK ↔ MEX: Fri, Sep 4, 2026 JFK→MEX (GYSCKP) + Mon, Sep 7, 2026 MEX→JFK (GYSCKP)
 
 ## Flights without a detected return leg
 
