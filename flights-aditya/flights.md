@@ -1,7 +1,7 @@
 # Flight Tracker
 
 _Auto-updated from forwarded emails._
-_Last updated: 7/12/2026, 12:52:17 PM ET_
+_Last updated: 7/18/2026, 3:09:18 AM ET_
 
 ## Upcoming flights
 
@@ -145,6 +145,16 @@ _Last updated: 7/12/2026, 12:52:17 PM ET_
 - Source email: Your Flight Receipt - ADITYA SOOD 04SEP26
 - Source count: 2 email(s)
 
+### Wed, Nov 25, 2026 — Virgin Atlantic Airways (HJCQ83)
+- Route: **LAX → DEL**
+- Passenger: ASHISH and AMITA
+- Segments:
+  - Wed, Nov 25, 2026 — 24: LAX 10:30 PM → LHR 04:50 PM
+  - Thu, Nov 26, 2026 — 300: LHR 06:50 PM → DEL 09:00 AM
+- Notes: Schedule change email; outbound departed earlier. Airport codes inferred from city names in email text.
+- Source email: Important Update: Flight Schedule Change
+- Source count: 1 email(s)
+
 ## Likely round-trip pairings
 
 - LGA ↔ ONT: Sun, Feb 22, 2026 LGA→ONT (AYQR8B) + Wed, Feb 25, 2026 ONT→LGA (IFWAUN)
@@ -160,3 +170,4 @@ _Last updated: 7/12/2026, 12:52:17 PM ET_
 - Fri, Mar 27, 2026: JFK→MEX (O788YR)
 - Wed, Apr 1, 2026: MEX→PVR (XCCZ9P)
 - Sat, Apr 4, 2026: PVR→JFK (JMFYYL)
+- Wed, Nov 25, 2026: LAX→DEL (HJCQ83)
