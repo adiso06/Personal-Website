@@ -1,7 +1,7 @@
 # Flight Tracker
 
 _Auto-updated from forwarded emails._
-_Last updated: 7/18/2026, 3:09:25 AM ET_
+_Last updated: 7/18/2026, 2:22:11 PM ET_
 
 ## Upcoming flights
 
@@ -145,18 +145,39 @@ _Last updated: 7/18/2026, 3:09:25 AM ET_
 - Source email: Your Flight Receipt - ADITYA SOOD 04SEP26
 - Source count: 2 email(s)
 
+### Fri, Nov 27, 2026 — Delta Air Lines (INDIA26)
+- Route: **LHR → DEL**
+- Passenger: Aditya Sood
+- Segments:
+  - Fri, Nov 27, 2026 — DL5947: LHR 06:50 PM → DEL 09:00 AM
+- Live status: https://www.flightaware.com/live/flight/DAL5947
+- Notes: Operated by Virgin Atlantic. Same booking also includes Chhaya Arora.
+- Source email: Manual entry from Delta itinerary paste
+
+### Sat, Dec 12, 2026 — Delta Air Lines (INDIA26)
+- Route: **DEL → JFK**
+- Passenger: Aditya Sood
+- Segments:
+  - Sat, Dec 12, 2026 — DL8337: DEL 05:10 AM → CDG 10:20 AM
+  - Sat, Dec 12, 2026 — DL8745: CDG 01:30 PM → JFK 04:00 PM
+- Live status: https://www.flightaware.com/live/flight/DAL8337 | https://www.flightaware.com/live/flight/DAL8745
+- Notes: Operated by Air France with a 3h 10m connection in CDG. Same booking also includes Chhaya Arora.
+- Source email: Manual entry from Delta itinerary paste
+
 ## Likely round-trip pairings
 
 - LGA ↔ ONT: Sun, Feb 22, 2026 LGA→ONT (AYQR8B) + Wed, Feb 25, 2026 ONT→LGA (IFWAUN)
+- JFK ↔ MEX: Fri, Mar 27, 2026 JFK→MEX (O788YR) + Mon, Sep 7, 2026 MEX→JFK (GYSCKP)
 - LGA ↔ ATL: Thu, Jun 4, 2026 LGA→ATL (RKGJ3K) + Sun, Jun 7, 2026 ATL→LGA (RKGJ3K)
 - LGA ↔ ORD: Sat, Jul 25, 2026 LGA→ORD (FKNKAG) + Mon, Jul 27, 2026 ORD→LGA (FKNKAG)
-- JFK ↔ MEX: Fri, Sep 4, 2026 JFK→MEX (GYSCKP) + Mon, Sep 7, 2026 MEX→JFK (GYSCKP)
 
 ## Flights without a detected return leg
 
 - Mon, Mar 9, 2026: LGA→SNA (AE6LOI)
 - Wed, Mar 11, 2026: JFK→ONT (MANUAL)
 - Sat, Mar 21, 2026: ONT→EWR (CHWBQM)
-- Fri, Mar 27, 2026: JFK→MEX (O788YR)
 - Wed, Apr 1, 2026: MEX→PVR (XCCZ9P)
 - Sat, Apr 4, 2026: PVR→JFK (JMFYYL)
+- Fri, Sep 4, 2026: JFK→MEX (GYSCKP)
+- Fri, Nov 27, 2026: LHR→DEL (INDIA26)
+- Sat, Dec 12, 2026: DEL→JFK (INDIA26)

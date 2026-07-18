@@ -60,7 +60,7 @@
   <header class="flex justify-between items-center mb-6 md:mb-10">
     <div>
       <h1 class="text-xl md:text-2xl font-bold tracking-tight text-c-text">Flight Tracker</h1>
-      <p class="text-c-dim text-[10px] md:text-xs font-mono mt-1">Updated 7/18/2026, 8:45:45 AM ET</p>
+      <p class="text-c-dim text-[10px] md:text-xs font-mono mt-1">Updated 7/18/2026, 2:22:13 PM ET</p>
     </div>
     <div class="flex items-center gap-3 md:gap-4">
       <button onclick="toggleTheme()" class="theme-toggle bg-c-btn" aria-label="Toggle theme">
@@ -106,7 +106,7 @@
               </div>
               <div class="text-right shrink-0">
                 <div class="text-lg md:text-2xl font-bold text-c-text whitespace-nowrap">Sat, Jul 25</div>
-                <div class="js-relative-time text-xs font-mono mt-0.5 text-yellow-500">in 8 days</div>
+                <div class="js-relative-time text-xs font-mono mt-0.5 text-yellow-500">in 7 days</div>
               </div>
             </div>
             <div class="mt-1"><span class="text-xs text-c-muted font-mono ml-2">2h 48m total</span></div>
@@ -156,7 +156,7 @@
               </div>
               <div class="text-right shrink-0">
                 <div class="text-lg md:text-2xl font-bold text-c-text whitespace-nowrap">Mon, Jul 27</div>
-                <div class="js-relative-time text-xs font-mono mt-0.5 text-yellow-500">in 10 days</div>
+                <div class="js-relative-time text-xs font-mono mt-0.5 text-yellow-500">in 9 days</div>
               </div>
             </div>
             <div class="mt-1"><span class="text-xs text-c-muted font-mono ml-2">2h 23m total</span></div>
@@ -220,7 +220,7 @@
               </div>
               <div class="text-right shrink-0">
                 <div class="text-lg md:text-2xl font-bold text-c-text whitespace-nowrap">Fri, Sep 4</div>
-                <div class="js-relative-time text-xs font-mono mt-0.5 text-green-500">in 49 days</div>
+                <div class="js-relative-time text-xs font-mono mt-0.5 text-green-500">in 48 days</div>
               </div>
             </div>
             <div class="mt-1"><span class="text-xs text-c-muted font-mono ml-2">3h 51m total</span></div>
@@ -270,7 +270,7 @@
               </div>
               <div class="text-right shrink-0">
                 <div class="text-lg md:text-2xl font-bold text-c-text whitespace-nowrap">Mon, Sep 7</div>
-                <div class="js-relative-time text-xs font-mono mt-0.5 text-green-500">in 52 days</div>
+                <div class="js-relative-time text-xs font-mono mt-0.5 text-green-500">in 51 days</div>
               </div>
             </div>
             <div class="mt-1"><span class="text-xs text-c-muted font-mono ml-2">7h 16m total</span></div>
@@ -303,12 +303,127 @@
   
     </div>
     
-    <section id="upcoming-orphans-section" class="mb-10 js-orphans-section hidden">
+    <section id="upcoming-orphans-section" class="mb-10 js-orphans-section ">
       <div class="sticky top-0 z-10 backdrop-blur-md bg-c-sticky border-b border-c-line py-4 mb-6 -mx-4 px-4">
         <h2 class="text-2xl font-bold tracking-tight text-c-text uppercase">Other Flights</h2>
       </div>
       <div id="upcoming-orphans-legs" class="bg-c-seg rounded-2xl p-4 md:p-6">
         
+      <div class="relative pl-6 pb-4 js-leg js-orphan-leg" data-depart-date="2026-11-27" data-dot-kind="orphan" data-sort-key="2026-11-27T18:50">
+        <div class="absolute left-[3px] top-4 bottom-0 w-0.5 bg-c-line js-leg-line "></div>
+        <div class="absolute left-0 top-2 w-2 h-2 rounded-full js-leg-dot bg-gray-500 shadow-[0_0_6px_rgba(100,116,139,0.4)]"></div>
+        
+    <article class="card rounded-2xl overflow-hidden shadow-lg transition hover:shadow-xl group js-flight-card " data-depart-date="2026-11-27" data-sort-key="2026-11-27T18:50">
+      <div class="p-4 md:p-6 relative overflow-hidden">
+        <div class="js-next-pill absolute top-0 right-0 bg-blue-500 text-white text-[10px] font-bold px-3 py-1 rounded-bl-xl uppercase tracking-wider hidden">Next Up</div>
+        <div class="js-completed-pill absolute top-0 right-0 text-c-dim text-[10px] font-bold px-3 py-1 uppercase tracking-wider hidden">Completed</div>
+
+        <div class="flex items-start gap-3 mb-4">
+          <img src="https://www.google.com/s2/favicons?domain=delta.com&sz=128" alt="Delta Air Lines" width="40" height="40" loading="lazy" class="w-9 h-9 md:w-10 md:h-10 rounded-full object-cover shadow-lg bg-white shrink-0" onerror="this.outerHTML='<div class=\'w-9 h-9 md:w-10 md:h-10 rounded-full bg-red-700 flex items-center justify-center text-white font-bold text-lg shadow-lg shrink-0\'>D</div>'">
+          <div class="flex-1 min-w-0">
+            <div class="flex justify-between items-start gap-2">
+              <div class="min-w-0">
+                <h2 class="text-base md:text-lg font-bold text-c-text leading-tight">LHR <span class="text-c-dim mx-1">&#9992;</span> DEL</h2>
+                <button onclick="navigator.clipboard.writeText('INDIA26');this.querySelector('.copied').style.display='inline';this.querySelector('.label').style.display='none';setTimeout(()=>{this.querySelector('.copied').style.display='none';this.querySelector('.label').style.display='inline'},1500)" class="text-blue-500 text-sm font-medium hover:underline cursor-pointer transition inline-flex items-center gap-1">
+        <span class="label">Delta Air Lines &bull; INDIA26</span>
+        <span class="copied text-green-500" style="display:none">Copied!</span>
+        <svg class="w-3.5 h-3.5 opacity-40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+       </button>
+              </div>
+              <div class="text-right shrink-0">
+                <div class="text-lg md:text-2xl font-bold text-c-text whitespace-nowrap">Fri, Nov 27</div>
+                <div class="js-relative-time text-xs font-mono mt-0.5 text-green-500">in 132 days</div>
+              </div>
+            </div>
+            <div class="mt-1"><span class="text-xs text-c-muted font-mono ml-2">14h 10m total</span></div>
+          </div>
+        </div>
+
+        <div class="bg-c-seg rounded-xl p-2.5 md:p-4">
+          
+      <div class="flex items-center justify-between gap-2 py-2 border-b border-c-seg last:border-0">
+        <div class="flex items-center gap-2 min-w-0">
+          <a href="https://www.flightaware.com/live/flight/DAL5947" target="_blank" class="text-xs font-mono text-blue-500 hover:text-blue-600 bg-c-bg2 px-1.5 py-0.5 rounded hover:underline transition">DL5947</a>
+          <span class="font-bold text-c-text">LHR</span>
+          <span class="text-c-dim">&rarr;</span>
+          <span class="font-bold text-c-text">DEL</span>
+        </div>
+        <div class="text-xs md:text-sm text-c-muted whitespace-nowrap">
+          6:50p - 9:00a
+        </div>
+      </div>
+        </div>
+
+        
+      </div>
+    </article>
+  
+      </div>
+      <div class="relative pl-6 pb-4 js-leg js-orphan-leg" data-depart-date="2026-12-12" data-dot-kind="orphan" data-sort-key="2026-12-12T05:10">
+        <div class="absolute left-[3px] top-4 bottom-0 w-0.5 bg-c-line js-leg-line hidden"></div>
+        <div class="absolute left-0 top-2 w-2 h-2 rounded-full js-leg-dot bg-gray-500 shadow-[0_0_6px_rgba(100,116,139,0.4)]"></div>
+        
+    <article class="card rounded-2xl overflow-hidden shadow-lg transition hover:shadow-xl group js-flight-card " data-depart-date="2026-12-12" data-sort-key="2026-12-12T05:10">
+      <div class="p-4 md:p-6 relative overflow-hidden">
+        <div class="js-next-pill absolute top-0 right-0 bg-blue-500 text-white text-[10px] font-bold px-3 py-1 rounded-bl-xl uppercase tracking-wider hidden">Next Up</div>
+        <div class="js-completed-pill absolute top-0 right-0 text-c-dim text-[10px] font-bold px-3 py-1 uppercase tracking-wider hidden">Completed</div>
+
+        <div class="flex items-start gap-3 mb-4">
+          <img src="https://www.google.com/s2/favicons?domain=delta.com&sz=128" alt="Delta Air Lines" width="40" height="40" loading="lazy" class="w-9 h-9 md:w-10 md:h-10 rounded-full object-cover shadow-lg bg-white shrink-0" onerror="this.outerHTML='<div class=\'w-9 h-9 md:w-10 md:h-10 rounded-full bg-red-700 flex items-center justify-center text-white font-bold text-lg shadow-lg shrink-0\'>D</div>'">
+          <div class="flex-1 min-w-0">
+            <div class="flex justify-between items-start gap-2">
+              <div class="min-w-0">
+                <h2 class="text-base md:text-lg font-bold text-c-text leading-tight">DEL <span class="text-c-dim mx-1">&#9992;</span> JFK</h2>
+                <button onclick="navigator.clipboard.writeText('INDIA26');this.querySelector('.copied').style.display='inline';this.querySelector('.label').style.display='none';setTimeout(()=>{this.querySelector('.copied').style.display='none';this.querySelector('.label').style.display='inline'},1500)" class="text-blue-500 text-sm font-medium hover:underline cursor-pointer transition inline-flex items-center gap-1">
+        <span class="label">Delta Air Lines &bull; INDIA26</span>
+        <span class="copied text-green-500" style="display:none">Copied!</span>
+        <svg class="w-3.5 h-3.5 opacity-40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+       </button>
+              </div>
+              <div class="text-right shrink-0">
+                <div class="text-lg md:text-2xl font-bold text-c-text whitespace-nowrap">Sat, Dec 12</div>
+                <div class="js-relative-time text-xs font-mono mt-0.5 text-green-500">in 147 days</div>
+              </div>
+            </div>
+            <div class="mt-1"><span class="text-xs text-c-muted font-mono ml-2">10h 50m total</span></div>
+          </div>
+        </div>
+
+        <div class="bg-c-seg rounded-xl p-2.5 md:p-4">
+          
+      <div class="flex items-center justify-between gap-2 py-2 border-b border-c-seg last:border-0">
+        <div class="flex items-center gap-2 min-w-0">
+          <a href="https://www.flightaware.com/live/flight/DAL8337" target="_blank" class="text-xs font-mono text-blue-500 hover:text-blue-600 bg-c-bg2 px-1.5 py-0.5 rounded hover:underline transition">DL8337</a>
+          <span class="font-bold text-c-text">DEL</span>
+          <span class="text-c-dim">&rarr;</span>
+          <span class="font-bold text-c-text">CDG</span>
+        </div>
+        <div class="text-xs md:text-sm text-c-muted whitespace-nowrap">
+          5:10a - 10:20a
+        </div>
+      </div>
+          <div class="flex items-center gap-2 py-1.5 pl-2">
+            <svg class="w-3 h-3 text-c-dim" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span class="text-xs font-mono text-c-dim">3h 10m layover at CDG</span>
+          </div>
+      <div class="flex items-center justify-between gap-2 py-2 border-b border-c-seg last:border-0">
+        <div class="flex items-center gap-2 min-w-0">
+          <a href="https://www.flightaware.com/live/flight/DAL8745" target="_blank" class="text-xs font-mono text-blue-500 hover:text-blue-600 bg-c-bg2 px-1.5 py-0.5 rounded hover:underline transition">DL8745</a>
+          <span class="font-bold text-c-text">CDG</span>
+          <span class="text-c-dim">&rarr;</span>
+          <span class="font-bold text-c-text">JFK</span>
+        </div>
+        <div class="text-xs md:text-sm text-c-muted whitespace-nowrap">
+          1:30p - 4:00p
+        </div>
+      </div>
+        </div>
+
+        
+      </div>
+    </article>
+  
+      </div>
       </div>
     </section>
   
@@ -363,7 +478,7 @@
               </div>
               <div class="text-right shrink-0">
                 <div class="text-lg md:text-2xl font-bold text-c-text whitespace-nowrap">Sun, Feb 22</div>
-                <div class="js-relative-time text-xs font-mono mt-0.5 text-c-dim">145 days ago</div>
+                <div class="js-relative-time text-xs font-mono mt-0.5 text-c-dim">146 days ago</div>
               </div>
             </div>
             
@@ -428,7 +543,7 @@
               </div>
               <div class="text-right shrink-0">
                 <div class="text-lg md:text-2xl font-bold text-c-text whitespace-nowrap">Wed, Feb 25</div>
-                <div class="js-relative-time text-xs font-mono mt-0.5 text-c-dim">142 days ago</div>
+                <div class="js-relative-time text-xs font-mono mt-0.5 text-c-dim">143 days ago</div>
               </div>
             </div>
             
@@ -512,7 +627,7 @@
               </div>
               <div class="text-right shrink-0">
                 <div class="text-lg md:text-2xl font-bold text-c-text whitespace-nowrap">Mon, Mar 9</div>
-                <div class="js-relative-time text-xs font-mono mt-0.5 text-c-dim">130 days ago</div>
+                <div class="js-relative-time text-xs font-mono mt-0.5 text-c-dim">131 days ago</div>
               </div>
             </div>
             
@@ -603,7 +718,7 @@
               </div>
               <div class="text-right shrink-0">
                 <div class="text-lg md:text-2xl font-bold text-c-text whitespace-nowrap">Wed, Mar 11</div>
-                <div class="js-relative-time text-xs font-mono mt-0.5 text-c-dim">128 days ago</div>
+                <div class="js-relative-time text-xs font-mono mt-0.5 text-c-dim">129 days ago</div>
               </div>
             </div>
             
@@ -668,7 +783,7 @@
               </div>
               <div class="text-right shrink-0">
                 <div class="text-lg md:text-2xl font-bold text-c-text whitespace-nowrap">Sat, Mar 21</div>
-                <div class="js-relative-time text-xs font-mono mt-0.5 text-c-dim">118 days ago</div>
+                <div class="js-relative-time text-xs font-mono mt-0.5 text-c-dim">119 days ago</div>
               </div>
             </div>
             
@@ -747,7 +862,7 @@
               </div>
               <div class="text-right shrink-0">
                 <div class="text-lg md:text-2xl font-bold text-c-text whitespace-nowrap">Fri, Mar 27</div>
-                <div class="js-relative-time text-xs font-mono mt-0.5 text-c-dim">112 days ago</div>
+                <div class="js-relative-time text-xs font-mono mt-0.5 text-c-dim">113 days ago</div>
               </div>
             </div>
             
@@ -797,7 +912,7 @@
               </div>
               <div class="text-right shrink-0">
                 <div class="text-lg md:text-2xl font-bold text-c-text whitespace-nowrap">Wed, Apr 1</div>
-                <div class="js-relative-time text-xs font-mono mt-0.5 text-c-dim">107 days ago</div>
+                <div class="js-relative-time text-xs font-mono mt-0.5 text-c-dim">108 days ago</div>
               </div>
             </div>
             
@@ -847,7 +962,7 @@
               </div>
               <div class="text-right shrink-0">
                 <div class="text-lg md:text-2xl font-bold text-c-text whitespace-nowrap">Sat, Apr 4</div>
-                <div class="js-relative-time text-xs font-mono mt-0.5 text-c-dim">104 days ago</div>
+                <div class="js-relative-time text-xs font-mono mt-0.5 text-c-dim">105 days ago</div>
               </div>
             </div>
             
@@ -911,7 +1026,7 @@
               </div>
               <div class="text-right shrink-0">
                 <div class="text-lg md:text-2xl font-bold text-c-text whitespace-nowrap">Thu, Jun 4</div>
-                <div class="js-relative-time text-xs font-mono mt-0.5 text-c-dim">43 days ago</div>
+                <div class="js-relative-time text-xs font-mono mt-0.5 text-c-dim">44 days ago</div>
               </div>
             </div>
             
@@ -961,7 +1076,7 @@
               </div>
               <div class="text-right shrink-0">
                 <div class="text-lg md:text-2xl font-bold text-c-text whitespace-nowrap">Sun, Jun 7</div>
-                <div class="js-relative-time text-xs font-mono mt-0.5 text-c-dim">40 days ago</div>
+                <div class="js-relative-time text-xs font-mono mt-0.5 text-c-dim">41 days ago</div>
               </div>
             </div>
             
