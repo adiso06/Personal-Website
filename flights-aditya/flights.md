@@ -1,7 +1,7 @@
 # Flight Tracker
 
 _Auto-updated from forwarded emails._
-_Last updated: 7/18/2026, 3:09:18 AM ET_
+_Last updated: 7/18/2026, 3:09:23 AM ET_
 
 ## Upcoming flights
 
@@ -155,6 +155,15 @@ _Last updated: 7/18/2026, 3:09:18 AM ET_
 - Source email: Important Update: Flight Schedule Change
 - Source count: 1 email(s)
 
+### Thu, Dec 17, 2026 — Virgin Atlantic Airways (HJCQ83)
+- Route: **DEL → LHR**
+- Passenger: ASHISH and AMITA
+- Segments:
+  - Thu, Dec 17, 2026 — 301: DEL 11:20 AM → LHR 03:55 PM
+- Notes: Return leg appears in the email, but the remainder of the return itinerary may be truncated. Airport codes inferred from city names in email text.
+- Source email: Important Update: Flight Schedule Change
+- Source count: 1 email(s)
+
 ## Likely round-trip pairings
 
 - LGA ↔ ONT: Sun, Feb 22, 2026 LGA→ONT (AYQR8B) + Wed, Feb 25, 2026 ONT→LGA (IFWAUN)
@@ -171,3 +180,4 @@ _Last updated: 7/18/2026, 3:09:18 AM ET_
 - Wed, Apr 1, 2026: MEX→PVR (XCCZ9P)
 - Sat, Apr 4, 2026: PVR→JFK (JMFYYL)
 - Wed, Nov 25, 2026: LAX→DEL (HJCQ83)
+- Thu, Dec 17, 2026: DEL→LHR (HJCQ83)
