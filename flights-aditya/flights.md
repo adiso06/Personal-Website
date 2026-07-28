@@ -1,7 +1,7 @@
 # Flight Tracker
 
 _Auto-updated from forwarded emails._
-_Last updated: 7/18/2026, 2:22:11 PM ET_
+_Last updated: 7/28/2026, 6:09:13 AM ET_
 
 ## Upcoming flights
 
@@ -126,6 +126,16 @@ _Last updated: 7/18/2026, 2:22:11 PM ET_
 - Source email: Your trip confirmation (LGA - ORD)
 - Source count: 1 email(s)
 
+### Wed, Jul 29, 2026 — American Airlines (FKNKAG)
+- Route: **ORD → EWR**
+- Passenger: Unknown
+- Segments:
+  - Wed, Jul 29, 2026 — AA3170: ORD 6:42 AM → EWR 10:00 AM
+- Live status: https://www.flightaware.com/live/flight/AAL3170
+- Notes: American Airlines canceled one or more original flights and rebooked all passengers. A new boarding pass is required.
+- Source email: You've been rebooked to fly
+- Source count: 1 email(s)
+
 ### Fri, Sep 4, 2026 — Delta Air Lines (GYSCKP)
 - Route: **JFK → MEX**
 - Passenger: Aditya Sood
@@ -167,17 +177,18 @@ _Last updated: 7/18/2026, 2:22:11 PM ET_
 ## Likely round-trip pairings
 
 - LGA ↔ ONT: Sun, Feb 22, 2026 LGA→ONT (AYQR8B) + Wed, Feb 25, 2026 ONT→LGA (IFWAUN)
-- JFK ↔ MEX: Fri, Mar 27, 2026 JFK→MEX (O788YR) + Mon, Sep 7, 2026 MEX→JFK (GYSCKP)
 - LGA ↔ ATL: Thu, Jun 4, 2026 LGA→ATL (RKGJ3K) + Sun, Jun 7, 2026 ATL→LGA (RKGJ3K)
 - LGA ↔ ORD: Sat, Jul 25, 2026 LGA→ORD (FKNKAG) + Mon, Jul 27, 2026 ORD→LGA (FKNKAG)
+- JFK ↔ MEX: Fri, Sep 4, 2026 JFK→MEX (GYSCKP) + Mon, Sep 7, 2026 MEX→JFK (GYSCKP)
 
 ## Flights without a detected return leg
 
 - Mon, Mar 9, 2026: LGA→SNA (AE6LOI)
 - Wed, Mar 11, 2026: JFK→ONT (MANUAL)
 - Sat, Mar 21, 2026: ONT→EWR (CHWBQM)
+- Fri, Mar 27, 2026: JFK→MEX (O788YR)
 - Wed, Apr 1, 2026: MEX→PVR (XCCZ9P)
 - Sat, Apr 4, 2026: PVR→JFK (JMFYYL)
-- Fri, Sep 4, 2026: JFK→MEX (GYSCKP)
+- Wed, Jul 29, 2026: ORD→EWR (FKNKAG)
 - Fri, Nov 27, 2026: LHR→DEL (INDIA26)
 - Sat, Dec 12, 2026: DEL→JFK (INDIA26)
