@@ -1,7 +1,7 @@
 # Flight Tracker
 
 _Auto-updated from forwarded emails._
-_Last updated: 8/22/2026, 7:18:35 PM ET_
+_Last updated: 8/22/2026, 7:21:06 PM ET_
 
 ## Upcoming flights
 
@@ -162,18 +162,9 @@ _Last updated: 8/22/2026, 7:18:35 PM ET_
   - Thu, Nov 26, 2026 — 3: JFK 10:15 PM → LHR 10:30 AM
   - Fri, Nov 27, 2026 — 5947: LHR 06:50 PM → DEL 09:00 AM
 - Live status: https://www.flightaware.com/live/flight/DAL3 | https://www.flightaware.com/live/flight/DAL5947
-- Notes: Schedule change: the JFK departure is now Delta 3 at 10:15 PM, replacing the previously listed Delta 1 departure at 08:00 PM. The existing LHR-to-DEL flight DL5947 remains scheduled.
+- Notes: Schedule change: the JFK departure is now Delta 3 at 10:15 PM, replacing the previously listed Delta 1 departure at 08:00 PM. The existing LHR-to-DEL flight DL5947 remains scheduled and is operated by Virgin Atlantic.
 - Source email: Important Update: Flight Schedule Change
 - Source count: 1 email(s)
-
-### Fri, Nov 27, 2026 — Delta Air Lines (INDIA26)
-- Route: **LHR → DEL**
-- Passenger: Aditya Sood
-- Segments:
-  - Fri, Nov 27, 2026 — DL5947: LHR 06:50 PM → DEL 09:00 AM
-- Live status: https://www.flightaware.com/live/flight/DAL5947
-- Notes: Operated by Virgin Atlantic. Same booking also includes Chhaya Arora.
-- Source email: Manual entry from Delta itinerary paste
 
 ### Sat, Dec 12, 2026 — Delta Air Lines (HX8VFV)
 - Route: **DEL → JFK**
@@ -182,19 +173,9 @@ _Last updated: 8/22/2026, 7:18:35 PM ET_
   - Sat, Dec 12, 2026 — 8337: DEL 05:10 AM → CDG 10:20 AM
   - Sat, Dec 12, 2026 — 8745: CDG 01:30 PM → JFK 04:00 PM
 - Live status: https://www.flightaware.com/live/flight/DAL8337 | https://www.flightaware.com/live/flight/DAL8745
-- Notes: Return itinerary matches the existing database and appears unchanged.
+- Notes: Return itinerary is unchanged. Operated by Air France with a 3h 10m connection in CDG.
 - Source email: Important Update: Flight Schedule Change
 - Source count: 1 email(s)
-
-### Sat, Dec 12, 2026 — Delta Air Lines (INDIA26)
-- Route: **DEL → JFK**
-- Passenger: Aditya Sood
-- Segments:
-  - Sat, Dec 12, 2026 — DL8337: DEL 05:10 AM → CDG 10:20 AM
-  - Sat, Dec 12, 2026 — DL8745: CDG 01:30 PM → JFK 04:00 PM
-- Live status: https://www.flightaware.com/live/flight/DAL8337 | https://www.flightaware.com/live/flight/DAL8745
-- Notes: Operated by Air France with a 3h 10m connection in CDG. Same booking also includes Chhaya Arora.
-- Source email: Manual entry from Delta itinerary paste
 
 ## Likely round-trip pairings
 
@@ -213,6 +194,4 @@ _Last updated: 8/22/2026, 7:18:35 PM ET_
 - Sat, Apr 4, 2026: PVR→JFK (JMFYYL)
 - Wed, Jul 29, 2026: ORD→EWR (FKNKAG)
 - Thu, Nov 26, 2026: JFK→DEL (HX8VFV)
-- Fri, Nov 27, 2026: LHR→DEL (INDIA26)
 - Sat, Dec 12, 2026: DEL→JFK (HX8VFV)
-- Sat, Dec 12, 2026: DEL→JFK (INDIA26)
