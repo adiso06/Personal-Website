@@ -1,7 +1,7 @@
 # Flight Tracker
 
 _Auto-updated from forwarded emails._
-_Last updated: 7/28/2026, 6:09:13 AM ET_
+_Last updated: 8/22/2026, 7:18:32 PM ET_
 
 ## Upcoming flights
 
@@ -155,6 +155,17 @@ _Last updated: 7/28/2026, 6:09:13 AM ET_
 - Source email: Your Flight Receipt - ADITYA SOOD 04SEP26
 - Source count: 2 email(s)
 
+### Thu, Nov 26, 2026 — Delta Air Lines (HX8VFV)
+- Route: **JFK → DEL**
+- Passenger: Chhaya Arora and Aditya Sood
+- Segments:
+  - Thu, Nov 26, 2026 — 3: JFK 10:15 PM → LHR 10:30 AM
+  - Fri, Nov 27, 2026 — 5947: LHR 06:50 PM → DEL 09:00 AM
+- Live status: https://www.flightaware.com/live/flight/DAL3 | https://www.flightaware.com/live/flight/DAL5947
+- Notes: Schedule change: the JFK departure is now Delta 3 at 10:15 PM, replacing the previously listed Delta 1 departure at 08:00 PM. The existing LHR-to-DEL flight DL5947 remains scheduled.
+- Source email: Important Update: Flight Schedule Change
+- Source count: 1 email(s)
+
 ### Fri, Nov 27, 2026 — Delta Air Lines (INDIA26)
 - Route: **LHR → DEL**
 - Passenger: Aditya Sood
@@ -163,6 +174,17 @@ _Last updated: 7/28/2026, 6:09:13 AM ET_
 - Live status: https://www.flightaware.com/live/flight/DAL5947
 - Notes: Operated by Virgin Atlantic. Same booking also includes Chhaya Arora.
 - Source email: Manual entry from Delta itinerary paste
+
+### Sat, Dec 12, 2026 — Delta Air Lines (HX8VFV)
+- Route: **DEL → JFK**
+- Passenger: Chhaya Arora and Aditya Sood
+- Segments:
+  - Sat, Dec 12, 2026 — 8337: DEL 05:10 AM → CDG 10:20 AM
+  - Sat, Dec 12, 2026 — 8745: CDG 01:30 PM → JFK 04:00 PM
+- Live status: https://www.flightaware.com/live/flight/DAL8337 | https://www.flightaware.com/live/flight/DAL8745
+- Notes: Return itinerary matches the existing database and appears unchanged.
+- Source email: Important Update: Flight Schedule Change
+- Source count: 1 email(s)
 
 ### Sat, Dec 12, 2026 — Delta Air Lines (INDIA26)
 - Route: **DEL → JFK**
@@ -190,5 +212,7 @@ _Last updated: 7/28/2026, 6:09:13 AM ET_
 - Wed, Apr 1, 2026: MEX→PVR (XCCZ9P)
 - Sat, Apr 4, 2026: PVR→JFK (JMFYYL)
 - Wed, Jul 29, 2026: ORD→EWR (FKNKAG)
+- Thu, Nov 26, 2026: JFK→DEL (HX8VFV)
 - Fri, Nov 27, 2026: LHR→DEL (INDIA26)
+- Sat, Dec 12, 2026: DEL→JFK (HX8VFV)
 - Sat, Dec 12, 2026: DEL→JFK (INDIA26)
