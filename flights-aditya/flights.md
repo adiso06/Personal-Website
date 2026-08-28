@@ -1,7 +1,7 @@
 # Flight Tracker
 
 _Auto-updated from forwarded emails._
-_Last updated: 8/22/2026, 7:21:06 PM ET_
+_Last updated: 8/28/2026, 10:52:32 AM ET_
 
 ## Upcoming flights
 
@@ -155,6 +155,26 @@ _Last updated: 8/22/2026, 7:21:06 PM ET_
 - Source email: Your Flight Receipt - ADITYA SOOD 04SEP26
 - Source count: 2 email(s)
 
+### Fri, Oct 23, 2026 — American Airlines (IPAKBF)
+- Route: **LGA → OKC**
+- Passenger: Pm Aa
+- Segments:
+  - Fri, Oct 23, 2026 — AA4526: LGA 6:53 PM → OKC 9:51 PM
+- Live status: https://www.flightaware.com/live/flight/AAL4526
+- Notes: Operated by Republic Airways as American Eagle; Economy (B).
+- Source email: Your trip confirmation (LGA - OKC)
+- Source count: 1 email(s)
+
+### Sun, Oct 25, 2026 — American Airlines (IPAKBF)
+- Route: **OKC → LGA**
+- Passenger: Pm Aa
+- Segments:
+  - Sun, Oct 25, 2026 — AA4426: OKC 5:00 PM → LGA 9:29 PM
+- Live status: https://www.flightaware.com/live/flight/AAL4426
+- Notes: Operated by Republic Airways as American Eagle; Economy (B).
+- Source email: Your trip confirmation (LGA - OKC)
+- Source count: 1 email(s)
+
 ### Thu, Nov 26, 2026 — Delta Air Lines (HX8VFV)
 - Route: **JFK → DEL**
 - Passenger: Chhaya Arora and Aditya Sood
@@ -183,6 +203,7 @@ _Last updated: 8/22/2026, 7:21:06 PM ET_
 - LGA ↔ ATL: Thu, Jun 4, 2026 LGA→ATL (RKGJ3K) + Sun, Jun 7, 2026 ATL→LGA (RKGJ3K)
 - LGA ↔ ORD: Sat, Jul 25, 2026 LGA→ORD (FKNKAG) + Mon, Jul 27, 2026 ORD→LGA (FKNKAG)
 - JFK ↔ MEX: Fri, Sep 4, 2026 JFK→MEX (GYSCKP) + Mon, Sep 7, 2026 MEX→JFK (GYSCKP)
+- LGA ↔ OKC: Fri, Oct 23, 2026 LGA→OKC (IPAKBF) + Sun, Oct 25, 2026 OKC→LGA (IPAKBF)
 
 ## Flights without a detected return leg
 
