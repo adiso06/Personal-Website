@@ -1,7 +1,7 @@
 # Flight Tracker
 
 _Auto-updated from forwarded emails._
-_Last updated: 8/28/2026, 10:52:32 AM ET_
+_Last updated: 9/3/2026, 8:06:55 PM ET_
 
 ## Upcoming flights
 
@@ -140,20 +140,20 @@ _Last updated: 8/28/2026, 10:52:32 AM ET_
 - Route: **JFK → MEX**
 - Passenger: Aditya Sood
 - Segments:
-  - Fri, Sep 4, 2026 — DL7940: JFK 06:29 PM → MEX 10:20 PM
-- Live status: https://www.flightaware.com/live/flight/DAL7940
+  - Fri, Sep 4, 2026 — DL625: JFK 09:41AM → MEX 12:55PM
+- Live status: https://www.flightaware.com/live/flight/DAL625
 - Notes: DL7940 is operated by Aeromexico.
 - Source email: Your Flight Receipt - ADITYA SOOD 04SEP26
-- Source count: 2 email(s)
+- Source count: 4 email(s)
 
 ### Mon, Sep 7, 2026 — Delta Air Lines (GYSCKP)
 - Route: **MEX → JFK**
 - Passenger: Aditya Sood
 - Segments:
-  - Mon, Sep 7, 2026 — DL624: MEX 02:15 PM → JFK 09:31 PM
+  - Mon, Sep 7, 2026 — DL624: MEX 02:15PM → JFK 09:31PM
 - Live status: https://www.flightaware.com/live/flight/DAL624
 - Source email: Your Flight Receipt - ADITYA SOOD 04SEP26
-- Source count: 2 email(s)
+- Source count: 4 email(s)
 
 ### Fri, Oct 23, 2026 — American Airlines (IPAKBF)
 - Route: **LGA → OKC**
