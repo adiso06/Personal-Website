@@ -1,7 +1,7 @@
 # Flight Tracker
 
 _Auto-updated from forwarded emails._
-_Last updated: 9/3/2026, 8:06:58 PM ET_
+_Last updated: 9/11/2026, 2:21:59 PM ET_
 
 ## Upcoming flights
 
@@ -155,6 +155,28 @@ _Last updated: 9/3/2026, 8:06:58 PM ET_
 - Source email: Your Flight Receipt - ADITYA SOOD 04SEP26
 - Source count: 4 email(s)
 
+### Wed, Sep 30, 2026 — Delta Air Lines (HUTKJH)
+- Route: **LGA → FCA**
+- Passenger: Chhaya Arora
+- Segments:
+  - Wed, Sep 30, 2026 — 2313: LGA 05:59PM → MSP 08:05PM
+  - Wed, Sep 30, 2026 — 1602: MSP 09:55PM → FCA 11:43PM
+- Live status: https://www.flightaware.com/live/flight/DAL2313 | https://www.flightaware.com/live/flight/DAL1602
+- Notes: Seats: DL2313 24F; DL1602 22F.
+- Source email: Fwd: Your Flight Receipt - CHHAYA ARORA 30SEP26
+- Source count: 1 email(s)
+
+### Sun, Oct 4, 2026 — Delta Air Lines (HUTKJH)
+- Route: **FCA → LGA**
+- Passenger: Chhaya Arora
+- Segments:
+  - Sun, Oct 4, 2026 — 1578: FCA 06:35AM → MSP 10:12AM
+  - Sun, Oct 4, 2026 — 2756: MSP 01:00PM → LGA 04:43PM
+- Live status: https://www.flightaware.com/live/flight/DAL1578 | https://www.flightaware.com/live/flight/DAL2756
+- Notes: Seats: DL1578 22F; DL2756 23F.
+- Source email: Fwd: Your Flight Receipt - CHHAYA ARORA 30SEP26
+- Source count: 1 email(s)
+
 ### Fri, Oct 23, 2026 — American Airlines (IPAKBF)
 - Route: **LGA → OKC**
 - Passenger: Pm Aa
@@ -203,6 +225,7 @@ _Last updated: 9/3/2026, 8:06:58 PM ET_
 - LGA ↔ ATL: Thu, Jun 4, 2026 LGA→ATL (RKGJ3K) + Sun, Jun 7, 2026 ATL→LGA (RKGJ3K)
 - LGA ↔ ORD: Sat, Jul 25, 2026 LGA→ORD (FKNKAG) + Mon, Jul 27, 2026 ORD→LGA (FKNKAG)
 - JFK ↔ MEX: Fri, Sep 4, 2026 JFK→MEX (GYSCKP) + Mon, Sep 7, 2026 MEX→JFK (GYSCKP)
+- LGA ↔ FCA: Wed, Sep 30, 2026 LGA→FCA (HUTKJH) + Sun, Oct 4, 2026 FCA→LGA (HUTKJH)
 - LGA ↔ OKC: Fri, Oct 23, 2026 LGA→OKC (IPAKBF) + Sun, Oct 25, 2026 OKC→LGA (IPAKBF)
 
 ## Flights without a detected return leg
