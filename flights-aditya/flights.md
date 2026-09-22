@@ -1,7 +1,7 @@
 # Flight Tracker
 
 _Auto-updated from forwarded emails._
-_Last updated: 9/11/2026, 2:22:03 PM ET_
+_Last updated: 9/22/2026, 9:53:47 AM ET_
 
 ## Upcoming flights
 
@@ -155,6 +155,17 @@ _Last updated: 9/11/2026, 2:22:03 PM ET_
 - Source email: Your Flight Receipt - ADITYA SOOD 04SEP26
 - Source count: 4 email(s)
 
+### Sat, Sep 26, 2026 — American Airlines (SEYVFP)
+- Route: **JFK → ONT**
+- Passenger: Ashish Sood
+- Segments:
+  - Sat, Sep 26, 2026 — AA2234: JFK 7:59 AM → DFW 10:42 AM
+  - Sat, Sep 26, 2026 — AA2635: DFW 12:20 PM → ONT 1:25 PM
+- Live status: https://www.flightaware.com/live/flight/AAL2234 | https://www.flightaware.com/live/flight/AAL2635
+- Notes: Booking covers two passengers: Ashish Sood and Amita Sood.
+- Source email: Fwd: Your trip confirmation (JFK - ONT)
+- Source count: 1 email(s)
+
 ### Wed, Sep 30, 2026 — Delta Air Lines (HUTKJH)
 - Route: **LGA → FCA**
 - Passenger: Chhaya Arora
@@ -237,5 +248,6 @@ _Last updated: 9/11/2026, 2:22:03 PM ET_
 - Wed, Apr 1, 2026: MEX→PVR (XCCZ9P)
 - Sat, Apr 4, 2026: PVR→JFK (JMFYYL)
 - Wed, Jul 29, 2026: ORD→EWR (FKNKAG)
+- Sat, Sep 26, 2026: JFK→ONT (SEYVFP)
 - Thu, Nov 26, 2026: JFK→DEL (HX8VFV)
 - Sat, Dec 12, 2026: DEL→JFK (HX8VFV)
