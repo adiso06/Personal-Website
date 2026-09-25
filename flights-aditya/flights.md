@@ -1,7 +1,7 @@
 # Flight Tracker
 
 _Auto-updated from forwarded emails._
-_Last updated: 9/22/2026, 9:53:51 AM ET_
+_Last updated: 9/24/2026, 11:50:28 PM ET_
 
 ## Upcoming flights
 
@@ -155,6 +155,16 @@ _Last updated: 9/22/2026, 9:53:51 AM ET_
 - Source email: Your Flight Receipt - ADITYA SOOD 04SEP26
 - Source count: 4 email(s)
 
+### Fri, Sep 25, 2026 — American Airlines (OUXMOV)
+- Route: **JFK → DEL**
+- Passenger: Aditya Sood
+- Segments:
+  - Fri, Sep 25, 2026 — AA292: JFK 8:45 PM → DEL 9:00 PM
+- Live status: https://www.flightaware.com/live/flight/AAL292
+- Notes: Nonstop flight arriving Saturday, September 26, 2026. This differs from the existing November 26 JFK→DEL itinerary.
+- Source email: Your trip confirmation (JFK - DEL)
+- Source count: 1 email(s)
+
 ### Sat, Sep 26, 2026 — American Airlines (SEYVFP)
 - Route: **JFK → ONT**
 - Passenger: Ashish Sood
@@ -248,6 +258,7 @@ _Last updated: 9/22/2026, 9:53:51 AM ET_
 - Wed, Apr 1, 2026: MEX→PVR (XCCZ9P)
 - Sat, Apr 4, 2026: PVR→JFK (JMFYYL)
 - Wed, Jul 29, 2026: ORD→EWR (FKNKAG)
+- Fri, Sep 25, 2026: JFK→DEL (OUXMOV)
 - Sat, Sep 26, 2026: JFK→ONT (SEYVFP)
 - Thu, Nov 26, 2026: JFK→DEL (HX8VFV)
 - Sat, Dec 12, 2026: DEL→JFK (HX8VFV)
