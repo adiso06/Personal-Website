@@ -1,7 +1,7 @@
 # Flight Tracker
 
 _Auto-updated from forwarded emails._
-_Last updated: 9/25/2026, 12:06:02 AM ET_
+_Last updated: 9/25/2026, 12:23:23 AM ET_
 
 ## Upcoming flights
 
@@ -197,6 +197,16 @@ _Last updated: 9/25/2026, 12:06:02 AM ET_
 - Source email: Your trip confirmation (DEL - JFK)
 - Source count: 1 email(s)
 
+### Sat, Oct 3, 2026 — American Airlines (WQPZZY)
+- Route: **DEL → JFK**
+- Passenger: Aditya Sood
+- Segments:
+  - Sat, Oct 3, 2026 — AA293: DEL 11:30 PM → JFK 6:10 AM
+- Live status: https://www.flightaware.com/live/flight/AAL293
+- Notes: Possible date change: the database lists AA293 DEL→JFK on 2026-10-01, while this newly issued confirmation shows departure on 2026-10-03 and arrival on 2026-10-04.
+- Source email: Your trip confirmation (DEL - JFK)
+- Source count: 1 email(s)
+
 ### Sun, Oct 4, 2026 — Delta Air Lines (HUTKJH)
 - Route: **FCA → LGA**
 - Passenger: Chhaya Arora
@@ -270,5 +280,6 @@ _Last updated: 9/25/2026, 12:06:02 AM ET_
 - Sat, Apr 4, 2026: PVR→JFK (JMFYYL)
 - Wed, Jul 29, 2026: ORD→EWR (FKNKAG)
 - Sat, Sep 26, 2026: JFK→ONT (SEYVFP)
+- Sat, Oct 3, 2026: DEL→JFK (WQPZZY)
 - Thu, Nov 26, 2026: JFK→DEL (HX8VFV)
 - Sat, Dec 12, 2026: DEL→JFK (HX8VFV)
