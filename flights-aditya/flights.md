@@ -116,16 +116,6 @@ _Last updated: 9/25/2026, 8:43:16 PM ET_
 - Source email: Your trip confirmation (LGA - ORD)
 - Source count: 1 email(s)
 
-### Mon, Jul 27, 2026 — American Airlines (FKNKAG)
-- Route: **ORD → LGA**
-- Passenger: Unknown Passenger
-- Segments:
-  - Mon, Jul 27, 2026 — AA3050: ORD 8:04 PM → LGA 10:27 PM
-- Live status: https://www.flightaware.com/live/flight/AAL3050
-- Notes: Return leg from round-trip confirmation.
-- Source email: Your trip confirmation (LGA - ORD)
-- Source count: 1 email(s)
-
 ### Wed, Jul 29, 2026 — American Airlines (FKNKAG)
 - Route: **ORD → EWR**
 - Passenger: Unknown
@@ -254,7 +244,7 @@ _Last updated: 9/25/2026, 8:43:16 PM ET_
 
 - LGA ↔ ONT: Sun, Feb 22, 2026 LGA→ONT (AYQR8B) + Wed, Feb 25, 2026 ONT→LGA (IFWAUN)
 - LGA ↔ ATL: Thu, Jun 4, 2026 LGA→ATL (RKGJ3K) + Sun, Jun 7, 2026 ATL→LGA (RKGJ3K)
-- LGA ↔ ORD: Sat, Jul 25, 2026 LGA→ORD (FKNKAG) + Mon, Jul 27, 2026 ORD→LGA (FKNKAG)
+- LGA ↔ ORD: Sat, Jul 25, 2026 LGA→ORD (FKNKAG) + Wed, Jul 29, 2026 ORD→EWR (FKNKAG)
 - JFK ↔ MEX: Fri, Sep 4, 2026 JFK→MEX (GYSCKP) + Mon, Sep 7, 2026 MEX→JFK (GYSCKP)
 - JFK ↔ DEL: Fri, Sep 25, 2026 JFK→DEL (OUXMOV) + Sat, Oct 3, 2026 DEL→JFK (WQPZZY)
 - LGA ↔ FCA: Wed, Sep 30, 2026 LGA→FCA (HUTKJH) + Sun, Oct 4, 2026 FCA→LGA (HUTKJH)
@@ -268,7 +258,6 @@ _Last updated: 9/25/2026, 8:43:16 PM ET_
 - Fri, Mar 27, 2026: JFK→MEX (O788YR)
 - Wed, Apr 1, 2026: MEX→PVR (XCCZ9P)
 - Sat, Apr 4, 2026: PVR→JFK (JMFYYL)
-- Wed, Jul 29, 2026: ORD→EWR (FKNKAG)
 - Sat, Sep 26, 2026: JFK→ONT (SEYVFP)
 - Thu, Nov 26, 2026: JFK→DEL (HX8VFV)
 - Sat, Dec 12, 2026: DEL→JFK (HX8VFV)
