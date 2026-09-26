@@ -1,7 +1,7 @@
 # Flight Tracker
 
 _Auto-updated from forwarded emails._
-_Last updated: 9/25/2026, 12:23:25 AM ET_
+_Last updated: 9/25/2026, 8:43:16 PM ET_
 
 ## Upcoming flights
 
@@ -187,16 +187,6 @@ _Last updated: 9/25/2026, 12:23:25 AM ET_
 - Source email: Fwd: Your Flight Receipt - CHHAYA ARORA 30SEP26
 - Source count: 1 email(s)
 
-### Thu, Oct 1, 2026 — American Airlines (HXABGT)
-- Route: **DEL → JFK**
-- Passenger: Aditya Sood
-- Segments:
-  - Thu, Oct 1, 2026 — AA293: DEL 11:30 PM → JFK 6:10 AM
-- Live status: https://www.flightaware.com/live/flight/AAL293
-- Notes: Arrives at JFK on Friday, October 2, 2026. Seat 34A; Economy (O).
-- Source email: Your trip confirmation (DEL - JFK)
-- Source count: 1 email(s)
-
 ### Sat, Oct 3, 2026 — American Airlines (WQPZZY)
 - Route: **DEL → JFK**
 - Passenger: Aditya Sood
@@ -266,7 +256,7 @@ _Last updated: 9/25/2026, 12:23:25 AM ET_
 - LGA ↔ ATL: Thu, Jun 4, 2026 LGA→ATL (RKGJ3K) + Sun, Jun 7, 2026 ATL→LGA (RKGJ3K)
 - LGA ↔ ORD: Sat, Jul 25, 2026 LGA→ORD (FKNKAG) + Mon, Jul 27, 2026 ORD→LGA (FKNKAG)
 - JFK ↔ MEX: Fri, Sep 4, 2026 JFK→MEX (GYSCKP) + Mon, Sep 7, 2026 MEX→JFK (GYSCKP)
-- JFK ↔ DEL: Fri, Sep 25, 2026 JFK→DEL (OUXMOV) + Thu, Oct 1, 2026 DEL→JFK (HXABGT)
+- JFK ↔ DEL: Fri, Sep 25, 2026 JFK→DEL (OUXMOV) + Sat, Oct 3, 2026 DEL→JFK (WQPZZY)
 - LGA ↔ FCA: Wed, Sep 30, 2026 LGA→FCA (HUTKJH) + Sun, Oct 4, 2026 FCA→LGA (HUTKJH)
 - LGA ↔ OKC: Fri, Oct 23, 2026 LGA→OKC (IPAKBF) + Sun, Oct 25, 2026 OKC→LGA (IPAKBF)
 
@@ -280,6 +270,5 @@ _Last updated: 9/25/2026, 12:23:25 AM ET_
 - Sat, Apr 4, 2026: PVR→JFK (JMFYYL)
 - Wed, Jul 29, 2026: ORD→EWR (FKNKAG)
 - Sat, Sep 26, 2026: JFK→ONT (SEYVFP)
-- Sat, Oct 3, 2026: DEL→JFK (WQPZZY)
 - Thu, Nov 26, 2026: JFK→DEL (HX8VFV)
 - Sat, Dec 12, 2026: DEL→JFK (HX8VFV)
