@@ -1,7 +1,7 @@
 # Flight Tracker
 
 _Auto-updated from forwarded emails._
-_Last updated: 9/25/2026, 8:43:16 PM ET_
+_Last updated: 10/29/2026, 7:24:26 PM ET_
 
 ## Upcoming flights
 
@@ -220,14 +220,14 @@ _Last updated: 9/25/2026, 8:43:16 PM ET_
 
 ### Thu, Nov 26, 2026 — Delta Air Lines (HX8VFV)
 - Route: **JFK → DEL**
-- Passenger: Chhaya Arora and Aditya Sood
+- Passenger: Aditya Sood
 - Segments:
-  - Thu, Nov 26, 2026 — 3: JFK 10:15 PM → LHR 10:30 AM
+  - Thu, Nov 26, 2026 — 5994: JFK 06:00 PM → LHR 06:20 AM
   - Fri, Nov 27, 2026 — 5947: LHR 06:50 PM → DEL 09:00 AM
-- Live status: https://www.flightaware.com/live/flight/DAL3 | https://www.flightaware.com/live/flight/DAL5947
+- Live status: https://www.flightaware.com/live/flight/DAL5994 | https://www.flightaware.com/live/flight/DAL5947
 - Notes: Schedule change: the JFK departure is now Delta 3 at 10:15 PM, replacing the previously listed Delta 1 departure at 08:00 PM. The existing LHR-to-DEL flight DL5947 remains scheduled and is operated by Virgin Atlantic.
-- Source email: Important Update: Flight Schedule Change
-- Source count: 1 email(s)
+- Source email: Fwd: Your Flight Receipt - ADITYA SOOD 26NOV26
+- Source count: 2 email(s)
 
 ### Sat, Dec 12, 2026 — Delta Air Lines (HX8VFV)
 - Route: **DEL → JFK**
@@ -244,7 +244,6 @@ _Last updated: 9/25/2026, 8:43:16 PM ET_
 
 - LGA ↔ ONT: Sun, Feb 22, 2026 LGA→ONT (AYQR8B) + Wed, Feb 25, 2026 ONT→LGA (IFWAUN)
 - LGA ↔ ATL: Thu, Jun 4, 2026 LGA→ATL (RKGJ3K) + Sun, Jun 7, 2026 ATL→LGA (RKGJ3K)
-- LGA ↔ ORD: Sat, Jul 25, 2026 LGA→ORD (FKNKAG) + Wed, Jul 29, 2026 ORD→EWR (FKNKAG)
 - JFK ↔ MEX: Fri, Sep 4, 2026 JFK→MEX (GYSCKP) + Mon, Sep 7, 2026 MEX→JFK (GYSCKP)
 - JFK ↔ DEL: Fri, Sep 25, 2026 JFK→DEL (OUXMOV) + Sat, Oct 3, 2026 DEL→JFK (WQPZZY)
 - LGA ↔ FCA: Wed, Sep 30, 2026 LGA→FCA (HUTKJH) + Sun, Oct 4, 2026 FCA→LGA (HUTKJH)
@@ -258,6 +257,8 @@ _Last updated: 9/25/2026, 8:43:16 PM ET_
 - Fri, Mar 27, 2026: JFK→MEX (O788YR)
 - Wed, Apr 1, 2026: MEX→PVR (XCCZ9P)
 - Sat, Apr 4, 2026: PVR→JFK (JMFYYL)
+- Sat, Jul 25, 2026: LGA→ORD (FKNKAG)
+- Wed, Jul 29, 2026: ORD→EWR (FKNKAG)
 - Sat, Sep 26, 2026: JFK→ONT (SEYVFP)
 - Thu, Nov 26, 2026: JFK→DEL (HX8VFV)
 - Sat, Dec 12, 2026: DEL→JFK (HX8VFV)
