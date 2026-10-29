@@ -1,7 +1,7 @@
 # Flight Tracker
 
 _Auto-updated from forwarded emails._
-_Last updated: 10/29/2026, 7:24:26 PM ET_
+_Last updated: 10/29/2026, 7:24:30 PM ET_
 
 ## Upcoming flights
 
@@ -231,14 +231,14 @@ _Last updated: 10/29/2026, 7:24:26 PM ET_
 
 ### Sat, Dec 12, 2026 — Delta Air Lines (HX8VFV)
 - Route: **DEL → JFK**
-- Passenger: Chhaya Arora and Aditya Sood
+- Passenger: Aditya Sood
 - Segments:
   - Sat, Dec 12, 2026 — 8337: DEL 05:10 AM → CDG 10:20 AM
   - Sat, Dec 12, 2026 — 8745: CDG 01:30 PM → JFK 04:00 PM
 - Live status: https://www.flightaware.com/live/flight/DAL8337 | https://www.flightaware.com/live/flight/DAL8745
 - Notes: Return itinerary is unchanged. Operated by Air France with a 3h 10m connection in CDG.
-- Source email: Important Update: Flight Schedule Change
-- Source count: 1 email(s)
+- Source email: Fwd: Your Flight Receipt - ADITYA SOOD 26NOV26
+- Source count: 2 email(s)
 
 ## Likely round-trip pairings
 
