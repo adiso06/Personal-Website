@@ -1,7 +1,7 @@
 # Flight Tracker
 
 _Auto-updated from forwarded emails._
-_Last updated: 10/29/2026, 7:24:33 PM ET_
+_Last updated: 11/22/2026, 2:57:20 PM ET_
 
 ## Upcoming flights
 
@@ -240,6 +240,16 @@ _Last updated: 10/29/2026, 7:24:33 PM ET_
 - Source email: Fwd: Your Flight Receipt - ADITYA SOOD 26NOV26
 - Source count: 2 email(s)
 
+### Thu, Feb 11, 2027 — American Airlines (CAYHMW)
+- Route: **JFK → DEL**
+- Passenger: Aditya Sood
+- Segments:
+  - Thu, Feb 11, 2027 — AA292: JFK 8:15 PM → DEL 9:35 PM
+- Live status: https://www.flightaware.com/live/flight/AAL292
+- Notes: Nonstop flight arriving in Delhi on Friday, February 12, 2027. Economy (B).
+- Source email: Your trip confirmation (JFK - DEL)
+- Source count: 1 email(s)
+
 ## Likely round-trip pairings
 
 - LGA ↔ ONT: Sun, Feb 22, 2026 LGA→ONT (AYQR8B) + Wed, Feb 25, 2026 ONT→LGA (IFWAUN)
@@ -262,3 +272,4 @@ _Last updated: 10/29/2026, 7:24:33 PM ET_
 - Sat, Sep 26, 2026: JFK→ONT (SEYVFP)
 - Thu, Nov 26, 2026: JFK→DEL (HX8VFV)
 - Sat, Dec 12, 2026: DEL→JFK (HX8VFV)
+- Thu, Feb 11, 2027: JFK→DEL (CAYHMW)
