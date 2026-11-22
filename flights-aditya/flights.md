@@ -1,7 +1,7 @@
 # Flight Tracker
 
 _Auto-updated from forwarded emails._
-_Last updated: 11/22/2026, 4:19:34 PM ET_
+_Last updated: 11/22/2026, 4:47:02 PM ET_
 
 ## Upcoming flights
 
@@ -250,6 +250,17 @@ _Last updated: 11/22/2026, 4:19:34 PM ET_
 - Source email: Your trip confirmation (JFK - DEL)
 - Source count: 1 email(s)
 
+### Mon, Feb 15, 2027 — Etihad Airways (8V8RN9)
+- Route: **JAI → JFK**
+- Passenger: Aditya Sood
+- Segments:
+  - Mon, Feb 15, 2027 — 327: JAI 21:45 → AUH 00:05
+  - Tue, Feb 16, 2027 — 3: AUH 09:25 → JFK 15:00
+- Live status: https://www.flightaware.com/live/flight/ETD327 | https://www.flightaware.com/live/flight/ETD3
+- Notes: Arrives in Abu Dhabi on 2027-02-16; 9-hour 20-minute connection at AUH.
+- Source email: Your booking confirmation
+- Source count: 1 email(s)
+
 ## Likely round-trip pairings
 
 - LGA ↔ ONT: Sun, Feb 22, 2026 LGA→ONT (AYQR8B) + Wed, Feb 25, 2026 ONT→LGA (IFWAUN)
@@ -273,3 +284,4 @@ _Last updated: 11/22/2026, 4:19:34 PM ET_
 - Thu, Nov 26, 2026: JFK→DEL (HX8VFV)
 - Sat, Dec 12, 2026: DEL→JFK (HX8VFV)
 - Thu, Feb 11, 2027: JFK→DEL (KGXIPS)
+- Mon, Feb 15, 2027: JAI→JFK (8V8RN9)
